@@ -7,6 +7,19 @@
     
     }
 
+    .section1-img-modelo-div {
+        border: 1px solid black;
+        display: flex;
+        width: 55.4%;
+        position: relative;
+        left: 35em;
+    }
+
+    .section1-img-modelo {
+        height: 100%;
+        width: auto;
+    }
+
     .login-div1{
         display: flex;
         flex-direction: column;
