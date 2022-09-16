@@ -8,7 +8,6 @@
     }
 
     .section1-img-modelo-div {
-        border: 1px solid black;
         display: flex;
         width: 55.4%;
         position: relative;
@@ -16,8 +15,10 @@
     }
 
     .section1-img-modelo {
-        height: 100%;
-        width: auto;
+        position: relative;
+        bottom: 8em;
+        height: 40vh;
+        
     }
 
     .login-div1{
