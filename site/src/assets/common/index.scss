@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&display=swap');
+
+@font-face {
+    font-family: 'inter' ;
+    src: url('https://fonts.googleapis.com/css2?family=Inter&family=K2D:wght@300&display=swap');
+}
+
+@font-face {
+    font-family:'caviar' ;
+    src: url('../fonts/CaviarDreams.ttf');
+}
+
+@font-face {
+    font-family:'caviar-bold' ;
+    src: url('../fonts/CaviarDreams_Bold.ttf');
+}
+
+@font-face {
+    font-family:'caviar-bold-italic' ;
+    src: url('../fonts/CaviarDreams_BoldItalic.ttf');
+}
+
+@font-face {
+    font-family:'caviar-italic' ;
+    src: url('../fonts/CaviarDreams_Italic.ttf');
+}
+
+* {
+    margin: 0px;
+}

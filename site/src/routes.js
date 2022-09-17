@@ -1,5 +1,13 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
+// ROTAS PARA USUARIOS
+
+import Login from '../src/pages/Login'
+
+
+
+// ROTAS PARA ADMIN
+
 import HomeAdm from '../src/pages/administrador/HomeAdministrador'
 import CadastroProd from '../src/pages/administrador/CadastroProduto'
 import GerenciarProd from '../src/pages/administrador/GerenciarProd'
@@ -18,7 +26,7 @@ export default function Index(){
     return(
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={< HomeAdm />} />
+                <Route path='/' element={< Login />} />
                 <Route path='/cadastroProduto' element={< CadastroProd />} />
                 <Route path='/gerenciarProduto' element={< GerenciarProd />} />
                 <Route path='/alterarCard' element={< AlterarCard />} />
