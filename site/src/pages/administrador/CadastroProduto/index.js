@@ -1,10 +1,10 @@
 import './index.scss'
 
 
-function CadastroProduto(){
+export default function CadastroProduto(){
     return(
         <main>
-            
+            <h1>dsadas</h1>
         </main>
 
     );

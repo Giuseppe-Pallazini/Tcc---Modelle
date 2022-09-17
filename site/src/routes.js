@@ -1,4 +1,4 @@
-import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // ROTAS PARA USUARIOS
 
@@ -27,7 +27,8 @@ export default function Index(){
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={< Login />} />
-                <Route path='/cadastroProduto' element={< CadastroProd />} />
+                <Route path='/homeadm' element={<HomeAdm/>}/>
+                <Route path='/cadastroprod' element={< CadastroProd />} />
                 <Route path='/gerenciarProduto' element={< GerenciarProd />} />
                 <Route path='/alterarCard' element={< AlterarCard />} />
                 <Route path='/alterarCarrolsel' element={< AlterarCassolsel />} />
