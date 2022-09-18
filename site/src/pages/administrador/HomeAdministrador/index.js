@@ -1,12 +1,14 @@
 import './index.scss'
-import '../../../assets/common/index.scss'
-import Cabecalho from '../../../components/cabecalhoadm'
+import { useNavigate} from 'react-router-dom'
+import storage from 'local-storage'
 
+import '../../../assets/common/index.scss'
+import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
     return(
-        <main>
-            <Cabecalho/>
-        </main>
+       <main>
+        
+        </main> 
     );
 }

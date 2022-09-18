@@ -2,11 +2,11 @@ import { useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
 
 import './index.scss';
-import '../../assets/common/index.scss'
+import '../../../assets/common/index.scss'
 import {useEffect, useState, useRef} from 'react'
 
-import Imagem1 from '../../assets/image/logo_transparent.png'
-import Imagem2 from "../../assets/image/image-login.png";
+import Imagem1 from '../../../assets/image/logo_transparent.png'
+import Imagem2 from "../../../assets/image/image-login.png";
 
 import LoadingBar from 'react-top-loading-bar'
 
