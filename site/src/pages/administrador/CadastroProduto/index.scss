@@ -36,12 +36,29 @@
     .div-cadastro-titulo-addfoto{
         display: flex;
         flex-direction: row;
+        
+        position: absolute;
+        width: 200px;
+        height: 20px;
+        left: 237px;
+        top: 171px;
+
+        font-family: 'caviar';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+
     }
-    .div-cadastro-add-foto p{
-        margin-right: 2em;
+    .div-cadastro-titulo-addfoto p {
+        margin-right: 0.5em;
     }
-    .div-cadastro-add-foto img{
-        margin-left: 0.3em;
+    .div-cadastro-titulo-addfoto img {
+      margin-left: 0.4em;
     }
     .cadastro-input-img-1{
         position: absolute;
@@ -131,13 +148,12 @@
     .div-dashboard-cadastro-composição{
         display: flex;
         flex-direction: row;
-        margin-left: 3em;
     }
-    .cadastro-input-composicao{
+    .cadastro-input-detalhes{
         position: absolute;
-        width: 30em;
+        width: 20em;
         height: 20px;
-        left: 120px;
+        left: 220px;
         top: 553px;
         
         font-family: 'caviar';
@@ -147,6 +163,34 @@
         border: 0px;
         border-bottom: 1px solid #000;
     }
+    .cadastro-input-detalhes-2{
+        position: absolute;
+        width: 20em;
+        height: 20px;
+        left: 220px;
+        top: 595px;
+        
+        font-family: 'caviar';
+        font-size: 12px;
+        line-height: 14px;
+
+        border: 0px;
+        border-bottom: 1px solid #000;
+    }
+    .cadastro-input-detalhes-3{
+        position: absolute;
+        width: 20em;
+        left: 220px;
+        top: 580px;
+        
+        font-family: 'caviar';
+        font-size: 12px;
+        line-height: 14px;
+
+        border: 0px;
+        border-bottom: 1px solid #000;
+    }
+
     .cadastro-escolher-img-cl2{
         display: flex;
         flex-direction: column;
@@ -156,16 +200,198 @@
         display: flex;
         flex-direction: column ;
     }
-    .div-dashboard-cadastro-marca-l1{
-                
+    .cadastro-input-composicao{
+        position: absolute;
+        width: 20em;
+        left: 220px;
+        top: 440px;
+
+        font-family: 'caviar';
+        font-size: 12px;
+        line-height: 14px;
+
+        border: 0px;
+        border-bottom: 1px solid #000;
+
     }
-    
+    .cadastro-input-composicao-2{
+        position: absolute;
+        width: 20em;
+        left: 220px;
+        top: 460px;
+
+        font-family: 'caviar';
+        font-size: 12px;
+        line-height: 14px;
+
+        border: 0px;
+        border-bottom: 1px solid #000;
+
+    }
+    .cadastro-input-composicao-3{
+        position: absolute;
+        width: 20em;
+        left: 220px;
+        top: 480px;
+
+        font-family: 'caviar';
+        font-size: 12px;
+        line-height: 14px;
+
+        border: 0px;
+        border-bottom: 1px solid #000;
+
+    }
+    .cadastro-titulo-marcas{
+        position: absolute;
+        width: 50px;
+        height: 14px;
+        left: 220px;
+        top: 700px;
+
+        font-family: 'Caviar Dreams';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        /* identical to box height */
+
+        text-align: center;
+
+        color: #19110B;
+    }
+    .cadastro-marcas-gucci{ 
+        box-sizing: border-box;
+        position: absolute;
+        width: 71px;
+        height: 27px;
+        left: 216px;
+        top: 730px;
+
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-marcas-balenciaga{
+        box-sizing: border-box;
+        position: absolute;
+        width: 71px;
+        height: 27px;
+        left: 300px;
+        top: 730px;
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-marcas-dolceEgabbana{
+        box-sizing: border-box;
+        position: absolute;
+        width: 108px;
+        height: 27px;
+        left: 390px;
+        top: 730px;
+
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+
+    .cadastro-marcas-burberry{
+        box-sizing: border-box;
+        position: absolute;
+        width: 71px;
+        height: 27px;
+        left: 216px;
+        top: 770px;
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-marcas-morley{
+        box-sizing: border-box;
+        position: absolute;
+        width: 71px;
+        height: 27px;
+        left: 300px;
+        top: 770px;
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-marcas-kenzo{
+        box-sizing: border-box;
+        position: absolute;
+        width: 71px;
+        height: 27px;
+        left: 390px;
+        top: 770px;
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-marcas-modelle{
+        box-sizing: border-box;
+        position: absolute;
+        width: 67px;
+        height: 27px;
+        left: 480px;
+        top: 770px;
+        border: 1px solid #19110B;
+        border-radius: 10px; 
+    }
+
+
+    .cadastro-marcas-zegna{
+        box-sizing: border-box;
+        position: absolute;
+        width: 71px;
+        height: 27px;
+        left: 216px;
+        top: 810px;
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-marcas-louisvuitton{
+        box-sizing: border-box;
+        position: absolute;
+        width: 108px;
+        height: 27px;
+        left: 300px;
+        top: 810px;
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-marcas-prada{
+        box-sizing: border-box;
+        position: absolute;
+        width: 108px;
+        height: 27px;
+        left: 425px;
+        top: 810px;
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-marcas-versace{
+        position: absolute;
+        width: 71px;
+        height: 27px;
+        left: 216px;
+        top: 850px;
+
+        background: #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-marcas-apenasuma{
+        width: 81px;
+        height: 12px;
+        left: 216px;
+        top: 900px;
+
+        font-family: 'Caviar Dreams';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 8px;
+        line-height: 9px;
+        color: #19110B;
+
+    }
 
 
 
-
-
-    
     .div-cadastro-column-02{
         display: flex;
         flex-direction: column;

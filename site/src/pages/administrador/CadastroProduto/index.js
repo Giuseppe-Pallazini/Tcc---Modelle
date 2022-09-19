@@ -45,47 +45,46 @@ export default function CadastroProduto(){
 
             <div className='div-dashboard-cadastro-composição'>
                 <input type='text' className='cadastro-input-composicao' placeholder='Composição do produto ' />
-                <img src={ImagemX} alt='logo' /> 
-                <img src={ImagemCerto} alt='logo'/>
+                <input type='text' className='cadastro-input-composicao-2'  />
+                <input type='text' className='cadastro-input-composicao-3'  />
             </div>
 
             <div className='div-dashboard-cadastro-detalhes'>
-                <input type='text' />
-                <img src={ImagemX} alt='logo' /> 
-                <img src={ImagemCerto} alt='logo'/>
+                <input type='text' className='cadastro-input-detalhes' placeholder='Detalhes do produto' />
+                <input type='text' className='cadastro-input-detalhes-2'  />
+                <input type='text' className='cadastro-input-detalhes-3'  />
             </div>
 
             <div className='div-dashboard-cadastro-marca' >
-                <div>
+                <div className='cadastro-titulo-marcas'>
                     <p> Marcas(s)</p>
                 </div>
                 <div className='div-dashboard-cadastro-marca-l1'>
-                    <input type='checked' placeholder='Gucci' />
-                    <input type='checked' placeholder='Balenciaga' />
-                    <input type='checked' placeholder='Dolse & Gabbana' />
+                    <input type='checked' className='cadastro-marcas-gucci' placeholder='Gucci' />
+                    <input type='checked' className='cadastro-marcas-balenciaga' placeholder='Balenciaga' />
+                    <input type='checked' className='cadastro-marcas-dolceEgabbana' placeholder='Dolce & Gabbana' />
                 </div>
 
                 <div className='div-dashboard-cadastro-marca-l2'>
-                    <input type='checked' placeholder='Burberry' />
-                    <input type='checked' placeholder='Morley' />
-                    <input type='checked' placeholder='Kenzo' />
-                    <input type='checked' placeholder='Modelle' />
+                    <input type='checked' className='cadastro-marcas-burberry' placeholder='Burberry' />
+                    <input type='checked' className='cadastro-marcas-morley' placeholder='Morley' />
+                    <input type='checked' className='cadastro-marcas-kenzo' placeholder='Kenzo' />
+                    <input type='checked' className='cadastro-marcas-modelle' placeholder='Modelle' />
                 </div>
                 
                 <div className='div-dashboard-cadastro-marca-l3'>
-                    <input type='checked' placeholder='Zegna' />
-                    <input type='checked' placeholder='Louis Vuitton' />
-                    <input type='checked' placeholder='Prada' />
+                    <input type='checked' className='cadastro-marcas-zegna' placeholder='Zegna' />
+                    <input type='checked' className='cadastro-marcas-louisvuitton' placeholder='Louis Vuitton' />
+                    <input type='checked' className='cadastro-marcas-prada' placeholder='Prada' />
                 </div>
 
                 <div className='div-dashboard-cadastro-marca-l4'>
-                    <input type='checked' placeholder='Versace' />
+                    <input type='checked' className='cadastro-marcas-versace' placeholder='Versace' />
+                    <p className='cadastro-marcas-apenasuma'> * Apenas uma marca </p>
                 </div>
-
-                <p> * Apenas uma marca</p>
             </div> 
 
-
+ 
             <div className='div-cadastro-column-02'>
 
 
