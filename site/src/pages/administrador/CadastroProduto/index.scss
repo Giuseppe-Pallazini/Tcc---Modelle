@@ -1,0 +1,173 @@
+.main-cadastro{
+    display: flex;
+    flex-direction: column;
+
+
+    .div-cadastro-column-01{
+        display: flex;
+        flex-direction: column;
+    }
+    .div-dashboard-cadastro-pricipal{
+        display: flex;
+        flex-direction: column;
+    }
+    .titulo-cadastro h1{
+        position: absolute;
+        width: 358px;
+        height: 57px;
+        left: 469px;
+        top: 87px;
+
+        font-family: 'Caviar Dreams';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 41px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #19110B;
+    }
+    .div-dashboard-cadastro-inputs{
+        display: flex;
+        flex-direction: row;
+    }
+    .div-cadastro-titulo-addfoto{
+        display: flex;
+        flex-direction: row;
+    }
+    .div-cadastro-add-foto p{
+        margin-right: 2em;
+    }
+    .div-cadastro-add-foto img{
+        margin-left: 0.3em;
+    }
+    .cadastro-input-img-1{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        left: 236px;
+        top: 199px;
+
+        background: #F8F8F8;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+    }
+    .cadastro-input-img-2{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        left: 475px;
+        top: 269px;
+
+        background: #F8F8F8;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+    }
+    .cadastro-input-img-2 img{
+        width: 18.38px;
+        height: 18.37px;
+        top: 219.88px;
+        left: 495.88px;
+        position: absolute;
+        left: 38.74%;
+        right: 59.82%;
+        top: 21.47%;
+        bottom: 76.73%;
+    }
+    .cadastro-input-img-3{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        left: 475px;
+        top: 339px;
+
+        background: #F8F8F8;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+    }
+    .cadastro-input-img-3 img{
+        width: 18.38px;
+        height: 18.37px;
+        top: 219.88px;
+        left: 495.88px;
+        position: absolute;
+        left: 38.74%;
+        right: 59.82%;
+        top: 21.47%;
+        bottom: 76.73%;
+    }
+    .cadastro-input-img-4{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        left: 475px;
+        top: 199px;
+
+        background: #F8F8F8;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+    }
+    .cadastro-input-img-4 img{
+        width: 18.38px;
+        height: 18.37px;
+        top: 219.88px;
+        left: 495.88px;
+        position: absolute;
+        left: 38.74%;
+        right: 59.82%;
+        top: 21.47%;
+        bottom: 76.73%;
+    }
+    .cadastro-input-img-2 img{
+        position: absolute;
+        left: 38.74%;
+        right: 59.82%;
+        top: 21.47%;
+        bottom: 76.73%;
+
+    }
+    .div-dashboard-cadastro-composição{
+        display: flex;
+        flex-direction: row;
+        margin-left: 3em;
+    }
+    .cadastro-input-composicao{
+        position: absolute;
+        width: 30em;
+        height: 20px;
+        left: 120px;
+        top: 553px;
+        
+        font-family: 'caviar';
+        font-size: 12px;
+        line-height: 14px;
+
+        border: 0px;
+        border-bottom: 1px solid #000;
+    }
+    .cadastro-escolher-img-cl2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .div-dashboard-cadastro-marca{
+        display: flex;
+        flex-direction: column ;
+    }
+    .div-dashboard-cadastro-marca-l1{
+                
+    }
+    
+
+
+
+
+
+    
+    .div-cadastro-column-02{
+        display: flex;
+        flex-direction: column;
+    }
+}
