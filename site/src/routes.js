@@ -19,7 +19,7 @@ import PagamentoPix from './pages/usuario/pagamentoPix'
 import PagamentoQrCode from './pages/usuario/pagamentoQrCode'
 import RecuperarSenha from './pages/usuario/recuperarSenha'
 import EnviarCodigo from './pages/usuario/recuperarSenha-codigo'
-import seusPedidos from './pages/usuario/seusPedidos'
+import SeusPedidos from './pages/usuario/seusPedidos'
 import SobreModelle from './pages/usuario/sobreModelle'
 
 
@@ -79,7 +79,7 @@ export default function Index(){
                 <Route path='/user/pagamentoQrCode' element={< PagamentoQrCode />} />
                 <Route path='/user/recuperarSenha' element={< RecuperarSenha />} />
                 <Route path='/user/enviarCodigo' element={< EnviarCodigo />} />
-                <Route path='/user/seusPedidos' element={< seusPedidos />} />
+                <Route path='/user/seusPedidos' element={< SeusPedidos />} />
                 <Route path='/user/sobreModelle' element={< SobreModelle />} />
 
             </Routes>

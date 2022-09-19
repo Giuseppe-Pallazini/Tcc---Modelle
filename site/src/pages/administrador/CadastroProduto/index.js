@@ -1,10 +1,11 @@
 import './index.scss'
-
+import Cabecalho from '../../../components/cabecalhoadm/index'
 
 export default function CadastroProduto(){
     return(
         <main>
-            <h1>dsadas</h1>
+            < Cabecalho />
+            <h1> </h1>
         </main>
 
     );

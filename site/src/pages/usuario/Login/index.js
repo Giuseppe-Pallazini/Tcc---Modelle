@@ -51,7 +51,7 @@ export default function Index() {
     }
 
     }  
-
+  
   return (
     <main className="main-login">
       <LoadingBar color='#99889C' ref={ref} />
