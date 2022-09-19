@@ -67,16 +67,15 @@ export default function Index() {
           <input className='div-dashboard-login-usuario' type="text" placeholder="Usuário" value={email} onChange={e => setEmail(e.target.value)}/>
           <input className='div-dashboard-login-senha' type="password" placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)} />
           
+          <div>
+            {erro}
+          </div>
           
           <button className='div-dashboard-bt' onClick={entrarClick} disabled={carregando} >Login</button>
           
           <p className='div-dashboard-desc2' >Esqueceu a senha</p>
           <p className='div-dashboard-desc3'>Criar Conta</p>
 
-          <div>
-            {erro}
-          </div>
-          
           <p className='div-dashboard-desc4'>All rights reserved &copy; </p>
 
         </div>

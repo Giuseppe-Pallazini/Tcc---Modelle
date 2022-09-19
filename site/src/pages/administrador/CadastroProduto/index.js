@@ -5,7 +5,7 @@ export default function CadastroProduto(){
     return(
         <main>
             < Cabecalho />
-            <h1> </h1>
+            <h1> Cadastro </h1>
         </main>
 
     );
