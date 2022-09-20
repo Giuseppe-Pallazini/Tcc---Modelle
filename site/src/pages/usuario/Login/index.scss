@@ -6,6 +6,10 @@
         .div-dashboard-login{
             display: flex;
             flex-direction: column;
+            textarea:focus, input:focus {
+                box-shadow: 0 0 0 0;
+                outline: 0;
+            }
 
             .div-dashboard-login-img1{
                 position: absolute;
@@ -26,31 +30,16 @@
                 font-size: 40px;
                 line-height: 46px;
             }
-                
-            .div-dashboard-login-desc1{
-                position: absolute;
-                width: 128px;
-                height: 15px;
-                left: 120px;
-                top: 494px;
-
-                font-family: 'inter';
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 15px;
-
-                color: #000000;
-            }
 
             .div-dashboard-login-usuario{
                 position: absolute;
-                width: 30em;
+                width: 25em;
                 height: 20px;
                 left: 120px;
-                top: 553px;
+                top: 500px;
                 
                 font-family: 'caviar';
-                font-size: 12px;
+                font-size: 15px;
                 line-height: 14px;
 
                 border: 0px;
@@ -59,17 +48,24 @@
 
             .div-dashboard-login-senha{
                 position: absolute;
-                width: 30em;
+                width: 25em;
                 height: 20px;
                 left: 120px;
-                top: 593px;
+                top: 560px;
                 
                 font-family: 'caviar';
-                font-size: 12px;
+                font-size: 15px;
                 line-height: 14px;
 
                 border: 0px;
                 border-bottom: 1px solid #000;
+            }
+
+            .div-dashboard-login-erro {
+                position: relative;
+                top: 38em;
+                left: 13.5em;
+            
             }
 
                 
@@ -119,8 +115,8 @@
                     position: absolute;
                     width: 100px;
                     height: 15px;
-                    left: 20px;
-                    top: 989px;
+                    left: 30px;
+                    top: 900px;
 
                     font-family: 'caviar';
                     font-size: 10px;
@@ -133,7 +129,7 @@
             .div-imagem-1{
                 position: absolute;
                 width: 708px;
-                height: 1024px;
+                height: 100%;
                 left: 572px;
                 top: 0px;
                 filter: blur(2px);

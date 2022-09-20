@@ -1,6 +1,9 @@
 import { useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './index.scss';
 import '../../../assets/common/index.scss'
 import {useEffect, useState, useRef} from 'react'
@@ -22,11 +25,15 @@ export default function Index() {
   const ref = useRef();
 
   useEffect(() => {
-    if(storage('usuario-logado')){
-        navigate('/')
+    if(storage('admin-logado')){
+        navigate('/admin/home')
     }
 
-  }, [])
+    else if (storage('usuario-logado')) {
+      navigate('/user/landingpage')
+    }
+
+  }, [carregando])
 
   async function entrarClick() {
     ref.current.continuousStart();
@@ -34,7 +41,15 @@ export default function Index() {
 
     try {
         const r = await login(email, senha);
-        storage('usuario-logado', r);
+        if (email === "admin" && senha === "1234") {
+        storage('admin-logado', r);
+
+        setCarregando(false)
+        }
+        
+        else
+          storage('usuario-logado', r)
+          setCarregando(false)
 
         setTimeout(() => { 
             navigate('/');
@@ -46,7 +61,6 @@ export default function Index() {
 
         if( err.response.status === 401) {
             setErro(err.response.data.erro);
-            alert(err);
         }
     }
 
@@ -62,12 +76,11 @@ export default function Index() {
           <img className='div-dashboard-login-img1' src={Imagem1} alt=''/>
           <h1 className='div-dashboard-login-tit1' >Inicie Sessão</h1>
           
-          <p className='div-dashboard-login-desc1'>*Campos obrigatorios</p>
 
           <input className='div-dashboard-login-usuario' type="text" placeholder="Usuário" value={email} onChange={e => setEmail(e.target.value)}/>
           <input className='div-dashboard-login-senha' type="password" placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)} />
           
-          <div>
+          <div className='div-dashboard-login-erro'>
             {erro}
           </div>
           
