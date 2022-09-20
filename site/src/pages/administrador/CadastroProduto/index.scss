@@ -376,12 +376,13 @@
         border-radius: 10px;
     }
     .cadastro-marcas-apenasuma{
+        position: absolute;
         width: 81px;
         height: 12px;
-        left: 216px;
-        top: 900px;
+        left: 220px;
+        top: 890px;
 
-        font-family: 'Caviar Dreams';
+        font-family: 'caviar';
         font-style: normal;
         font-weight: 400;
         font-size: 8px;
@@ -395,5 +396,285 @@
     .div-cadastro-column-02{
         display: flex;
         flex-direction: column;
+    }
+
+    .cadastro-cl2-camposobrigatorios{
+        position: absolute;
+        width: 128px;
+        height: 15px;
+        left: 705px;
+        top: 166px;
+
+        font-family: 'caviar';
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height */
+
+        text-align: center;
+
+    }
+    .cadastro-cl2-nomeProduto{
+        position: absolute;
+        width: 220px;
+        height: 17px;
+        left: 706px;
+        top: 201px;
+
+        font-family: 'caviar';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+
+        border: none;
+        border-bottom: 1px solid #000;
+    }
+    .logo-x-produto{
+        position: absolute;
+        left: 70.28%;
+        right: 35.45%;
+        top: 22.1%;
+        bottom: 79.3%;
+        width: .8em;
+        right: .8em;
+
+    }
+    .logo-certo-produto{
+        position: absolute;
+        left: 71.7%;
+        right: 18.6%;
+        top: 22.1%;
+        bottom: 79.2%;
+        width: .8em;
+        right: .8em;
+    }
+
+    .cadastro-cl2-complementoProduto{
+        position: absolute;
+        width: 220px;
+        height: 17px;
+        left: 705px;
+        top: 237px;
+
+        font-family: 'Caviar Dreams';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+
+        border: 0px;
+        border-bottom: 1px solid #000;
+    }
+    .logo-x-complemento{
+        position: absolute;
+        left: 70.28%;
+        right: 35.45%;
+        top: 26%;
+        bottom: 79.3%;
+        width: .8em;
+        right: .8em;
+
+    }
+    .logo-certo-complemento{
+        position: absolute;
+        left: 71.7%;
+        right: 18.6%;
+        top: 26%;
+        bottom: 79.2%;
+        width: .8em;
+        right: .8em;
+    }
+
+    .cadastro-cl2-valor{
+        position: absolute;
+        width: 220px;
+        height: 21px;
+        left: 705px;
+        top: 270px;
+
+        font-family: 'Caviar Dreams';
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+
+        border: 0px;
+        border-bottom: 1px solid #000;
+    }
+    .logo-x-valor{
+        position: absolute;
+        left: 70.28%;
+        right: 35.45%;
+        top: 30%;
+        bottom: 79.3%;
+        width: .8em;
+        right: .8em;
+
+    }
+    .logo-certo-valor{
+        position: absolute;
+        left: 71.7%;
+        right: 18.6%;
+        top: 30%;
+        bottom: 79.2%;
+        width: .8em;
+        right: .8em;
+    }
+
+    .cadastro-div-valorProd{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .cadastro-p-parcelas{
+        position: absolute;
+        width: 67px;
+        height: 21px;
+        left: 705px;
+        top: 323px;
+
+        font-family: 'Caviar Dreams';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .cadastro-input-parcelas{
+        box-sizing: border-box;
+        position: absolute;
+        width: 55px;
+        height: 20px;
+        left: 705px;
+        top: 345px;
+
+        background: #F6F6F6;
+        border: 1px solid #D5D5D5;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+    }
+
+
+    .cadastro-p-juros{
+        position: absolute;
+        width: 28px;
+        height: 21px;
+        left: 825px;
+        top: 323px; 
+
+        font-family: 'Caviar Dreams';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .cadastro-input-juros{
+        box-sizing: border-box;
+        position: absolute;
+        width: 59px;
+        height: 20px;
+        left: 825px;
+        top: 345px;
+
+        background: #F6F6F6;
+        border: 1px solid #D5D5D5;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+    }
+
+
+
+    .cadastro-tamanhos{
+        display: flex;
+        flex-direction: column;
+    }
+    .cadastro-inputs-tamanhos{
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        left: 704px;
+        top: 439px;
+
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-p-tamanhos{
+        position: absolute;
+        width: 67px;
+        height: 21px;
+        left: 704px;
+        top: 408px;
+
+        font-family: 'caviar';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+
+        color: #19110B;
+    }   
+    .cadastro-input-tamanho-PP{
+        box-sizing: border-box;
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        margin-left: 2em;
+        left: 704px;
+        top: 439px;
+
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-input-tamanho-P{
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        left: 741px;
+        top: 439px;
+
+        background: #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-input-tamanho-M{
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        left: 778px;
+        top: 439px;
+
+        background: #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-input-tamanho-G{
+        box-sizing: border-box;
+
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        left: 815px;
+        top: 439px;
+
+        border: 1px solid #19110B;
+        border-radius: 10px;
+    }
+    .cadastro-input-tamanho-GG{
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        left: 852px;
+        top: 439px;
+
+        background: #19110B;
+        border-radius: 10px;
     }
 }

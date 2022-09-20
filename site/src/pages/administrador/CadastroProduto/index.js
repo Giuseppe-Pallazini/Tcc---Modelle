@@ -80,16 +80,64 @@ export default function CadastroProduto(){
 
                 <div className='div-dashboard-cadastro-marca-l4'>
                     <input type='checked' className='cadastro-marcas-versace' placeholder='Versace' />
-                    <p className='cadastro-marcas-apenasuma'> * Apenas uma marca </p>
                 </div>
+
+                <p className='cadastro-marcas-apenasuma'> * Apenas uma marca </p>
             </div> 
 
  
             <div className='div-cadastro-column-02'>
 
+                <div className='cadastro-cl2-camposobrigatorios'>
+                    <p> * Campos obrigatorios </p>
+                </div>
 
+                <div>
+                    <input type='text' className='cadastro-cl2-nomeProduto' placeholder='Nome do produto' />
+                    <img src={ImagemX} alt='logo' className='logo-x-produto' /> 
+                    <img src={ImagemCerto} alt='logo' className='logo-certo-produto' />  
+                </div>
+
+                
+                <div>
+                    <input type='text' className='cadastro-cl2-complementoProduto' placeholder='Complemento produto' />
+                    <img src={ImagemX} alt='logo' className='logo-x-complemento' /> 
+                    <img src={ImagemCerto} alt='logo' className='logo-certo-complemento' />
+                </div>
+                
+                <div className='cadastro-div-valorProd'>
+                    <input type='text' className='cadastro-cl2-valor' placeholder='Valor(R$)' />
+                    <img src={ImagemX} alt='logo' className='logo-x-valor' /> 
+                    <img src={ImagemCerto} alt='logo' className='logo-certo-valor' />  
+                </div>
             </div>
 
+
+            <div>
+                <div>
+                    <p className='cadastro-p-parcelas'> Parcela(s)</p>
+                    <input type='text' placeholder='0' className='cadastro-input-parcelas' />
+                </div>
+
+
+                <div>
+                    <p className='cadastro-p-juros'> Juros</p>
+                    <input type='text' placeholder='0%' className='cadastro-input-juros' />
+                </div>
+            </div>
+
+
+            <div className='cadastro-tamanhos'>
+                <p className='cadastro-p-tamanhos'> Tamanhos </p>
+                
+                <div className='cadastro-inputs-tamanhos'>
+                    <input type='checked' className='cadastro-input-tamanho-PP' placeholder='PP' />
+                    <input type='checked' className='cadastro-input-tamanhos-P' placeholder='P' />
+                    <input type='checked' className='cadastro-input-tamanho-M' placeholder='M' />
+                    <input type='checked' className='cadastro-input-tamanho-G' placeholder='G' />
+                    <input type='checked' className='cadastro-input-tamanho-GG' placeholder='GG' />
+                </div> 
+            </div>
 
         </main>
 
