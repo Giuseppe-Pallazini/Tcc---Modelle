@@ -12,8 +12,8 @@ import Imagem1 from '../../../assets/image/logo_transparent.png'
 import Imagem2 from "../../../assets/image/image-login.png";
 
 import LoadingBar from 'react-top-loading-bar'
-
-import {login} from '../../../api/usuarioAPI.js'
+ 
+import { login } from '../../../api/usuarioAPI.js'
 
 export default function Index() {
   const [email, setEmail] = useState('');

@@ -3,6 +3,8 @@ import Cabecalho from '../../../components/cabecalhoadm/index'
 import ImagemX from '../../../assets/image/logo-x-input.svg'
 import ImagemCerto from '../../../assets/image/logo-certo-input.svg'
 import EscolherImg from '../../../assets/image/escolher-imagem.svg'
+import InputMulticolor from '../../../assets/image/logo-multicores.svg'
+import LogoAddCor from '../../../assets/image/logo-mais.svg'
 
 export default function CadastroProduto(){
     return(
@@ -128,15 +130,51 @@ export default function CadastroProduto(){
 
 
             <div className='cadastro-tamanhos'>
-                <p className='cadastro-p-tamanhos'> Tamanhos </p>
+                <p className='cadastro-p-tamanhos'> Tamanho(s)</p>
                 
                 <div className='cadastro-inputs-tamanhos'>
                     <input type='checked' className='cadastro-input-tamanho-PP' placeholder='PP' />
-                    <input type='checked' className='cadastro-input-tamanhos-P' placeholder='P' />
+                    <input type='checked' className='cadastro-input-tamanho-P' placeholder='P' />
                     <input type='checked' className='cadastro-input-tamanho-M' placeholder='M' />
                     <input type='checked' className='cadastro-input-tamanho-G' placeholder='G' />
                     <input type='checked' className='cadastro-input-tamanho-GG' placeholder='GG' />
                 </div> 
+            </div>
+
+            <div className='div-cadastro-cores' >
+                <div>
+                <p className='cadastro-p-cores'>Cor(es) </p>
+                </div>
+                <div className='cadastro-cores-input'>
+                    <img src={InputMulticolor} alt='logo' className='cadastro-input-multicores' />
+                    <input type='checked' className='cadastro-input-cores-exemplo'/>
+                    <img src={LogoAddCor} alt='logo' className='cadastro-logo-addCor' />
+                </div>
+            </div>
+            
+
+            <div className='div-cadastr-modelos'>
+                <div>
+                    <p className='cadastro-p-modelo'> Modelo(s)</p>
+                </div>
+                <div classname='cadastro-modelo-l1'> 
+                    <input type='checked' className='cadastro-modelo-camisa' placeholder='Camisa' />
+                    <input type='checked' className='cadastro-modelo-calca' placeholder='Calça' />
+                    <input type='checked' className='cadastro-modelo-bermuda' placeholder='Bermuda' />
+                    <input type='checked' className='cadastro-modelo-blusa' placeholder='Blusa' />
+                </div>
+
+                <div className='cadastro-modelo-l2'>
+                    <input type='checked' className='cadastro-modelo-relogios' placeholder='Relógios' />
+                    <input type='checked' className='cadastro-modelo-moletom' placeholder='Moletom' />
+                    <input type='checked' className='cadastro-modelo-casaco' placeholder='Casaco' />
+                    <input type='checked' className='cadastro-modelo-sueter' placeholder='Suéter' />
+                </div>
+
+                <div className='cadastro-modelo-l3'>
+                    <input type='checked' className='cadastro-modelo-camisa' placeholder='Polo' />    
+                </div>
+
             </div>
 
         </main>
