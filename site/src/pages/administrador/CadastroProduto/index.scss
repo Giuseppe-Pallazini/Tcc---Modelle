@@ -748,7 +748,7 @@
         position: absolute;
         left: 61.50%;
         right: 37.86%;
-        top: 58%;
+        top: 52%;
         bottom: 45.91%;
     }
 
@@ -776,7 +776,7 @@
         left: 706px;
         top: 616px;
 
-        font-family: 'Caviar Dreams';
+        font-family: 'caviar';
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
@@ -803,6 +803,9 @@
         align-items: center;
         text-align: center;
 
+
+        border: .8px solid #202020;
+        border-radius: 10px;
         color: #19110B;
     }
     .cadastro-modelo-calca{
@@ -822,6 +825,8 @@
         align-items: center;
         text-align: center;
         background: #000;
+        border: .8px solid #202020;
+        border-radius: 10px;
 
         color: #FFFFFF;
     }
@@ -841,6 +846,8 @@
         display: flex;
         align-items: center;
         text-align: center;
+        border: .8px solid #202020;
+        border-radius: 10px;
 
         color: #19110B;
     }
@@ -860,6 +867,8 @@
         display: flex;
         align-items: center;
         text-align: center;
+        border: .8px solid #202020;
+        border-radius: 10px;
 
         color: #19110B;
     }
@@ -880,6 +889,8 @@
         display: flex;
         align-items: center;
         text-align: center;
+        border: .8px solid #202020;
+        border-radius: 10px;
 
         color: #19110B;
     }
@@ -900,14 +911,16 @@
         align-items: center;
         text-align: center;
         background: #000;
+        border: .8px solid #202020;
+        border-radius: 10px;
 
         color: #ffffff;
     }
     .cadastro-modelo-casaco{
         position: absolute;
-        width: 49px;
+        width: 55px;
         height: 11px;
-        left: 855px;
+        left: 858px;
         top: 680px;
 
         padding: .4em;
@@ -919,6 +932,8 @@
         display: flex;
         align-items: center;
         text-align: center;
+        border: .8px solid #202020;
+        border-radius: 10px;
 
         color: #19110B;
     }
@@ -926,8 +941,8 @@
         position: absolute;
         width: 49px;
         height: 11px;
-        left: 711px;
-        top: 648px;
+        left: 935px;
+        top: 680px;
 
         padding: .4em;
         font-family: 'Inter';
@@ -938,6 +953,8 @@
         display: flex;
         align-items: center;
         text-align: center;
+        border: .8px solid #202020;
+        border-radius: 10px;
 
         color: #19110B;
     }
@@ -957,9 +974,140 @@
         display: flex;
         align-items: center;
         text-align: center;
+        border: .8px solid #202020;
+        border-radius: 10px;
 
         color: #19110B;
     }
+
+    .div-cadastro-categoria{
+        display: flex;
+        flex-direction: column;
+    }
+    .cadastro-p-categoria{
+        position: absolute;
+        width: 67px;
+        height: 21px;
+        left: 705px;
+        top: 767px;
+
+        font-family: 'caviar';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+
+        color: #19110B;
+
+    }
+    .cadastro-categoria-linha{
+        display: flex;
+        flex-direction: row;
+    }
+    .cadastro-categoria-masculino{
+        position: absolute;
+        width: 67px;
+        height: 11px;
+        left: 711px;
+        top: 799px;
+
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        border: .8px solid #202020;
+        border-radius: 10px;
+
+        color: #19110B;
+    }
+    .cadastro-categoria-Feminino{
+        position: absolute;
+        width: 63px;
+        height: 11px;
+        left: 809px;
+        top: 799px;
+
+        border: none;
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        border: .8px solid #202020;
+        border-radius: 10px;
+        background: #000;
+
+        color: #FFFFFF;
+
+    }
+    .cadastro-categoria-Novidades{
+        position: absolute;
+        width: 61px;
+        height: 11px;
+        left: 900px;
+        top: 799px;
+
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        border: .8px solid #202020;
+        border-radius: 10px;
+
+        color: #19110B;
+
+    }
+
+
+
+
+    .div-cadastro-btn-salvar{
+        
+    }
+    .cadastro-btn-salvar{
+        position: absolute;
+        width: 80px;
+        height: 27px;
+        left: 931px;
+        top: 924px;
+
+        padding: .6em;
+        background: #19110B;
+        border-radius: 10px;
+        width: 63px;
+        height: 11px;
+        left: 939px;
+        top: 932px;
+        text-align: center;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        border: .8px solid #202020;
+        border-radius: 15px;
+        
+
+        color: #FFFFFF;
+
+
+    }   
 
 
 }

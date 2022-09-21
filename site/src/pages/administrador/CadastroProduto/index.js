@@ -178,16 +178,20 @@ export default function CadastroProduto(){
 
 
 
-            <div>
+            <div className='div-cadastro-categoria'>
                 <div>
-                    <p> Cregoria(s) </p>
+                    <p className='cadastro-p-categoria'> Categoria(s) </p>
                 </div>
 
-                <div>
+                <div className='cadastro-categoria-linha'>
                     <input type='checked' className='cadastro-categoria-masculino' placeholder='Masculino' />
                     <input type='checked' className='cadastro-categoria-Feminino' placeholder='Feminino' />
                     <input type='checked' className='cadastro-categoria-Novidades' placeholder='Novidades-' />
                 </div>
+            </div>
+
+            <div className='div-cadastro-btn-salvar'>
+                <buttom className='cadastro-btn-salvar'> Salvar </buttom>
             </div>
         </main>
 
