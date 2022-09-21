@@ -153,7 +153,7 @@ export default function CadastroProduto(){
             </div>
             
 
-            <div className='div-cadastr-modelos'>
+            <div className='div-cadastro-modelos'>
                 <div>
                     <p className='cadastro-p-modelo'> Modelo(s)</p>
                 </div>
@@ -172,11 +172,23 @@ export default function CadastroProduto(){
                 </div>
 
                 <div className='cadastro-modelo-l3'>
-                    <input type='checked' className='cadastro-modelo-camisa' placeholder='Polo' />    
+                    <input type='checked' className='cadastro-modelo-polo' placeholder='Polo' />    
                 </div>
-
             </div>
 
+
+
+            <div>
+                <div>
+                    <p> Cregoria(s) </p>
+                </div>
+
+                <div>
+                    <input type='checked' className='cadastro-categoria-masculino' placeholder='Masculino' />
+                    <input type='checked' className='cadastro-categoria-Feminino' placeholder='Feminino' />
+                    <input type='checked' className='cadastro-categoria-Novidades' placeholder='Novidades-' />
+                </div>
+            </div>
         </main>
 
     );

@@ -254,8 +254,6 @@
         font-weight: 400;
         font-size: 12px;
         line-height: 14px;
-        /* identical to box height */
-
         text-align: center;
 
         color: #19110B;
@@ -267,6 +265,9 @@
         height: 27px;
         left: 216px;
         top: 730px;
+        display: flex;
+        align-items: center;
+        text-align: center;
 
         border: 1px solid #19110B;
         border-radius: 10px;
@@ -278,19 +279,28 @@
         height: 27px;
         left: 300px;
         top: 730px;
+        display: flex;
+        align-items: center;
+        text-align: center;
         border: 1px solid #19110B;
         border-radius: 10px;
     }
     .cadastro-marcas-dolceEgabbana{
         box-sizing: border-box;
         position: absolute;
-        width: 108px;
+        width: 118px;
         height: 27px;
+        display: flex;
+        align-items: center;
+        text-align: center;
         left: 390px;
         top: 730px;
 
         border: 1px solid #19110B;
         border-radius: 10px;
+        display: flex;
+        align-items: center;
+        text-align: center;
     }
 
     .cadastro-marcas-burberry{
@@ -300,6 +310,9 @@
         height: 27px;
         left: 216px;
         top: 770px;
+        display: flex;
+        align-items: center;
+        text-align: center;
         border: 1px solid #19110B;
         border-radius: 10px;
     }
@@ -309,6 +322,9 @@
         width: 71px;
         height: 27px;
         left: 300px;
+        display: flex;
+        align-items: center;
+        text-align: center;
         top: 770px;
         border: 1px solid #19110B;
         border-radius: 10px;
@@ -319,6 +335,9 @@
         width: 71px;
         height: 27px;
         left: 390px;
+        display: flex;
+        align-items: center;
+        text-align: center;
         top: 770px;
         border: 1px solid #19110B;
         border-radius: 10px;
@@ -329,6 +348,9 @@
         width: 67px;
         height: 27px;
         left: 480px;
+        display: flex;
+        align-items: center;
+        text-align: center;
         top: 770px;
         border: 1px solid #19110B;
         border-radius: 10px; 
@@ -342,6 +364,9 @@
         height: 27px;
         left: 216px;
         top: 810px;
+        display: flex;
+        align-items: center;
+        text-align: center;
         border: 1px solid #19110B;
         border-radius: 10px;
     }
@@ -352,6 +377,9 @@
         height: 27px;
         left: 300px;
         top: 810px;
+        display: flex;
+        align-items: center;
+        text-align: center;
         border: 1px solid #19110B;
         border-radius: 10px;
     }
@@ -362,7 +390,9 @@
         height: 27px;
         left: 425px;
         top: 810px;
-
+        display: flex;
+        align-items: center;
+        text-align: center;
         border: 1px solid #19110B;
         border-radius: 10px;
     }
@@ -372,7 +402,9 @@
         height: 27px;
         left: 216px;
         top: 850px;
-
+        display: flex;
+        align-items: center;
+        text-align: center;
         background: #19110B;
         border-radius: 10px;
     }
@@ -412,10 +444,8 @@
         font-weight: 400;
         font-size: 12px;
         line-height: 15px;
-        /* identical to box height */
 
         text-align: center;
-
     }
     .cadastro-cl2-nomeProduto{
         position: absolute;
@@ -716,66 +746,219 @@
     }   
     .cadastro-logo-addCor{
         position: absolute;
-        left: 58.50%;
+        left: 61.50%;
         right: 37.86%;
-        top: 87%;
+        top: 58%;
         bottom: 45.91%;
     }
 
+    .div-cadastro-modelos{
+        display: flex;
+        flex-direction: column;
+    }
+    .cadastro-modelo-l1{
+        display: flex;
+        flex-direction: row;
+    }
+    .cadastro-modelo-l2{
+        display: flex;
+        flex-direction: row;
+    }
+    .cadastro-modelo-l3{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .cadastro-p-modelo{
+        position: absolute;
+        width: 43px;
+        height: 14px;
+        left: 706px;
+        top: 616px;
+
+        font-family: 'Caviar Dreams';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+
+        color: #19110B;
+    }
+
     .cadastro-modelo-camisa{
-        width: 60px;
-        height: 27px;
-        border: 1px solid #19110B;
-        border-radius: 10px;
+        position: absolute;
+        width: 49px;
+        height: 11px;
+        left: 711px;
+        top: 648px;
+
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #19110B;
     }
     .cadastro-modelo-calca{
-        width: 60px;
-        height: 27px;
-        border: 1px solid #19110B;
-        border-radius: 10px;
+        position: absolute;
+        width: 49px;
+        height: 11px;
+        left: 785px;
+        top: 648px;
+
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        background: #000;
+
+        color: #FFFFFF;
     }
     .cadastro-modelo-bermuda{
-        width: 60px;
-        height: 27px;
-        border: 1px solid #19110B;
-        border-radius: 10px;
+        position: absolute;
+        width: 55px;
+        height: 11px;
+        left: 858px;
+        top: 648px;
+
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #19110B;
     }
     .cadastro-modelo-blusa{
-        width: 60px;
-        height: 27px;
-        border: 1px solid #19110B;
-        border-radius: 10px;
+        position: absolute;
+        width: 49px;
+        height: 11px;
+        left: 935px;
+        top: 648px;
+
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #19110B;
     }
 
     .cadastro-modelo-relogios{
-        width: 60px;
-        height: 27px;
-        border: 1px solid #19110B;
-        border-radius: 10px;
+        position: absolute;
+        width: 49px;
+        height: 11px;
+        left: 711px;
+        top: 680px;
+
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #19110B;
     }
     .cadastro-modelo-moletom{
-        width: 60px;
-        height: 27px;
-        border: 1px solid #19110B;
-        border-radius: 10px;
+        position: absolute;
+        width: 49px;
+        height: 11px;
+        left: 785px;
+        top: 680px;
+
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        background: #000;
+
+        color: #ffffff;
     }
     .cadastro-modelo-casaco{
-        width: 60px;
-        height: 27px;
-        border: 1px solid #19110B;
-        border-radius: 10px;
+        position: absolute;
+        width: 49px;
+        height: 11px;
+        left: 855px;
+        top: 680px;
+
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #19110B;
     }
     .cadastro-modelo-sueter{
-        width: 60px;
-        height: 27px;
-        border: 1px solid #19110B;
-        border-radius: 10px;
+        position: absolute;
+        width: 49px;
+        height: 11px;
+        left: 711px;
+        top: 648px;
+
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #19110B;
     }
     .cadastro-modelo-polo{
-        width: 60px;
-        height: 27px;
-        border: 1px solid #19110B;
-        border-radius: 10px;
+        position: absolute;
+        width: 49px;
+        height: 11px;
+        left: 711px;
+        top: 713px;
+
+        padding: .4em;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #19110B;
     }
 
 
