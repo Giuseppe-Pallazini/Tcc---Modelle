@@ -11,7 +11,7 @@ export default function CadastroProduto(){
         <main className='main-cadastro'>
             < Cabecalho />
             <div className='titulo-cadastro'>
-                <h1> Cadastro </h1>
+                <h1 className='cadastro-h1-titulo'> Cadastro </h1>
             </div>
             
             <div className='div-cadastro-column-01'>
@@ -46,9 +46,11 @@ export default function CadastroProduto(){
             </div>
 
             <div className='div-dashboard-cadastro-composição'>
-                <input type='text' className='cadastro-input-composicao' placeholder='Composição do produto ' />
-                <input type='text' className='cadastro-input-composicao-2'  />
-                <input type='text' className='cadastro-input-composicao-3'  />
+                <textarea type='text' cols="30" rows="5" maxlength="110" className='cadastro-input-composicao' placeholder='Composição do produto ' />
+                <hr className='hr' />
+                <hr className='hr-1' />
+                <hr className='hr-2' />
+                <hr className='hr-3' />
             </div>
 
             <div className='div-dashboard-cadastro-detalhes'>
