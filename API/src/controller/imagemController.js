@@ -1,10 +1,14 @@
 
 import { Router } from 'express'
 import { inserirImagem } from '../repository/imagemRepository.js';
+import multer from 'multer'
+
+
 const server = Router();
+const upload = multer({dest: 'storage/fotoProduto'})
 
 
-server.update('/api/:id/roupa', upload.single('img'), async (req,resp) => {
+server.put('/roupa/:id/foto', upload.single('foto'), async (req,resp) => {
     try {
         if (!req.file)
             throw new Error('A imagem não pôde ser salva.')
@@ -19,10 +23,10 @@ server.update('/api/:id/roupa', upload.single('img'), async (req,resp) => {
         resp.status(204).send()
 
     } catch (err) {
-        resp.status(401).send({
-            erro: err.message
-                
-        })}
+        console.log(err)
+
+    }
+       
 })
 
 export default server;

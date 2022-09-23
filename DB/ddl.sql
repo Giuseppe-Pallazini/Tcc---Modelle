@@ -85,20 +85,13 @@ foreign key (id_produto) references tb_produto (id_produto)
 
 -- 
 
-create table tb_imagem (
-id_imagem		int primary key auto_increment,
-ds_img			varchar(500)
-);
-
 create table tb_produto_imagem (
  id_produto_imagem			int primary key auto_increment,
- id_img						varchar(500),
+ img_produto			    varchar(500),
  id_produto					int,
  foreign key (id_produto) references tb_produto (id_produto)
  );
-
-
-
+  
 
 -- 7
 create table tb_produto (
