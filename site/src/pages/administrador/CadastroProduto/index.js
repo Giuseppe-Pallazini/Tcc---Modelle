@@ -6,7 +6,54 @@ import EscolherImg from '../../../assets/image/escolher-imagem.svg'
 import InputMulticolor from '../../../assets/image/logo-multicores.svg'
 import LogoAddCor from '../../../assets/image/logo-mais.svg'
 
+import { ListarMarca } from '../../../api/marcaAPI'
+import { ListarTamanho} from '../../../api/tamanhoAPI'
+import { ListarModelo } from '../../../api/modeloAPI'
+import { listarCategoria } from '../../../api/categoriaAPI'
+
+import { useEffect, useState } from 'react'
+
 export default function CadastroProduto(){
+    const [idMarca, setIdMarca] = useState();
+    const [marca, setMarca] = useState([]);
+
+    const [idTamanho, setIdTamanho] = useState();
+    const [tamanho, setTamanho] = useState([]);
+
+    const [idModelo, setIdModelo] = useState();
+    const [modelo, setModelo] = useState([]);
+
+    const [idCategoria, setIdCategoria] = useState();
+    const [categoria, setCategoria] = useState([]);
+
+    async function carregarMarca() {
+        const r = await ListarMarca();
+        setMarca(r);
+    }
+
+    async function carregarTamanho() {
+        const r = await ListarTamanho();
+        setTamanho(r);
+    }
+
+    async function carregarModelo() {
+        const r = await ListarModelo();
+        setModelo(r);
+    }
+
+    async function carregarCategoria() {
+        const r = await listarCategoria();
+        setCategoria(r);
+    }
+
+
+    useEffect(() => {
+        carregarMarca();
+        carregarTamanho();
+        carregarModelo();
+        carregarCategoria();
+    }, [])
+
     return(
         <main className='main-cadastro'>
             < Cabecalho />
@@ -62,10 +109,14 @@ export default function CadastroProduto(){
             <div className='div-dashboard-cadastro-marca' >
                 <div className='cadastro-titulo-marcas'>
                     <p> Marcas(s)</p>
+                    <select value={idMarca} onChange={e => setIdMarca(e.target.value)} >              
+                        <option selected disabled hidden>Selecione</option>
+                            {marca.map(item =>
+                                <option value={item.id}> {item.marca} </option>
+                            )}
+                    </select>
                 </div>
-                <select>
-                    
-                </select>
+
 
                 <p className='cadastro-marcas-apenasuma'> * Apenas uma marca </p>
             </div> 
@@ -116,11 +167,12 @@ export default function CadastroProduto(){
                 <p className='cadastro-p-tamanhos'> Tamanho(s)</p>
                 
                 <div className='cadastro-inputs-tamanhos'>
-                    <input type='checked' className='cadastro-input-tamanho-PP' placeholder='PP' />
-                    <input type='checked' className='cadastro-input-tamanho-P' placeholder='P' />
-                    <input type='checked' className='cadastro-input-tamanho-M' placeholder='M' />
-                    <input type='checked' className='cadastro-input-tamanho-G' placeholder='G' />
-                    <input type='checked' className='cadastro-input-tamanho-GG' placeholder='GG' />
+                    <select value={idTamanho} onChange={e => setIdTamanho(e.target.value)} >              
+                        <option selected disabled hidden>Selecione</option>
+                            {tamanho.map(item =>
+                                <option value={item.id}> {item.tamanho} </option>
+                            )}
+                    </select>
                 </div> 
             </div>
 
@@ -137,25 +189,16 @@ export default function CadastroProduto(){
             
 
             <div className='div-cadastro-modelos'>
-                <div>
-                    <p className='cadastro-p-modelo'> Modelo(s)</p>
-                </div>
-                <div classname='cadastro-modelo-l1'> 
-                    <input type='checked' className='cadastro-modelo-camisa' placeholder='Camisa' />
-                    <input type='checked' className='cadastro-modelo-calca' placeholder='Calça' />
-                    <input type='checked' className='cadastro-modelo-bermuda' placeholder='Bermuda' />
-                    <input type='checked' className='cadastro-modelo-blusa' placeholder='Blusa' />
-                </div>
 
-                <div className='cadastro-modelo-l2'>
-                    <input type='checked' className='cadastro-modelo-relogios' placeholder='Relógios' />
-                    <input type='checked' className='cadastro-modelo-moletom' placeholder='Moletom' />
-                    <input type='checked' className='cadastro-modelo-casaco' placeholder='Casaco' />
-                    <input type='checked' className='cadastro-modelo-sueter' placeholder='Suéter' />
-                </div>
+                <p className='cadastro-p-modelo'> Modelo(s)</p>
 
-                <div className='cadastro-modelo-l3'>
-                    <input type='checked' className='cadastro-modelo-polo' placeholder='Polo' />    
+                <div classname='cadastro-inputs-modelos'> 
+                <select value={idModelo} onChange={e => setIdModelo(e.target.value)} >              
+                        <option selected disabled hidden>Selecione</option>
+                            {modelo.map(item =>
+                                <option value={item.id}> {item.modelo} </option>
+                            )}
+                    </select>
                 </div>
             </div>
 
@@ -167,9 +210,12 @@ export default function CadastroProduto(){
                 </div>
 
                 <div className='cadastro-categoria-linha'>
-                    <input type='checked' className='cadastro-categoria-masculino' placeholder='Masculino' />
-                    <input type='checked' className='cadastro-categoria-Feminino' placeholder='Feminino' />
-                    <input type='checked' className='cadastro-categoria-Novidades' placeholder='Novidades-' />
+                    <select className='cadastro-categoria-masculino' value={idCategoria} onChange={e => setIdCategoria(e.target.value)} >              
+                        <option selected disabled hidden>Selecione</option>
+                            {categoria.map(item =>
+                                <option value={item.id}> {item.categoria} </option>
+                            )}
+                    </select>
                 </div>
             </div>
 
