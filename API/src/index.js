@@ -3,6 +3,8 @@ import 'dotenv/config'
 import LoginController from './controller/loginController.js'
 import CategoriaController from './controller/categoriaController.js'
 import ModeloController from './controller/modeloController.js'
+import MarcaController from './controller/marcaController.js'
+import TamanhoController from './controller/tamanhoController.js'
 
 
 import express from 'express'
@@ -16,6 +18,8 @@ server.use(express.json())
 server.use(LoginController)
 server.use(CategoriaController)
 server.use(ModeloController)
+server.use(MarcaController)
+server.use(TamanhoController)
 
 
 server.listen(process.env.PORT, () => console.log(`API online na porta ${process.env.PORT}`))
