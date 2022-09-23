@@ -46,7 +46,7 @@ export default function CadastroProduto(){
             </div>
 
             <div className='div-dashboard-cadastro-composição'>
-                <textarea type='text' cols="30" rows="5" maxlength="110" className='cadastro-input-composicao' placeholder='Composição do produto ' />
+                <textarea type='text' cols="30" rows="5" maxlength="108" className='cadastro-input-composicao' placeholder='Composição do produto ' />
                 <hr className='hr' />
                 <hr className='hr-1' />
                 <hr className='hr-2' />
@@ -63,28 +63,9 @@ export default function CadastroProduto(){
                 <div className='cadastro-titulo-marcas'>
                     <p> Marcas(s)</p>
                 </div>
-                <div className='div-dashboard-cadastro-marca-l1'>
-                    <input type='checked' className='cadastro-marcas-gucci' placeholder='Gucci' />
-                    <input type='checked' className='cadastro-marcas-balenciaga' placeholder='Balenciaga' />
-                    <input type='checked' className='cadastro-marcas-dolceEgabbana' placeholder='Dolce & Gabbana' />
-                </div>
-
-                <div className='div-dashboard-cadastro-marca-l2'>
-                    <input type='checked' className='cadastro-marcas-burberry' placeholder='Burberry' />
-                    <input type='checked' className='cadastro-marcas-morley' placeholder='Morley' />
-                    <input type='checked' className='cadastro-marcas-kenzo' placeholder='Kenzo' />
-                    <input type='checked' className='cadastro-marcas-modelle' placeholder='Modelle' />
-                </div>
-                
-                <div className='div-dashboard-cadastro-marca-l3'>
-                    <input type='checked' className='cadastro-marcas-zegna' placeholder='Zegna' />
-                    <input type='checked' className='cadastro-marcas-louisvuitton' placeholder='Louis Vuitton' />
-                    <input type='checked' className='cadastro-marcas-prada' placeholder='Prada' />
-                </div>
-
-                <div className='div-dashboard-cadastro-marca-l4'>
-                    <input type='checked' className='cadastro-marcas-versace' placeholder='Versace' />
-                </div>
+                <select>
+                    
+                </select>
 
                 <p className='cadastro-marcas-apenasuma'> * Apenas uma marca </p>
             </div> 
