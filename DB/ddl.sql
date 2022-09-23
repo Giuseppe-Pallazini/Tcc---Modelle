@@ -83,6 +83,20 @@ foreign key (id_categoria) references tb_categoria (id_categoria),
 foreign key (id_produto) references tb_produto (id_produto)
 );
 
+-- 
+
+create table tb_imagem (
+id_imagem		int primary key auto_increment,
+ds_img			varchar(500)
+);
+
+create table tb_produto_imagem (
+ id_produto_imagem			int primary key auto_increment,
+ id_img						varchar(500),
+ id_produto					int,
+ foreign key (id_produto) references tb_produto (id_produto)
+ );
+
 
 
 
@@ -91,6 +105,7 @@ create table tb_produto (
 id_produto 					int primary key auto_increment,
 id_tamanho					int,
 id_modelo					int,
+id_img						int,
 nm_produto 					varchar(100),
 nm_prod_complemento 		varchar(100),
 vl_preco 					decimal(15,2),
@@ -105,3 +120,4 @@ foreign key (id_marca) references tb_marca (id_marca),
 foreign key (id_categoria) references tb_categoria (id_categoria)
 );
  -- -----
+ 

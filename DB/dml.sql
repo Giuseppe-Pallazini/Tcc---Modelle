@@ -19,42 +19,57 @@ select * from tb_produto;
 --
 
 -- 20
-insert into tb_produto (id_modelo, id_tamanho, nm_produto, nm_prod_complemento, vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, ds_cor, id_marca, id_categoria)
-			values	   	(1,1,'camisa', 'braba', '1200', 'algodao', 'oi', '15', '12', 'azul', 1, 1);
+insert into tb_produto (id_tamanho, id_modelo, id_img, nm_produto, nm_prod_complemento, vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, ds_cor, id_marca, id_categoria)
+			values	   	(1,1,1, 'camisa', 'braba', '1200', 'algodao', 'oi', '15', '12', 'azul', 1, 1);
 -- ---------------
 -- 12
 insert into tb_marca (nm_marca)
 			values	 	('Versace');
+select * from tb_marca;
             
 -- 19
 insert into tb_produto_marca (id_marca, id_produto)
 			values		(1,1);
+select * from tb_produto_marca;
             
 -- ---------------
+
+insert into tb_imagem (ds_img)
+			values 		('../../assets...');
+
+insert into tb_produto_imagem (id_img, id_produto)
+			values (1,1);
+
+
+-- ------------
 -- 13
 insert into tb_tamanho (nm_tamanho)
-			values	 	('P');
+			values	 	('PP');
+select * from tb_tamanho;
 
 -- 18
 insert into tb_produto_tamanho (id_tamanho, id_produto)
 			values		(1,1);
-            
+select * from tb_produto_tamanho;
+
 -- ---------------
 -- 14
 insert into tb_modelo (nm_modelo)
 			values	 	('Camisa');
-            
+select * from tb_modelo;
+
 -- 17
 insert into tb_produto_modelo (id_modelo, id_produto)
 			values		(1,1);
-            
+select * from tb_produto_modelo;
 -- ---------------
 -- 15
 insert into tb_categoria (nm_categoria)
 			values	 	('Homem');
+select * from tb_categoria;
 		
 -- 16
 insert into tb_produto_categoria (id_categoria, id_produto)
 			values		(1,1);
-            
+select * from tb_produto_categoria;
 -- ---------------
