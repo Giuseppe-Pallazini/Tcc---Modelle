@@ -866,8 +866,23 @@
         text-align: center;
 
         color: #19110B;
-
     }
+    #foto{
+        visibility: hidden;
+        border: 1px solid black;
+        height: 15em;
+        width: 15em;
+    }
+    .foto{
+    position: relative;
+    bottom: 12em;
+    left: 0.7em;
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    }
+    
+
 
     .cadastro-logo-addcategoria-div {
         display: flex;
