@@ -1,5 +1,6 @@
 use ModelleDB;
 
+
 insert into tb_login (ds_email, ds_senha)
 	values('admin','1234');
 --
@@ -34,8 +35,8 @@ select * from tb_produto_marca;
             
 -- ---------------
 
-insert into tb_imagem (ds_img)
-			values 		('../../assets...');
+insert into tb_produto_imagem ('img_produto')
+			values 		('');
 
 insert into tb_produto_imagem (id_img, id_produto)
 			values (1,1);
