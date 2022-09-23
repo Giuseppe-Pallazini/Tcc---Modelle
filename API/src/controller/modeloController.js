@@ -4,7 +4,7 @@ import { Router } from "express";
 const server = Router();
 
 
-server.get('/admin/cadastrar/modelo', async (req, resp) => {
+server.get('/api/modelo', async (req, resp) => {
     try {
         const linhas = await listarModelos();
         resp.send(linhas);
