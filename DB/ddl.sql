@@ -2,6 +2,7 @@ create database ModelleDB;
 
 use ModelleDB;
 
+-- 1
 create table tb_usuario (
 id_usuario 			int primary key auto_increment,
 nm_usuario 			varchar(100),
@@ -11,7 +12,7 @@ ds_email 			varchar(50),
 ds_senha 			varchar(50)
 );
 
-
+-- 2
 create table tb_login (
 id_login   int primary key auto_increment,
 id_usuario int,
@@ -22,12 +23,13 @@ foreign key (id_usuario) references tb_usuario (id_usuario)
 
 
 -- ---------------------------------------------------------------------------------------------------------
-
+-- 3
 create table tb_marca (
 id_marca		int primary key auto_increment,
 nm_marca		varchar(200)
 );
 
+-- 8
 create table tb_produto_marca (
 id_produto_marca			int primary key auto_increment,
 id_marca					int,
@@ -36,12 +38,13 @@ foreign key (id_marca) references tb_marca (id_marca),
 foreign key (id_produto) references tb_produto (id_produto)
 );
 
-
+-- 4
 create table tb_tamanho (
 id_tamanho		int primary key auto_increment,
 nm_tamanho		varchar(200)
 );
 
+-- 9
 create table tb_produto_tamanho (
 id_produto_tamanho 		int primary key auto_increment,
 id_tamanho				int,
@@ -50,11 +53,13 @@ foreign key (id_tamanho) references tb_tamanho (id_tamanho),
 foreign key (id_produto) references tb_produto (id_produto)
 );
 
+-- 5
 create table tb_modelo (
 id_modelo 		int primary key auto_increment,
 nm_modelo		varchar(200)
 );
 
+-- 10
 create table tb_produto_modelo (
 id_produto_modelo		int primary key auto_increment,
 id_modelo				int,
@@ -63,11 +68,13 @@ foreign key (id_modelo) references tb_modelo (id_modelo),
 foreign key (id_produto) references tb_produto (id_produto)
 );
 
+-- 6
 create table tb_categoria (
 id_categoria	int primary key auto_increment,
 nm_categoria	varchar(200)
 );
 
+-- 11
 create table tb_produto_categoria (
 id_produto_categoria		int primary key auto_increment,
 id_categoria				int,
@@ -79,7 +86,7 @@ foreign key (id_produto) references tb_produto (id_produto)
 
 
 
-
+-- 7
 create table tb_produto (
 id_produto 					int primary key auto_increment,
 id_tamanho					int,
