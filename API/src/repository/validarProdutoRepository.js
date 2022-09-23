@@ -2,23 +2,22 @@ import { con } from './connection.js'
 
 export async function salvarProduto(produto) {
     const comando = `
-        insert into tb_produto (id_produto, id_tamanho, id_modelo, id_img, nm_produto, nm_produto_complemento, 
+        insert into tb_produto (id_tamanho, id_modelo, nm_produto, nm_produto_complemento, 
                                 vl_preço, ds_composicao, ds_detalhes, vl_juros, vl_parcela, ds_cor, id_marca, id_categoria )
-                        values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `
 
     const [resp] = await con.query(comando, [
-                            produto.idProduto,
                             produto.idTamanho,
                             produto.IdModelo,
-                            produto.idImg,
                             produto.nome,
                             produto.complementoProduto,
                             produto.preco,
-                            produto.coposicao,
+                            produto.composicao,
                             produto.detalhes,
                             produto.juros,
                             produto.parcela,
+                            produto.cor,
                             produto.idMarca,
                             produto.idCategoria
                         ])
@@ -39,7 +38,7 @@ export async function salvarProdutoCategoria(idProduto, idCategoria) {
 
 export async function salvarProdutoMarca(idProduto, idMarca) {
     const comando = `
-        insert into tb_produto_categoria (id_produto, id_marca)
+        insert into tb_produto_marca (id_produto, id_marca)
                                   values (?, ?)
     `
 
@@ -48,7 +47,7 @@ export async function salvarProdutoMarca(idProduto, idMarca) {
 
 export async function salvarProdutoModelo(idProduto, Idmodelo) {
     const comando = `
-        insert into tb_produto_categoria (id_produto, id_modelo)
+        insert into tb_produto_modelo (id_produto, id_modelo)
                                   values (?, ?)
     `
 
@@ -57,7 +56,7 @@ export async function salvarProdutoModelo(idProduto, Idmodelo) {
 
 export async function salvarProdutoTamanho(idProduto, idTamanho) {
     const comando = `
-        insert into tb_produto_categoria (id_produto, id_tamanho)
+        insert into tb_produto_tamanho (id_produto, id_tamanho)
                                   values (?, ?)
     `
 
@@ -65,9 +64,9 @@ export async function salvarProdutoTamanho(idProduto, idTamanho) {
 }
 
 
-export async function salvarProdutoModelo(idProduto, idImg) {
+export async function salvarProdutoImagem(idProduto, idImg) {
     const comando = `
-        insert into tb_produto_categoria (id_produto, id_img)
+        insert into tb_produto_imagem (id_produto, id_img)
                                   values (?, ?)
     `
 

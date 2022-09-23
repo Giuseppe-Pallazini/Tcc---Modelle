@@ -6,6 +6,7 @@ import ModeloController from './controller/modeloController.js'
 import MarcaController from './controller/marcaController.js'
 import TamanhoController from './controller/tamanhoController.js'
 import ImagemController from './controller/imagemController.js'
+import ProdutoController from './controller/validarProdutoController.js'
 
 
 import express from 'express'
@@ -22,6 +23,7 @@ server.use(ModeloController)
 server.use(MarcaController)
 server.use(TamanhoController)
 server.use(ImagemController)
+server.use(ProdutoController)
 
 
 server.listen(process.env.PORT, () => console.log(`API online na porta ${process.env.PORT}`))

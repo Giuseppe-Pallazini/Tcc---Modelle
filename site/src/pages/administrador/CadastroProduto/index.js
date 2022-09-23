@@ -120,20 +120,6 @@ function buscarNomeTamanho(id) {
                             <input type='file' />
                             <img src={EscolherImg} alt='logo' />
                     </div>
-                    <div className='cadastro-escolher-img-cl2'> 
-                        <div className='cadastro-input-img-2'>
-                            <input type='file' />
-                            <img src={EscolherImg} alt='logo' />
-                        </div>
-                        <div className='cadastro-input-img-3'>
-                            <input type='file' />
-                            <img src={EscolherImg} alt='logo' />
-                        </div>
-                        <div className='cadastro-input-img-4'>
-                            <input type='file' />
-                            <img src={EscolherImg} alt='logo'/>
-                        </div>
-                    </div>
                 </div>
             </div>
             </div>
