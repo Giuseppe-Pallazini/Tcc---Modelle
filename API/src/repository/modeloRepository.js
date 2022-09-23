@@ -3,7 +3,7 @@ import {con} from '../repository/connection.js'
 export async function listarModelos() {
     const comando = 
         `select id_modelo           as id,
-                  nm_modelo           as categoria
+                  nm_modelo           as modelo
                from tb_modelo`
     
 

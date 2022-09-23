@@ -648,8 +648,21 @@
         left: 704px;
         top: 439px;
 
-        border: 1px solid #19110B;
         border-radius: 10px;
+    }
+
+    .cadastro-logo-addtamanho-div {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 22.5em;
+    .cadastro-logo-addtamanho {
+        position: relative;
+        width: 1em;
+        height: auto;
+        left: 10.5em;
+        cursor: pointer;
+        }
     }
     .cadastro-p-tamanhos{
         position: absolute;
@@ -775,13 +788,13 @@
         border-radius: 10px;
         border: none;
     }   
-    .cadastro-logo-addCor{
-        position: absolute;
-        left: 62%;
-        right: 37.86%;
-        top: 59%;
-        bottom: 45.91%;
-    }
+        .cadastro-logo-addMod{
+            position: absolute;
+            left: 6em;
+            right: 37.86%;
+            top: .2em;
+            cursor: pointer;
+        }
 
     .div-cadastro-modelos{
         display: flex;
@@ -795,6 +808,11 @@
         height: 27px;
         left: 704px;
         top: 625px;
+        
+    }
+
+    .cadastro-inputs-modelos {
+        color: black;
     }
 
     .cadastro-modelo-l2{
@@ -850,6 +868,22 @@
         color: #19110B;
 
     }
+
+    .cadastro-logo-addcategoria-div {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 42em;
+        left: 39.5em;
+    .cadastro-logo-addcategoria {
+        position: absolute;
+        width: 1em;
+        height: auto;
+        left: 10.5em;
+        cursor: pointer;
+        }
+    }
+
     .cadastro-categoria-linha{
         display: flex;
         flex-direction: row;
@@ -946,7 +980,33 @@
         color: #FFFFFF;
 
 
-    }   
+    }
 
+    .cat-conteiner {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        justify-content:left;
+        left: 44em;
+        top: 42em;
+        width: 20%;
+    }
+
+    .cat-selecionada {
+        font-size: .7em;
+        padding: .5em 1em;
+        background-color: #19110B;
+        margin: .5em 5px;
+        color: #fff;
+        border-radius: 1em;
+    }
+
+    .aa {
+        border: 1px solid black;
+        position: relative;
+        top: 23em;
+        width: 20%;
+        left: 44em;
+    }
 
 }

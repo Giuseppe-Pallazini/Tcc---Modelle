@@ -26,6 +26,10 @@ export default function CadastroProduto(){
     const [idCategoria, setIdCategoria] = useState();
     const [categoria, setCategoria] = useState([]);
 
+    const [catSelecionadas, setCatSelecionadas] = useState([]);
+    const [modSelecionadas, setModSelecionadas] = useState([]);
+    const [tamSelecionadas, setTamSelecionadas] = useState([]);
+
     async function carregarMarca() {
         const r = await ListarMarca();
         setMarca(r);
@@ -45,6 +49,48 @@ export default function CadastroProduto(){
         const r = await listarCategoria();
         setCategoria(r);
     }
+
+///////////////////////////
+    function adicionarCategoria() {
+        if (!catSelecionadas.find(item => item == idCategoria)) {
+            const categorias = [...catSelecionadas, idCategoria];
+            setCatSelecionadas(categorias);
+        }
+    }
+
+    function buscarNomeCategoria(id) {
+        const cat = categoria.find(item => item.id == id);
+        return cat.categoria;
+    }
+
+
+///////////////////////////
+function adicionarModelo() {
+    if (!modSelecionadas.find(item => item == idModelo)) {
+        const modelos = [...modSelecionadas, idModelo];
+        setModSelecionadas(modelos);
+    }
+}
+
+function buscarNomeModelo(id) {
+   const cat = modelo.find(item => item.id == id);
+    return cat.modelo;
+}
+
+
+///////////////////////////
+function adicionarTamanho() {
+    if (!tamSelecionadas.find(item => item == idTamanho)) {
+        const tamanhos = [...tamSelecionadas, idTamanho];
+        setTamSelecionadas(tamanhos);
+    }
+}
+
+function buscarNomeTamanho(id) {
+    const cat = tamanho.find(item => item.id == id);
+    return cat.tamanho;
+}
+    
 
 
     useEffect(() => {
@@ -94,10 +140,7 @@ export default function CadastroProduto(){
 
             <div className='div-dashboard-cadastro-composição'>
                 <textarea type='text' cols="30" rows="5" maxlength="108" className='cadastro-input-composicao' placeholder='Composição do produto ' />
-                <hr className='hr' />
-                <hr className='hr-1' />
-                <hr className='hr-2' />
-                <hr className='hr-3' />
+                
             </div>
 
             <div className='div-dashboard-cadastro-detalhes'>
@@ -109,8 +152,8 @@ export default function CadastroProduto(){
             <div className='div-dashboard-cadastro-marca' >
                 <div className='cadastro-titulo-marcas'>
                     <p> Marcas(s)</p>
-                    <select value={idMarca} onChange={e => setIdMarca(e.target.value)} >              
-                        <option selected disabled hidden>Selecione</option>
+                    <select  className='oi' value={idMarca} onChange={e => setIdMarca(e.target.value)} >              
+                        <option selected disabled hidden> Selecione </option>
                             {marca.map(item =>
                                 <option value={item.id}> {item.marca} </option>
                             )}
@@ -165,6 +208,7 @@ export default function CadastroProduto(){
 
             <div className='cadastro-tamanhos'>
                 <p className='cadastro-p-tamanhos'> Tamanho(s)</p>
+                <div className='cadastro-logo-addtamanho-div'> <img src={LogoAddCor} alt='logo' className='cadastro-logo-addtamanho' onClick={adicionarTamanho} /> </div>
                 
                 <div className='cadastro-inputs-tamanhos'>
                     <select value={idTamanho} onChange={e => setIdTamanho(e.target.value)} >              
@@ -173,7 +217,16 @@ export default function CadastroProduto(){
                                 <option value={item.id}> {item.tamanho} </option>
                             )}
                     </select>
-                </div> 
+                </div>
+
+                <div className='aa'><label></label>
+                    <div className='tam-conteiner'>
+                        {tamSelecionadas.map(id =>
+                            <div className='tam-selecionada'>
+                                {buscarNomeTamanho(id)}
+                            </div>
+                        )}
+                    </div></div>
             </div>
 
             <div className='div-cadastro-cores' >
@@ -183,7 +236,7 @@ export default function CadastroProduto(){
                 <div className='cadastro-cores-input'>
                     <img src={InputMulticolor} alt='logo' className='cadastro-input-multicores' />
                     <input type='checked' className='cadastro-input-cores-exemplo'/>
-                    <img src={LogoAddCor} alt='logo' className='cadastro-logo-addCor' />
+                    
                 </div>
             </div>
             
@@ -191,6 +244,7 @@ export default function CadastroProduto(){
             <div className='div-cadastro-modelos'>
 
                 <p className='cadastro-p-modelo'> Modelo(s)</p>
+                <img src={LogoAddCor} alt='logo' className='cadastro-logo-addMod' onClick={adicionarModelo}/>
 
                 <div classname='cadastro-inputs-modelos'> 
                 <select value={idModelo} onChange={e => setIdModelo(e.target.value)} >              
@@ -200,6 +254,15 @@ export default function CadastroProduto(){
                             )}
                     </select>
                 </div>
+
+                <div><label></label>
+                    <div className='mod-conteiner'>
+                        {modSelecionadas.map(id =>
+                            <div className='mod-selecionada'>
+                                {buscarNomeModelo(id)}
+                            </div>
+                        )}
+                    </div></div>
             </div>
 
 
@@ -207,6 +270,7 @@ export default function CadastroProduto(){
             <div className='div-cadastro-categoria'>
                 <div>
                     <p className='cadastro-p-categoria'> Categoria(s) </p>
+                    <div className='cadastro-logo-addcategoria-div'> <img src={LogoAddCor} alt='logo' onClick={adicionarCategoria} className='cadastro-logo-addcategoria' /> </div>
                 </div>
 
                 <div className='cadastro-categoria-linha'>
@@ -218,6 +282,14 @@ export default function CadastroProduto(){
                     </select>
                 </div>
             </div>
+            <div><label></label>
+                    <div className='cat-conteiner'>
+                        {catSelecionadas.map(id =>
+                            <div className='cat-selecionada'>
+                                {buscarNomeCategoria(id)}
+                            </div>
+                        )}
+                    </div></div>
 
             <div className='div-cadastro-btn-salvar'>
                 <buttom className='cadastro-btn-salvar'> Salvar </buttom>
