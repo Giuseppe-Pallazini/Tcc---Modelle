@@ -10,6 +10,7 @@ import { ListarMarca } from '../../../api/marcaAPI'
 import { ListarTamanho} from '../../../api/tamanhoAPI'
 import { ListarModelo } from '../../../api/modeloAPI'
 import { listarCategoria } from '../../../api/categoriaAPI'
+import { buscarImagem } from '../../../api/produtoAPI'
 
 import { useEffect, useState } from 'react'
 
@@ -25,6 +26,8 @@ export default function CadastroProduto(){
 
     const [idCategoria, setIdCategoria] = useState();
     const [categoria, setCategoria] = useState([]);
+    
+    const [imagem, setImagem] = useState();
 
     const [catSelecionadas, setCatSelecionadas] = useState([]);
     const [modSelecionadas, setModSelecionadas] = useState([]);
@@ -90,6 +93,19 @@ function buscarNomeTamanho(id) {
     const cat = tamanho.find(item => item.id == id);
     return cat.tamanho;
 }
+
+function mostrarImagem() {
+    if (typeof (imagem) == 'object'){
+        return URL.createObjectURL(imagem);
+    }
+    else {
+        return buscarImagem(imagem)
+    }
+}
+
+function escolherImagem() {
+    document.getElementById('foto').click();
+}
     
 
 
@@ -116,9 +132,11 @@ function buscarNomeTamanho(id) {
                 </div>
                 
                 <div className='div-dashboard-cadastro-inputs'>
-                    <div className='cadastro-input-img-1'>
-                            <input type='file' />
-                            <img src={EscolherImg} alt='logo' />
+                    <div className='cadastro-input-img-1' onClick={escolherImagem}>
+                        <input type='file' id='foto' onChange={e => setImagem(e.target.files[0])} />
+                            {imagem &&
+                            <img className='foto' src={mostrarImagem(imagem)} alt='' />
+                            }
                     </div>
                 </div>
             </div>
