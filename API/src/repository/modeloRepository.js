@@ -24,3 +24,12 @@ export async function buscarModeloPorId(id) {
     const [linhas] = await con.query(comando, [id]);
     return linhas[0];
 }
+
+export async function salvarProdutoModelo(idProduto, IdModelo) {
+    const comando = `
+        insert into tb_produto_modelo (id_modelo, id_produto)
+                                  values (?, ?)
+    `
+
+    const [resp] = await con.query(comando, [IdModelo, idProduto]);
+}

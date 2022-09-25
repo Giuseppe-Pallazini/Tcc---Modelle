@@ -2,10 +2,10 @@ import { Router } from 'express';
 
 // import { inserirImagem } from '../repository/imagemRepository';
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
-import { listarMarca } from '../repository/marcaRepository.js';
-import { buscarModeloPorId } from '../repository/modeloRepository.js'
-import { listarTamanhos } from '../repository/tamanhoRepository.js'
-import { salvarProduto } from '../repository/validarProdutoRepository.js';
+import { listarMarca, buscarMarcaPorId, salvarProdutoMarca} from '../repository/marcaRepository.js';
+import { buscarModeloPorId, salvarProdutoModelo } from '../repository/modeloRepository.js'
+import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
+import { salvarProduto, salvarProdutoCategoria } from '../repository/validarProdutoRepository.js';
 
 const server = Router();
 
@@ -13,49 +13,55 @@ const server = Router();
 
 server.post('/admin/produto', async (req, resp) => {
     try {
-        const Produto = req.body;
+        const produto = req.body;
 
-        await salvarProduto(Produto)
+        const idProduto = await salvarProduto(produto)
 
-        const idProduto = await salvarProduto(Produto);
+        // const idProduto = await salvarProduto(produto);
 
+
+        for (const IdMarc in produto.IdMarca) {
+            const mar = await buscarMarcaPorId(IdMarc);
+            
+            if (mar != undefined){
+                await salvarProdutoMarca(idProduto, IdMarc);
+            }
+        }
 
         
-        for (const idCategoria of novoProduto.idCategoria) {
-            const cat = await categoriaId(idCategoria);
+        for (const idCateg in produto.idCategoria) {
+            const cat = await categoriaId(idCateg);
             
-            if (cat != undefined)
-                await verCategoria(idProduto, idCategoria);
+            if (cat != undefined){
+                await salvarProdutoCategoria(idProduto, idCateg);
+            }
         }
 
-        for (const IdModelo of novoProduto.IdModelo) {
+        for (const IdModelo in produto.IdModelo) {
                 const mod = await buscarModeloPorId(IdModelo);
             
-            if (mod != undefined)
-                await listarModelos(idProduto, IdModelo);
-        }
-        for (const IdMarca of novoProduto.IdMarca) {
-            const mar = await buscarMarcaPorId(IdMarca);
-            
-            if (mar != undefined)
-                await listarMarca(idProduto, IdMarca);
+            if (mod != undefined){
+                await salvarProduto(idProduto, IdModelo);
+            }
         }
 
-        for (const IdTamanho of novoProduto.IdTamanho) {
+        for (const IdTamanho in produto.IdTamanho) {
             const tam = await buscarTamanhoPorId(IdTamanho);
             
-            if (tam != undefined)
-                await listarTamanhos(idProduto, IdTamanho);
+            if (tam != undefined){
+                await salvarProdutoTamanho(idProduto, IdTamanho);
+            }
         }
 
-        resp.status(204).send('Produto inserido');
+        resp.status(204).send(idProduto);
 
     }
     
     catch (err) {
-        return resp.status(400).send({
-            erro: err.message
-        })
+        // return resp.status(400).send({
+        //     erro: err.message
+        // })
+        console.log(err);
     }
 })
 

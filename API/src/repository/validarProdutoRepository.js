@@ -2,8 +2,8 @@ import { con } from './connection.js'
 
 export async function salvarProduto(produto) {
     const comando = `
-        insert into tb_produto (id_tamanho, id_modelo, nm_produto, nm_produto_complemento, 
-                                vl_preço, ds_composicao, ds_detalhes, vl_juros, vl_parcela, ds_cor, id_marca, id_categoria )
+        insert into tb_produto (id_tamanho, id_modelo, nm_produto, nm_prod_complemento, 
+                                vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, ds_cor, id_marca, id_categoria )
                         values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `
 
@@ -32,7 +32,7 @@ export async function salvarProdutoCategoria(idProduto, idCategoria) {
                                   values (?, ?)
     `
 
-    const [resp] = await con.query(comando, [idCategoria, idProduto])
+    const [resp] = await con.query(comando, [idCategoria, idProduto]);
 }
 
 

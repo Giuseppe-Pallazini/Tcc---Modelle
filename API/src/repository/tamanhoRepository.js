@@ -14,3 +14,25 @@ export async function listarTamanhos() {
     
   }
 
+  export async function buscarTamanhoPorId(idTamanho) {
+    const comando = `
+	  select id_tamanho           as id,
+             nm_tamanho         as tamanho
+        from tb_tamanho
+       where id_tamanho = ?; 
+      `
+
+    const [linhas] = await con.query(comando, [idTamanho]);
+    return linhas[0];
+  }
+
+  export async function salvarProdutoTamanho(idProduto, IdTamanho) {
+    const comando = `
+        insert into tb_produto_tamanho (id_tamanho, id_produto)
+                                  values (?, ?)
+    `
+
+    const [resp] = await con.query(comando, [IdTamanho, idProduto]);
+}
+
+
