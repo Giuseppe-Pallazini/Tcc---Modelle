@@ -812,8 +812,18 @@
     }
 
     .cadastro-inputs-modelos {
+        display: flex;
+        flex-direction: row;
+
         color: black;
     }
+
+    .abc{
+        display: flex;
+        flex-direction: row;
+    }
+
+
 
     .cadastro-modelo-l2{
         display: flex;
@@ -904,7 +914,11 @@
         display: flex;
         flex-direction: row;
     }
+
     .cadastro-categoria-masculino{
+        display: flex;
+        flex-direction: row;
+
         position: absolute;
         left: 705px;
         top: 770px;

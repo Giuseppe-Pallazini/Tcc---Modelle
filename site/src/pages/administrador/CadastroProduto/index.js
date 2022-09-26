@@ -6,15 +6,26 @@ import EscolherImg from '../../../assets/image/escolher-imagem.svg'
 import InputMulticolor from '../../../assets/image/logo-multicores.svg'
 import LogoAddCor from '../../../assets/image/logo-mais.svg'
 
+import { toast } from 'react-toastify';
+
 import { ListarMarca } from '../../../api/marcaAPI'
 import { ListarTamanho} from '../../../api/tamanhoAPI'
 import { ListarModelo } from '../../../api/modeloAPI'
 import { listarCategoria } from '../../../api/categoriaAPI'
-import { buscarImagem } from '../../../api/produtoAPI'
+import { buscarImagem, inserirProduto } from '../../../api/produtoAPI'
 
 import { useEffect, useState } from 'react'
 
 export default function CadastroProduto(){
+    const [nome, setNome] = useState();
+    const [complementoProduto, setComplementoProduto] = useState();
+    const [preco, setPreco] = useState(0);
+    const [composicao, setComposicao] = useState();
+    const [detalhes, setDetalhes] = useState();
+    const [juros, setJuros] = useState(0);
+    const [parcela, setParcela] = useState(0);
+    const [cor, setCor] = useState();
+
     const [idMarca, setIdMarca] = useState();
     const [marca, setMarca] = useState([]);
 
@@ -107,6 +118,16 @@ function escolherImagem() {
     document.getElementById('foto').click();
 }
     
+async function salvarProduto() {
+    try {
+
+        const r = await inserirProduto(idTamanho, idModelo, nome, complementoProduto, preco, composicao, detalhes, juros, parcela, cor, idMarca, idCategoria);
+        toast.dark('Produto cadastrado com sucesso');
+    }
+    catch (err) {
+        console.log(err)
+    }
+}
 
 
     useEffect(() => {
@@ -143,14 +164,14 @@ function escolherImagem() {
             </div>
 
             <div className='div-dashboard-cadastro-composição'>
-                <textarea type='text' cols="30" rows="5" maxlength="108" className='cadastro-input-composicao' placeholder='Composição do produto ' />
+                <textarea type='text' cols="30" rows="5" maxlength="108" className='cadastro-input-composicao' placeholder='Composição do produto ' value={composicao} onChange={e => setComposicao(e.target.value)} />
                 
             </div>
 
             <div className='div-dashboard-cadastro-detalhes'>
-                <input type='text' className='cadastro-input-detalhes' placeholder='Detalhes do produto' />
-                <input type='text' className='cadastro-input-detalhes-2'  />
-                <input type='text' className='cadastro-input-detalhes-3'  />
+                <input type='text' className='cadastro-input-detalhes' placeholder='Detalhes do produto' value={detalhes} onChange={e => setDetalhes(e.target.value)} />
+                <input type='text' className='cadastro-input-detalhes-2' value={detalhes} onChange={e => setDetalhes(e.target.value)} />
+                <input type='text' className='cadastro-input-detalhes-3' value={detalhes} onChange={e => setDetalhes(e.target.value)} />
             </div>
 
             <div className='div-dashboard-cadastro-marca' >
@@ -176,20 +197,20 @@ function escolherImagem() {
                 </div>
 
                 <div>
-                    <input type='text' className='cadastro-cl2-nomeProduto' placeholder='Nome do produto' />
+                    <input type='text' className='cadastro-cl2-nomeProduto' placeholder='Nome do produto' value={nome} onChange={e => setNome(e.target.value)} />
                     <img src={ImagemX} alt='logo' className='logo-x-produto' /> 
                     <img src={ImagemCerto} alt='logo' className='logo-certo-produto' />  
                 </div>
 
                 
                 <div>
-                    <input type='text' className='cadastro-cl2-complementoProduto' placeholder='Complemento produto' />
+                    <input type='text' className='cadastro-cl2-complementoProduto' placeholder='Complemento produto' value={complementoProduto} onChange={e => setComplementoProduto(e.target.value)} />
                     <img src={ImagemX} alt='logo' className='logo-x-complemento' /> 
                     <img src={ImagemCerto} alt='logo' className='logo-certo-complemento' />
                 </div>
                 
                 <div className='cadastro-div-valorProd'>
-                    <input type='text' className='cadastro-cl2-valor' placeholder='Valor(R$)' />
+                    <input type='text' className='cadastro-cl2-valor' placeholder='Valor(R$)' value={preco} onChange={e => setPreco(e.target.value)} />
                     <img src={ImagemX} alt='logo' className='logo-x-valor' /> 
                     <img src={ImagemCerto} alt='logo' className='logo-certo-valor' />  
                 </div>
@@ -199,13 +220,13 @@ function escolherImagem() {
             <div>
                 <div>
                     <p className='cadastro-p-parcelas'> Parcela(s)</p>
-                    <input type='text' placeholder='0' className='cadastro-input-parcelas' />
+                    <input type='text' placeholder='0' className='cadastro-input-parcelas' value={parcela} onChange={e => setParcela(e.target.value)} />
                 </div>
 
 
                 <div>
                     <p className='cadastro-p-juros'> Juros</p>
-                    <input type='text' placeholder='0%' className='cadastro-input-juros' />
+                    <input type='text' placeholder='0%' className='cadastro-input-juros' value={juros} onChange={e => setJuros(e.target.value)} />
                 </div>
             </div>
 
@@ -253,9 +274,12 @@ function escolherImagem() {
                 <div classname='cadastro-inputs-modelos'> 
                 <select value={idModelo} onChange={e => setIdModelo(e.target.value)} >              
                         <option selected disabled hidden>Selecione</option>
-                            {modelo.map(item =>
-                                <option value={item.id}> {item.modelo} </option>
-                            )}
+                            
+
+                                {modelo.map(item =>
+                                    <option value={item.id}> {item.modelo} </option>
+                                )}
+
                     </select>
                 </div>
 
@@ -295,7 +319,7 @@ function escolherImagem() {
                         )}
                     </div></div>
 
-            <div className='div-cadastro-btn-salvar'>
+            <div className='div-cadastro-btn-salvar' onClick={salvarProduto}>
                 <buttom className='cadastro-btn-salvar'> Salvar </buttom>
             </div>
         </main>
