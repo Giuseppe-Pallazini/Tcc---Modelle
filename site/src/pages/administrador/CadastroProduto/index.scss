@@ -1,6 +1,11 @@
 .main-cadastro{
     display: flex;
     flex-direction: column;
+
+    textarea:focus, input:focus {
+        box-shadow: 0 0 0 0;
+        outline: 0;
+        }
     
     .div-cadastro-column-01{
         display: flex;
@@ -166,7 +171,9 @@
 
         border: 0px;
         border-bottom: 1px solid #000;
+            
     }
+
     .cadastro-input-detalhes-2{
         position: absolute;
         width: 20em;
