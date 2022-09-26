@@ -75,6 +75,18 @@ insert into tb_produto_categoria (id_categoria, id_produto)
 select * from tb_produto_categoria;
 -- ---------------
 
+-- insert categrias
+
+insert into tb_categoria (nm_categoria)
+		values ('Feminino');
+        
+insert into tb_categoria (nm_categoria)
+		values ('Masculino');
+        
+insert into tb_categoria (nm_categoria)
+		values('Novidades');
+
+
 --Insert modelos
 
 insert into tb_modelo (nm_modelo)
@@ -100,15 +112,15 @@ insert into tb_modelo (nm_modelo)
 
 
 --Insert Tamanhos
-insert into tb_tamanho (nm_tamnho)
+insert into tb_tamanho (nm_tamanho)
             values      ('PP');
-insert into tb_tamanho (nm_tamnho)
+insert into tb_tamanho (nm_tamanho)
             values      ('P');
-insert into tb_tamanho (nm_tamnho)
+insert into tb_tamanho (nm_tamanho)
             values      ('M');
-insert into tb_tamanho (nm_tamnho)
+insert into tb_tamanho (nm_tamanho)
             values      ('G');
-insert into tb_tamanho (nm_tamnho)
+insert into tb_tamanho (nm_tamanho)
             values      ('GG');
 
 

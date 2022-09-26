@@ -17,7 +17,7 @@ server.put('/roupa/:id/foto', upload.single('foto'), async (req,resp) => {
         const { id } = req.params;
         const imagem = req.file.path;
 
-        const resposta = await inserirImagem(imagem, id);
+        const resposta = await inserirImagem(id, imagem);
         if (resposta != 1)
             throw new Error ('A imagem não pode ser salva.')
 

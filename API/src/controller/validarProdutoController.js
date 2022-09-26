@@ -58,9 +58,9 @@ server.post('/admin/produto', async (req, resp) => {
     }
     
     catch (err) {
-        // return resp.status(400).send({
-        //     erro: err.message
-        // })
+         return resp.status(400).send({
+            erro: err.message
+         })
         console.log(err);
     }
 })
