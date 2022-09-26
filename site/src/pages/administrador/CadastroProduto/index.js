@@ -12,7 +12,7 @@ import { ListarMarca } from '../../../api/marcaAPI'
 import { ListarTamanho} from '../../../api/tamanhoAPI'
 import { ListarModelo } from '../../../api/modeloAPI'
 import { listarCategoria } from '../../../api/categoriaAPI'
-import { buscarImagem, inserirProduto } from '../../../api/produtoAPI'
+import { buscarImagem, enviarImagemProduto, inserirProduto } from '../../../api/produtoAPI'
 
 import { useEffect, useState } from 'react'
 
@@ -120,12 +120,14 @@ function escolherImagem() {
     
 async function salvarProduto() {
     try {
+        const novoProduto = await inserirProduto(idTamanho, idModelo, nome, complementoProduto, preco, composicao, detalhes, juros, parcela, cor, idMarca, idCategoria);
+        const r = await enviarImagemProduto (novoProduto.id, imagem);
 
-        const r = await inserirProduto(idTamanho, idModelo, nome, complementoProduto, preco, composicao, detalhes, juros, parcela, cor, idMarca, idCategoria);
+        
         toast.dark('Produto cadastrado com sucesso');
     }
     catch (err) {
-        console.log(err)
+        toast.dark(err);
     }
 }
 
@@ -164,7 +166,8 @@ async function salvarProduto() {
             </div>
 
             <div className='div-dashboard-cadastro-composição'>
-                <textarea type='text' cols="30" rows="5" maxlength="108" className='cadastro-input-composicao' placeholder='Composição do produto ' value={composicao} onChange={e => setComposicao(e.target.value)} />
+                <textarea type='text' cols="27" rows="5" maxlength="108" className='cadastro-input-composicao' placeholder='Composição do produto ' value={composicao} onChange={e => setComposicao(e.target.value)} />
+                <hr className='hr' />
                 
             </div>
 
@@ -260,7 +263,7 @@ async function salvarProduto() {
                 </div>
                 <div className='cadastro-cores-input'>
                     <img src={InputMulticolor} alt='logo' className='cadastro-input-multicores' />
-                    <input type='checked' className='cadastro-input-cores-exemplo'/>
+                    <input type='checked' className='cadastro-input-cores-exemplo' value={cor} onChange={e => setCor(e.target.value)} />
                     
                 </div>
             </div>
@@ -275,11 +278,9 @@ async function salvarProduto() {
                 <select value={idModelo} onChange={e => setIdModelo(e.target.value)} >              
                         <option selected disabled hidden>Selecione</option>
                             
-
-                                {modelo.map(item =>
-                                    <option value={item.id}> {item.modelo} </option>
-                                )}
-
+                            {modelo.map(item =>
+                                <option value={item.id}> {item.modelo} </option>
+                            )}
                     </select>
                 </div>
 
@@ -304,6 +305,7 @@ async function salvarProduto() {
                 <div className='cadastro-categoria-linha'>
                     <select className='cadastro-categoria-masculino' value={idCategoria} onChange={e => setIdCategoria(e.target.value)} >              
                         <option selected disabled hidden>Selecione</option>
+
                             {categoria.map(item =>
                                 <option value={item.id}> {item.categoria} </option>
                             )}

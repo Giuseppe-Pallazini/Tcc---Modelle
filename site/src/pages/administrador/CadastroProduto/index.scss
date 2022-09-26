@@ -151,6 +151,7 @@
     .div-dashboard-cadastro-composição{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
     }
     .cadastro-input-detalhes{
         position: absolute;
@@ -641,7 +642,7 @@
         display: flex;
         flex-direction: row;
         box-sizing: border-box;
-
+        
         position: absolute;
         width: 27px;
         height: 27px;
@@ -814,8 +815,15 @@
     .cadastro-inputs-modelos {
         display: flex;
         flex-direction: row;
+        box-sizing: border-box;
 
-        color: black;
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        left: 704px;
+        top: 439px;
+
+        border-radius: 10px;
     }
 
     .abc{
