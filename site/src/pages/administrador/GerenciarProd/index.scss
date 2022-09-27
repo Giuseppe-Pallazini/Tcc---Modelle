@@ -98,6 +98,275 @@
     .div-linha-cards{
         display: flex;
         flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
     }
+
+    .div-linha-cards{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .gerenciarProd-card-1{
+        display: flex;
+        flex-direction: column;
+        margin-top: 6em;
+        margin-left: 5em;
+        border-radius: .5em;
+
+        box-shadow: 4px 3px rgb(119, 119, 119);
+    }
+
+    .gerenciarProd-div-icons{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        margin-right: 1em;
+    }
+    .logo-remover{
+        width: 16px;
+        height: 16px;
+        margin-right: .5em;
+    }
+    .logo-editar{
+        width: 18px;
+        height: 16px;
+    }
+
+    .gerenciarProd-imagem-card{
+        margin-top: -1em;
+        padding: 2em;
+        width: 14em;
+        height: 14em;
+    }
+    .marca-produto-card{
+        font-family: 'caviar';
+        font-size: 20px;
+        margin-top: -1em;
+        font-weight: 800;
+        margin-left: 1em;
+
+    }
+    .descricao-produto-card{
+        margin-left: 2em;
+        font-weight: 100;
+        opacity: 60%;
+        margin-top: .5em;
+        font-family: 'caviar';
+        font-size: 10px;
+        border: none;
+    }
+
+    .gerenciarProd-div-preco{
+        display: flex;
+        flex-direction: row;
+        margin-top: .5em;
+    }
+    .preço-produto-card{
+        font-family: 'caviar';
+        font-size: 15px;
+        margin-left: 1.3em;
+        font-weight: 100;
+        opacity: 60%;
+    }
+    .valor-produto-card{
+        margin-left: 8em;
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 60%;
+    }
+
+    .gerenciarProd-div-cor{
+        display: flex;
+        flex-direction: row;
+        margin-top: .8em;
+    }
+    .cor-produto-card{
+        font-family: 'caviar';
+        font-size: 15px;
+        margin-left: 1.3em;
+        font-weight: 100;
+        opacity: 60%;
+    }
+    .valorCor-produto-card{
+        margin-left: 7.3em;
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 60%;
+    }
+
+    .gerenciarProd-div-modelo{
+        display: flex;
+        flex-direction: row;
+        margin-top: .3em;
+    }
+    .modelo-produto-card{
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        margin-left: 1.3em;
+        opacity: 60%;
+    }
+    .valorModelo-produto-card{
+        margin-left: 5.5em;
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 60%;
+    }
+
+
+
+    .gerenciarProd-div-tamanhos{
+        display: flex;
+        flex-direction: row;
+        margin-top: .3em;
+    }
+    .tamanho-produto-card{
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 60%;
+        margin-left: 1.3em;
+    }   
+    .valorTamanho-produto-card{
+        display: flex;
+        flex-direction: row;
+        margin-left: 4.4em;
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 60%;
+    }
+    .tamanhoProduto-card{
+        margin-left: .5em;
+    }
+
+
+
+    .gerenciarProd-div-disponivel{
+        display: flex;
+        flex-direction: row;
+        margin-top: .3em;
+    }
+    .disponivel-produto-card{
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 60%;
+        margin-left: 1.3em;
+    }
+    .valorDisponivel-produto-card{
+        margin-left: 1.9em;
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 60%;
+    }
+
+
+
+    .gerenciarProd-div-categoria{
+        display: flex;
+        flex-direction: row;
+        margin-top: .3em;
+    }
+    .categoria-produto-card{
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 80%;
+        margin-left: 1.3em;
+    }
+    .valorCategoria-produto-card{
+        margin-left: 4em;
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 80%;
+    }
+
+
+
+    .gerenciarProd-div-genero{
+        display: flex;
+        flex-direction: row;
+        margin-top: .3em;
+    }
+    .genero-produto-card{
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 80%;
+        margin-left: 1.3em;
+    }
+    .valorMasculino-produto-card{
+        margin-left: 5.5em;
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 80%;
+    }
+
+
+
+    .gerenciarProd-div-id{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        margin-right: 1em;
+        margin-top: 1em;
+    }
+    .id-produto-card{
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 80%;
+    }
+    .valorId-produto-card{
+        margin-left: .2em;
+        font-family: 'caviar';
+        font-size: 15px;
+        font-weight: 100;
+        opacity: 80%;
+    }
+
+    .gerenciarProd-card-2{
+        display: flex;
+        flex-direction: column;
+        margin-top: 6em;
+        margin-left: 7em;
+        border-radius: .5em;
+        box-shadow: 4px 3px rgb(119, 119, 119);
+    }
+
+    .gerenciarProd-card-3{
+        display: flex;
+        flex-direction: column;
+        margin-top: 6em;
+        border-radius: .5em;
+        margin-left: 7em;
+        box-shadow: 4px 3px rgb(119, 119, 119);
+    }
+
+    .gerenciarProd-card-4{
+        display: flex;
+        flex-direction: column;
+        margin-top: 6em;
+        border-radius: .5em;
+        margin-left: 5em;
+        box-shadow: 4px 3px rgb(119, 119, 119);
+    }
+    .gerenciarProd-card-5{
+        display: flex;
+        flex-direction: column;
+        margin-top: 6em;
+        border-radius: .5em;
+        margin-left: 7em;
+        box-shadow: 4px 3px rgb(119, 119, 119);
+    }
+
 
 }
