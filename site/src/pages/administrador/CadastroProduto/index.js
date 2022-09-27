@@ -122,12 +122,12 @@ async function salvarProduto() {
     try {
         const novoProduto = await inserirProduto(idTamanho, idModelo, nome, complementoProduto, preco, composicao, detalhes, juros, parcela, cor, idMarca, idCategoria);
         const r = await enviarImagemProduto (novoProduto.id, imagem);
-
         
         toast.dark('Produto cadastrado com sucesso');
     }
     catch (err) {
         toast.dark(err);
+        console.log(err)
     }
 }
 
@@ -166,7 +166,7 @@ async function salvarProduto() {
             </div>
 
             <div className='div-dashboard-cadastro-composição'>
-                <textarea type='text' cols="27" rows="5" maxlength="108" className='cadastro-input-composicao' placeholder='Composição do produto ' value={composicao} onChange={e => setComposicao(e.target.value)} />
+                <textarea type='text' cols="27" rows="5" maxLength="108" className='cadastro-input-composicao' placeholder='Composição do produto ' value={composicao} onChange={e => setComposicao(e.target.value)} />
                 <hr className='hr' />
                 
             </div>
@@ -321,8 +321,8 @@ async function salvarProduto() {
                         )}
                     </div></div>
 
-            <div className='div-cadastro-btn-salvar' onClick={salvarProduto}>
-                <buttom className='cadastro-btn-salvar'> Salvar </buttom>
+            <div className='div-cadastro-btn-salvar'>
+                <button onClick={salvarProduto} className='cadastro-btn-salvar'> Salvar </button>
             </div>
         </main>
 

@@ -98,7 +98,6 @@ create table tb_produto (
 id_produto 					int primary key auto_increment,
 id_tamanho					int,
 id_modelo					int,
-id_img						int,
 nm_produto 					varchar(100),
 nm_prod_complemento 		varchar(100),
 vl_preco 					decimal(15,2),
