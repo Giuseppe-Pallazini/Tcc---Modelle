@@ -1,0 +1,103 @@
+.main-gerenciarProd{
+    display: flex;
+    flex-direction: column;
+    
+    .div-input-buscar{
+        display: flex;
+        flex-direction: row;
+    }
+    .div-linha-titulos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .gerenciarProd-input-buscar{
+        margin-top: 3.2em;
+        margin-left: 3em;
+        width: 12em;
+        height: 2em;
+        border: none;
+    }
+    .logo-buscar{
+        position: absolute;
+        margin-left: 11.2em;
+        padding-top: 3em;
+        height: 1.2em;
+    }
+
+
+    .div-titulo-gerenciar{
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .gerenciarProd-titulo{
+        display: flex;
+        align-items: center;
+        margin-right: 5em;
+        margin-top: 0.5em;
+        font-family: 'caviar';
+        font-style: normal;
+        font-weight: 100 ;
+        width: 20px;
+        font-size: 30px;
+    }
+
+    .div-titulo-gerenciar{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .div-nome-mes{
+        display: flex;
+        flex-direction: row;
+    }
+    .gerenciarProd-fevereiro{
+        font-family: 'caviar';
+        font-size: 15px;
+        margin-top: 1em;
+        margin-bottom: .3em;
+        margin-right: 6em;
+    }
+    .gerenciarProd-logo-buscar{
+        position: absolute;
+        height: .8em;
+        width: 1em;
+        margin-left: 4.5em;
+        margin-top: 1.2em;
+
+    }
+
+
+    .select-mes{
+        margin-right: 3em;
+    }
+    .input-mes{
+        font-family: 'caviar';
+        font-weight: 400;
+        font-size: 12px;
+
+        border: none;
+        border-bottom: 1.8px solid #000;
+    }
+
+    .select-ano{
+        margin-right: 3em;
+    }
+    .input-ano{
+        font-family: 'caviar';
+        font-weight: 400;
+        font-size: 12px;
+
+        border: none;
+        border-bottom: 1px solid #000;
+    }
+
+
+    .div-linha-cards{
+        display: flex;
+        flex-direction: row;
+    }
+
+}

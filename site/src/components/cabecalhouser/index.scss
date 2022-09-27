@@ -3,7 +3,6 @@
     flex-direction: row;
     justify-content: space-between;
 
-    position: absolute;
     width: 1280px;
     height: 104px;
     left: 0px;
@@ -23,14 +22,13 @@
                 color: white;
                 font-family: 'logo-font';
                 font-weight: 400;
-                font-size: 2.5em
-                ;
+                font-size: 2.5em;
                 
             }
         }
     .cab-user-logo{
         position: absolute;
-        width: 58px;
+        width: 32px;
         height: 40px;
         left: 571px;
         top: 10px;
