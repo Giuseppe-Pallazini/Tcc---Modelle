@@ -1,0 +1,228 @@
+.main-homeAdmin{
+    display: flex;
+    flex-direction: column;
+
+    .cab-admin{
+        display: flex;
+        flex-direction: row;
+        height: 4.5em;
+        background-color: rgb(240, 241, 241);
+    }
+        .cab-admin-img{
+            position: absolute;
+            left: 2.34%;
+            right: 96.15%;
+            top: 2.87%;
+            bottom: 94.96%;
+        }
+        .cab-admin-user{
+            position: absolute;
+            left: 56px;
+            top: 32px;
+
+            font-family: 'inter';
+            font-size: 14px;
+        }
+    .cab-exit{
+        .cab-exit-1{
+            position: absolute;
+            width: 22px;
+            height: 20px;
+            left: 1209px;
+            top: 30px;
+        }
+    }
+
+
+
+    .section-homeAdm{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .card-01-homeAdm{
+        display: flex;
+        flex-direction: column;
+        background-color: #e4e7eb;
+        width: 20em;
+        height: 25em;
+        border-radius: .5em;
+        margin-top: 5em;
+    }
+    .div-imagem-engrenagem{
+        margin-top: -5em;
+        margin-left: 13em;
+    }
+        .homeAdm-img-engrenagem{
+            width: 10em;
+            height: 10em;
+        }
+        .homeAdm-conteudo-card01{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .homeAdm-titulo-card01{
+            text-align: center;
+            font-size: 1.3em;
+            font-family: 'caviar';
+            font-weight: 100;
+            margin-top: 1em;
+        }
+        .hr-titulo-card01{
+            width: 10em;
+            margin-left: 2.5em;
+        }
+        .home-adm-bt-linha1-card01{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 3em;
+            
+        }
+        .homeAdm-botão-usuarios{
+            font-size: 1em;
+            font-family: 'caviar';
+            border: none;
+            margin-right: 5em;
+            background-color: #e4e7eb;
+            border-bottom: 1.8px solid #000;
+
+        }
+        .homeAdm-botão-pedidos{
+            font-size: 1em;
+            font-family: 'caviar';
+            border: none;
+            background-color: #e4e7eb;
+            font-weight: 200;
+            border-bottom: 1.8px solid #000;
+        }   
+
+
+        .home-adm-bt-linha2-card01{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 3em;
+        }
+        .homeAdm-botão-produto{
+            font-size: 1em;
+            font-family: 'caviar';
+            border: none;
+            margin-right: 5em;
+            background-color: #e4e7eb;
+            font-weight: 200;
+            border-bottom: 1.8px solid #000;
+        }
+        .homeAdm-botão-cadastro{
+            font-size: 1em;
+            font-family: 'caviar';
+            border: none;
+            background-color: #e4e7eb;
+            font-weight: 200;
+            border-bottom: 1.8px solid #000;
+        }
+
+        .home-adm-bt-linha3-card01{
+            display: flex;
+            justify-content: center;
+        }
+        .homeAdm-botão-feedbecks{
+            font-size: 1em;
+            margin-top: 2em;
+            font-family: 'caviar';
+            border: none;
+            background-color: #e4e7eb;
+            font-weight: 200;
+            border-bottom: 1.8px solid #000;
+        }
+    
+
+
+
+    .card-02-homeAdm{
+        display: flex;
+        flex-direction: column;
+        background-color: #e4e7eb;
+        width: 20em;
+        margin-left: 4em;
+        height: 25em;
+        border-radius: .5em;
+        margin-top: 5em;
+    }
+    .div-imagem-eventos{
+        margin-top: -5em;
+        margin-left: 15em;
+    }
+   .homeAdm-conteudo-card02{
+        text-align: center;
+        font-size: 1.3em;
+        font-family: 'caviar';  
+        margin-top: 1em;
+   }
+   .hr-titulo-card02{
+        width: 5em;
+        margin-left: 5.1em;
+    }
+
+    .home-adm-bt-linha1-card02{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .homeAdm-botão-addModelos{
+
+    }
+    .homeAdm-botão-novidades{
+
+    }
+
+
+    .home-adm-bt-linha2-card02{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .homeAdm-botão-cardDestaque{
+        font-size: 1em;
+        font-family: 'caviar';
+        border: none;
+        background-color: #e4e7eb;
+        font-weight: 200;
+        border-bottom: 1.8px solid #000;
+    }
+    .homeAdm-botão-colecao{
+        font-size: 1em;
+            font-family: 'caviar';
+            border: none;
+            background-color: #e4e7eb;
+            font-weight: 200;
+            border-bottom: 1.8px solid #000;
+    }
+
+
+    .home-adm-bt-linha3-card02{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .homeAdm-botão-addCupom{
+        font-size: 1em;
+        margin-top: 2em;
+        font-family: 'caviar';
+        border: none;
+        background-color: #e4e7eb;
+        font-weight: 200;
+        border-bottom: 1.8px solid #000;
+    }
+    .homeAdm-botão-carrosel{
+        font-size: 1em;
+        margin-top: 2em;
+        font-family: 'caviar';
+        border: none;
+        background-color: #e4e7eb;
+        font-weight: 200;
+        border-bottom: 1.8px solid #000;
+    }
+
+
+}
