@@ -1,28 +1,21 @@
 .cab{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-
-    width: 1280px;
-    height: 80px;
+    justify-content:space-between;
 
     background: #F9F9F9;
 
     .cab-admin{
+        width: 15%;
         .cab-admin-img{
-            position: absolute;
-            left: 2.34%;
-            right: 96.15%;
-            top: 2.87%;
-            bottom: 94.96%;
+            position: relative;
+            top: 1.7em;
+            left: 2em;
         }
         .cab-admin-user{
-            position: absolute;
-            left: 56px;
-            top: 32px;
-
-            font-family: 'inter';
-            font-size: 14px;
+            position: relative;
+            top: 1.5em;
+            left: 3em;
         }
     }
 
@@ -33,14 +26,13 @@
             margin-right: 2em;
             background-color: #19110B;
             padding: 0.5em;
+            margin-right: 1em;
             color: #fff;
-            border: 0px solid #19110B;
-            border-radius: 1em solid #19110B;
+            border-radius: .5em;
             width: 9em;
  
 
-            -webkit-appearance: none !important;
-            -webkit-border-radius: 0px;
+
             line-height: normal;
 
             height: 2.3125rem; 
@@ -57,12 +49,12 @@
             color: #fff;
             border: 0px solid #19110B;
 
-            -webkit-appearance: none !important;
+            
             background-position: 100% center;
 
             font-size: 0.875rem;
             line-height: normal;
-            border-radius: 0;
+            border-radius: .5em;
             height: 2.3125rem; 
 
             text-align: center;
@@ -70,12 +62,11 @@
     }
 
     .cab-exit{
+        display: flex;
+        align-items: center;
         .cab-exit-1{
-            position: absolute;
             width: 22px;
-            height: 20px;
-            left: 1209px;
-            top: 30px;
+            height: auto;
         }
     }
 }

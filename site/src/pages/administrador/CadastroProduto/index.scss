@@ -1,6 +1,6 @@
 .main-cadastro{
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
 
     textarea:focus, input:focus {
         box-shadow: 0 0 0 0;
@@ -10,6 +10,13 @@
     .div-cadastro-column-01{
         display: flex;
         flex-direction: column;
+
+        position: relative;
+
+        border: 1px solid black;
+        height: 52.2em;
+        width: 50%;
+
         
     }
     .div-dashboard-cadastro-pricipal{
@@ -18,7 +25,7 @@
     }
     .titulo-cadastro{
         position: absolute;
-        width: 100%;
+        width: 99%;
         height: 57px;
         top: 87px;
         display: flex;
@@ -41,6 +48,7 @@
         display: flex;
         flex-direction: row;
     }
+
     .div-cadastro-titulo-addfoto{
         display: flex;
         flex-direction: row;
@@ -431,15 +439,15 @@
     }
     .cadastro-marcas-apenasuma{
         position: absolute;
-        width: 81px;
+        width: 120px;
         height: 12px;
-        left: 220px;
-        top: 890px;
+        left: 223px;
+        top: 740px;
 
         font-family: 'caviar';
         font-style: normal;
         font-weight: 400;
-        font-size: 8px;
+        font-size: 12px;
         line-height: 9px;
         color: #19110B;
 
@@ -450,6 +458,7 @@
     .div-cadastro-column-02{
         display: flex;
         flex-direction: column;
+        border: 1px solid black;
     }
 
     .cadastro-cl2-camposobrigatorios{
@@ -659,16 +668,20 @@
         border-radius: 10px;
     }
 
+
+
     .cadastro-logo-addtamanho-div {
         display: flex;
         justify-content: center;
+        align-items: center;
         position: relative;
-        top: 22.5em;
+        top: 25em;
+        left: 50em;
+        border: 1px solid black;
     .cadastro-logo-addtamanho {
         position: relative;
         width: 1em;
         height: auto;
-        left: 10.5em;
         cursor: pointer;
         }
     }
@@ -688,69 +701,17 @@
 
         color: #19110B;
     }   
-    .cadastro-input-tamanho-PP{
-        position: absolute;
-        width: 27px;
-        height: 27px;
-        margin-left: 2em;
-        right: -.5px;
-        border: none;
-        top: -0.1em;
+    .tam-conteiner{
         display: flex;
-        align-items: center;
-        text-align: center;
-        border: 1px solid #19110B;
-        border-radius: 10px;
-    }
-    .cadastro-input-tamanho-P{
-        position: absolute;
-        width: 27px;
-        height: 27px;
-        left: 35px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        border: none;
-        background: #19110B;
-        border-radius: 10px;
-    }
-    .cadastro-input-tamanho-M{
-        position: absolute;
-        width: 27px;
-        height: 27px;
-        left: 80px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        border: none;
+        flex-direction: row;
 
-        background: #19110B;
-        border-radius: 10px;
-    }
-    .cadastro-input-tamanho-G{
-        position: absolute;
-        width: 27px;
-        height: 27px;
-        left: 125px;
-        display: flex;
-        align-items: center;
-        text-align: center;
+        .tam-selecionada{
+    
+            border: none;
+            top: -0.1em;
+            border: 1px solid #19110B;
+        }
 
-        border: 1px solid #19110B;
-        border-radius: 10px;
-    }
-    .cadastro-input-tamanho-GG{
-        position: absolute;
-        width: 27px;
-        height: 27px;
-        left: 170px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        border: none;
-
-        background: #19110B;    
-        border-radius: 10px;
     }
 
     .div-cadastro-cores{
@@ -789,10 +750,9 @@
         position: absolute;
         width: 27px;
         height: 27px;
-        left: 742px;
+        left: 710px;
         top: 527px;
 
-        background: #007FFF;
         border-radius: 10px;
         border: none;
     }   
@@ -892,7 +852,7 @@
 
         color: #19110B;
     }
-    #foto{
+    #foto, #foto2{
         visibility: hidden;
         border: 1px solid black;
         height: 15em;
@@ -914,8 +874,9 @@
         display: flex;
         justify-content: center;
         position: relative;
-        top: 42em;
-        left: 39.5em;
+        top: 35.5em;
+        left: 38em;
+        width: 20%;
     .cadastro-logo-addcategoria {
         position: absolute;
         width: 1em;
@@ -1008,7 +969,6 @@
         background: #19110B;
         border-radius: 10px;
         width: 80px;
-        height: 15px;
         left: 706px;
         top: 830px;
         text-align: center;

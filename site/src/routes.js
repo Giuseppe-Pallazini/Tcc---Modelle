@@ -37,6 +37,7 @@ import GerenciarPed from '../src/pages/administrador/GerenciarPed'
 import DetalhesPed from '../src/pages/administrador/DetalhesPed'
 import GerenciarUsuarios from '../src/pages/administrador/GerenciarUsuarios'
 import EditarPeca from '../src/pages/administrador/EditarPeca'
+import CadastroProduto2 from '../src/pages/administrador/CadastrarProduto2.0'
 
 
 export default function Index(){
@@ -49,6 +50,7 @@ export default function Index(){
 
                 <Route path='/admin/home' element={<HomeAdm/>}/>
                 <Route path='/admin/cadastroprod' element={< CadastroProd />} />
+                <Route path='/admin/cadastroproduto2' element={< CadastroProduto2 />} />
                 <Route path='/admin/gerenciarProd' element={< GerenciarProd />} />
                 <Route path='/admin/alterarCard' element={< AlterarCard />} />
                 <Route path='/admin/alterarCarrolsel' element={< AlterarCassolsel />} />

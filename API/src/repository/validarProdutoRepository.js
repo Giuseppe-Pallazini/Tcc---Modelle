@@ -9,7 +9,7 @@ export async function salvarProduto(produto) {
 
     const [resp] = await con.query(comando, [
                             produto.idTamanho,
-                            produto.IdModelo,
+                            produto.idModelo,
                             produto.nome,
                             produto.complementoProduto,
                             produto.preco,

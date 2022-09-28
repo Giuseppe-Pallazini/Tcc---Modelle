@@ -53,7 +53,9 @@ server.post('/admin/produto', async (req, resp) => {
             }
         }
 
-        resp.status(204).send("Produto Inserido");
+        resp.send({
+            id: idProduto
+        });
 
     }
     

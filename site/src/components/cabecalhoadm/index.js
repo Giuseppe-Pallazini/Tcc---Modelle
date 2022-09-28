@@ -4,7 +4,7 @@ import Imagem2 from '../../assets/image/img-exit.png'
 
 export default function Index(){
     return(
-        <main>
+        <header>
             <nav className='cab'>
                 <div className='cab-admin'>
                     <img className='cab-admin-img' src={Imagem1} alt=""/>
@@ -35,6 +35,6 @@ export default function Index(){
                     <img className='cab-exit-1' src={Imagem2} alt="" />
                 </div>
             </nav>
-        </main>
+        </header>
     )
 }

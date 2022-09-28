@@ -17,6 +17,9 @@ server.put('/roupa/:id/foto', upload.single('foto'), async (req,resp) => {
         const { id } = req.params;
         const imagem = req.file.path;
 
+        console.log(id);
+        console.log(imagem);
+
         const resposta = await inserirImagem(imagem, id);
 
         resp.status(204).send()
