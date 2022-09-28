@@ -1,7 +1,7 @@
 import './index.scss'
 import Imagem1 from '../../assets/image/img-user.png'
 import Imagem2 from '../../assets/image/img-exit.png'
-
+ 
 export default function Index(){
     return(
         <main>
