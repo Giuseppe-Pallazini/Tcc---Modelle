@@ -38,20 +38,20 @@
     .section-homeAdm{
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
+        margin-top: 10em;
     }
     .card-01-homeAdm{
         display: flex;
         flex-direction: column;
         background-color: #e4e7eb;
         width: 20em;
-        height: 25em;
+        height: 30em;
         border-radius: .5em;
         margin-top: 5em;
     }
     .div-imagem-engrenagem{
-        margin-top: -5em;
+        margin-top: -6em;
         margin-left: 13em;
     }
         .homeAdm-img-engrenagem{
@@ -62,6 +62,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-top: 2em;
         }
         .homeAdm-titulo-card01{
             text-align: center;
@@ -128,7 +129,7 @@
         }
         .homeAdm-botão-feedbecks{
             font-size: 1em;
-            margin-top: 2em;
+            margin-top: 3em;
             font-family: 'caviar';
             border: none;
             background-color: #e4e7eb;
@@ -144,10 +145,13 @@
         flex-direction: column;
         background-color: #e4e7eb;
         width: 20em;
-        margin-left: 4em;
-        height: 25em;
+        height: 30em;
         border-radius: .5em;
         margin-top: 5em;
+    }
+    .homeAdm-img-editarEventos{
+        width: 10em;
+        height: 10em;
     }
     .div-imagem-eventos{
         margin-top: -5em;
@@ -155,8 +159,14 @@
     }
    .homeAdm-conteudo-card02{
         text-align: center;
-        font-size: 1.3em;
         font-family: 'caviar';  
+        margin-top: 2em;
+   }
+   .homeAdm-titulo-card02{
+        text-align: center;
+        font-size: 1.3em;
+        font-family: 'caviar';
+        font-weight: 100;
         margin-top: 1em;
    }
    .hr-titulo-card02{
@@ -168,12 +178,24 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        margin-top: 3em;
     }
     .homeAdm-botão-addModelos{
+        font-size: 1em;
+        font-family: 'caviar';
+        border: none;
+        margin-right: 4em;
 
+
+        background-color: #e4e7eb;
+        border-bottom: 1.8px solid #000;
     }
     .homeAdm-botão-novidades{
-
+        font-size: 1em;
+        font-family: 'caviar';
+        border: none;
+        background-color: #e4e7eb;
+        border-bottom: 1.8px solid #000;
     }
 
 
@@ -181,11 +203,13 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        margin-top: 3em;
     }
     .homeAdm-botão-cardDestaque{
         font-size: 1em;
         font-family: 'caviar';
         border: none;
+        margin-right: 4em;
         background-color: #e4e7eb;
         font-weight: 200;
         border-bottom: 1.8px solid #000;
@@ -198,18 +222,18 @@
             font-weight: 200;
             border-bottom: 1.8px solid #000;
     }
-
-
     .home-adm-bt-linha3-card02{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        margin-top: 1em;
     }
     .homeAdm-botão-addCupom{
         font-size: 1em;
         margin-top: 2em;
         font-family: 'caviar';
         border: none;
+        margin-right: 5em;
         background-color: #e4e7eb;
         font-weight: 200;
         border-bottom: 1.8px solid #000;

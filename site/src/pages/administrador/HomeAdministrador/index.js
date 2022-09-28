@@ -5,6 +5,8 @@ import Imagem1 from '../../../assets/image/img-user.png'
 import Imagem2 from '../../../assets/image/img-exit.png'
 import ImagemEngrenagem from '../../../assets/image/imagem-engrenagem.svg'
 import ImagemEditarEventos from '../../../assets/image/imagem-editarEventos.svg'
+import { Link } from 'react-router-dom'
+
 
 import '../../../assets/common/index.scss'
 import {useEffect, useState, useRef} from 'react'
@@ -13,7 +15,7 @@ export default function Index(){
     return(
        <main className='main-homeAdmin'>
             <nav>
-                <div className='cab-admin'>
+               <div className='cab-admin'>
                     <img className='cab-admin-img' src={Imagem1} alt=""/>
                     <span className='cab-admin-user'>Administrador</span>
                 </div>
@@ -34,18 +36,18 @@ export default function Index(){
                             <hr className='hr-titulo-card01' />
                         </div>
                         <div className='home-adm-bt-linha1-card01'>
-                            <button className='homeAdm-botão-usuarios' > Usuários </button>
-                            <button className='homeAdm-botão-pedidos' > Pedidos </button>
+                            <Link to='/admin/gerenciarUsuarios' className='homeAdm-botão-usuarios' > Usuários </Link>
+                            <Link to='/admin/gerenciarPed' className='homeAdm-botão-pedidos' > Pedidos </Link>
                         </div>
 
                         <div className='home-adm-bt-linha2-card01'>
-                            <button className='homeAdm-botão-produto' > Produtos </button>
-                            <button className='homeAdm-botão-cadastro' > Cadastro </button>
+                            <Link to='/admin/gerenciarProd' className='homeAdm-botão-produto' > Produtos </Link>
+                            <Link to='/admin/cadastroprod' className='homeAdm-botão-cadastro' > Cadastro </Link>
                         </div>
 
 
                         <div className='home-adm-bt-linha3-card01'>
-                            <button className='homeAdm-botão-feedbecks' > Feedbacks </button>
+                            <Link to='/admin/gerenciarFeedbecks' className='homeAdm-botão-feedbecks' > Feedbacks </Link>
                         </div>
                     </div>
                 </div>
@@ -66,18 +68,18 @@ export default function Index(){
                         </div>
 
                         <div className='home-adm-bt-linha1-card02'>
-                            <button className='homeAdm-botão-addModelos' > Add. Modelos </button>
-                            <button className='homeAdm-botão-novidades' > Novidades </button>
+                            <Link to='/admin/cadastroprod' className='homeAdm-botão-addModelos' > Add. Modelo </Link>
+                            <Link to='/admin/gerenciarProd' className='homeAdm-botão-novidades' > Novidades </Link>
                         </div>
 
                         <div className='home-adm-bt-linha2-card02'>
-                            <button className='homeAdm-botão-cardDestaque' > Card em destaque </button>
-                            <button className='homeAdm-botão-colecao' > Coleção </button>
+                            <Link to='/admin/alterarCard' className='homeAdm-botão-cardDestaque' > Card destaque </Link>
+                            <Link to='/admin/gerenciarProd' className='homeAdm-botão-colecao' > Coleção </Link>
                         </div>
 
                         <div className='home-adm-bt-linha3-card02'>
-                            <button className='homeAdm-botão-addCupom' > Add. cupom </button>
-                            <button className='homeAdm-botão-carrosel' > Carrosel </button>
+                            <Link to='/admin/cadastrarCupom' className='homeAdm-botão-addCupom' > Add. cupom </Link>
+                            <Link to='/admin/alterarCarrolsel' className='homeAdm-botão-carrosel' > Carrosel </Link>
                         </div>
                     </div>
                 </div>

@@ -50,7 +50,7 @@ export default function Index(){
 
                 <Route path='/admin/home' element={<HomeAdm/>}/>
                 <Route path='/admin/cadastroprod' element={< CadastroProd />} />
-                <Route path='/admin/cadastroproduto2' element={< CadastroProduto2 />} />
+                <Route path='/admin/cadastroproduto' element={< CadastroProduto2 />} />
                 <Route path='/admin/gerenciarProd' element={< GerenciarProd />} />
                 <Route path='/admin/alterarCard' element={< AlterarCard />} />
                 <Route path='/admin/alterarCarrolsel' element={< AlterarCassolsel />} />
