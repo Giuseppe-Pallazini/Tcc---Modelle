@@ -1,0 +1,293 @@
+.cadastro{
+    display: flex;
+    flex-direction: column;
+
+    textarea:focus, input:focus {
+        box-shadow: 0 0 0 0;
+        outline: 0;
+    }   
+
+    textarea{
+        resize: none;
+        border: none;
+    }
+    
+
+    .cadastro-sections {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .text-1{
+        display: flex;
+        justify-content: center;
+    
+    }
+
+    .cadastro-section-1{
+        display: flex;
+        flex-direction: column;
+
+
+        .insert-img-agrupamento{
+            display: flex;
+            flex-direction: row;
+
+            width: 200px;
+            height: 200px;
+            left: 236px;
+            top: 199px;
+
+            border-radius: .5em;
+
+            background-color: aqua;
+
+            .insert-img-1 {
+                display: flex;
+                flex-direction: column;
+
+                
+            }
+
+            .img{
+                width: 60px;
+                height: 60px;
+                left: 475px;
+                top: 199px;
+                
+                border-radius: .5em;
+
+                background-color: aqua;
+                
+            }
+
+            #foto{
+                visibility: hidden;
+            }
+
+            .info{
+                display: flex;
+                flex-direction: column;
+
+                margin-top: 10em;
+
+
+            }
+
+            .det{
+                border: none;
+                border-bottom: 1px solid #000;
+            }
+
+           
+
+            
+
+            
+
+        
+
+           
+
+        }
+
+
+        
+    }
+
+
+    .cadastro-section-2 {
+        display: flex;
+        flex-direction: column;
+        font-family: 'caviar';
+
+        width: 300px;
+
+
+        .cadastro-section-2-input1 {
+            margin-top: 4em;
+
+            font-family: 'caviar';
+
+            border: 0px;
+            border-bottom: 1px solid #000;
+        }
+
+        .cadastro-section-2-input2 {
+            margin-top: 2em;
+
+            font-family: 'caviar';
+
+            border: 0px;
+            border-bottom: 1px solid #000;
+        }
+
+        .cadastro-section-2-input3 {
+            margin-top: 2em;
+
+            font-family: 'caviar';
+
+            border: 0px;
+            border-bottom: 1px solid #000;
+        }
+
+        
+
+        .cadastro-section2-div1 {
+            display: flex;
+            flex-direction: row;
+
+            margin-top: 2em;
+            
+
+        .cadastro-section2-div1-1-input {
+                border: none;
+                border-bottom: 1px solid #000;
+            }
+
+            .cadastro-section2-div1-1-p {
+                margin-right: 2em;
+            }
+
+            .cadastro-section2-div1-input {
+                border: none;
+                border-bottom: 1px solid #000;
+
+                width: 40px;
+            }
+
+            .cadastro-section2-div2 {
+
+                .cadastro-section2-div2-input {
+                    border: none;
+                    border-bottom: 1px solid #000;
+
+                    width: 40px;
+                }
+            }
+        }
+        
+
+
+        .cadastro-section2-div3 {
+            margin-top: 2em;
+
+
+            .cadastro-section2-div3-1 {
+            display: flex;
+            flex-direction: row;
+            }
+
+            .cadastro-section2-div3-select {
+                margin-top: .2em;
+            }
+
+            .cadastro-section2-div3-1-img {
+                margin-left: 1em;
+            }
+
+            .aa {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .tam-conteiner {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .tam-selecionada {
+                font-family: 'inter';
+                font-size: 13px;
+                background-color: #19110B;
+                padding: .3em;
+                color: white;
+                margin-right: .5em;
+                margin-top: .3em;
+            }
+
+            .cadastro-section2-div3-select-option {
+                font-size: 10px;
+                margin: 0px;
+            }
+        }
+
+        .cadastro-section2-div4 {
+            margin-top: 2em;
+        }
+
+
+        .cadastro-section2-div5 {
+            margin-top: 2em;
+
+            .cadastro-section2-div5-1 {
+            display: flex;
+            flex-direction: row;
+            }
+
+            .cadastro-section2-div5-1-img {
+                margin-left: 1em;
+            }
+
+            .mod-conteiner {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .mod-selecionada {
+                font-family: 'inter';
+                font-size: 13px;
+                background-color: #19110B;
+                padding: .3em;
+                color: white;
+                margin-right: .5em;
+                margin-top: .3em;
+            }
+        }
+
+        .cadastro-section2-div6 {
+            margin-top: 2em;
+
+            .cadastro-section2-div6-1 {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .cadastro-section2-div6-1-img {
+                margin-left: 1em;
+            }
+
+            .cat-selecionada {
+                font-family: 'inter';
+                font-size: 13px;
+                background-color: #19110B;
+                padding: .3em;
+                color: white;
+                margin-right: .5em;
+                margin-top: .3em;
+                border-radius: .3em;
+            }
+
+            .cat-conteiner {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+
+        .cadastro-section2-button {
+            margin-top: 4em;
+
+            padding: .6em;
+            background: #19110B;
+            border-radius: 10px;
+            width: 80px;
+            text-align: center;
+
+            color: white;
+
+            font-family: 'caviar';
+        }
+    }
+}
