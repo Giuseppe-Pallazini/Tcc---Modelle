@@ -1,0 +1,91 @@
+.main-cadastro-usuario{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .section-cadastro-cl1{
+        display: flex;
+        flex-direction: column;
+        margin-right: 10em;
+    }
+    .logo-modelle{
+        margin-left: 5.5em;
+        margin-top: 5em;
+    }
+    .cadastro-titulo-criarConta{
+        margin-top: .5em;
+        margin-left: .2em;
+        text-align: center;
+        font-family: 'caviar';
+        font-weight: 300;
+        font-size: 35px;
+    }
+
+    .cadastro-div-camposObrigatorios {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5em;
+    }
+    .cadastro-p-camposObrigatorios{
+        font-size: 10px;
+        font-weight: 800;
+    }
+    .erro-senhar-email{
+        margin-bottom: .4em;
+        margin-top: 2em;
+        opacity: 80%;
+        font-size:  10px;
+    }
+    .butao-criarConta{
+        border: none;
+        width: 24em;
+        height: 3em;
+        background-color: #000;
+        color: #ffffff;
+    }
+
+    .cadastro-jaPossuoConta{
+        color: #000;
+        opacity: 60%;
+    }
+
+    .div-cadastro-inputs{
+        display: flex;
+        flex-direction: column;
+        max-width: 20em;
+        margin-top: 2em;
+        border-bottom: 1px solid #000;
+    }
+    .cadastro-inputs{
+        font-size: 15px;
+        width: 22em;
+        border: none;
+    }
+    .div-cadastro-inputs-confirmarSenha{
+        display: flex;
+        flex-direction: column;
+        max-width: 20em;
+        margin-top: 1em;
+        border-bottom: 1px solid #000;
+    }
+    .cadastro-p-qtdCaracteres{
+        opacity: 70%;
+        margin-top: .5em;
+        font-size: 10px;
+    }
+
+    .cadastro-p-AllRightsReserved{
+        margin-top: 14em;
+        margin-left: -6em;
+    }
+
+    .section-cadastro-cl2{
+        height: 104vh;
+    }
+    .div-cadastro-imagemMulher{
+        margin-right: -11em;
+    }
+    .cadastro-imagem-mulher{
+        height: 104vh;
+    }
+}

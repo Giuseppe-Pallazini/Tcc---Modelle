@@ -29,6 +29,9 @@ export default function CadastroProduto() {
     const [idCategoria, setIdCategoria] = useState();
     const [categoria, setCategoria] = useState([]);
 
+    const [idMarca, setIdMarca] = useState();
+    const [marca, setMarca] = useState([]);
+
     const [idModelo, setIdModelo] = useState();
     const [modelo, setModelo] = useState([]);
 
