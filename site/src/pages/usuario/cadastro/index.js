@@ -1,5 +1,6 @@
 import { useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
+
 import ImagemCadastroUsuario from '../../../assets/image/imagem-cadastro-usuario.png'
 import LogoModelle from '../../../assets/image/logo-modelle.svg'
 
@@ -21,32 +22,32 @@ export default function Index(){
                         <p className='cadastro-p-camposObrigatorios'> * Campos obrigatorios </p>
 
                         <div className='div-cadastro-inputs'>
-                            <input className='cadastro-inputs' placeholder='Nome' />
+                            <input type='text' className='cadastro-inputs' placeholder='Nome' />
                         </div>
 
                         <div className='div-cadastro-inputs'>
-                            <input className='cadastro-inputs' placeholder='Data de nascimento       _/_/_' />
+                            <input type='date' className='cadastro-inputs' placeholder='Data de nascimento       _/_/_' />
                         </div>
 
                         <div className='div-cadastro-inputs' >
-                            <input className='cadastro-inputs' placeholder='Telefone' />
+                            <input type='text' className='cadastro-inputs' placeholder='Telefone' />
                         </div>
 
                         <div className='div-cadastro-inputs'>
-                            <input className='cadastro-inputs' placeholder='Email' />
+                            <input type='text' className='cadastro-inputs' placeholder='Email' />
                         </div>
 
                         <div className='div-cadastro-inputs'>
-                            <input className='cadastro-inputs' placeholder='Confirmar email' />
+                            <input type='text' className='cadastro-inputs' placeholder='Confirmar email' />
                         </div>
 
                         <div className='div-cadastro-inputs'>
-                            <input className='cadastro-inputs' placeholder='Senha' />
+                            <input type='password' className='cadastro-inputs' placeholder='Senha' />
                         </div>
                             <p className='cadastro-p-qtdCaracteres'> A senha deve conter de 6 a 8 caracteres </p>
 
                         <div className='div-cadastro-inputs-confirmarSenha'>
-                            <input className='cadastro-inputs' placeholder='Confrirmar Senha' />
+                            <input type='password' className='cadastro-inputs' placeholder='Confrirmar Senha' />
                         </div>
 
                         <div>
@@ -54,11 +55,10 @@ export default function Index(){
                             <button className='butao-criarConta'> Criar conta </button>
                         </div> 
 
-                        <Link to='/' className='cadastro-jaPossuoConta'>Ja possuo Conta </Link>                   
+                        <Link to='/login' className='cadastro-jaPossuoConta'>Ja possuo Conta </Link>                   
                     </div>
                 </div>
 
-                    
                 <p className='cadastro-p-AllRightsReserved'> All rights reserved © </p>
             </section>
 

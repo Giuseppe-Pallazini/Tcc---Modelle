@@ -47,10 +47,10 @@ export default function Index() {
         setCarregando(false)
         }
         
-        else
+        else{
           storage('usuario-logado', r)
           setCarregando(false)
-
+        }
         setTimeout(() => { 
             navigate('/');
         }, 2000)

@@ -44,7 +44,7 @@ export default function Index(){
     return(
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={< Login />} />
+                <Route path='/login' element={< Login />} />
 
                 // ROTAS ADM
 

@@ -52,19 +52,20 @@
     .div-cadastro-inputs{
         display: flex;
         flex-direction: column;
-        max-width: 20em;
+        max-width: 19em;
         margin-top: 2em;
         border-bottom: 1px solid #000;
     }
     .cadastro-inputs{
         font-size: 15px;
-        width: 22em;
+        width: 20em;
         border: none;
     }
     .div-cadastro-inputs-confirmarSenha{
         display: flex;
         flex-direction: column;
         max-width: 20em;
+        width: 19em;
         margin-top: 1em;
         border-bottom: 1px solid #000;
     }
