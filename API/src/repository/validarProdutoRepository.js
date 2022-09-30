@@ -24,6 +24,27 @@ export async function salvarProduto(produto) {
     return resp.insertId;
 }
 
+export async function listarTodosProdutos() {
+    const comando =
+        `select id_produto    	id,
+        id_tamanho    			tamanho,
+        id_modelo     			modelo,
+        nm_produto    			nome,
+        nm_prod_complemento  	complementoProduto,
+        vl_preco			    preco,
+        ds_composicao			composicao,
+        ds_detalhes				detalhes,
+        vl_juros				juros,
+        vl_parcela				parcela,
+        ds_cor					cor,
+        id_marca				marca,
+        id_categoria			categoria
+            from tb_produto`
+
+    const [linhas] = await con.query(comando);
+    return linhas;
+}
+
 
 
 export async function salvarProdutoCategoria(idProduto, idCategoria) {
@@ -71,4 +92,29 @@ export async function salvarProdutoImagem(idProduto, idImg) {
     `
 
     const [resp] = await con.query(comando, [idProduto, idImg])
+}
+
+
+
+export async function buscarPorNome(nome) {
+    const comando =
+        `select 	id_produto    	id,
+        id_tamanho    			tamanho,
+        id_modelo     			modelo,
+        nm_produto    			nome,
+        nm_prod_complemento  	complementoProduto,
+        vl_preco			    preco,
+        ds_composicao			composicao,
+        ds_detalhes				detalhes,
+        vl_juros				juros,
+        vl_parcela				parcela,
+        ds_cor					cor,
+        id_marca				marca,
+        id_categoria			categoria
+       from tb_produto
+	            where nm_produto    like ?
+        `
+
+    const [linhas] = await con.query(comando, [`%${nome}%`]);
+    return linhas;
 }

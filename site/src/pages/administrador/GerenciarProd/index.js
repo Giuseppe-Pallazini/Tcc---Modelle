@@ -3,21 +3,25 @@ import '../../../assets/common/index.scss'
 import CardProduto from '../../../components/cardGerenciarProduto'
 import CabeçalhoAdm from '../../../components/cabecalhoadm'
 
-import Iconbuscar from '../../../assets/image/icon-buscar.svg'
+// import Iconbuscar from '../../../assets/image/icon-buscar.svg'
 import IconSeta from '../../../assets/image/icon-seta.svg'
+
+import { buscarPorNome } from '../../../api/produtoAPI';
 
 
 export default function Index(){
+
+
     return(
        <main className='main-gerenciarProd' >
             <CabeçalhoAdm />
             
             <section>
                 <div className='div-linha-titulos'>
-                    <div className='div-input-buscar'>
+                    {/* <div className='div-input-buscar'>
                         <input type='text' className='gerenciarProd-input-buscar' placeholder='Buscar' />
                         <img src={Iconbuscar} alt='logo' className='logo-buscar' />
-                    </div>
+                    </div> */}
 
                     <div className='div-titulo-gerenciar'>
                         <h1 className='gerenciarProd-titulo'> Gerenciar produtos </h1>
@@ -40,14 +44,7 @@ export default function Index(){
  
                 <div className='div-linha-cards'>
                     <CardProduto />
-
-                    <CardProduto />
-
-                    <CardProduto />
-
-                    <CardProduto />
-
-                    <CardProduto />                      
+                   
                 </div>
             </section>
         </main> 

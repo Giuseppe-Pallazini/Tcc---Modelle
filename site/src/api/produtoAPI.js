@@ -40,3 +40,14 @@ export async function enviarImagemProduto(id, imagem){
 export function buscarImagem(imagem) {
     return `${api.getUri()}/${imagem}`
 }
+
+export async function listarTodos(){
+    const resposta = await api.get('/admin/produto')
+    return resposta.data;
+
+}
+
+export async function buscarPorNome(nome){
+    const resposta = await api.get(`/produto/busca?nome=${nome}`)
+    return resposta.data;
+}

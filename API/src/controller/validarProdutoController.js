@@ -5,7 +5,7 @@ import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
 import { listarMarca, buscarMarcaPorId, salvarProdutoMarca} from '../repository/marcaRepository.js';
 import { buscarModeloPorId, salvarProdutoModelo } from '../repository/modeloRepository.js'
 import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
-import { salvarProduto, salvarProdutoCategoria } from '../repository/validarProdutoRepository.js';
+import { buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria } from '../repository/validarProdutoRepository.js';
 
 const server = Router();
 
@@ -64,6 +64,35 @@ server.post('/admin/produto', async (req, resp) => {
             erro: err.message
          })
         console.log(err);
+    }
+})
+
+server.get('/admin/produto', async (req, resp) => {
+    try {
+        const resposta = await listarTodosProdutos();
+        resp.send(resposta);
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
+
+server.get('/produto/busca', async (req, resp) => {
+    try {
+        const { nome } = req.query;
+        const resposta = await buscarPorNome(nome);
+
+        if (!resposta) {
+            throw new Error('Produto não localizado.')
+        }
+        resp.send(resposta);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
     }
 })
 
