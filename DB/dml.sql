@@ -103,3 +103,19 @@ insert into tb_marca (nm_marca)
 
 insert into tb_marca (nm_marca)
             values    ('Versace');
+
+
+-- Inner Join da tabela de cadastro
+
+select tb_produto.id_produto, tb_produto.nm_produto, tb_produto.nm_prod_complemento, tb_produto.vl_preco, tb_produto.ds_cor, tb_modelo.nm_modelo
+		, tb_categoria.nm_categoria, tb_tamanho.nm_tamanho, tb_marca.nm_marca
+from tb_produto
+
+inner join tb_modelo
+on tb_modelo.id_modelo = tb_produto.id_produto
+inner join tb_categoria
+on tb_categoria.id_categoria = tb_produto.id_produto
+inner join tb_tamanho
+on tb_tamanho.id_tamanho = tb_produto.id_produto
+inner join tb_marca
+on tb_marca.id_marca = tb_produto.id_produto;

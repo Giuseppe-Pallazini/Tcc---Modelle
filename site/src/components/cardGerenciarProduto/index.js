@@ -15,7 +15,7 @@ import { buscarPorNome,listarTodos } from '../../api/produtoAPI'
 
 export default function Index(){
     const [produto, setProduto] = useState([]);
-    const [modelo, setModelo] = useState();
+    const [modelo, setModelo] = useState([]);
     const [filtro, setFiltro] = useState('');
 
 
@@ -37,7 +37,7 @@ export default function Index(){
 
 
     return(
-        <main>
+        <main className='main-menu-produtos'>
 
             <div className='div-input-buscar'>
                 <input type='text' className='gerenciarProd-input-buscar' placeholder='Buscar' value={filtro} onChange={e => setFiltro(e.target.value)} />
@@ -52,33 +52,33 @@ export default function Index(){
                                 </div>
                                 <img src={ImagemCard} alt='imagem' className='gerenciarProd-imagem-card' />
                                 <h1 className='marca-produto-card'> 
-                                        <p value={item.id}> {item.nome} </p>
+                                        <p> {item.nm_produto} </p>
                                 </h1>
-                                <p className='descricao-produto-card'> {item.complementoProduto}  </p>
+                                <p className='descricao-produto-card'> {item.nm_prod_complemento}  </p>
                                 
                                 <div className='gerenciarProd-div-preco'>
                                     <p className='preço-produto-card'> R$</p>
-                                    <p className='valor-produto-card'> {item.preco} </p>
+                                    <p className='valor-produto-card'> {item.vl_preco} </p>
                                 </div>
 
                                 <div className='gerenciarProd-div-cor' >
                                     <p className='cor-produto-card'> Cor </p>
-                                    <p className='valorCor-produto-card'> {item.cor} </p>
+                                    <p className='valorCor-produto-card'> {item.ds_cor} </p>
                                 </div>
                                 
                                 <div className='gerenciarProd-div-modelo' >
                                     <p className='modelo-produto-card'> Modelo </p>
                                     <p className='valorModelo-produto-card'> 
-                                        {item.modelo}
+                                        {item.nm_modelo}
                                     </p>
                                 </div>
 
                                 <div className='gerenciarProd-div-tamanhos' >
                                     <p className='tamanho-produto-card'> Tamanho </p>
                                     <div className='valorTamanho-produto-card'>
-                                        <p className='tamanhoProduto-card'> {item.tamanho} </p>
-                                        <p className='tamanhoProduto-card'> {item.tamanho} </p>
-                                        <p className='tamanhoProduto-card'> {item.tamanho} </p>
+                                        <p className='tamanhoProduto-card'> {item.nm_tamanho} </p>
+                                        <p className='tamanhoProduto-card'> {item.nm_tamanho} </p>
+                                        <p className='tamanhoProduto-card'> {item.nm_tamanho} </p>
                                     </div>
                                 </div>
 
@@ -91,17 +91,17 @@ export default function Index(){
 
                                 <div className='gerenciarProd-div-categoria' >
                                     <p className='categoria-produto-card'> Categoria </p>
-                                    <p className='valorCategoria-produto-card'> {item.categoria} </p>
+                                    <p className='valorCategoria-produto-card'> {item.nm_categoria} </p>
                                 </div>
 
                                 <div className='gerenciarProd-div-genero' >
-                                    <p className='genero-produto-card'> Genêro </p>
-                                    <p className='valorMasculino-produto-card'> {item.categoria} </p>
+                                    <p className='genero-produto-card'> Marca </p>
+                                    <p className='valorMasculino-produto-card'> {item.nm_marca} </p>
                                 </div>
 
                                 <div className='gerenciarProd-div-id' >
                                     <p className='id-produto-card'> ID: </p>
-                                    <p className='valorId-produto-card'> {item.id} </p>
+                                    <p className='valorId-produto-card'> {item.id_produto} </p>
                                 </div>
                             </div>
             )}  

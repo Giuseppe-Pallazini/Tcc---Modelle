@@ -26,20 +26,18 @@ export async function salvarProduto(produto) {
 
 export async function listarTodosProdutos() {
     const comando =
-        `select id_produto    	id,
-        id_tamanho    			tamanho,
-        id_modelo     			modelo,
-        nm_produto    			nome,
-        nm_prod_complemento  	complementoProduto,
-        vl_preco			    preco,
-        ds_composicao			composicao,
-        ds_detalhes				detalhes,
-        vl_juros				juros,
-        vl_parcela				parcela,
-        ds_cor					cor,
-        id_marca				marca,
-        id_categoria			categoria
-            from tb_produto`
+        `select tb_produto.id_produto, tb_produto.nm_produto, tb_produto.nm_prod_complemento, tb_produto.vl_preco, tb_produto.ds_cor, tb_modelo.nm_modelo
+		, tb_categoria.nm_categoria, tb_tamanho.nm_tamanho, tb_marca.nm_marca
+            from tb_produto
+
+            inner join tb_modelo
+            on tb_modelo.id_modelo = tb_produto.id_produto
+            inner join tb_categoria
+            on tb_categoria.id_categoria = tb_produto.id_produto
+            inner join tb_tamanho
+            on tb_tamanho.id_tamanho = tb_produto.id_produto
+            inner join tb_marca
+            on tb_marca.id_marca = tb_produto.id_produto`
 
     const [linhas] = await con.query(comando);
     return linhas;
@@ -111,8 +109,8 @@ export async function buscarPorNome(nome) {
         ds_cor					cor,
         id_marca				marca,
         id_categoria			categoria
-       from tb_produto
-	            where nm_produto    like ?
+        from tb_produto
+	    where nm_produto    like ?
         `
 
     const [linhas] = await con.query(comando, [`%${nome}%`]);

@@ -64,9 +64,7 @@ vl_juros					int,
 vl_parcela					int,
 ds_cor						varchar(100),
 id_marca					int,
-id_categoria				int,
-foreign key (id_marca) references tb_marca (id_marca),
-foreign key (id_categoria) references tb_categoria (id_categoria)
+id_categoria				int
 );
 
 -- 8
