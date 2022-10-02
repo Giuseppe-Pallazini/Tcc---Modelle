@@ -30,8 +30,7 @@ export default function Index(){
             <section>
                 <div className='div-linha-titulos'>
                 <div className='div-input-buscar'>
-                <input type='text' className='gerenciarProd-input-buscar' placeholder='Buscar' value={filtro} onChange={e => setFiltro(e.target.value)} />
-                <img src={IconBuscar} alt='logo' className='logo-buscar' onClick={filtrar}/>
+
             </div>
 
                     <div className='div-titulo-gerenciar'>
