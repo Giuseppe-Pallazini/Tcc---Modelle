@@ -3,13 +3,24 @@ import '../../../assets/common/index.scss'
 import CardProduto from '../../../components/cardGerenciarProduto'
 import CabeçalhoAdm from '../../../components/cabecalhoadm'
 
-// import Iconbuscar from '../../../assets/image/icon-buscar.svg'
 import IconSeta from '../../../assets/image/icon-seta.svg'
+import IconBuscar from '../../../assets/image/busca.png'
 
 import { buscarPorNome } from '../../../api/produtoAPI';
+import { useState } from 'react';
 
 
 export default function Index(){
+    const [filtro, setFiltro] = useState('');
+    const [produto, setProduto] = useState([]);
+    
+
+
+
+    async function filtrar(){
+        const resp = await buscarPorNome(filtro);
+        setProduto(resp)
+    }
 
 
     return(
@@ -18,10 +29,10 @@ export default function Index(){
             
             <section>
                 <div className='div-linha-titulos'>
-                    {/* <div className='div-input-buscar'>
-                        <input type='text' className='gerenciarProd-input-buscar' placeholder='Buscar' />
-                        <img src={Iconbuscar} alt='logo' className='logo-buscar' />
-                    </div> */}
+                <div className='div-input-buscar'>
+                <input type='text' className='gerenciarProd-input-buscar' placeholder='Buscar' value={filtro} onChange={e => setFiltro(e.target.value)} />
+                <img src={IconBuscar} alt='logo' className='logo-buscar' onClick={filtrar}/>
+            </div>
 
                     <div className='div-titulo-gerenciar'>
                         <h1 className='gerenciarProd-titulo'> Gerenciar produtos </h1>

@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 import LogoRemover from '../../assets/image/logo-remover.svg'
 import LogoEditar from '../../assets/image/logo-editar.svg'
-import Iconbuscar from '../../assets/image/icon-buscar.svg'
+//import Iconbuscar from '../../assets/image/icon-buscar.svg'
 
 import ImagemCard from '../../assets/image/imagem-card.png'
 import { buscarPorNome,listarTodos } from '../../api/produtoAPI'
@@ -27,22 +27,17 @@ export default function Index(){
     const navigate = useNavigate();
 
     useEffect(()  => {
-        carregarProduto();
+        //carregarProduto();
     }, [])
 
-    async function carregarProduto(){
-        const resp = await listarTodos();
-        setProduto(resp); 
-    }
+    //async function carregarProduto(){
+    //    const resp = await listarTodos();
+    //    setProduto(resp); 
+    //}
 
 
     return(
         <main className='main-menu-produtos'>
-
-            <div className='div-input-buscar'>
-                <input type='text' className='gerenciarProd-input-buscar' placeholder='Buscar' value={filtro} onChange={e => setFiltro(e.target.value)} />
-                <img src={Iconbuscar} alt='logo' className='logo-buscar' onClick={filtrar}/>
-            </div>
 
             {produto.map(item => 
                 <div className='gerenciarProd-card-1'>

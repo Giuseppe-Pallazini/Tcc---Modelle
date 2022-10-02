@@ -15,8 +15,8 @@
 
     .cadastro-sections {
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction:row-reverse;
+        justify-content: space-evenly;
     }
 
     .text-1{
@@ -28,6 +28,20 @@
     .cadastro-section-1{
         display: flex;
         flex-direction: column;
+
+    .informacoes {
+        margin-top: 5em;
+
+        .text {
+            width: 95%;
+        }
+    }
+
+    .detalhes {
+        margin-top: 5em;
+        border: 1px solid black;
+    }
+
 
 
         .insert-img-agrupamento{
@@ -41,14 +55,29 @@
 
             border-radius: .5em;
 
-            background-color: aqua;
+            background-color: #f4f4f4;
 
             .insert-img-1 {
                 display: flex;
                 flex-direction: column;
-
+              
+                margin-left: 3em;
                 
             }
+            .insert-img-agrupamento-div1-1 {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .foto {
+                    position: absolute;
+                    width: 8em;
+                    height: 8em;
+                }
+            }
+
+
 
             .img{
                 width: 60px;
@@ -58,7 +87,7 @@
                 
                 border-radius: .5em;
 
-                background-color: aqua;
+                background-color: #f4f4f4;
                 
             }
 
@@ -66,33 +95,28 @@
                 visibility: hidden;
             }
 
-            .info{
-                display: flex;
-                flex-direction: column;
-
-                margin-top: 10em;
-
-
-            }
 
             .det{
                 border: none;
                 border-bottom: 1px solid #000;
             }
-
-           
-
-            
-
-            
-
-        
-
            
 
         }
 
+        .cadastro-section2-button {
+            margin-top: 4em;
 
+            padding: .6em;
+            background: #19110B;
+            border-radius: 10px;
+            width: 80px;
+            text-align: center;
+
+            color: white;
+
+            font-family: 'caviar';
+        }
         
     }
 
@@ -171,7 +195,13 @@
 
 
         .cadastro-section2-div3 {
-            margin-top: 2em;
+            margin-top: 3em;
+
+            .cadastro-section2-div3-1-img {
+                position: relative;
+                left: .8em;
+                top: 1.3em;
+            }
 
 
             .cadastro-section2-div3-1 {
@@ -181,10 +211,6 @@
 
             .cadastro-section2-div3-select {
                 margin-top: .2em;
-            }
-
-            .cadastro-section2-div3-1-img {
-                margin-left: 1em;
             }
 
             .aa {
@@ -198,7 +224,6 @@
             }
 
             .tam-selecionada {
-                font-family: 'inter';
                 font-size: 13px;
                 background-color: #19110B;
                 padding: .3em;
@@ -208,13 +233,17 @@
             }
 
             .cadastro-section2-div3-select-option {
-                font-size: 10px;
-                margin: 0px;
+                font-size: 11px;
             }
         }
 
         .cadastro-section2-div4 {
             margin-top: 2em;
+
+            .cadastro-section2-div4-color {
+                margin-top: .5em;
+                width: 25%;
+            }
         }
 
 
@@ -227,7 +256,9 @@
             }
 
             .cadastro-section2-div5-1-img {
-                margin-left: 1em;
+                position: relative;
+                left: 2.5em;
+                top: 1.3em;
             }
 
             .mod-conteiner {
@@ -255,8 +286,14 @@
                 flex-direction: row;
             }
 
+            .cadastro-categoria-masculino {
+                width: 28%;
+            }
+
             .cadastro-section2-div6-1-img {
-                margin-left: 1em;
+                position: relative;
+                left: 1.25em;
+                top: 1.3em;
             }
 
             .cat-selecionada {
@@ -276,18 +313,12 @@
             }
         }
 
-        .cadastro-section2-button {
-            margin-top: 4em;
+        .marcas {
+            margin-top: 2em;
 
-            padding: .6em;
-            background: #19110B;
-            border-radius: 10px;
-            width: 80px;
-            text-align: center;
-
-            color: white;
-
-            font-family: 'caviar';
+            .marca-select {
+                width: 28%;
+            }
         }
     }
 }

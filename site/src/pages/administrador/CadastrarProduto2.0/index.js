@@ -59,6 +59,12 @@ export default function CadastroProduto() {
         const r = await listarCategoria();
         setCategoria(r);
     }
+
+    async function carregarMarca() {
+        const r = await ListarMarca();
+        setMarca(r);
+    }
+
     
     function buscarNomeTamanho(id) {
         const cat = tamanho.find(item => item.id == id);
@@ -69,6 +75,7 @@ export default function CadastroProduto() {
         if (!tamSelecionadas.find(item => item == idTamanho)) {
             const tamanhos = [...tamSelecionadas, idTamanho];
             setTamSelecionadas(tamanhos);
+            console.log(tamanhos)
         }
     }
 
@@ -111,11 +118,14 @@ export default function CadastroProduto() {
 
     async function salvarProduto() {
         try {
-            const novoProduto = await inserirProduto(idTamanho, idModelo, nome, complementoProduto, preco, composicao, detalhes, juros, parcela, cor, idMarca, idCategoria);
+            const novoProduto = await inserirProduto(idTamanho, idModelo, nome, complementoProduto, preco,  composicao, detalhes, juros, parcela, cor, idMarca, idCategoria);
             alert(novoProduto.id);
+
+            toast.dark(' ✔️ Produto cadastrado com sucesso!');
+
             const r = await enviarImagemProduto(novoProduto.id, imagem);
 
-            toast.dark('Produto cadastrado com sucesso');
+            
         }
         catch (err) {
             toast.dark(err);
@@ -125,6 +135,7 @@ export default function CadastroProduto() {
 
 
     useEffect(() => {
+        carregarMarca();
         carregarTamanho();
         carregarModelo();
         carregarCategoria();
@@ -149,7 +160,15 @@ export default function CadastroProduto() {
 
 
                     <div className='insert-img-agrupamento'>
-                        <div> <input type='file' id='foto' /> </div>
+                        <div className='insert-img-agrupamento-div1-1' onClick={() => escolherImagem('foto')}> 
+                        
+                             <input className='insert-img-agrupamento-input' type='file' id='foto' onChange={e => setImagem(e.target.files[0])} /> 
+                             {imagem &&
+                            
+                                <img className='foto' src={mostrarImagem(imagem)} alt='' />
+                            }
+                        </div>
+                        
                         
                         <div className='insert-img-1'>
                         <input className='img' type='file' id='foto2' />
@@ -161,32 +180,26 @@ export default function CadastroProduto() {
 
 
 
-                    <div className='info'>
+                    <div className='informacoes'>
 
                         <p className='comp'> Composição do Produto </p>
 
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
+                        <input className='text' value={composicao} onChange={e => setComposicao(e.target.value)}/>
+
+                    </div>
 
 
                         <div className='detalhes'>
 
-                          <textarea placeholder='Detalhes do Produto' cols="30" rows="5">
-
-                          </textarea>
-
-
+                          <textarea placeholder='Detalhes do Produto' cols="25" rows="5" onChange={e => setDetalhes(e.target.value)} /> 
 
 
                         </div>
                         
-                    </div>
+                    
 
-
+                   
+                    <button onClick={salvarProduto} className='cadastro-section2-button'> Salvar </button>
             
                     
 
@@ -205,17 +218,17 @@ export default function CadastroProduto() {
                 <section className='cadastro-section-2'>
                     <input className='cadastro-section-2-input1' type='text' placeholder='Nome do produto' onChange={e => setNome(e.target.value)} />
                     <input className='cadastro-section-2-input2' type='text' placeholder='Complemento do produto' onChange={e => setComplementoProduto(e.target.value)} />
-                    <input className='cadastro-section-2-input3' type='text' placeholder='Valor (R$)' />
+                    <input className='cadastro-section-2-input3' type='text' placeholder='Valor (R$)' onChange={e => setPreco(e.target.value)} />
 
                     <div className='cadastro-section2-div1'>
                         <div className='cadastro-section2-div1-1'> 
                             <p className='cadastro-section2-div1-1-p'> Parcela(s) </p>
-                            <input className='cadastro-section2-div1-input' type='text' placeholder='0' />
+                            <input className='cadastro-section2-div1-input' type='text' placeholder='0' onChange={e => setParcela(e.target.value)} />
                         </div>
 
                         <div className='cadastro-section2-div2'>
                             <p className='cadastro-section2-div2-p'> Juros </p>
-                            <input className='cadastro-section2-div2-input' type='text' placeholder='0' />
+                            <input className='cadastro-section2-div2-input' type='text' placeholder='0' onChange={e => setJuros(e.target.value)} />
                         </div>
                     </div>
 
@@ -241,7 +254,7 @@ export default function CadastroProduto() {
 
                     <div className='cadastro-section2-div4'> 
                     <p> Cor em destaque </p>
-                        <input type='color' />
+                        <input className='cadastro-section2-div4-color' type='color' onChange={e => setCor(e.target.value)}/>
                     </div>
 
                     <div className='cadastro-section2-div5'>
@@ -283,8 +296,19 @@ export default function CadastroProduto() {
                         )}
                     </div></div>
                     </div>
+
+                    <div className='marcas'>
+                        <p className='marcas-p'> Marca </p>
+                        <select className='marca-select' value={idMarca} onChange={e => setIdMarca(e.target.value)} >
+                            <option selected disabled hidden> Selecione </option>
+                            {marca.map(item =>
+                                <option value={item.id}> {item.marca} </option>
+                            )}
+                        </select>
+                    </div>
+
                     
-                    <button onClick={salvarProduto} className='cadastro-section2-button'> Salvar </button>
+                    
 
                 </section>
 
