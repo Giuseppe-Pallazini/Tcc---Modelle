@@ -52,33 +52,33 @@ export default function Index(){
                                 </div>
                                 <img src={ImagemCard} alt='imagem' className='gerenciarProd-imagem-card' />
                                 <h1 className='marca-produto-card'> 
-                                        <p> {item.nm_produto} </p>
+                                        <p> {item.nome} </p>
                                 </h1>
-                                <p className='descricao-produto-card'> {item.nm_prod_complemento}  </p>
+                                <p className='descricao-produto-card'> {item.complementoProduto}  </p>
                                 
                                 <div className='gerenciarProd-div-preco'>
                                     <p className='preço-produto-card'> R$</p>
-                                    <p className='valor-produto-card'> {item.vl_preco} </p>
+                                    <p className='valor-produto-card'> {item.preco} </p>
                                 </div>
 
                                 <div className='gerenciarProd-div-cor' >
                                     <p className='cor-produto-card'> Cor </p>
-                                    <p className='valorCor-produto-card'> {item.ds_cor} </p>
+                                    <p className='valorCor-produto-card'> {item.cor} </p>
                                 </div>
                                 
                                 <div className='gerenciarProd-div-modelo' >
                                     <p className='modelo-produto-card'> Modelo </p>
                                     <p className='valorModelo-produto-card'> 
-                                        {item.nm_modelo}
+                                        {item.idModelo}
                                     </p>
                                 </div>
 
                                 <div className='gerenciarProd-div-tamanhos' >
                                     <p className='tamanho-produto-card'> Tamanho </p>
                                     <div className='valorTamanho-produto-card'>
-                                        <p className='tamanhoProduto-card'> {item.nm_tamanho} </p>
-                                        <p className='tamanhoProduto-card'> {item.nm_tamanho} </p>
-                                        <p className='tamanhoProduto-card'> {item.nm_tamanho} </p>
+                                        <p className='tamanhoProduto-card'> {item.idTamanho} </p>
+                                        <p className='tamanhoProduto-card'> {item.idTamanho} </p>
+                                        <p className='tamanhoProduto-card'> {item.idTamanho} </p>
                                     </div>
                                 </div>
 
@@ -91,17 +91,17 @@ export default function Index(){
 
                                 <div className='gerenciarProd-div-categoria' >
                                     <p className='categoria-produto-card'> Categoria </p>
-                                    <p className='valorCategoria-produto-card'> {item.nm_categoria} </p>
+                                    <p className='valorCategoria-produto-card'> {item.idCategoria} </p>
                                 </div>
 
                                 <div className='gerenciarProd-div-genero' >
                                     <p className='genero-produto-card'> Marca </p>
-                                    <p className='valorMasculino-produto-card'> {item.nm_marca} </p>
+                                    <p className='valorMasculino-produto-card'> {item.idMarca} </p>
                                 </div>
 
                                 <div className='gerenciarProd-div-id' >
                                     <p className='id-produto-card'> ID: </p>
-                                    <p className='valorId-produto-card'> {item.id_produto} </p>
+                                    <p className='valorId-produto-card'> {item.produto} </p>
                                 </div>
                             </div>
             )}  
