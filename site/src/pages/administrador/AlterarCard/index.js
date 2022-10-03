@@ -7,8 +7,19 @@ import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
     return(
-       <main>
-        
+       <main className='main-cardEmDestaque'>
+            <section className='section-cardEmDestaque'>
+                <div className='div-titulo-cardEmDestaque'>
+                    <h1 className='titulo-cardEmDestaque'> Card em destaque </h1>
+                </div>
+
+                <div className='div-escolher-painelEditar'> </div>
+
+
+                
+
+            </section>
+
         </main> 
     );
 }
