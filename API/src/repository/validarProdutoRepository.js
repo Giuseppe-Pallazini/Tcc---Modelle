@@ -2,14 +2,12 @@ import { con } from './connection.js'
 
 export async function salvarProduto(produto) {
     const comando = `
-        insert into tb_produto (id_tamanho, id_modelo, nm_produto, nm_prod_complemento, 
-                                vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, ds_cor, id_marca, id_categoria )
-                        values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        insert into tb_produto (nm_produto, nm_prod_complemento, 
+                                vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, ds_cor)
+                        values (?, ?, ?, ?, ?, ?, ?, ?)
     `
 
     const [resp] = await con.query(comando, [
-                            produto.idTamanho,
-                            produto.idModelo,
                             produto.nome,
                             produto.complementoProduto,
                             produto.preco,
@@ -17,9 +15,7 @@ export async function salvarProduto(produto) {
                             produto.detalhes,
                             produto.juros,
                             produto.parcela,
-                            produto.cor,
-                            produto.idMarca,
-                            produto.idCategoria
+                            produto.cor
                         ])
     return resp.insertId;
 }
@@ -47,11 +43,11 @@ export async function listarTodosProdutos() {
 
 export async function salvarProdutoCategoria(idProduto, idCategoria) {
     const comando = `
-        insert into tb_produto_categoria (id_categoria, id_produto)
+        insert into tb_produto_categoria (id_produto, id_categoria)
                                   values (?, ?)
     `
 
-    const [resp] = await con.query(comando, [idCategoria, idProduto]);
+    const [resp] = await con.query(comando, [idProduto, idCategoria]);
 }
 
 
@@ -80,6 +76,7 @@ export async function salvarProdutoTamanho(idProduto, idTamanho) {
     `
 
     const [resp] = await con.query(comando, [idProduto, idTamanho])
+    return resp.affectedRows;
 }
 
 

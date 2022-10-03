@@ -29,7 +29,7 @@ server.post('/admin/produto', async (req, resp) => {
         }
 
         
-        for (const idCateg in produto.idCategoria) {
+        for (const idCateg of produto.idCategoria) {
             const cat = await categoriaId(idCateg);
             
             if (cat != undefined){
@@ -37,15 +37,15 @@ server.post('/admin/produto', async (req, resp) => {
             }
         }
 
-        for (const IdModelo in produto.IdModelo) {
-                const mod = await buscarModeloPorId(IdModelo);
+        for (const IdModelo of produto.modelo) {
+            const mod = await buscarModeloPorId(IdModelo);
             
             if (mod != undefined){
                 await salvarProduto(idProduto, IdModelo);
             }
         }
 
-        for (const IdTamanho in produto.IdTamanho) {
+        for (const IdTamanho of produto.tamanho) {
             const tam = await buscarTamanhoPorId(IdTamanho);
             
             if (tam != undefined){
@@ -61,9 +61,8 @@ server.post('/admin/produto', async (req, resp) => {
     
     catch (err) {
          return resp.status(400).send({
-            erro: err.message
+            erro: err.message  
          })
-        console.log(err);
     }
 })
 

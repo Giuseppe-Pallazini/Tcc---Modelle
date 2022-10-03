@@ -1,9 +1,10 @@
   import {con} from './connection.js'
 
   export async function verCategoria(){
-      const comando =`select  id_categoria   as id,
-                              nm_categoria   as categoria
-                              from tb_categoria`
+      const comando =`
+      select  id_categoria    id,
+              nm_categoria    categoria
+      from tb_categoria`
 
 
   const [linhas] = await con.query(comando);
@@ -13,10 +14,11 @@
 
   export async function categoriaId(idCateg) {
     const comando = `
-      select id_categoria         as id,
-            nm_categoria         as categoria
-        from tb_categoria
-       where id_categoria = ?
+      select 
+      id_categoria         id,
+      nm_categoria         categoria
+      from tb_categoria
+      where id_categoria = ?
       `
 
     const [linhas] = await con.query(comando, [idCateg]);
