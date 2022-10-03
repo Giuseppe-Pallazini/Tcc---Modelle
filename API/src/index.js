@@ -8,7 +8,7 @@ import TamanhoController from './controller/tamanhoController.js'
 import ImagemController from './controller/imagemController.js'
 import ProdutoController from './controller/validarProdutoController.js'
 import MostrarProdutoController from './controller/mostrarprodutocontroller.js'
-
+import CadastrarNovoUsuario from './controller/cadastroUsuarioController.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -26,6 +26,6 @@ server.use(TamanhoController)
 server.use(ImagemController)
 server.use(ProdutoController)
 server.use(MostrarProdutoController)
-
+server.use(CadastrarNovoUsuario)
 
 server.listen(process.env.PORT, () => console.log(`API online na porta ${process.env.PORT}`))

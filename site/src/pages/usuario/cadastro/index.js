@@ -4,12 +4,18 @@ import storage from 'local-storage'
 import ImagemCadastroUsuario from '../../../assets/image/imagem-cadastro-usuario.png'
 import LogoModelle from '../../../assets/image/logo-modelle.svg'
 
-
 import { Link } from 'react-router-dom'
 import './index.scss';
 import '../../../assets/common/index.scss'
+import { useState } from 'react'
 
 export default function Index(){
+    const [NomeUsuario, setNomeUsuario] = useState('');
+
+
+
+
+
     return(
        <main className='main-cadastro-usuario'>
             <section className='section-cadastro-cl1'>
@@ -26,11 +32,11 @@ export default function Index(){
                         </div>
 
                         <div className='div-cadastro-inputs'>
-                            <input type='date' className='cadastro-inputs' placeholder='Data de nascimento       _/_/_' />
+                            <input type='date' className='cadastro-inputs' />
                         </div>
 
                         <div className='div-cadastro-inputs' >
-                            <input type='text' className='cadastro-inputs' placeholder='Telefone' />
+                            <input type='text' maxLength="13" className='cadastro-inputs' placeholder='Telefone' />
                         </div>
 
                         <div className='div-cadastro-inputs'>
@@ -42,12 +48,12 @@ export default function Index(){
                         </div>
 
                         <div className='div-cadastro-inputs'>
-                            <input type='password' className='cadastro-inputs' placeholder='Senha' />
+                            <input type='password' maxLength="8" className='cadastro-inputs' placeholder='Senha' />
                         </div>
                             <p className='cadastro-p-qtdCaracteres'> A senha deve conter de 6 a 8 caracteres </p>
 
                         <div className='div-cadastro-inputs-confirmarSenha'>
-                            <input type='password' className='cadastro-inputs' placeholder='Confrirmar Senha' />
+                            <input type='password' maxLength="8" className='cadastro-inputs' placeholder='Confrirmar Senha' />
                         </div>
 
                         <div>

@@ -4,7 +4,7 @@ const api = axios.create({
     baseURL:"http://localhost:5000"
 })
 
-export async function login (email, senha){
+export default async function login (email, senha){
     const r = await api.post('/usuario/login',
     {
         email:email,
@@ -12,6 +12,21 @@ export async function login (email, senha){
     });
 
     return r.data;
+
+}
+
+
+export default async function CadastroUsuario (nome, dtNascimento, numero, email, senha){
+    const x = await api.post('/usuario/cadastro',
+    {
+        nome: nome,
+        dtNascimento: dtNascimento,
+        numero: numero,
+        email: email,
+        senha: senha
+    });
+
+    return x.data;
 
 }
 
