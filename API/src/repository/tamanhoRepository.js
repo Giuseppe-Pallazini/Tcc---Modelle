@@ -35,5 +35,3 @@ export async function listarTamanhos() {
     const [resp] = await con.query(comando, [idProduto, idTamanho]);
     return resp;
 }
-
-
