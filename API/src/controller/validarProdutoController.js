@@ -7,12 +7,10 @@ import { listarMarca, buscarMarcaPorId, salvarProdutoMarca } from '../repository
 import { buscarModeloPorId, salvarProdutoModelo } from '../repository/modeloRepository.js'
 import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
 import { buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
-import { buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
-import { buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria } from '../repository/validarProdutoRepository.js';
 
 
 const server = Router();
-const upload = multer({ dest: '/storage/produto' })
+const upload = multer({ dest: '/storage/fotoProduto' })
 
 
 
@@ -31,7 +29,7 @@ server.post('/admin/produto', async (req, resp) => {
         }
 
 
-        for (const idCateg of produto.idCategoria) {
+        for (const idCateg in produto.idCategoria) {
             const cat = await categoriaId(idCateg);
 
             if (cat != undefined) {
@@ -39,7 +37,7 @@ server.post('/admin/produto', async (req, resp) => {
             }
         }
 
-        for (const IdModelo of produto.modelo) {
+        for (const IdModelo in produto.modelo) {
             const mod = await buscarModeloPorId(IdModelo);
 
             if (mod != undefined) {
@@ -47,7 +45,7 @@ server.post('/admin/produto', async (req, resp) => {
             }
         }
 
-        for (const IdTamanho of produto.tamanho) {
+        for (const IdTamanho in produto.tamanho) {
             const tam = await buscarTamanhoPorId(IdTamanho);
 
             if (tam != undefined) {
@@ -81,7 +79,7 @@ server.put('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
 
     } catch (err) {
         resp.status(204).send({
-            erro: message
+            erro: err.message
         })
     }
 

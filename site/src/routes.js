@@ -26,7 +26,6 @@ import SobreModelle from './pages/usuario/sobreModelle'
 // ROTAS PARA ADMIN
 
 import HomeAdm from '../src/pages/administrador/HomeAdministrador'
-import CadastroProd from '../src/pages/administrador/CadastroProduto'
 import GerenciarProd from '../src/pages/administrador/GerenciarProd'
 import AlterarCard from '../src/pages/administrador/AlterarCard'
 import AlterarCassolsel from '../src/pages/administrador/AlterarCarrousel'
@@ -49,7 +48,6 @@ export default function Index(){
                 // ROTAS ADM
 
                 <Route path='/admin/home' element={<HomeAdm/>}/>
-                <Route path='/admin/cadastroprod' element={< CadastroProd />} />
                 <Route path='/admin/cadastroproduto' element={< CadastroProduto2 />} />
                 <Route path='/admin/gerenciarProd' element={< GerenciarProd />} />
                 <Route path='/admin/alterarCard' element={< AlterarCard />} />

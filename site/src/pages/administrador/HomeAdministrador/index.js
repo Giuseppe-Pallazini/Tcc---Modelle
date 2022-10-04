@@ -42,7 +42,7 @@ export default function Index(){
 
                         <div className='home-adm-bt-linha2-card01'>
                             <Link to='/admin/gerenciarProd' className='homeAdm-botão-produto' > Produtos </Link>
-                            <Link to='/admin/cadastroprod' className='homeAdm-botão-cadastro' > Cadastro </Link>
+                            <Link to='/admin/cadastroproduto' className='homeAdm-botão-cadastro' > Cadastro </Link>
                         </div>
 
 

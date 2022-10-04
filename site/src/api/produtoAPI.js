@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const api = axios.create({
     baseURL: "http://localhost:5000/"
 })
@@ -31,7 +33,7 @@ export async function listarTodos(){
 }
 
 export async function buscarPorNome(nome){
-    const resposta = await api.get(/produto/busca?nome=$:{nome})
+    const resposta = await api.get(`/produto/busca?nome=$:{nome}`)
     return resposta.data;
 }
 
@@ -47,7 +49,7 @@ export async function salvarImagem(id, imagem, imagem2, imagem3, imagem4){
         headers: {
             'Content-Type': 'multipart/form-data'
         }
-    } )
+    } );
 
     return r.data;
 }

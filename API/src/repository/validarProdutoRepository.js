@@ -104,7 +104,7 @@ export async function salvarProdutoTamanho(idProduto, idTamanho) {
 
 export async function salvarProdutoImagem(idProduto, imagemPath) {
     const comando = `
-        insert into tb_produto_imagem (id_produto, ds_img)
+        insert into tb_produto_imagem (id_produto, ds_imagem)
                                   values (?, ?)
     `
 

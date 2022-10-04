@@ -68,36 +68,36 @@ export default function CadastroProduto() {
 
 
     function buscarNomeTamanho(id) {
-        const cat = tamanho.find(item => item.id == id);
+        const cat = tamanho.find(item => item.id === id);
         return cat.tamanho;
     }
 
     function adicionarTamanho() {
-        if (!tamSelecionadas.find(item => item == idTamanho)) {
+        if (!tamSelecionadas.find(item => item === idTamanho)) {
             const tamanhos = [...tamSelecionadas, idTamanho];
             setTamSelecionadas(tamanhos);
         }
     }
 
     function buscarNomeModelo(id) {
-        const cat = modelo.find(item => item.id == id);
+        const cat = modelo.find(item => item.id === id);
         return cat.modelo;
     }
 
     function adicionarModelo() {
-        if (!modSelecionadas.find(item => item == idModelo)) {
+        if (!modSelecionadas.find(item => item === idModelo)) {
             const modelos = [...modSelecionadas, idModelo];
             setModSelecionadas(modelos);
         }
     }
 
     function buscarNomeCategoria(id) {
-        const cat = categoria.find(item => item.id == id);
+        const cat = categoria.find(item => item.id === id);
         return cat.categoria;
     }
 
     function adicionarCategoria() {
-        if (!catSelecionadas.find(item => item == idCategoria)) {
+        if (!catSelecionadas.find(item => item === idCategoria)) {
             const categorias = [...catSelecionadas, idCategoria];
             setCatSelecionadas(categorias);
             console.log(categorias)
@@ -105,7 +105,7 @@ export default function CadastroProduto() {
     }
 
     function mostrarImagem(imagem) {
-        if (typeof (imagem) == 'object') {
+        if (typeof (imagem) === 'object') {
             return URL.createObjectURL(imagem);
         }
         else {
@@ -219,19 +219,19 @@ export default function CadastroProduto() {
                 </section>
 
                 <section className='cadastro-section-2'>
-                    <input className='cadastro-section-2-input1' type='text' placeholder='Nome do produto' onChange={e => setNome(e.target.value)} />
-                    <input className='cadastro-section-2-input2' type='text' placeholder='Complemento do produto' onChange={e => setComplementoProduto(e.target.value)} />
-                    <input className='cadastro-section-2-input3' type='text' placeholder='Valor (R$)' onChange={e => setPreco(e.target.value)} />
+                    <input className='cadastro-section-2-input1' type='text' placeholder='Nome do produto' value={nome} onChange={e => setNome(e.target.value)} />
+                    <input className='cadastro-section-2-input2' type='text' placeholder='Complemento do produto' value={complementoProduto}  onChange={e => setComplementoProduto(e.target.value)} />
+                    <input className='cadastro-section-2-input3' type='text' placeholder='Valor (R$)' value={preco} onChange={e => setPreco(e.target.value)} />
 
                     <div className='cadastro-section2-div1'>
                         <div className='cadastro-section2-div1-1'>
                             <p className='cadastro-section2-div1-1-p'> Parcela(s) </p>
-                            <input className='cadastro-section2-div1-input' type='text' placeholder='0' onChange={e => setParcela(e.target.value)} />
+                            <input className='cadastro-section2-div1-input' type='text' placeholder='0' value={parcela}  onChange={e => setParcela(e.target.value)} />
                         </div>
 
                         <div className='cadastro-section2-div2'>
                             <p className='cadastro-section2-div2-p'> Juros </p>
-                            <input className='cadastro-section2-div2-input' type='text' placeholder='0' onChange={e => setJuros(e.target.value)} />
+                            <input className='cadastro-section2-div2-input' type='text' placeholder='0' value={juros} onChange={e => setJuros(e.target.value)} />
                         </div>
                     </div>
 
