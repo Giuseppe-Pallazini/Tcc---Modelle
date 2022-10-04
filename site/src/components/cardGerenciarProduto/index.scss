@@ -29,11 +29,13 @@
     width: 16px;
     height: 16px;
     opacity: 80%;
-    margin-top: -1em;
+    cursor: pointer;
+    margin-top: -1.5em;
     margin-right: .5em;
 }
 .logo-editar{
-    margin-top: -1em;
+    cursor: pointer;
+    margin-top: -1.5em;
     width: 18px;
     height: 16px;
 }
@@ -215,9 +217,6 @@
     
     opacity: 80%;
 }
-
-
-
 .gerenciarProd-div-id{
     display: flex;
     flex-direction: row;

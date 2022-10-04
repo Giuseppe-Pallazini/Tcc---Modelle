@@ -17,7 +17,7 @@ import { removerProduto, removerProdutoCategoria, removerProdutoImagem, removerP
             await removerProdutoTamanho(id);
             await removerProduto(id);
     
-    
+            
             resp.status(204).send();
     
         } catch (err) {
