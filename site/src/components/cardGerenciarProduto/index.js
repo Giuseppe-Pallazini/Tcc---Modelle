@@ -18,6 +18,7 @@ export default function Index(){
     const [produto, setProduto] = useState([]);
     const [modelo, setModelo] = useState([]);
     const [filtro, setFiltro] = useState('');
+    
 
 
     async function filtrar(){
@@ -42,7 +43,7 @@ export default function Index(){
            await carregarProduto();
             toast.dark('Produto removido com sucesso!')
         } catch (err) {
-            
+            console.log(err);
         }
     }
 
@@ -60,7 +61,7 @@ export default function Index(){
             {produto.map(item => 
                 <div className='gerenciarProd-card-1'>
                         <div className='gerenciarProd-div-icons'>
-                                <img src={LogoRemover} alt='logo' className='logo-remover' onClick={() => deletarProduto(item.id)} />
+                                    <img src={LogoRemover} alt='logo' className='logo-remover' onClick={() => deletarProduto(item.produto)} />
                                     <img src={LogoEditar} alt='logo' className='logo-editar' />
                                 </div>
                                 <img src={ImagemCard} alt='imagem' className='gerenciarProd-imagem-card' />
@@ -99,7 +100,7 @@ export default function Index(){
                                 
                                 <div className='gerenciarProd-div-disponivel' >
                                     <p className='disponivel-produto-card'> disponibilidade </p>
-                                    <p className='valorDisponivel-produto-card'> 7 </p>
+                                    <p className='valorDisponivel-produto-card'> {item.disponibilidade} </p>
                                 </div>
 
                                 <div className='gerenciarProd-div-categoria' >

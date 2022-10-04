@@ -51,6 +51,6 @@ export async function buscarPorNome(nome){
 }
 
 export async function removerProduto(id){
-    const resposta = await api.delete(`/admin/produto` + id)
+    const resposta = await api.delete('/admin/produto/' + id)
     return resposta.data;
 }
