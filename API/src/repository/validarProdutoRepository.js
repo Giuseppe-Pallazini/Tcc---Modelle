@@ -65,6 +65,7 @@ export async function salvarProdutoCategoria(idProduto, idCategoria) {
     `
 
     const [resp] = await con.query(comando, [idProduto, idCategoria]);
+    return resp.affectedRows
 }
 
 
@@ -74,8 +75,11 @@ export async function salvarProdutoMarca(idProduto, idMarca) {
                                   values (?, ?)
     `
 
-    const [resp] = await con.query(comando, [idProduto, idMarca])
+    const [resp] = await con.query(comando, [idProduto, idMarca]);
+    return resp.affectedRows
 }
+
+
 
 export async function salvarProdutoModelo(idProduto, Idmodelo) {
     const comando = `
@@ -84,6 +88,7 @@ export async function salvarProdutoModelo(idProduto, Idmodelo) {
     `
 
     const [resp] = await con.query(comando, [idProduto, Idmodelo])
+    return resp.affectedRows
 }
 
 export async function salvarProdutoTamanho(idProduto, idTamanho) {

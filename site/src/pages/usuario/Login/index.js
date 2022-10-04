@@ -26,11 +26,15 @@ export default function Index() {
 
   useEffect(() => {
     if(storage('admin-logado')){
+      setTimeout(() => {
         navigate('/admin/home')
+      }, 2000)
     }
 
     else if (storage('usuario-logado')) {
+      setTimeout(() => {
       navigate('/user/landingpage')
+      }, 2000)
     }
 
   }, [carregando])
@@ -46,14 +50,13 @@ export default function Index() {
 
         setCarregando(false)
         }
-        
         else{
           storage('usuario-logado', r)
           setCarregando(false)
         }
-        setTimeout(() => { 
-            navigate('/');
-        }, 2000)
+        //setTimeout(() => { 
+        //    navigate('/');
+        //}, 2000)
 
     } catch (err) {
         ref.current.complete();

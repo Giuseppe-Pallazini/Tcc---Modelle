@@ -24,3 +24,4 @@
     const [linhas] = await con.query(comando, [idCateg]);
     return linhas[0];
   }
+

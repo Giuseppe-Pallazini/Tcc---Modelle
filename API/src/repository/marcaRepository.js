@@ -33,4 +33,5 @@ export async function listarMarca() {
     `
 
     const [resp] = await con.query(comando, [idMarca, idProduto]);
+    return resp
 }

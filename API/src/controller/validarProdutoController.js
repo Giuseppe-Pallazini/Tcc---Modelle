@@ -4,7 +4,7 @@ import { Router } from 'express';
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
 import { listarMarca, buscarMarcaPorId, salvarProdutoMarca} from '../repository/marcaRepository.js';
 import { buscarModeloPorId, salvarProdutoModelo } from '../repository/modeloRepository.js'
-import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
+import { buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
 import { buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria } from '../repository/validarProdutoRepository.js';
 
 const server = Router();
