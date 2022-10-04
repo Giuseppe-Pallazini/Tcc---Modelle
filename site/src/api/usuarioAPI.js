@@ -16,18 +16,18 @@ export async function login (email, senha){
 }
 
 
-export async function CadastroUsuario (nome, dtNascimento, numero, email, senha){
+export async function CadastroUsuario (nome, dtNascimento, telefone, email, senha){
     const r = await api.post('/usuario/cadastro',
     {
         nome: nome,
         dtNascimento: dtNascimento,
-        numero: numero,
+        telefone: telefone,
         email: email,
         senha: senha
     });
 
     return r.data;
-
+ 
 }
 
 //http://localhost:5000/usuario/login
