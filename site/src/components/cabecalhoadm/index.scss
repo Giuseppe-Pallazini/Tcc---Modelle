@@ -22,34 +22,48 @@
     .cab-canvas{
         margin-top: 1.5em;
 
+
         .cab-canvas-gerenc{
             margin-right: 2em;
-            background-color: #19110B;
-            padding: 0.5em;
-            margin-right: 1em;
-            color: #fff;
+            border: 2px solid black;
+            color: #19110B;
             border-radius: .5em;
             width: 9em;
- 
-
+            transition: .2s all ease-in-out;
 
             line-height: normal;
 
             height: 2.3125rem; 
 
             .cab-canvas-dc{
-                text-align: center;
+                text-align: left;
                 padding: 5em;
+                background-color: white;
+                color: #19110B;
+                font-family: 'inter';
             }
+            
         }
 
-        .cab-canvas-event{
-            background-color: #19110B;
-            padding: 0.5em;
-            color: #fff;
-            border: 0px solid #19110B;
+        .cab-canvas-gerenc:hover {
+            background-color:#19110B;
+            color: white;
+            cursor: pointer;
+        }
 
-            
+
+
+
+
+
+
+        .cab-canvas-event{
+            padding: 0.5em;
+            color: #19110B;
+            border: 2px solid #19110B;
+
+            transition: .3s all ease-in-out;
+
             background-position: 100% center;
 
             font-size: 0.875rem;
@@ -58,6 +72,12 @@
             height: 2.3125rem; 
 
             text-align: center;
+        }
+
+        .cab-canvas-event:hover {
+            background-color: #19110B;
+            color: white;
+            cursor: pointer;
         }
     }
 
