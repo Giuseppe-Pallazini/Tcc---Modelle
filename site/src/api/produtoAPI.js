@@ -38,10 +38,10 @@ export async function buscarPorNome(nome){
 export async function salvarImagem(id, imagem, imagem2, imagem3, imagem4){
 
     let form = new FormData();
-    form.append('imagem', imagem)
-    form.append('imagem2', imagem2)
-    form.append('imagem3', imagem3)
-    form.append('imagem4', imagem4)
+    form.append('imagens', imagem)
+    form.append('imagens', imagem2)
+    form.append('imagens', imagem3)
+    form.append('imagens', imagem4)
 
     const r = await api.put('/admin/produto/' + id, form, {
         headers: {
