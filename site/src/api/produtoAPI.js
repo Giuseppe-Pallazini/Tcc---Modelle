@@ -49,3 +49,8 @@ export async function buscarPorNome(nome){
     const resposta = await api.get(`/produto/busca?nome=${nome}`)
     return resposta.data;
 }
+
+export async function removerProduto(id){
+    const resposta = await api.delete(`/admin/produto` + id)
+    return resposta.data;
+}

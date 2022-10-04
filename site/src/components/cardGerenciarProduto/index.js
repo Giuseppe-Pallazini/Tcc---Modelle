@@ -2,13 +2,14 @@ import './index.scss'
 
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
 
 import LogoRemover from '../../assets/image/logo-remover.svg'
 import LogoEditar from '../../assets/image/logo-editar.svg'
 import Iconbuscar from '../../assets/image/icon-buscar.svg'
 
 import ImagemCard from '../../assets/image/imagem-card.png'
-import { buscarPorNome,listarTodos } from '../../api/produtoAPI'
+import { buscarPorNome, listarTodos, removerProduto } from '../../api/produtoAPI'
 
 
  
@@ -35,6 +36,18 @@ export default function Index(){
         setProduto(resp); 
     }
 
+    async function deletarProduto(id){
+        try {
+           await removerProduto(id);
+           await carregarProduto();
+            toast.dark('Produto removido com sucesso!')
+        } catch (err) {
+            
+        }
+    }
+
+
+
 
     return(
         <main className='main-menu-produtos'>
@@ -47,7 +60,7 @@ export default function Index(){
             {produto.map(item => 
                 <div className='gerenciarProd-card-1'>
                         <div className='gerenciarProd-div-icons'>
-                                <img src={LogoRemover} alt='logo' className='logo-remover' />
+                                <img src={LogoRemover} alt='logo' className='logo-remover' onClick={() => deletarProduto(item.id)} />
                                     <img src={LogoEditar} alt='logo' className='logo-editar' />
                                 </div>
                                 <img src={ImagemCard} alt='imagem' className='gerenciarProd-imagem-card' />

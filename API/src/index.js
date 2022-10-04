@@ -9,9 +9,11 @@ import ImagemController from './controller/imagemController.js'
 import ProdutoController from './controller/validarProdutoController.js'
 import MostrarProdutoController from './controller/mostrarprodutocontroller.js'
 // import CadastrarNovoUsuario from './controller/cadastroUsuarioController.js'
+import RemoverProduto  from './controller/removerProdutoController.js'
 
 import express from 'express'
 import cors from 'cors'
+
 
 const server = express();
 server.use(cors())
@@ -27,5 +29,6 @@ server.use(ImagemController)
 server.use(ProdutoController)
 server.use(MostrarProdutoController)
 // server.use(CadastrarNovoUsuario)
+server.use(RemoverProduto);
 
-server.listen(process.env.PORT, () => console.log(`API online na porta ${process.env.PORT}`))
+server.listen(process.env.PORT, () => console.log(`API online na porta ${process.env.PORT}`));
