@@ -23,6 +23,7 @@ export default function CadastroProduto() {
     const [detalhes, setDetalhes] = useState();
     const [juros, setJuros] = useState(0);
     const [parcela, setParcela] = useState(0);
+    const [disponivel, setDisponivel] = useState();
     const [cor, setCor] = useState();
 
     const [idCategoria, setIdCategoria] = useState();
@@ -68,36 +69,36 @@ export default function CadastroProduto() {
 
 
     function buscarNomeTamanho(id) {
-        const cat = tamanho.find(item => item.id === id);
+        const cat = tamanho.find(item => item.id == id);
         return cat.tamanho;
     }
 
     function adicionarTamanho() {
-        if (!tamSelecionadas.find(item => item === idTamanho)) {
+        if (!tamSelecionadas.find(item => item == idTamanho)) {
             const tamanhos = [...tamSelecionadas, idTamanho];
             setTamSelecionadas(tamanhos);
         }
     }
 
     function buscarNomeModelo(id) {
-        const cat = modelo.find(item => item.id === id);
+        const cat = modelo.find(item => item.id == id);
         return cat.modelo;
     }
 
     function adicionarModelo() {
-        if (!modSelecionadas.find(item => item === idModelo)) {
+        if (!modSelecionadas.find(item => item == idModelo)) {
             const modelos = [...modSelecionadas, idModelo];
             setModSelecionadas(modelos);
         }
     }
 
     function buscarNomeCategoria(id) {
-        const cat = categoria.find(item => item.id === id);
+        const cat = categoria.find(item => item.id == id);
         return cat.categoria;
     }
 
     function adicionarCategoria() {
-        if (!catSelecionadas.find(item => item === idCategoria)) {
+        if (!catSelecionadas.find(item => item == idCategoria)) {
             const categorias = [...catSelecionadas, idCategoria];
             setCatSelecionadas(categorias);
             console.log(categorias)
@@ -105,7 +106,7 @@ export default function CadastroProduto() {
     }
 
     function mostrarImagem(imagem) {
-        if (typeof (imagem) === 'object') {
+        if (typeof (imagem) == 'object') {
             return URL.createObjectURL(imagem);
         }
         else {
@@ -119,7 +120,7 @@ export default function CadastroProduto() {
 
     async function salvarProduto() {
         try {
-            const r = await inserirProduto(nome, complementoProduto, preco, composicao, detalhes, juros, parcela, cor, tamSelecionadas, catSelecionadas);
+            const r = await inserirProduto(idTamanho, idModelo, nome, complementoProduto, preco, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idCategoria);
             await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
 
             alert(r.id);
@@ -232,6 +233,11 @@ export default function CadastroProduto() {
                         <div className='cadastro-section2-div2'>
                             <p className='cadastro-section2-div2-p'> Juros </p>
                             <input className='cadastro-section2-div2-input' type='text' placeholder='0' value={juros} onChange={e => setJuros(e.target.value)} />
+                        </div>
+
+                        <div className='cadastro-section2-div3'>
+                            <p> Disponivel</p>
+                            <input className='cadastro-section2-div3-input' type='text' placeholder='0' value={disponivel} onChange={e => setDisponivel(e.target.value)} ></input>
                         </div>
                     </div>
 

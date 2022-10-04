@@ -1,13 +1,35 @@
 import { con } from './connection.js'
 
+// export async function salvarProduto(produto) {
+//     const comando = `
+//         insert into tb_produto (nm_produto, nm_prod_complemento, 
+//                                 vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, ds_cor)
+//                         values (?, ?, ?, ?, ?, ?, ?, ?)
+//     `
+
+//     const [resp] = await con.query(comando, [
+//         produto.nome,
+//         produto.complementoProduto,
+//         produto.preco,
+//         produto.composicao,
+//         produto.detalhes,
+//         produto.juros,
+//         produto.parcela,
+//         produto.cor
+//     ])
+//     return resp.insertId;
+// }
+
 export async function salvarProduto(produto) {
     const comando = `
-        insert into tb_produto (nm_produto, nm_prod_complemento, 
-                                vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, ds_cor)
-                        values (?, ?, ?, ?, ?, ?, ?, ?)
+        insert into tb_produto (id_tamanho, id_modelo, nm_produto, nm_prod_complemento, 
+                                vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, vl_disponivel, ds_cor, id_marca, id_categoria)
+                        values (?, ?, ?, ? ,? ,? ,? ,? ,? ,?, ?, ?, ?)
     `
 
     const [resp] = await con.query(comando, [
+        produto.idTamanho,
+        produto.idModelo,
         produto.nome,
         produto.complementoProduto,
         produto.preco,
@@ -15,7 +37,10 @@ export async function salvarProduto(produto) {
         produto.detalhes,
         produto.juros,
         produto.parcela,
-        produto.cor
+        produto.disponivel,
+        produto.cor,
+        produto.idMarca,
+        produto.idCategoria
     ])
     return resp.insertId;
 }
@@ -32,7 +57,6 @@ export async function listarTodosProdutos() {
         nm_tamanho as idTamanho,
         nm_marca as idMarca
     from tb_produto
-
     inner join tb_modelo
     on tb_modelo.id_modelo = tb_produto.id_modelo
     inner join tb_categoria
@@ -42,6 +66,8 @@ export async function listarTodosProdutos() {
     inner join tb_marca
     on tb_produto.id_marca = tb_marca.id_marca
     
+
+    
         group by id_produto, 
             nm_produto,
             nm_prod_complemento,
@@ -50,7 +76,7 @@ export async function listarTodosProdutos() {
             nm_modelo,
             nm_categoria,
             nm_tamanho,
-            nm_marca`
+            nm_marca;`
 
     const [linhas] = await con.query(comando);
     return linhas;

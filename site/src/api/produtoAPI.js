@@ -1,22 +1,26 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: "http://localhost:5000/"
+    baseURL: "http://localhost:5000"
 })
 
-export async function inserirProduto(nome, complementoProduto, preco, composicao, detalhes, juros, parcela, cor, tamanho, categoria) {
+export async function inserirProduto(idTamanho, idModelo, nome, complementoProduto, preco, composicao, detalhes, juros, parcela,disponivel, cor, idMarca, idCategoria) {
     const r = await api.post('/admin/produto', 
-    { 
-        nome: nome,
-        complementoProduto: complementoProduto,
-        preco: preco,
+    {   
+        idTamanho: idTamanho ,
+        idModelo: idModelo ,
+        nome: nome ,
+        complementoProduto: complementoProduto , 
+        preco: preco ,
         composicao: composicao,
-        detalhes: detalhes,
+        detalhes: detalhes ,
         juros: juros,
         parcela: parcela,
+        disponivel: disponivel,
         cor: cor,
-        tamanho: tamanho,
-        categoria: categoria
+        idMarca: idMarca,
+        idCategoria: idCategoria
+
     }
     );
     return r.data;
@@ -27,13 +31,13 @@ export function buscarImagem(imagem) {
 }
 
 export async function listarTodos(){
-    const resposta = await api.get('/admin/produto')
+    const resposta = await api.get('/admin/todasroupas')
     return resposta.data;
 
 }
 
 export async function buscarPorNome(nome){
-    const resposta = await api.get(`/produto/busca?nome=$:{nome}`)
+    const resposta = await api.get(`/produto/busca?nome=${nome}`)
     return resposta.data;
 }
 
