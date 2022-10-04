@@ -8,15 +8,15 @@ export async function salvarProduto(produto) {
     `
 
     const [resp] = await con.query(comando, [
-                            produto.nome,
-                            produto.complementoProduto,
-                            produto.preco,
-                            produto.composicao,
-                            produto.detalhes,
-                            produto.juros,
-                            produto.parcela,
-                            produto.cor
-                        ])
+        produto.nome,
+        produto.complementoProduto,
+        produto.preco,
+        produto.composicao,
+        produto.detalhes,
+        produto.juros,
+        produto.parcela,
+        produto.cor
+    ])
     return resp.insertId;
 }
 
@@ -102,13 +102,13 @@ export async function salvarProdutoTamanho(idProduto, idTamanho) {
 }
 
 
-export async function salvarProdutoImagem(idProduto, idImg) {
+export async function salvarProdutoImagem(idProduto, imagemPath) {
     const comando = `
-        insert into tb_produto_imagem (id_produto, id_img)
+        insert into tb_produto_imagem (id_produto, ds_img)
                                   values (?, ?)
     `
 
-    const [resp] = await con.query(comando, [idProduto, idImg])
+    const [resp] = await con.query(comando, [idProduto, imagemPath])
 }
 
 

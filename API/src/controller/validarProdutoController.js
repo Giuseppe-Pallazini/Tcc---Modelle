@@ -1,13 +1,18 @@
+import multer from 'multer'
 import { Router } from 'express';
 
-// import { inserirImagem } from '../repository/imagemRepository';
+
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
-import { listarMarca, buscarMarcaPorId, salvarProdutoMarca} from '../repository/marcaRepository.js';
+import { listarMarca, buscarMarcaPorId, salvarProdutoMarca } from '../repository/marcaRepository.js';
 import { buscarModeloPorId, salvarProdutoModelo } from '../repository/modeloRepository.js'
+import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
+import { buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
 import { buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
 import { buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria } from '../repository/validarProdutoRepository.js';
 
+
 const server = Router();
+const upload = multer({ dest: '/storage/produto' })
 
 
 
@@ -17,65 +22,69 @@ server.post('/admin/produto', async (req, resp) => {
 
         const idProduto = await salvarProduto(produto)
 
-        // const idProduto = await salvarProduto(produto);
-
-
         for (const IdMarc in produto.IdMarca) {
             const mar = await buscarMarcaPorId(IdMarc);
-            
-            if (mar != undefined){
+
+            if (mar != undefined) {
                 await salvarProdutoMarca(idProduto, IdMarc);
             }
         }
 
-        
+
         for (const idCateg of produto.idCategoria) {
             const cat = await categoriaId(idCateg);
-            
-            if (cat != undefined){
+
+            if (cat != undefined) {
                 await salvarProdutoCategoria(idProduto, idCateg);
             }
         }
 
         for (const IdModelo of produto.modelo) {
             const mod = await buscarModeloPorId(IdModelo);
-            
-            if (mod != undefined){
+
+            if (mod != undefined) {
                 await salvarProduto(idProduto, IdModelo);
             }
         }
 
         for (const IdTamanho of produto.tamanho) {
             const tam = await buscarTamanhoPorId(IdTamanho);
-            
-            if (tam != undefined){
+
+            if (tam != undefined) {
                 await salvarProdutoTamanho(idProduto, IdTamanho);
             }
         }
 
         resp.send({
-            id: idProduto
+            id: idProduto                                   
         });
 
     }
-    
+
     catch (err) {
-         return resp.status(400).send({
-            erro: err.message  
-         })
+        return resp.status(400).send({
+            erro: err.message
+        })
     }
 })
 
-server.get('/admin/produto', async (req, resp) => {
+server.put('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
     try {
-        const resposta = await listarTodosProdutos();
-        resp.send(resposta);
+        const id = req.params.id;
+        const imagens = req.files;
+
+        for (const imagem of imagens) {
+            await salvarProdutoImagem(id, imagem.path)
+        }
+
+        resp.status(204).send();
 
     } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        });
+        resp.status(204).send({
+            erro: message
+        })
     }
+
 })
 
 
@@ -94,6 +103,5 @@ server.get('/produto/busca', async (req, resp) => {
         })
     }
 })
-
 
 export default server;

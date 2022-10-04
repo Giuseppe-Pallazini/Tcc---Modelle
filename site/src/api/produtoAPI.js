@@ -1,8 +1,5 @@
-
-import axios from 'axios';
-
 const api = axios.create({
-    baseURL: "http://localhost:5000"
+    baseURL: "http://localhost:5000/"
 })
 
 export async function inserirProduto(nome, complementoProduto, preco, composicao, detalhes, juros, parcela, cor, tamanho, categoria) {
@@ -23,18 +20,6 @@ export async function inserirProduto(nome, complementoProduto, preco, composicao
     return r.data;
 }
 
-export async function enviarImagemProduto(id, imagem){
-    const formData = new FormData();
-    formData.append('foto', imagem);
-
-    const resposta = await api.put(`/roupa/${id}/foto`, formData, {
-        headers: {
-            "Content-Type": "multipart/form-data"
-        }
-    });
-    return resposta.status;
-}
-
 export function buscarImagem(imagem) {
     return `${api.getUri()}/${imagem}`
 }
@@ -46,11 +31,29 @@ export async function listarTodos(){
 }
 
 export async function buscarPorNome(nome){
-    const resposta = await api.get(`/produto/busca?nome=${nome}`)
+    const resposta = await api.get(/produto/busca?nome=$:{nome})
     return resposta.data;
+}
+
+export async function salvarImagem(id, imagem, imagem2, imagem3, imagem4){
+
+    let form = new FormData();
+    form.append('imagem', imagem)
+    form.append('imagem2', imagem2)
+    form.append('imagem3', imagem3)
+    form.append('imagem4', imagem4)
+
+    const r = await api.put('/admin/produto/' + id, form, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    } )
+
+    return r.data;
 }
 
 export async function removerProduto(id){
     const resposta = await api.delete('/admin/produto/' + id)
     return resposta.data;
+
 }

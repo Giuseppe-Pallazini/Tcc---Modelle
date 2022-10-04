@@ -10,10 +10,9 @@ import { ListarMarca } from '../../../api/marcaAPI'
 import { ListarTamanho } from '../../../api/tamanhoAPI'
 import { ListarModelo } from '../../../api/modeloAPI'
 import { listarCategoria } from '../../../api/categoriaAPI'
-import { buscarImagem, enviarImagemProduto, inserirProduto } from '../../../api/produtoAPI'
+import { buscarImagem, inserirProduto, salvarImagem } from '../../../api/produtoAPI'
 
 import { useEffect, useState } from 'react'
-
 
 
 export default function CadastroProduto() {
@@ -40,6 +39,8 @@ export default function CadastroProduto() {
 
     const [imagem, setImagem] = useState();
     const [imagem2, setImagem2] = useState();
+    const [imagem3, setImagem3] = useState();
+    const [imagem4, setImagem4] = useState();
 
     const [catSelecionadas, setCatSelecionadas] = useState([]);
     const [modSelecionadas, setModSelecionadas] = useState([]);
@@ -103,7 +104,7 @@ export default function CadastroProduto() {
         }
     }
 
-    function mostrarImagem() {
+    function mostrarImagem(imagem) {
         if (typeof (imagem) == 'object') {
             return URL.createObjectURL(imagem);
         }
@@ -118,13 +119,12 @@ export default function CadastroProduto() {
 
     async function salvarProduto() {
         try {
-            const novoProduto = await inserirProduto(nome, complementoProduto, preco, composicao, detalhes, juros, parcela, cor, tamSelecionadas, catSelecionadas);
-            alert(novoProduto.id);
+            const r = await inserirProduto(nome, complementoProduto, preco, composicao, detalhes, juros, parcela, cor, tamSelecionadas, catSelecionadas);
+            await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
+
+            alert(r.id);
 
             toast.dark(' ✔️ Produto cadastrado com sucesso!');
-
-
-            const r = await enviarImagemProduto(novoProduto.id, imagem);
 
         }
         catch (err) {
@@ -155,14 +155,13 @@ export default function CadastroProduto() {
                 <section className='cadastro-section-1'>
 
 
-
                     <h2 className='text-2'> Adicionar foto(s) </h2>
 
 
                     <div className='insert-img-agrupamento'>
-                        <div className='insert-img-agrupamento-div1-1' onClick={() => escolherImagem('foto')}>
+                        <div className='insert-img-agrupamento-div1-1' onClick={() => escolherImagem('imagem')}>
 
-                            <input className='insert-img-agrupamento-input' type='file' id='foto' onChange={e => setImagem(e.target.files[0])} />
+                            <input type='file' id='imagem' onChange={e => setImagem(e.target.files[0])} />
                             {imagem &&
 
                                 <img className='foto' src={mostrarImagem(imagem)} alt='' />
@@ -171,9 +170,29 @@ export default function CadastroProduto() {
 
 
                         <div className='insert-img-1'>
-                            <input className='img' type='file' id='foto2' />
-                            <input className='img' type='file' id='foto3' />
-                            <input className='img' type='file' id='foto4' />
+                            <div className='img-2' onClick={() => escolherImagem('imagem2')}>
+                                <input type='file' id='imagem2' onChange={e => setImagem2(e.target.files[0])} />
+                                {imagem2 &&
+                                    <img className='foto2' src={mostrarImagem(imagem2)} alt='' />
+                                }
+                            </div>
+
+                            <div className='img-3' onClick={() => escolherImagem('imagem3')}>
+                                <input type='file' id='imagem3' onChange={e => setImagem3(e.target.files[0])} />
+                                {imagem3 &&
+                                    <img className='foto3' src={mostrarImagem(imagem3)} alt='' />
+                                }
+                            </div>
+
+                            <div className='img-4' onClick={() => escolherImagem('imagem4')}>
+                                <input type='file' id='imagem4' onChange={e => setImagem4(e.target.files[0])} />
+                                {imagem4 &&
+
+                                    <img className='foto4' src={mostrarImagem(imagem4)} alt='' />
+                                }
+                            </div>
+
+
                         </div>
 
                     </div>
@@ -193,27 +212,11 @@ export default function CadastroProduto() {
 
                         <textarea placeholder='Detalhes do Produto' cols="25" rows="5" onChange={e => setDetalhes(e.target.value)} />
 
-
                     </div>
-
-
-
 
                     <button onClick={salvarProduto} className='cadastro-section2-button'> Salvar </button>
 
-
-
-
                 </section>
-
-
-
-
-
-
-
-
-
 
                 <section className='cadastro-section-2'>
                     <input className='cadastro-section-2-input1' type='text' placeholder='Nome do produto' onChange={e => setNome(e.target.value)} />
@@ -233,7 +236,7 @@ export default function CadastroProduto() {
                     </div>
 
                     <div className='cadastro-section2-div3'>
-                        <div className='cadastro-section2-div3-1'> <p> Tamanho(s)</p> <img onClick={adicionarTamanho} className='cadastro-section2-div3-1-img' src={LogoAdd} alt='' /> </div>
+                        <div className='cadastro-section2-div3-1'> <p> Tamanho(s) </p> <img onClick={adicionarTamanho} className='cadastro-section2-div3-1-img' src={LogoAdd} alt='' /> </div>
 
                         <select className='cadastro-section2-div3-select' value={idTamanho} onChange={e => setIdTamanho(e.target.value)} >
                             <option selected disabled hidden>Selecione</option>
@@ -307,9 +310,6 @@ export default function CadastroProduto() {
                             )}
                         </select>
                     </div>
-
-
-
 
                 </section>
 
