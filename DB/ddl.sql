@@ -62,6 +62,7 @@ ds_composicao 				varchar(400),
 ds_detalhes 				varchar(400),
 vl_juros					int,
 vl_parcela					int,
+vl_disponivel				int,
 ds_cor						varchar(100),
 id_marca					int,
 id_categoria				int
