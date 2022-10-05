@@ -1,7 +1,7 @@
 import './index.scss'
 import '../../assets/common/index.scss'
 import Imagem1 from '../../assets/image/logo_transparent-white.png'
-import Imagem2 from '../../assets/image/busca.png'
+import Imagem2 from '../../assets/image/logo-lupa.png'
 import Imagem3 from '../../assets/image/bolsa-lista-desejo.png'
 import Imagem4 from '../../assets/image/carrinho.svg'
 import Imagem5 from '../../assets/image/user.png'

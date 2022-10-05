@@ -1,7 +1,9 @@
 import './index.scss'
 import Imagem1 from '../../assets/image/img-user.png'
 import Imagem2 from '../../assets/image/img-exit.png'
+import { Link } from 'react-router-dom'
  
+
 export default function Index(){
     return(
         <header>
@@ -31,9 +33,9 @@ export default function Index(){
                     </select>
                 </div>
 
-                <div className='cab-exit'>
-                    <img className='cab-exit-1' src={Imagem2} alt="" />
-                </div>
+                <Link className='cab-exit' to='/admin/home'>
+                    <img className='cab-exit-1' src={Imagem2} alt="" header/>
+                </Link>
             </nav>
         </header>
     )

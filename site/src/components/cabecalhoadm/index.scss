@@ -2,27 +2,25 @@
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-
+   
     background: #F9F9F9;
-
     .cab-admin{
         width: 15%;
         .cab-admin-img{
             position: relative;
-            top: 1.7em;
+            top: 1.5em;
             left: 2em;
         }
         .cab-admin-user{
             position: relative;
-            top: 1.5em;
+            top: 1.2em;
             left: 3em;
         }
     }
 
     .cab-canvas{
-        margin-top: 1.5em;
-
-
+        margin-top: 1em;
+        margin-bottom: 1em;
         .cab-canvas-gerenc{
             margin-right: 2em;
             border: 2px solid black;
@@ -44,19 +42,11 @@
             }
             
         }
-
         .cab-canvas-gerenc:hover {
             background-color:#19110B;
             color: white;
             cursor: pointer;
         }
-
-
-
-
-
-
-
         .cab-canvas-event{
             padding: 0.5em;
             color: #19110B;

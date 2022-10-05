@@ -6,7 +6,8 @@ import { toast } from 'react-toastify';
 
 import LogoRemover from '../../assets/image/logo-remover.svg'
 import LogoEditar from '../../assets/image/logo-editar.svg'
-import Iconbuscar from '../../assets/image/icon-buscar.svg'
+import IconLupa from '../../assets/image/logo-lupa.png'
+import { Link } from 'react-router-dom';
 
 import ImagemCard from '../../assets/image/imagem-card.png'
 import { buscarPorNome, listarTodos, removerProduto } from '../../api/produtoAPI'
@@ -19,7 +20,6 @@ export default function Index(){
     const [modelo, setModelo] = useState([]);
     const [filtro, setFiltro] = useState('');
     
-
 
     async function filtrar(){
         const resp = await buscarPorNome(filtro);
@@ -55,14 +55,16 @@ export default function Index(){
 
             <div className='div-input-buscar'>
                 <input type='text' className='gerenciarProd-input-buscar' placeholder='Buscar' value={filtro} onChange={e => setFiltro(e.target.value)} />
-                <img src={Iconbuscar} alt='logo' className='logo-buscar' onClick={filtrar}/>
+                <img src={IconLupa} alt='logo' className='logo-buscar' />
             </div>
 
             {produto.map(item => 
                 <div className='gerenciarProd-card-1'>
                         <div className='gerenciarProd-div-icons'>
                                     <img src={LogoRemover} alt='logo' className='logo-remover' onClick={() => deletarProduto(item.produto)} />
-                                    <img src={LogoEditar} alt='logo' className='logo-editar' />
+                                    <Link to='/admin/editarPeca'>
+                                        <img src={LogoEditar} alt='logo' className='logo-editar' />
+                                    </Link>
                                 </div>
                                 <img src={ImagemCard} alt='imagem' className='gerenciarProd-imagem-card' />
                                 <h1 className='marca-produto-card'> 

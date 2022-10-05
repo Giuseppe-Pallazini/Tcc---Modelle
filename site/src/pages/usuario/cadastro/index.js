@@ -21,8 +21,6 @@ export default function Index(){
     async function cadastrarUsuario() {
         try {
             const novoUsuario = await CadastroUsuario(nome, dtNascimento, telefone, email, senha);
-            alert(novoUsuario.id);
-
             toast.dark(' ✔️ Cadastro concluido com secesso!');
 
         }

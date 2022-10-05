@@ -1,7 +1,6 @@
 .main-gerenciarProd{
     display: flex;
     flex-direction: column;
-    background-color: rgb(248, 246, 241);
     
     .div-input-buscar{
         display: flex;
@@ -14,17 +13,19 @@
     }
 
     .gerenciarProd-input-buscar{
-        margin-top: 3.2em;
+        margin-top: -3em;
         margin-left: 3em;
+        border-radius: 1px;
+        border: none;
         width: 12em;
         height: 2em;
-        background-color: rgb(248, 246, 241);
-        border: none;
     }
     .logo-buscar{
         position: absolute;
         margin-left: 11.2em;
         padding-top: 3em;
+        color: #000;
+        margin-top: -5.2em;
         height: 1.2em;
     }
 
@@ -37,11 +38,12 @@
     .gerenciarProd-titulo{
         display: flex;
         align-items: center;
-        margin-top: 0.5em;
+        margin-top: 1em;
         font-family: 'caviar';
         font-style: normal;
         font-weight: 100 ;
-        width: 20px;
+        width: 10em;
+        margin-left: 5em;
         font-size: 30px;
     }
 
@@ -66,6 +68,7 @@
         position: absolute;
         height: .8em;
         width: 1em;
+        color: #000;
         margin-left: 4.5em;
         margin-top: 1.2em;
 
@@ -83,7 +86,6 @@
 
         border: none;
         border-bottom: 1.8px solid #000;
-        background-color: rgb(248, 246, 241);
     }
 
     .select-ano{
@@ -96,7 +98,6 @@
 
         border: none;
         border-bottom: 1px solid #000;
-        background-color: rgb(248, 246, 241);
     }
 
 
