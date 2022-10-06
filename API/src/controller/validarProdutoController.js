@@ -4,7 +4,7 @@ import { Router } from 'express';
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
 import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
 import { buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
-
+import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId  } from '../repository/mostrarprodutorepository.js'
 
 const server = Router();
 const upload = multer({ dest: '/storage/fotoProduto' })
@@ -74,5 +74,26 @@ server.get('/produto/busca', async (req, resp) => {
         })
     }
 })
+
+server.get('/admin/produto/:id', async (req, resp) => {
+    try{
+        const id = req.params.id;
+
+        const produto =  await ListarTodosProdutosPorId(id);
+        const tamanhos = await ListarTodosTamanhosporId(id);
+        const imagens = await ListarTodosImagensporId(id);
+
+        resp.send({
+            info: produto,
+            tamanhos: tamanhos,
+            imagens: imagens
+    })
+
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+)
 
 export default server;

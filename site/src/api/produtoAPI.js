@@ -63,3 +63,11 @@ export async function removerProduto(id){
     return resposta.data;
 
 }
+
+
+export async function buscarProdutoPorId(id){
+    const resposta = await api.get('/admin/produto/' + id)
+    return resposta.data;
+
+}
+

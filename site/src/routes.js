@@ -49,6 +49,7 @@ export default function Index(){
 
                 <Route path='/admin/home' element={<HomeAdm/>}/>
                 <Route path='/admin/cadastroproduto' element={< CadastroProduto2 />} />
+                <Route path='/admin/cadastroproduto/:id' element={< CadastroProduto2 />} />
                 <Route path='/admin/gerenciarProd' element={< GerenciarProd />} />
                 <Route path='/admin/alterarCard' element={< AlterarCard />} />
                 <Route path='/admin/alterarCarrolsel' element={< AlterarCassolsel />} />

@@ -10,12 +10,16 @@ import { ListarMarca } from '../../../api/marcaAPI'
 import { ListarTamanho } from '../../../api/tamanhoAPI'
 import { ListarModelo } from '../../../api/modeloAPI'
 import { listarCategoria } from '../../../api/categoriaAPI'
-import { buscarImagem, inserirProduto, salvarImagem } from '../../../api/produtoAPI'
+import { buscarImagem, buscarProdutoPorId, inserirProduto, salvarImagem } from '../../../api/produtoAPI'
 
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import { API_URL } from '../../../api/config';
 
 
 export default function CadastroProduto() {
+    const [idProduto, setIdProduto] = useState();
+
     const [nome, setNome] = useState();
     const [complementoProduto, setComplementoProduto] = useState();
     const [preco, setPreco] = useState();
@@ -46,6 +50,46 @@ export default function CadastroProduto() {
     const [catSelecionadas, setCatSelecionadas] = useState([]);
     const [modSelecionadas, setModSelecionadas] = useState([]);
     const [tamSelecionadas, setTamSelecionadas] = useState([]);
+
+    const { id } = useParams();
+
+    async function carregarProdutos(){
+        if (!id) return;
+
+        const r = await buscarProdutoPorId(id);
+        setIdProduto(r.info.id);
+        setNome(r.info.produto);
+        setComplementoProduto(r.info.complementoProduto);
+        setPreco(r.info.preco);
+        setComposicao(r.info.composicao);
+        setDetalhes(r.info.detalhes);
+        setJuros(r.info.juros);
+        setParcela(r.info.parcela);
+        setDisponivel(r.info.disponivel);
+        setCor(r.info.cor);
+        setIdMarca(r.info.marca);
+        setCategoria(r.info.categoria);
+        setModelo(r.info.modelo)
+        setTamSelecionadas(r.tamanhos);
+
+        if(r.imagens.lenght > 0){
+            setImagem(r.imagem[0])
+        }
+        
+        if(r.imagens.lenght > 1){
+            setImagem2(r.imagem[1])
+        }
+        
+        if(r.imagens.lenght > 2){
+            setImagem3(r.imagem[2])
+        }
+        
+        if(r.imagens.lenght > 3){
+            setImagem4(r.imagem[3])
+        }
+    }
+
+
 
     async function carregarTamanho() {
         const r = await ListarTamanho();
@@ -97,6 +141,10 @@ export default function CadastroProduto() {
         if (typeof (imagem) == 'object') {
             return URL.createObjectURL(imagem);
         }
+        else if(typeof(imagem) == 'string'){
+            return `${API_URL}/${imagem}`
+        }
+
         else {
             return buscarImagem(imagem)
         }
@@ -123,12 +171,15 @@ export default function CadastroProduto() {
         }
     }
 
+    
+
 
     useEffect(() => {
         carregarMarca();
         carregarTamanho();
         carregarModelo();
         carregarCategoria();
+        carregarProdutos();
     }, [])
 
     return (
