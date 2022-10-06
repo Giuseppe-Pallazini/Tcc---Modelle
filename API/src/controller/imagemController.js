@@ -2,25 +2,28 @@
 import { Router } from 'express'
 import { inserirImagem } from '../repository/imagemRepository.js';
 import multer from 'multer'
+import { salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
 
 
 const server = Router();
-const upload = multer({dest: 'storage/fotoProduto'})
+const upload = multer({ dest: 'storage/fotoProduto' });
 
 
-server.put('/roupa/:id/foto', upload.single('foto'), async (req,resp) => {
+server.put('/roupa/:id/imagens', upload.array('imagens'), async (req,resp) => {
     try {
-        if (!req.file)
+        if (!req.file){
             throw new Error('A imagem não pôde ser salva.')
-        
+        }
             
-        const { id } = req.params;
-        const imagem = req.file.path;
+        const id = req.params.id;
+        const imagens = req.files;
 
         console.log(id);
         console.log(imagem);
 
-        const resposta = await inserirImagem(imagem, id);
+        for(const imagem of imagens){
+            await salvarProdutoImagem(id, imagem.path);
+        }
 
         resp.status(204).send()
 

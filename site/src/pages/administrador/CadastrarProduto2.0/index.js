@@ -59,7 +59,7 @@ export default function CadastroProduto() {
         const r = await buscarProdutoPorId(id);
         setIdProduto(r.info.id);
         setNome(r.info.produto);
-        setComplementoProduto(r.info.complementoProduto);
+        setComplementoProduto(r.info.complemento);
         setPreco(r.info.preco);
         setComposicao(r.info.composicao);
         setDetalhes(r.info.detalhes);
@@ -68,25 +68,26 @@ export default function CadastroProduto() {
         setDisponivel(r.info.disponivel);
         setCor(r.info.cor);
         setIdMarca(r.info.marca);
-        setCategoria(r.info.categoria);
-        setModelo(r.info.modelo)
-        setTamSelecionadas(r.tamanhos);
+        setIdCategoria(r.info.categoria);
+        setIdModelo(r.info.modelo)
+        setTamSelecionadas(r.tamanho)
 
-        if(r.imagens.lenght > 0){
-            setImagem(r.imagem[0])
+        if(r.imagens.length > 0){
+            setImagem(r.imagens[0])
         }
         
-        if(r.imagens.lenght > 1){
-            setImagem2(r.imagem[1])
+        if(r.imagens.length > 1){
+            setImagem2(r.imagens[1])
         }
         
-        if(r.imagens.lenght > 2){
-            setImagem3(r.imagem[2])
+        if(r.imagens.length > 2){
+            setImagem3(r.imagens[2])
         }
         
-        if(r.imagens.lenght > 3){
-            setImagem4(r.imagem[3])
+        if(r.imagens.length > 3){
+            setImagem4(r.imagens[3])
         }
+   
     }
 
 
@@ -141,7 +142,8 @@ export default function CadastroProduto() {
         if (typeof (imagem) == 'object') {
             return URL.createObjectURL(imagem);
         }
-        else if(typeof(imagem) == 'string'){
+
+        else if (typeof (imagem) == 'string') {
             return `${API_URL}/${imagem}`
         }
 
@@ -251,7 +253,7 @@ export default function CadastroProduto() {
 
                     <div className='detalhes'>
 
-                        <textarea placeholder='Detalhes do Produto' cols="25" rows="5" onChange={e => setDetalhes(e.target.value)} />
+                        <textarea placeholder='Detalhes do Produto' cols="25" rows="5" value={detalhes} onChange={e => setDetalhes(e.target.value)} />
 
                     </div>
 

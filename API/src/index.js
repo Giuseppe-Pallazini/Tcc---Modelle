@@ -31,6 +31,6 @@ server.use(MostrarProdutoController);
 server.use(CadastroUsuarios);
 server.use(RemoverProduto);
 
-server.use('/storage/fotoProduto', express.static('/storage/fotoProduto'));
+server.use('/storage/fotoProduto', express.static('storage/fotoProduto'));
 
 server.listen(process.env.PORT, () => console.log(`API online na porta ${process.env.PORT}`));

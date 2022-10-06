@@ -5,6 +5,7 @@ import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
 import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
 import { buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
 import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId  } from '../repository/mostrarprodutorepository.js'
+import { removerProdutoImagem } from '../repository/removerProdutoRepository.js';
 
 const server = Router();
 const upload = multer({ dest: '/storage/fotoProduto' })
@@ -80,12 +81,12 @@ server.get('/admin/produto/:id', async (req, resp) => {
         const id = req.params.id;
 
         const produto =  await ListarTodosProdutosPorId(id);
-        const tamanhos = await ListarTodosTamanhosporId(id);
+        const tamanho = await ListarTodosTamanhosporId(id);
         const imagens = await ListarTodosImagensporId(id);
 
         resp.send({
             info: produto,
-            tamanhos: tamanhos,
+            tamanho: tamanho,
             imagens: imagens
     })
 
@@ -93,7 +94,21 @@ server.get('/admin/produto/:id', async (req, resp) => {
     catch(err){
         console.log(err)
     }
-}
-)
+})
+
+server.put('/admin/produto/update/:id', async (req, resp) => {
+    try{
+        const id = req.params.id;
+        const imagens = req.files;
+
+        await removerProdutoImagem
+    }
+
+    catch(err){
+
+    }
+}  )
+
+
 
 export default server;
