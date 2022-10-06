@@ -16,7 +16,25 @@ and 	ds_senha = 			'1234';
 --
 
 -- 21
-select * from tb_produto;
+select 
+	id_produto				id,
+	nm_produto				nome,
+    nm_prod_complemento 	Complemento,
+    vl_preco				Preço,
+    ds_composicao			Composição,
+    ds_detalhes				Detalhes,
+    vl_juros				Juros,
+    vl_parcela				Parcela,
+    vl_disponivel			Disponibilidade,
+    ds_cor					Cor,
+    id_marca				Id_Marca
+from tb_produto;
+
+select * from tb_produto_tamanho;
+select * from tb_produto_modelo;
+select * from tb_produto_categoria;
+select * from tb_produto_imagem;
+
 
 
 

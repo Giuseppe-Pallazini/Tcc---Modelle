@@ -53,8 +53,6 @@ nm_categoria	varchar(200)
 -- 7
 create table tb_produto (
 id_produto 					int primary key auto_increment,
-id_tamanho					int,
-id_modelo					int,
 nm_produto 					varchar(100),
 nm_prod_complemento 		varchar(100),
 vl_preco 					decimal(15,2),
@@ -64,19 +62,8 @@ vl_juros					int,
 vl_parcela					int,
 vl_disponivel				int,
 ds_cor						varchar(100),
-id_marca					int,
-id_categoria				int
+id_marca					int
 );
-
--- 8
-create table tb_produto_marca (
-id_produto_marca			int primary key auto_increment,
-id_marca					int,
-id_produto					int,
-foreign key (id_marca) references tb_marca (id_marca),
-foreign key (id_produto) references tb_produto (id_produto)
-);
-
 
 
 -- 9

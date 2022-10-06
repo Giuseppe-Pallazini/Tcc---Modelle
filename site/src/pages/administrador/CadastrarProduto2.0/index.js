@@ -18,11 +18,11 @@ import { useEffect, useState } from 'react'
 export default function CadastroProduto() {
     const [nome, setNome] = useState();
     const [complementoProduto, setComplementoProduto] = useState();
-    const [preco, setPreco] = useState(0);
+    const [preco, setPreco] = useState();
     const [composicao, setComposicao] = useState();
     const [detalhes, setDetalhes] = useState();
-    const [juros, setJuros] = useState(0);
-    const [parcela, setParcela] = useState(0);
+    const [juros, setJuros] = useState();
+    const [parcela, setParcela] = useState();
     const [disponivel, setDisponivel] = useState();
     const [cor, setCor] = useState();
 
@@ -77,6 +77,7 @@ export default function CadastroProduto() {
         if (!tamSelecionadas.find(item => item == idTamanho)) {
             const tamanhos = [...tamSelecionadas, idTamanho];
             setTamSelecionadas(tamanhos);
+            console.log(setTamSelecionadas)
         }
     }
 
@@ -89,6 +90,7 @@ export default function CadastroProduto() {
         if (!modSelecionadas.find(item => item == idModelo)) {
             const modelos = [...modSelecionadas, idModelo];
             setModSelecionadas(modelos);
+            console.log(setModSelecionadas)
         }
     }
 
@@ -101,7 +103,7 @@ export default function CadastroProduto() {
         if (!catSelecionadas.find(item => item == idCategoria)) {
             const categorias = [...catSelecionadas, idCategoria];
             setCatSelecionadas(categorias);
-            console.log(categorias)
+            console.log(setCatSelecionadas)
         }
     }
 
@@ -120,7 +122,8 @@ export default function CadastroProduto() {
 
     async function salvarProduto() {
         try {
-            const r = await inserirProduto(idTamanho, idModelo, nome, complementoProduto, preco, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idCategoria);
+            const precoProduto = Number(preco.replace(',', '.'));
+            const r = await inserirProduto(nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, catSelecionadas,modSelecionadas, tamSelecionadas);
             await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
 
             alert(r.id);

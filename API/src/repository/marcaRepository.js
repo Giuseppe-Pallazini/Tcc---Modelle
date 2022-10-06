@@ -25,13 +25,3 @@ export async function listarMarca() {
     const [linhas] = await con.query(comando, [idMarca]);
     return linhas[0];
   }
-
-  export async function salvarProdutoMarca(idProduto, idMarca) {
-    const comando = `
-        insert into tb_produto_marca (id_marca, id_produto)
-                                  values (?, ?)
-    `
-
-    const [resp] = await con.query(comando, [idMarca, idProduto]);
-    return resp
-}

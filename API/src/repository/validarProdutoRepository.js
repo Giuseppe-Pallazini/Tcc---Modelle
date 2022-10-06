@@ -22,14 +22,12 @@ import { con } from './connection.js'
 
 export async function salvarProduto(produto) {
     const comando = `
-        insert into tb_produto (id_tamanho, id_modelo, nm_produto, nm_prod_complemento, 
-                                vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, vl_disponivel, ds_cor, id_marca, id_categoria)
-                        values (?, ?, ?, ? ,? ,? ,? ,? ,? ,?, ?, ?, ?)
+        insert into tb_produto (nm_produto, nm_prod_complemento, 
+                                vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, vl_disponivel, ds_cor, id_marca)
+                        values (?, ?, ?, ? ,? ,? ,? ,? ,? ,?)
     `
 
     const [resp] = await con.query(comando, [
-        produto.idTamanho,
-        produto.idModelo,
         produto.nome,
         produto.complementoProduto,
         produto.preco,
@@ -39,9 +37,8 @@ export async function salvarProduto(produto) {
         produto.parcela,
         produto.disponivel,
         produto.cor,
-        produto.idMarca,
-        produto.idCategoria
-    ])
+        produto.idMarca
+        ])
     return resp.insertId;
 }
 

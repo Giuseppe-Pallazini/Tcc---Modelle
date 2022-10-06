@@ -1,17 +1,15 @@
 import multer from 'multer'
 import { Router } from 'express';
 
-
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
-import { listarMarca, buscarMarcaPorId, salvarProdutoMarca } from '../repository/marcaRepository.js';
 import { buscarModeloPorId, salvarProdutoModelo } from '../repository/modeloRepository.js'
 import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
 import { buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
+import { con } from '../repository/connection.js';
 
 
 const server = Router();
 const upload = multer({ dest: '/storage/fotoProduto' })
-
 
 
 server.post('/admin/produto', async (req, resp) => {
@@ -19,17 +17,11 @@ server.post('/admin/produto', async (req, resp) => {
         const produto = req.body;
 
         const idProduto = await salvarProduto(produto)
+        console.log('Tam ' + produto.tamanhos)
+        console.log('Modelo ' + produto.modelos)
+        console.log('Cat ' + produto.categorias)
 
-        for (const IdMarc in produto.IdMarca) {
-            const mar = await buscarMarcaPorId(IdMarc);
-
-            if (mar != undefined) {
-                await salvarProdutoMarca(idProduto, IdMarc);
-            }
-        }
-
-
-        for (const idCateg in produto.idCategoria) {
+        for (const idCateg of produto.categorias) {
             const cat = await categoriaId(idCateg);
 
             if (cat != undefined) {
@@ -37,21 +29,22 @@ server.post('/admin/produto', async (req, resp) => {
             }
         }
 
-        for (const IdModelo in produto.modelo) {
+        for (const IdModelo of produto.modelos) {
             const mod = await buscarModeloPorId(IdModelo);
 
             if (mod != undefined) {
-                await salvarProduto(idProduto, IdModelo);
+                await salvarProdutoModelo(idProduto, IdModelo);
             }
         }
 
-        for (const IdTamanho in produto.tamanho) {
+        for (const IdTamanho of produto.tamanhos) {
             const tam = await buscarTamanhoPorId(IdTamanho);
 
             if (tam != undefined) {
                 await salvarProdutoTamanho(idProduto, IdTamanho);
             }
         }
+
 
         resp.send({
             id: idProduto                                   
@@ -60,9 +53,11 @@ server.post('/admin/produto', async (req, resp) => {
     }
 
     catch (err) {
+        console.log(err)
         return resp.status(400).send({
             erro: err.message
         })
+
     }
 })
 

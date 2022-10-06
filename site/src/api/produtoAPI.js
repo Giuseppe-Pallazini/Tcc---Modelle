@@ -4,12 +4,11 @@ const api = axios.create({
     baseURL: "http://localhost:5000"
 })
 
-export async function inserirProduto(idTamanho, idModelo, nome, complementoProduto, preco, composicao, detalhes, juros, parcela,disponivel, cor, idMarca, idCategoria) {
+export async function inserirProduto( nome, complementoProduto, preco, composicao, detalhes, juros, parcela,disponivel, cor, idMarca, catSelecionadas, modSelecionadas, tamSelecionadas,
+     ) {
     const r = await api.post('/admin/produto', 
-    {   
-        idTamanho: idTamanho ,
-        idModelo: idModelo ,
-        nome: nome ,
+    {
+        nome: nome,
         complementoProduto: complementoProduto , 
         preco: preco ,
         composicao: composicao,
@@ -19,8 +18,9 @@ export async function inserirProduto(idTamanho, idModelo, nome, complementoProdu
         disponivel: disponivel,
         cor: cor,
         idMarca: idMarca,
-        idCategoria: idCategoria
-
+        categorias: catSelecionadas,
+        modelos: modSelecionadas,
+        tamanhos: tamSelecionadas,
     }
     );
     return r.data;
