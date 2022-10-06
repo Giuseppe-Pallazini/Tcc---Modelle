@@ -86,26 +86,12 @@ export default function CadastroProduto() {
         return cat.modelo;
     }
 
-    function adicionarModelo() {
-        if (!modSelecionadas.find(item => item == idModelo)) {
-            const modelos = [...modSelecionadas, idModelo];
-            setModSelecionadas(modelos);
-            console.log(setModSelecionadas)
-        }
-    }
 
     function buscarNomeCategoria(id) {
         const cat = categoria.find(item => item.id == id);
         return cat.categoria;
     }
 
-    function adicionarCategoria() {
-        if (!catSelecionadas.find(item => item == idCategoria)) {
-            const categorias = [...catSelecionadas, idCategoria];
-            setCatSelecionadas(categorias);
-            console.log(setCatSelecionadas)
-        }
-    }
 
     function mostrarImagem(imagem) {
         if (typeof (imagem) == 'object') {
@@ -123,7 +109,7 @@ export default function CadastroProduto() {
     async function salvarProduto() {
         try {
             const precoProduto = Number(preco.replace(',', '.'));
-            const r = await inserirProduto(nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, catSelecionadas,modSelecionadas, tamSelecionadas);
+            const r = await inserirProduto(nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
             await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
 
             alert(r.id);
@@ -132,7 +118,7 @@ export default function CadastroProduto() {
 
         }
         catch (err) {
-            toast.dark(err);
+            toast.error(err.response.data.erro);
             console.log(err)
         }
     }
@@ -270,7 +256,7 @@ export default function CadastroProduto() {
                     </div>
 
                     <div className='cadastro-section2-div5'>
-                        <div className='cadastro-section2-div5-1'> <p> Modelo </p> <img onClick={adicionarModelo} className='cadastro-section2-div5-1-img' src={LogoAdd} alt='' /> </div>
+                        <div className='cadastro-section2-div5-1'> <p> Modelo </p> </div>
                         <select value={idModelo} onChange={e => setIdModelo(e.target.value)} >
                             <option selected disabled hidden>Selecione</option>
 
@@ -291,7 +277,7 @@ export default function CadastroProduto() {
                     </div>
 
                     <div className='cadastro-section2-div6'>
-                        <div className='cadastro-section2-div6-1'> <p> Categoria </p> <img onClick={adicionarCategoria} className='cadastro-section2-div6-1-img' src={LogoAdd} alt='' /> </div>
+                        <div className='cadastro-section2-div6-1'> <p> Categoria </p> </div>
                         <select className='cadastro-categoria-masculino' value={idCategoria} onChange={e => setIdCategoria(e.target.value)} >
                             <option selected disabled hidden>Selecione</option>
 

@@ -69,6 +69,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                cursor: pointer;
             }
 
             .foto {
@@ -91,6 +92,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                cursor: pointer;
                 
                 .foto2 {
                     position: absolute;
@@ -112,6 +115,8 @@
                 border-radius: .5em;
 
                 background-color: #f4f4f4;
+
+                cursor: pointer;
                 
                 .foto3 {
                     position: absolute;
@@ -133,6 +138,8 @@
                 border-radius: .5em;
 
                 background-color: #f4f4f4;
+
+                cursor: pointer;
                 .foto4{
                     position: absolute;
                     width: 3em;
@@ -266,6 +273,7 @@
                 position: relative;
                 left: .8em;
                 top: 1.3em;
+                cursor: pointer;
             }
 
 
@@ -324,6 +332,7 @@
                 position: relative;
                 left: 2.5em;
                 top: 1.3em;
+                cursor: pointer;
             }
 
             .mod-conteiner {
@@ -359,6 +368,7 @@
                 position: relative;
                 left: 1.25em;
                 top: 1.3em;
+                cursor: pointer;
             }
 
             .cat-selecionada {

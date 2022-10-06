@@ -11,6 +11,7 @@ server.get('/api/marca', async (req, resp) => {
         resp.send(linhas);
     }
     catch (err) {
+        console.log(err)
         resp.status(400).send({
             erro: err.message
         })

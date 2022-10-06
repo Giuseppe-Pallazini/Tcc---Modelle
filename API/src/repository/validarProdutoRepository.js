@@ -23,8 +23,8 @@ import { con } from './connection.js'
 export async function salvarProduto(produto) {
     const comando = `
         insert into tb_produto (nm_produto, nm_prod_complemento, 
-                                vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, vl_disponivel, ds_cor, id_marca)
-                        values (?, ?, ?, ? ,? ,? ,? ,? ,? ,?)
+                                vl_preco, ds_composicao, ds_detalhes, vl_juros, vl_parcela, vl_disponivel, ds_cor, id_marca, id_modelo, id_categoria)
+                        values (?, ?, ?, ? ,? ,? ,? ,? ,? ,?, ?, ?)
     `
 
     const [resp] = await con.query(comando, [
@@ -37,7 +37,9 @@ export async function salvarProduto(produto) {
         produto.parcela,
         produto.disponivel,
         produto.cor,
-        produto.idMarca
+        produto.idMarca,
+        produto.idModelo,
+        produto.idCategoria
         ])
     return resp.insertId;
 }

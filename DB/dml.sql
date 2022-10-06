@@ -27,12 +27,14 @@ select
     vl_parcela				Parcela,
     vl_disponivel			Disponibilidade,
     ds_cor					Cor,
-    id_marca				Id_Marca
+    id_marca				Id_Marca,
+    id_modelo				Id_Modelo,
+    id_categoria			Id_Categoria
 from tb_produto;
 
 select * from tb_produto_tamanho;
-select * from tb_produto_modelo;
-select * from tb_produto_categoria;
+select * from tb_modelo;
+select * from tb_categoria;
 select * from tb_produto_imagem;
 
 
@@ -58,8 +60,6 @@ insert into tb_modelo (nm_modelo)
             values     ('Calça');
 insert into tb_modelo (nm_modelo)
             values     ('Bermuda');
-insert into tb_modelo (nm_modelo)
-            values     ('Blusa');
 insert into tb_modelo (nm_modelo)
             values     ('Blusa');
 insert into tb_modelo (nm_modelo)
@@ -137,3 +137,40 @@ inner join tb_tamanho
 on tb_tamanho.id_tamanho = tb_produto.id_produto
 inner join tb_marca
 on tb_marca.id_marca = tb_produto.id_produto;
+
+-- -------------------------
+
+
+
+select tb_produto.id_produto,
+       nm_produto,
+       nm_prod_complemento,
+       vl_preco,
+       ds_cor,
+       nm_modelo,
+       nm_categoria,
+       id_tamanho,
+       nm_marca
+from tb_produto
+
+inner join tb_modelo
+on tb_modelo.id_modelo = tb_produto.id_produto
+
+inner join tb_categoria
+on tb_categoria.id_categoria = tb_produto.id_produto
+inner join tb_produto_tamanho
+on tb_produto_tamanho.id_produto = tb_produto.id_produto
+inner join tb_marca
+on tb_marca.id_marca = tb_produto.id_produto
+
+    group by tb_produto.id_produto,
+       nm_produto,
+       nm_prod_complemento,
+       vl_preco,
+       ds_cor,
+       nm_modelo,
+       id_tamanho,
+       nm_marca,
+	   nm_modelo,
+       nm_categoria
+;

@@ -18,8 +18,8 @@ export async function inserirProduto( nome, complementoProduto, preco, composica
         disponivel: disponivel,
         cor: cor,
         idMarca: idMarca,
-        categorias: catSelecionadas,
-        modelos: modSelecionadas,
+        idCategoria: catSelecionadas,
+        idModelo: modSelecionadas,
         tamanhos: tamSelecionadas,
     }
     );

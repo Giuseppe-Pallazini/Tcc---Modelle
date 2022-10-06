@@ -62,7 +62,9 @@ vl_juros					int,
 vl_parcela					int,
 vl_disponivel				int,
 ds_cor						varchar(100),
-id_marca					int
+id_marca					int,
+id_modelo					int,
+id_categoria				int
 );
 
 
@@ -75,31 +77,15 @@ foreign key (id_tamanho) references tb_tamanho (id_tamanho),
 foreign key (id_produto) references tb_produto (id_produto)
 );
 
--- 10
-create table tb_produto_modelo (
-id_produto_modelo		int primary key auto_increment,
-id_modelo				int,
-id_produto				int,
-foreign key (id_modelo) references tb_modelo (id_modelo),
-foreign key (id_produto) references tb_produto (id_produto)
-);
-
--- 11
-create table tb_produto_categoria (
-id_produto_categoria		int primary key auto_increment,
-id_categoria				int,
-id_produto					int,
-foreign key (id_categoria) references tb_categoria (id_categoria),
-foreign key (id_produto) references tb_produto (id_produto)
-);
 
 -- 
 
-create table tb_produto_imagem (
- id_produto_imagem			int primary key auto_increment,
- ds_imagem		            varchar(500),
- id_produto					int,
- foreign key (id_produto) references tb_produto (id_produto)
- );
+CREATE TABLE tb_produto_imagem (
+    id_produto_imagem INT PRIMARY KEY AUTO_INCREMENT,
+    ds_imagem VARCHAR(500),
+    id_produto INT,
+    FOREIGN KEY (id_produto)
+        REFERENCES tb_produto (id_produto)
+);
 
 				
