@@ -10,7 +10,7 @@ import { ListarMarca } from '../../../api/marcaAPI'
 import { ListarTamanho } from '../../../api/tamanhoAPI'
 import { ListarModelo } from '../../../api/modeloAPI'
 import { listarCategoria } from '../../../api/categoriaAPI'
-import { buscarImagem, buscarProdutoPorId, inserirProduto, salvarImagem } from '../../../api/produtoAPI'
+import { alterarProduto, buscarImagem, buscarProdutoPorId, inserirProduto, salvarImagem } from '../../../api/produtoAPI'
 
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
@@ -60,7 +60,7 @@ export default function CadastroProduto() {
         setIdProduto(r.info.id);
         setNome(r.info.produto);
         setComplementoProduto(r.info.complemento);
-        setPreco(r.info.preco);
+        setPreco(r.info.preco.toString());
         setComposicao(r.info.composicao);
         setDetalhes(r.info.detalhes);
         setJuros(r.info.juros);
@@ -158,6 +158,11 @@ export default function CadastroProduto() {
 
     async function salvarProduto() {
         try {
+
+            if(!id){
+
+            
+
             const precoProduto = Number(preco.replace(',', '.'));
             const r = await inserirProduto(nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
             await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
@@ -165,10 +170,23 @@ export default function CadastroProduto() {
             alert(r.id);
 
             toast.dark(' ✔️ Produto cadastrado com sucesso!');
+            }
+
+            else{
+                const precoProduto = Number(preco.replace(',', '.'));
+                const r = await alterarProduto(id, nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
+                await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
+    
+                alert(r.id);
+    
+                toast.dark(' ✔️ Produto alterado com sucesso!');
+            }
+
+
 
         }
         catch (err) {
-            toast.error(err.response.data.erro);
+            toast.error('erro');
             console.log(err)
         }
     }

@@ -3,9 +3,10 @@ import { Router } from 'express';
 
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
 import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
-import { buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
+import { alterarProduto, buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
 import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId  } from '../repository/mostrarprodutorepository.js'
-import { removerProdutoImagem } from '../repository/removerProdutoRepository.js';
+import { removerProdutoImagem, removerProdutoTamanho } from '../repository/removerProdutoRepository.js';
+import { con } from '../repository/connection.js';
 
 const server = Router();
 const upload = multer({ dest: '/storage/fotoProduto' })
@@ -40,8 +41,9 @@ server.post('/admin/produto', async (req, resp) => {
     }
 })
 
-server.put('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
+server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
     try {
+
         const id = req.params.id;
         const imagens = req.files;
 
@@ -94,21 +96,44 @@ server.get('/admin/produto/:id', async (req, resp) => {
     catch(err){
         console.log(err)
     }
-})
+}
+)
 
-server.put('/admin/produto/update/:id', async (req, resp) => {
+server.put('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
     try{
         const id = req.params.id;
+        const produto = req.body;
         const imagens = req.files;
 
-        await removerProdutoImagem
-    }
+        console.log(id);
+        console.log(produto);
+        console.log(imagens)
+    
+        // await removerProdutoTamanho(id);
+        // await removerProdutoImagem(imagens);
 
+        // await alterarProduto(id, produto)
+
+        // for(let idTam of produto.tamanho){
+        //     const tam = buscarTamanhoPorId(idTam);
+
+        //     if(tam != undefined){
+        //         await salvarProdutoTamanho(idProduto, idTam)
+        //     }
+        // }
+
+        // for(const imagem of imagens){
+        //     await salvarProdutoImagem(id, imagem.path);
+        // }
+    
+        resp.status(204).send()
+    }
+    
     catch(err){
-
+    
     }
-}  )
-
+}
+)
 
 
 export default server;

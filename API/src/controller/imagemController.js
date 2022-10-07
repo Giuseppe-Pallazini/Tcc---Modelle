@@ -22,7 +22,7 @@ server.put('/roupa/:id/imagens', upload.array('imagens'), async (req,resp) => {
         console.log(imagem);
 
         for(const imagem of imagens){
-            await salvarProdutoImagem(id, imagem.path);
+            await salvarProdutoImagem(imagem.path, id);
         }
 
         resp.status(204).send()

@@ -26,6 +26,31 @@ export async function inserirProduto( nome, complementoProduto, preco, composica
     return r.data;
 }
 
+
+export async function alterarProduto(id, nome, complementoProduto, preco, composicao, detalhes, juros, parcela,disponivel, cor, idMarca, catSelecionadas, modSelecionadas, tamSelecionadas,
+    ) {
+   const r = await api.put('/admin/produto/' + id, 
+   {
+       nome: nome,
+       complementoProduto: complementoProduto , 
+       preco: preco ,
+       composicao: composicao,
+       detalhes: detalhes ,
+       juros: juros,
+       parcela: parcela,
+       disponivel: disponivel,
+       cor: cor,
+       idMarca: idMarca,
+       idCategoria: catSelecionadas,
+       idModelo: modSelecionadas,
+       tamanhos: tamSelecionadas,
+   }
+   );
+   return r.data;
+}
+
+
+
 export function buscarImagem(imagem) {
     return `${api.getUri()}/${imagem}`
 }

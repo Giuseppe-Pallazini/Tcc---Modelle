@@ -176,3 +176,40 @@ export async function buscarPorNome(nome) {
     const [linhas] = await con.query(comando, [`%${nome}%`]);
     return linhas;
 }
+
+export async function alterarProduto(id, produto){
+    const comando = `
+            update tb_produto
+            set nm_produto = ?,
+                nm_prod_complemento = ?,
+                vl_preco = ?,
+                ds_composicao = ?,
+                ds_detalhes = ?,
+                vl_juros = ?,
+                vl_parcela = ?,
+                vl_disponivel = ?,
+                ds_cor = ?,
+                id_marca = ?,
+                id_modelo = ?,
+                id_categoria = ?
+            where id_produto = ?
+    `
+
+    const [resp] = await con.query(comando, [
+        produto.nome,
+        produto.complementoProduto,
+        produto.preco,
+        produto.composicao,
+        produto.detalhes,
+        produto.juros,
+        produto.parcela,
+        produto.disponivel,
+        produto.cor,
+        produto.idMarca,
+        produto.idModelo,
+        produto.idCategoria,
+        id
+    ])
+
+    return resp.affectedRows;
+}
