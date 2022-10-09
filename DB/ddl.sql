@@ -88,4 +88,73 @@ CREATE TABLE tb_produto_imagem (
         REFERENCES tb_produto (id_produto)
 );
 
-				
+create table tb_produto_feedback(
+	id_produto_feedback int primary key auto_increment,
+	id_usuario          int,
+    id_produto			int,
+    ds_mensagem			varchar(100),
+    foreign key (id_produto)	references tb_produto (id_produto),
+    foreign key (id_usuario)	references tb_usuario (id_usuario)
+);
+
+create table tb_lista_desejos(
+	id_usuario_favorito	int primary key auto_increment,
+    id_usuario			int,
+    id_produto			int,
+	foreign key (id_produto)	references tb_produto (id_produto),
+    foreign key (id_usuario)	references tb_usuario (id_usuario)
+);
+
+create table tb_cupom(
+	id_cupom			int primary key auto_increment,
+    cod_cupom			varchar(10),
+    vl_cupom			decimal(15,2),
+    qtd_disponivel		int
+);
+
+create table tb_pedido(
+	id_pedido			int primary key auto_increment,
+    id_usuario			int,
+    id_cupom			int,
+    dt_pedido			date,
+    tp_frete			varchar(20),
+    ds_endereco			varchar(60),
+    nr_numero			int,
+    ds_cidade			varchar(40),
+    nr_cep				int,
+    ds_complemento		varchar(50),
+    vl_frete			decimal(15,2),
+    vl_total			decimal(15,2),
+    qtd_produto			int,
+    ds_status			varchar(25),
+    tp_pagamento		varchar(20),
+	foreign key (id_usuario)	references tb_usuario (id_usuario),
+	foreign key (id_cupom)	references tb_cupom	 (id_cupom)
+);
+
+create table tb_pedido_item(
+	id_produto_item		int primary key auto_increment,
+	id_pedido			int,
+    id_produto			int,
+    foreign key (id_pedido)		references tb_pedido(id_pedido),
+    foreign key (id_produto)	references tb_produto(id_produto)
+);
+
+create table tb_pagamento_pix(
+	id_pagamento_pix	int primary key auto_increment,
+    id_produto			int,
+    nm_cpf				int,
+    ds_chave			varchar(200),
+    foreign key (id_produto)	references tb_produto(id_produto)
+);
+
+create table tb_pagamento_cartao(
+	id_pagamento_cartao	int primary key auto_increment,
+    id_produto			int,
+    nm_titular			varchar(50),
+	nr_cartao			int,
+    dt_validade			date,
+    cod_seguranca		int,
+    nr_parcelas			int,
+    foreign key (id_produto)	references tb_produto(id_produto)
+);
