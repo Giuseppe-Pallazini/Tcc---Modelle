@@ -69,16 +69,16 @@ export async function buscarPorNome(nome){
 export async function salvarImagem(id, imagem, imagem2, imagem3, imagem4){
 
     let form = new FormData();
-    form.append('imagens', imagem)
-    form.append('imagens', imagem2)
-    form.append('imagens', imagem3)
-    form.append('imagens', imagem4)
+    form.append('imagens', imagem);
+    form.append('imagens', imagem2);
+    form.append('imagens', imagem3);
+    form.append('imagens', imagem4);
 
-    const r = await api.put('/admin/produto/' + id, form, {
+    const r = await api.put('/admin/produto/imagem/' + id, form, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
-    } );
+    });
 
     return r.data;
 }

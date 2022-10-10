@@ -160,9 +160,6 @@ export default function CadastroProduto() {
         try {
 
             if(!id){
-
-            
-
             const precoProduto = Number(preco.replace(',', '.'));
             const r = await inserirProduto(nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
             await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
@@ -177,7 +174,7 @@ export default function CadastroProduto() {
                 const r = await alterarProduto(id, nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
                 await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
     
-                alert(r.id);
+                alert(id);
     
                 toast.dark(' ✔️ Produto alterado com sucesso!');
             }

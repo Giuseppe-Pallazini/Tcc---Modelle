@@ -3,13 +3,13 @@ import { Router } from 'express';
 
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
 import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
-import { alterarProduto, buscarPorNome, listarTodosProdutos, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
+import { alterarProduto, buscarPorNome, listarTodosProdutos, removerProdutoImagensDiferentes, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
 import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId  } from '../repository/mostrarprodutorepository.js'
 import { removerProdutoImagem, removerProdutoTamanho } from '../repository/removerProdutoRepository.js';
 import { con } from '../repository/connection.js';
 
 const server = Router();
-const upload = multer({ dest: '/storage/fotoProduto' })
+const upload = multer({ dest: 'storage/fotoProduto' })
 
 
 server.post('/admin/produto', async (req, resp) => {
@@ -41,11 +41,21 @@ server.post('/admin/produto', async (req, resp) => {
     }
 })
 
-server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
+server.put('/admin/produto/imagem/:id', upload.array('imagens'), async (req, resp) => {
     try {
 
         const id = req.params.id;
         const imagens = req.files;
+        const imgs = req.body;
+        
+        console.log(id)
+        console.log(imagens);
+        console.log(imgs);
+
+
+        // const imagensPermanecem = req.body.imagens.filter(item => item != 'undefined');
+
+        // await removerProdutoImagensDiferentes(imagensPermanecem);
 
         for (const imagem of imagens) {
             await salvarProdutoImagem(id, imagem.path)
@@ -99,7 +109,7 @@ server.get('/admin/produto/:id', async (req, resp) => {
 }
 )
 
-server.put('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
+server.put('/admin/produto/alterar/:id', upload.array('imagens'), async (req, resp) => {
     try{
         const id = req.params.id;
         const produto = req.body;
@@ -107,24 +117,21 @@ server.put('/admin/produto/:id', upload.array('imagens'), async (req, resp) => {
 
         console.log(id);
         console.log(produto);
-        console.log(imagens)
+        console.log(imagens);
     
-        // await removerProdutoTamanho(id);
-        // await removerProdutoImagem(imagens);
 
-        // await alterarProduto(id, produto)
+        // Remover tamanhos
+        //await removerProdutoTamanho(id);
 
-        // for(let idTam of produto.tamanho){
-        //     const tam = buscarTamanhoPorId(idTam);
+        await alterarProduto(id, produto)
 
-        //     if(tam != undefined){
-        //         await salvarProdutoTamanho(idProduto, idTam)
-        //     }
-        // }
+        for(let idTam of produto.idTamanho){
+            const tam = buscarTamanhoPorId(idTam);
 
-        // for(const imagem of imagens){
-        //     await salvarProdutoImagem(id, imagem.path);
-        // }
+            if(tam != undefined){
+                await salvarProdutoTamanho(id, idTam)
+            }
+        }
     
         resp.status(204).send()
     }

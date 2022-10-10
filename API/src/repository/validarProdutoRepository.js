@@ -54,7 +54,8 @@ export async function listarTodosProdutos() {
         nm_modelo as idModelo,
         nm_categoria as idCategoria,
         nm_tamanho as idTamanho,
-        nm_marca as idMarca
+        nm_marca as idMarca,
+        ds_imagem as imagem
     from tb_produto
     inner join tb_modelo
     on tb_modelo.id_modelo = tb_produto.id_modelo
@@ -64,6 +65,10 @@ export async function listarTodosProdutos() {
     on tb_produto.id_tamanho = tb_tamanho.id_tamanho
     inner join tb_marca
     on tb_produto.id_marca = tb_marca.id_marca
+
+    inner join tb_produto_imagem
+    on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto
+    
     
 
     
@@ -75,7 +80,9 @@ export async function listarTodosProdutos() {
             nm_modelo,
             nm_categoria,
             nm_tamanho,
-            nm_marca;`
+            nm_marca,
+            ds_imagem
+            ;`
 
     const [linhas] = await con.query(comando);
     return linhas;
@@ -136,41 +143,54 @@ export async function salvarProdutoImagem(idProduto, imagemPath) {
     const [resp] = await con.query(comando, [idProduto, imagemPath])
 }
 
+export async function removerProdutoImagensDiferentes(imagens) {
+    const comando = `
+        delete from tb_produto_imagem 
+              where ds_imagem NOT IN (?)
+    `
+
+    const [resp] = await con.query(comando, [imagens])
+    return resp.affectedRows;
+}
 
 
 export async function buscarPorNome(nome) {
     const comando =
-        `	select tb_produto.id_produto as produto, 
+        `	select tb_produto.id_produto as produto,
         nm_produto as nome,
         nm_prod_complemento as complementoProduto,
         vl_preco as preco,
         ds_cor as cor,
         nm_modelo as idModelo,
         nm_categoria as idCategoria,
-        nm_tamanho as idTamanho,
-        nm_marca as idMarca
-    from tb_produto
+        count(nm_tamanho) as idTamanho,
+        nm_marca as idMarca,
+        vl_disponivel as disponibilidade
+ from tb_produto
+ 
+ inner join tb_modelo
+ on tb_modelo.id_modelo = tb_produto.id_modelo
+ inner join tb_categoria
+ on tb_categoria.id_categoria = tb_produto.id_categoria
+ inner join tb_produto_tamanho
+ on tb_produto_tamanho.id_produto = tb_produto.id_produto
+ inner join tb_tamanho
+ on tb_tamanho.id_tamanho = tb_produto_tamanho.id_tamanho
+ 
+ inner join tb_marca
+ on tb_marca.id_marca = tb_produto.id_marca
 
-    inner join tb_modelo
-    on tb_modelo.id_modelo = tb_produto.id_modelo
-    inner join tb_categoria
-    on tb_produto.id_categoria = tb_categoria.id_categoria
-    inner join tb_tamanho
-    on tb_produto.id_tamanho = tb_tamanho.id_tamanho
-    inner join tb_marca
-    on tb_produto.id_marca = tb_marca.id_marca
-    
-            where nm_produto    like ?
-    
-        group by id_produto, 
-            nm_produto,
-            nm_prod_complemento,
-            vl_preco,
-            ds_cor,
-            nm_modelo,
-            nm_categoria,
-            nm_tamanho,
-            nm_marca
+ where nm_produto like ?
+ 
+ group by tb_produto.id_produto,
+        nm_produto,
+        nm_prod_complemento,
+        vl_preco,
+        ds_cor,
+        nm_modelo,
+        nm_categoria,
+        nm_marca,
+        vl_disponivel
         `
 
     const [linhas] = await con.query(comando, [`%${nome}%`]);

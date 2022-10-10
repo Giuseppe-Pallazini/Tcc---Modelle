@@ -10,10 +10,10 @@ import { removerProduto, removerProdutoCategoria, removerProdutoImagem, removerP
         try {
             const id = req.params.id;
     
-            await removerProdutoCategoria(id);
+            // await removerProdutoCategoria(id);
             await removerProdutoImagem(id);
-            await removerProdutoMarca(id);
-            await removerProdutoModelo(id);
+            // await removerProdutoMarca(id);
+            // await removerProdutoModelo(id);
             await removerProdutoTamanho(id);
             await removerProduto(id);
     

@@ -10,7 +10,9 @@ import IconLupa from '../../assets/image/logo-lupa.png'
 import { Link } from 'react-router-dom';
 
 import ImagemCard from '../../assets/image/imagem-card.png'
-import { buscarPorNome, listarTodos, removerProduto } from '../../api/produtoAPI'
+import { buscarPorNome, listarTodos, removerProduto, buscarImagem } from '../../api/produtoAPI'
+
+import { API_URL } from '../../api/config.js';
 
 
  
@@ -25,8 +27,6 @@ export default function Index(){
         const resp = await buscarPorNome(filtro);
         setProduto(resp)
     }
-    
-    const navigate = useNavigate();
 
     useEffect(()  => {
         carregarProduto();
@@ -47,13 +47,32 @@ export default function Index(){
         }
     }
 
+    function mostrarImagem(imagem) {
+        if (typeof (imagem) == 'object') {
+            return URL.createObjectURL(imagem);
+        }
+
+        else if (typeof (imagem) == 'string') {
+            return `${API_URL}/${imagem}`
+        }
+
+        else {
+            return buscarImagem(imagem)
+        }
+    }
+
+    const navigate = useNavigate()
+    
+        async function editarProduto(id){
+            navigate(`/admin/cadastroproduto/${id}`);
+        }
 
 
 
     return(
         <main className='main-menu-produtos'>
 
-            <div className='div-input-buscar'>
+        <div className='div-input-buscar'>
                 <input type='text' className='gerenciarProd-input-buscar' placeholder='Buscar' value={filtro} onChange={e => setFiltro(e.target.value)} />
                 <img src={IconLupa} alt='logo' className='logo-buscar' />
             </div>
@@ -62,11 +81,11 @@ export default function Index(){
                 <div className='gerenciarProd-card-1'>
                         <div className='gerenciarProd-div-icons'>
                                     <img src={LogoRemover} alt='logo' className='logo-remover' onClick={() => deletarProduto(item.produto)} />
-                                    <Link to='/admin/editarPeca'>
-                                        <img src={LogoEditar} alt='logo' className='logo-editar' />
-                                    </Link>
+                                    <div>
+                                        <img src={LogoEditar} alt='logo' className='logo-editar' onClick={() => editarProduto(item.id)} />
+                                    </div>
                                 </div>
-                                <img src={ImagemCard} alt='imagem' className='gerenciarProd-imagem-card' />
+                                <img src={mostrarImagem(item.ds_imagem)}  alt='imagem' className='gerenciarProd-imagem-card' />
                                 <h1 className='marca-produto-card'> 
                                         <p> {item.nome} </p>
                                 </h1>
@@ -92,8 +111,6 @@ export default function Index(){
                                 <div className='gerenciarProd-div-tamanhos' >
                                     <p className='tamanho-produto-card'> Tamanho </p>
                                     <div className='valorTamanho-produto-card'>
-                                        <p className='tamanhoProduto-card'> {item.idTamanho} </p>
-                                        <p className='tamanhoProduto-card'> {item.idTamanho} </p>
                                         <p className='tamanhoProduto-card'> {item.idTamanho} </p>
                                     </div>
                                 </div>

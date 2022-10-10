@@ -14,7 +14,7 @@ export async function listarTamanhos() {
     
   }
 
-  export async function buscarTamanhoPorId(idTamanho) {
+  export async function buscarTamanhoPorId(id) {
     const comando = `
 	  select id_tamanho           as id,
              nm_tamanho         as tamanho
@@ -22,16 +22,15 @@ export async function listarTamanhos() {
        where id_tamanho = ?; 
       `
 
-    const [linhas] = await con.query(comando, [idTamanho]);
+    const [linhas] = await con.query(comando, [id]);
     return linhas[0];
   }
 
   export async function salvarProdutoTamanho(idProduto, idTamanho) {
     const comando = `
-        insert into tb_produto_tamanho (id_produto, id_tamanho)
+        insert into tb_produto_tamanho (id_tamanho, id_produto)
                                   values (?, ?)
     `
 
-    const [resp] = await con.query(comando, [idProduto, idTamanho]);
-    return resp;
+    const [resp] = await con.query(comando, [idTamanho, idProduto])
 }
