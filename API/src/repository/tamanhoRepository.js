@@ -17,7 +17,7 @@ export async function listarTamanhos() {
   export async function buscarTamanhoPorId(id) {
     const comando = `
 	  select id_tamanho           as id,
-             nm_tamanho         as tamanho
+             nm_tamanho         as tamanhos
         from tb_tamanho
        where id_tamanho = ?; 
       `

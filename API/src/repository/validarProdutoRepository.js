@@ -79,7 +79,6 @@ export async function listarTodosProdutos() {
             ds_cor,
             nm_modelo,
             nm_categoria,
-            nm_tamanho,
             nm_marca,
             ds_imagem
             ;`
@@ -165,7 +164,8 @@ export async function buscarPorNome(nome) {
         nm_categoria as idCategoria,
         count(nm_tamanho) as idTamanho,
         nm_marca as idMarca,
-        vl_disponivel as disponibilidade
+        vl_disponivel as disponibilidade,
+        ds_imagem
  from tb_produto
  
  inner join tb_modelo
@@ -176,7 +176,10 @@ export async function buscarPorNome(nome) {
  on tb_produto_tamanho.id_produto = tb_produto.id_produto
  inner join tb_tamanho
  on tb_tamanho.id_tamanho = tb_produto_tamanho.id_tamanho
- 
+ inner join tb_produto_imagem
+ on tb_produto_imagem.id_produto = tb_produto.id_produto
+
+
  inner join tb_marca
  on tb_marca.id_marca = tb_produto.id_marca
 

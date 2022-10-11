@@ -49,8 +49,8 @@ export async function removerProdutoCategoria(id_produto){
 
 export async function removerProdutoImagem(id_produto){
     const comando = `
-        delete from tb_produto_imagem
-                where ds_imagem NOT IN(?)
+             delete from tb_produto_imagem
+                    where id_produto = ?
     `
     const [resp] = await con.query(comando, [id_produto])
     return resp.affectedRows;

@@ -4,23 +4,23 @@ const api = axios.create({
     baseURL: "http://localhost:5000"
 })
 
-export async function inserirProduto( nome, complementoProduto, preco, composicao, detalhes, juros, parcela,disponivel, cor, idMarca, catSelecionadas, modSelecionadas, tamSelecionadas,
+export async function inserirProduto( nome, complementoProduto, preco, composicao, detalhes, juros, parcela,disponivel, cor, idMarca, idModelo, idCategoria, tamanhos
      ) {
     const r = await api.post('/admin/produto', 
     {
-        nome: nome,
-        complementoProduto: complementoProduto , 
-        preco: preco ,
-        composicao: composicao,
-        detalhes: detalhes ,
-        juros: juros,
-        parcela: parcela,
-        disponivel: disponivel,
-        cor: cor,
-        idMarca: idMarca,
-        idCategoria: catSelecionadas,
-        idModelo: modSelecionadas,
-        tamanhos: tamSelecionadas,
+        nome,
+        complementoProduto, 
+        preco,
+        composicao,
+        detalhes,
+        juros,
+        parcela,
+        disponivel,
+        cor,
+        idMarca,
+        idModelo,
+        idCategoria,
+        tamanhos
     }
     );
     return r.data;
@@ -29,7 +29,7 @@ export async function inserirProduto( nome, complementoProduto, preco, composica
 
 export async function alterarProduto(id, nome, complementoProduto, preco, composicao, detalhes, juros, parcela,disponivel, cor, idMarca, catSelecionadas, modSelecionadas, tamSelecionadas,
     ) {
-   const r = await api.put('/admin/produto/' + id, 
+   const r = await api.put('/admin/produto/alterar/' + id, 
    {
        nome: nome,
        complementoProduto: complementoProduto , 

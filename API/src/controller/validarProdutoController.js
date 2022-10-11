@@ -6,7 +6,6 @@ import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../rep
 import { alterarProduto, buscarPorNome, listarTodosProdutos, removerProdutoImagensDiferentes, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
 import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId  } from '../repository/mostrarprodutorepository.js'
 import { removerProdutoImagem, removerProdutoTamanho } from '../repository/removerProdutoRepository.js';
-import { con } from '../repository/connection.js';
 
 const server = Router();
 const upload = multer({ dest: 'storage/fotoProduto' })
@@ -17,14 +16,14 @@ server.post('/admin/produto', async (req, resp) => {
         const produto = req.body;
         const idProduto = await salvarProduto(produto)
 
-        for (const IdTamanho of produto.tamanhos) {
-            const tam = await buscarTamanhoPorId(IdTamanho);
+        for (const idTamanho of produto.tamanhos) {
+            const tam = await buscarTamanhoPorId(idTamanho);
+            console.log(tam);
 
             if (tam != undefined) {
-                await salvarProdutoTamanho(idProduto, IdTamanho);
+                await salvarProdutoTamanho(idProduto, idTamanho);
             }
         }
-
 
         resp.send({
             id: idProduto                                   
@@ -125,7 +124,7 @@ server.put('/admin/produto/alterar/:id', upload.array('imagens'), async (req, re
 
         await alterarProduto(id, produto)
 
-        for(let idTam of produto.idTamanho){
+        for(let idTam of produto.tamanho){
             const tam = buscarTamanhoPorId(idTam);
 
             if(tam != undefined){

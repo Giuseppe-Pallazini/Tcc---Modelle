@@ -47,8 +47,6 @@ export default function CadastroProduto() {
     const [imagem3, setImagem3] = useState();
     const [imagem4, setImagem4] = useState();
 
-    const [catSelecionadas, setCatSelecionadas] = useState([]);
-    const [modSelecionadas, setModSelecionadas] = useState([]);
     const [tamSelecionadas, setTamSelecionadas] = useState([]);
 
     const { id } = useParams();
@@ -72,20 +70,20 @@ export default function CadastroProduto() {
         setIdModelo(r.info.modelo)
         setTamSelecionadas(r.tamanho)
 
-        if(r.imagens.length > 0){
-            setImagem(r.imagens[0])
+        if (r.imagens.length > 0) {
+            setImagem(r.imagens[0]);
         }
-        
-        if(r.imagens.length > 1){
-            setImagem2(r.imagens[1])
+
+        if (r.imagens.length > 1) {
+            setImagem2(r.imagens[1]);
         }
-        
-        if(r.imagens.length > 2){
-            setImagem3(r.imagens[2])
+
+        if (r.imagens.length > 2) {
+            setImagem3(r.imagens[2]);
         }
-        
-        if(r.imagens.length > 3){
-            setImagem4(r.imagens[3])
+
+        if (r.imagens.length > 3) {
+            setImagem4(r.imagens[3]);
         }
    
     }
@@ -126,15 +124,13 @@ export default function CadastroProduto() {
         }
     }
 
-    function buscarNomeModelo(id) {
-        const cat = modelo.find(item => item.id == id);
-        return cat.modelo;
-    }
-
-
-    function buscarNomeCategoria(id) {
-        const cat = categoria.find(item => item.id == id);
-        return cat.categoria;
+    function adicionarTamanho() {
+        if (!idTamanho) return;
+        
+        if (!tamSelecionadas.find(item => item == idTamanho)) {
+            const tamanhos = [...tamSelecionadas, idTamanho];
+            setTamSelecionadas(tamanhos);
+        }
     }
 
 
@@ -334,13 +330,7 @@ export default function CadastroProduto() {
                         </select>
 
                         <div><label></label>
-                            <div className='mod-conteiner'>
-                                {modSelecionadas.map(id =>
-                                    <div className='mod-selecionada'>
-                                        {buscarNomeModelo(id)}
-                                    </div>
-                                )}
-                            </div>
+
                         </div>
                     </div>
 
@@ -355,13 +345,7 @@ export default function CadastroProduto() {
                         </select>
 
                         <div><label></label>
-                            <div className='cat-conteiner'>
-                                {catSelecionadas.map(id =>
-                                    <div className='cat-selecionada'>
-                                        {buscarNomeCategoria(id)}
-                                    </div>
-                                )}
-                            </div></div>
+                            </div>
                     </div>
 
                     <div className='marcas'>

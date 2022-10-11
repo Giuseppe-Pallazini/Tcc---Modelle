@@ -74,7 +74,7 @@ export default function Index(){
 
         <div className='div-input-buscar'>
                 <input type='text' className='gerenciarProd-input-buscar' placeholder='Buscar' value={filtro} onChange={e => setFiltro(e.target.value)} />
-                <img src={IconLupa} alt='logo' className='logo-buscar' />
+                <img src={IconLupa} alt='logo' className='logo-buscar' onClick={filtrar} />
             </div>
 
             {produto.map(item => 
