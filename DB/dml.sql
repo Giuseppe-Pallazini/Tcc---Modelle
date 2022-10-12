@@ -178,7 +178,7 @@ on tb_marca.id_marca = tb_produto.id_produto
 
 -- inner Join do gerenciar Produtos
 
-select select tb_produto.id_produto as produto,
+select tb_produto.id_produto as produto,
     nm_produto as nome,
     nm_prod_complemento as complementoProduto,
     vl_preco as preco,

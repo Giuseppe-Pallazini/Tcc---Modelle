@@ -65,6 +65,7 @@ export default function Index(){
     
         async function editarProduto(id){
             navigate(`/admin/cadastroproduto/${id}`);
+            //navigate(`/admin/produto/alterar/${id}`)
         }
 
 
@@ -82,7 +83,7 @@ export default function Index(){
                         <div className='gerenciarProd-div-icons'>
                                     <img src={LogoRemover} alt='logo' className='logo-remover' onClick={() => deletarProduto(item.produto)} />
                                     <div>
-                                        <img src={LogoEditar} alt='logo' className='logo-editar' onClick={() => editarProduto(item.id)} />
+                                        <img src={LogoEditar} alt='logo' className='logo-editar' onClick={() => editarProduto(item.produto)} />
                                     </div>
                                 </div>
                                 <img src={mostrarImagem(item.ds_imagem)}  alt='imagem' className='gerenciarProd-imagem-card' />

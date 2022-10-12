@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: column;
 
+    a:link, a:visited {
+        text-decoration: none;
+    }
+
     .cab-admin{
         display: flex;
         flex-direction: row;
@@ -88,8 +92,24 @@
             margin-right: 5em;
             background-color: #e4e7eb;
             color: black;
-
         }
+
+        .homeAdm-botão-usuarios, .homeAdm-botão-pedidos, .homeAdm-botão-produto, .homeAdm-botão-cadastro, .homeAdm-botão-feedbecks {
+            background-image: linear-gradient(transparent 0%, transparent 90%, #505050 20%, #505050 20%);
+            background-repeat: no-repeat;
+            background-size: 0% 100%;
+            background-position-x: center;
+        
+            transition: background-size 500ms;
+        }
+
+        .homeAdm-botão-usuarios:hover, .homeAdm-botão-pedidos:hover, .homeAdm-botão-produto:hover, .homeAdm-botão-cadastro:hover, .homeAdm-botão-feedbecks:hover {
+	    color: #505050;
+	    transition: 500ms;
+	    background-size: 100% 100%;
+	    background-position-x: center;
+        }
+
         .homeAdm-botão-pedidos{
             font-size: 1em;
             font-family: 'caviar';
@@ -189,6 +209,22 @@
 
         background-color: #e4e7eb;
         color: black;
+    }
+
+    .homeAdm-botão-addModelos, .homeAdm-botão-novidades, .homeAdm-botão-cardDestaque, .homeAdm-botão-colecao, .homeAdm-botão-addCupom, .homeAdm-botão-carrosel {
+        background-image: linear-gradient(transparent 0%, transparent 90%, #505050 20%, #505050 20%);
+        background-repeat: no-repeat;
+        background-size: 0% 100%;
+        background-position-x: center;
+    
+        transition: background-size 500ms;
+    }
+
+    .homeAdm-botão-addModelos:hover, .homeAdm-botão-novidades:hover, .homeAdm-botão-cardDestaque:hover, .homeAdm-botão-colecao:hover, .homeAdm-botão-addCupom:hover, .homeAdm-botão-carrosel:hover {
+	    color: #505050;
+	    transition: 500ms;
+	    background-size: 100% 100%;
+	    background-position-x: center;
     }
     .homeAdm-botão-novidades{
         font-size: 1em;
