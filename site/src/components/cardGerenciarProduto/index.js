@@ -1,4 +1,5 @@
 import './index.scss'
+import '../../assets/common/index.scss'
 
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
@@ -68,6 +69,10 @@ export default function Index(){
             //navigate(`/admin/produto/alterar/${id}`)
         }
 
+    function formatarPreco(preco){
+        return preco.toFixed(2);
+    }
+
 
 
     return(
@@ -94,7 +99,7 @@ export default function Index(){
                                 
                                 <div className='gerenciarProd-div-preco'>
                                     <p className='preço-produto-card'> R$</p>
-                                    <p className='valor-produto-card'> {item.preco} </p>
+                                    <p className='valor-produto-card'> {formatarPreco(item.preco)}</p>
                                 </div>
 
                                 <div className='gerenciarProd-div-cor' >
