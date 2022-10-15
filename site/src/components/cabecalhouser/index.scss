@@ -2,157 +2,125 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height:6.5em;
 
-    width: 1280px;
-    height: 104px;
-    left: 0px;
-    top: 0px;
-
-    background: linear-gradient(90.04deg, #8B7CA1 0.07%, #E7CB83 120.16%);
-    
-        .cab-user-txt{
-            position: absolute;
-            width: 139px;
-            height: 53px;
-            left: 27px;
-            top: 31px;
+    background: linear-gradient(90.04deg, #8B7CA1 0.07%, #E7CB83 120.16%);    
+    .cab-user-txt{
+    width: 139px;
+    height: 53px;
             
-            .cab-user-txt-1{
-                padding-left: 2px;
-                color: white;
-                font-family: 'logo-font';
-                font-weight: 400;
-                font-size: 2.5em;
+    .cab-user-txt-1{
+        padding-left: 2px;
+        color: white;
+        font-family: 'logo-font';
+        margin-left: 1em;
+        font-weight: 400;
+        font-size: 2.5em;
+        width: 3em;
+        margin-top: 0.5em;
+    }       
+}
+    .cab-user-topicos{  
+    margin-left: 15em;
+    .cab-user-logo{
+        display: flex;
+        justify-content: center;
+    }
+    .cab-user-divisoria{
+        width: 18em;
+    }
+    .cab-topic{
+        width: 15em;
+        display: flex;
+        flex-direction: row;
+        margin-left: 1.5em;
+        margin-top: 0.5em;
+        justify-content: space-between;
+
+        font-family: 'caviar';
+
+        color: #fff;
+
+    }
+    }
+    
+    .cab-menu{
+        display: flex;
+        flex-direction: row;
+
+        font-family: 'inter';
+        color: #fff;
+    }
+    .cab-busca{
+        display: flex;
+        flex-direction: row;
+        .cab-user-logo-lupa{
+            height: 1em;
+            width: 1em;
+
+            margin-right: 1em;
+            margin-top: 1.6em;
+        }
+        .cab-user-txt-2{
+            margin-right: 1em;
+            margin-top: 1.6em;
+        }
+    }
+
+    .cab-lista{
+        display: flex;
+        flex-direction: row;
+
+        font-family: 'inter';
+
+        .cab-user-lista{
+            margin-right: 0.5em;
+            margin-top: 1.7em;
+        }
+        .cab-user-lista-img{
+            height: 1.3em;
+            margin-right: 1em;
+            margin-top: 1.6em;
+        }
+    }
+
+    .cab-carrinho{
+        display: flex;
+        flex-direction: row;
+
+        .cab-user-carrinho{
+            height: 1.3em;
+            margin-top: 1.6em;
+        }
+        .cab-user-carrinho-div{
+            background-color: #fff;
+            height: 1.3em;
+            width: 1.2em;
+            border-radius: 15em;
+
+            margin-right: 1em;
+            margin-top: 1em;
+
+            .cab-user-carrinho-num{
+                display: flex;
+                justify-content: center;
+                color: #000;
                 
             }
         }
-    .cab-user-logo{
-        position: absolute;
-        width: 32px;
-        height: 40px;
-        left: 571px;
-        top: 10px;
-    }
-    .cab-user-divisoria{
-        position: absolute;
-        width: 300px;
-        height: 1px;
-        left: 450.5px;
-        top: 56px;
-        
-        background: #D9D9D9;
     }
 
-    .cab-topic{
+    .cab-user-1{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        position: absolute;
-        width: 220px;
-        height: 32px;
-        left: 490.5px;
-        top: 68px;
-
-        font-family: 'caviar';
-        font-size: 12px;
-        color: #D9D9D9;
-    }
-    
-    .cab-user-logo-lupa{
-        position: absolute;
-        left: 66.33%;
-        right: 32.89%;
-        top: 50%;
-        bottom: 98.43%;
-    }
-    .cab-user-txt-2{
-        position: absolute;
-        width: 44px;
-        height: 17.96px;
-        left: 865px;
-        top: 49.57px;
-        
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-        
-        color: #FFFFFF;
-    }
-
-    .cab-user-lista{
-        position: absolute;
-        width: 95px;
-        height: 15.85px;
-        left: 934px;
-        top: 49.57px;
-
-        font-family: 'inter';
-        font-size: 12px;
-        line-height: 15px;
-
-        color: #FFFFFF;
-    }
-    .cab-user-lista-img{
-        position: absolute;
-        width: 21px;
-        height: 22.19px;
-        left: 1038px;
-        top: 42.77px;
-    }
-
-    .cab-user-carrinho{
-        position: absolute;
-        width: 21px;
-        height: 21px;
-        left: 1090px;
-        top: 44px;
-    }
-
-    .cab-user-carrinho-div{
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        left: 1111px;
-        top: 38.19px;
-
-        background: #FFFFFF;
-        border-radius: 50em;
-
-        .cab-user-carrinho-num{
-            color: #E7CB83;
-            position: absolute;
-            bottom: -0.05em;
-            left: 0.3em;
+        .cab-user-nome{
+            margin-right: 0.5em;
+            margin-top: 1.8em;
+        }
+        .cab-user-img{
+            height: 1em;
+            margin-right: 1em;
+            margin-top: 2em;
         }
     }
-
-    .cab-user-nome{
-        position: absolute;
-        width: 83px;
-        height: 9px;
-        right: 1em;
-        top: 50px;
-        
-        font-family: 'caviar';
-        font-size: 12px;
-        line-height: 15px;
-        
-        color: #FFFFFF;
-    }
-
-    .cab-user-img{
-        position: absolute;
-        left: 96.48%;
-        right: 2.01%;
-        top: 42.07%;
-        bottom: 98.38%;
-    }
-
-    .cab-user-logo-lupa{
-        height: 1em;
-    }
-
-
 }

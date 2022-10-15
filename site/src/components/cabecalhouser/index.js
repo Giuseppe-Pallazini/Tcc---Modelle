@@ -14,7 +14,7 @@ export default function Index(){
                     <h1 className='cab-user-txt-1'>M o d e l l e</h1>
                 </div>
 
-                <div>
+                <div className='cab-user-topicos'>
                     <div className='cab-user-logo'>
                         <img src={Imagem1} alt=''/>
                     </div>
@@ -38,18 +38,18 @@ export default function Index(){
                     </div>
                 </div>
 
-                <div>
-                    <div>
+                <div className='cab-menu'>
+                    <div className='cab-busca'>
                         <img className='cab-user-logo-lupa' src={Imagem2} alt='' />
                         <p className='cab-user-txt-2'>Buscar</p>
                     </div> 
 
-                    <div>                        
+                    <div className='cab-lista'>                        
                         <p className='cab-user-lista'>Lista de desejos</p>
                         <img className='cab-user-lista-img' src={Imagem3} alt=''/>
                     </div>
 
-                    <div>
+                    <div className='cab-carrinho' >
                         <img className='cab-user-carrinho' src={Imagem4} alt=''/>
                         <div className='cab-user-carrinho-div'>
                             <span className='cab-user-carrinho-num'>0</span>
@@ -57,7 +57,7 @@ export default function Index(){
 
                     </div>
 
-                    <div>
+                    <div className='cab-user-1' >
                         <p className='cab-user-nome'>Usuario</p>
                         <img className='cab-user-img' src={Imagem5} alt='' />
                     </div>

@@ -1,6 +1,7 @@
 import { useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
 import CardUsuario from '../../../components/cardProdutoUsuario'
+import Cabecalho from '../../../components/cabecalhouser'
 
 
 import './index.scss';
@@ -12,7 +13,7 @@ export default function Index(){
 
     return(
        <main>
-            
+            <Cabecalho/>
             <CardUsuario />
 
         </main> 
