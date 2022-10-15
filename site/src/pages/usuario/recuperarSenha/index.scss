@@ -1,0 +1,19 @@
+.rec-senha-tudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+
+    .rec-senha-section1 {
+        textarea:focus, input:focus {
+            box-shadow: 0 0 0 0;
+            outline: 0;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}

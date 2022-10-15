@@ -11,6 +11,11 @@
                 outline: 0;
             }
 
+            a:link, a:visited, a:focus {
+                text-decoration: none;
+                color: default;
+            }
+
             .div-dashboard-login-img1{
                 position: absolute;
                 width: 140px;

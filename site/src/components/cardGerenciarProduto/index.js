@@ -69,10 +69,10 @@ export default function Index(){
             //navigate(`/admin/produto/alterar/${id}`)
         }
 
-    function formatarPreco(preco){
-        return preco.toFixed(2);
-    }
-
+        function formatarPreco(preco){
+            return preco.toFixed(2);
+        }
+        
 
 
     return(

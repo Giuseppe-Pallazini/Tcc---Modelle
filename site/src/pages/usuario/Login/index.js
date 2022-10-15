@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './index.scss';
 import '../../../assets/common/index.scss'
 import {useEffect, useState, useRef} from 'react'
+import { Link } from 'react-router-dom';
 
 import Imagem1 from '../../../assets/image/logo_transparent.png'
 import Imagem2 from "../../../assets/image/image-login.png";
@@ -89,8 +90,9 @@ export default function Index() {
           
           <button className='div-dashboard-bt' onClick={entrarClick} disabled={carregando} >Login</button>
           
-          <p className='div-dashboard-desc2' >Esqueceu a senha</p>
-          <p className='div-dashboard-desc3'>Criar Conta</p>
+          <Link className='div-dashboard-desc2' to={'/user/recuperarSenha'}> Esqueceu a senha </Link>
+
+          <Link className='div-dashboard-desc3' to={'/user/cadastro'}> Criar Conta </Link>
 
           <p className='div-dashboard-desc4'>All rights reserved &copy; </p>
 
