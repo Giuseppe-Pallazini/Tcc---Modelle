@@ -22,6 +22,7 @@
 }
     .cab-user-topicos{  
     margin-left: 15em;
+    margin-top: 0.5em;
     .cab-user-logo{
         display: flex;
         justify-content: center;
@@ -50,6 +51,7 @@
 
         font-family: 'inter';
         color: #fff;
+        margin-top: 1em;
     }
     .cab-busca{
         display: flex;
@@ -105,6 +107,7 @@
                 display: flex;
                 justify-content: center;
                 color: #000;
+                font-family: 'caviar';
                 
             }
         }
@@ -115,12 +118,12 @@
         flex-direction: row;
         .cab-user-nome{
             margin-right: 0.5em;
-            margin-top: 1.8em;
+            margin-top: 1.7em;
         }
         .cab-user-img{
             height: 1em;
             margin-right: 1em;
-            margin-top: 2em;
+            margin-top: 1.8em;
         }
     }
 }

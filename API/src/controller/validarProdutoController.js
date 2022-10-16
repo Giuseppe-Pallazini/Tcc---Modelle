@@ -141,5 +141,27 @@ server.put('/admin/produto/alterar/:id', upload.array('imagens'), async (req, re
 }
 )
 
+server.get('/api/produto/:id', async (req, resp) => {
+    try{
+        const id = req.params.id;
+
+        const produto =  await ListarTodosProdutosPorId(id);
+        const tamanho = await ListarTodosTamanhosporId(id);
+        const imagens = await ListarTodosImagensporId(id);
+        
+
+        resp.send({
+            info: produto,
+            tamanho: tamanho,
+            imagens: imagens
+    })
+
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+)
+
 
 export default server;
