@@ -10,6 +10,7 @@ import IconLupa from '../../assets/image/logo-lupa.png'
 import { buscarPorNome, listarTodos, removerProduto, buscarImagem } from '../../api/produtoAPI'
 
 import { API_URL } from '../../api/config.js';
+import { useNavigate } from 'react-router-dom';
 
 
  
@@ -24,6 +25,9 @@ export default function Index(){
     //     const resp = await buscarPorNome(filtro);
     //     setProduto(resp)
     // }
+
+    const navigate = useNavigate();
+
 
     useEffect(()  => {
         carregarProduto();
@@ -52,6 +56,12 @@ export default function Index(){
         return preco.toFixed(2);
     }
 
+    function abrirDetalhes(id){
+        navigate(`/user/destalheProduto/${id}`)
+    }
+
+
+
     return(
         <main className='main-menu-produtos'>
 
@@ -61,7 +71,7 @@ export default function Index(){
             </div> */}
 
             {produto.map(item => 
-                <div className='card-produto'>
+                <div className='card-produto' onClick={() => abrirDetalhes(item.produto)}>
                     <div className='icon-lista'>
                         <img src={IconListaDesejo} alt='' className='icon-lista-desejo' />                
                         <img src={mostrarImagem(item.ds_imagem)}  alt='imagem' className='gerenciarProd-imagem-card-1' />

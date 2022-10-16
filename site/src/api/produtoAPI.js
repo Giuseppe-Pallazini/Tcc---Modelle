@@ -96,3 +96,9 @@ export async function buscarProdutoPorId(id){
 
 }
 
+export async function buscarProdutoPorIdUsuario(id){
+    const resposta = await api.get('/api/produto/' + id)
+    return resposta.data;
+
+}
+
