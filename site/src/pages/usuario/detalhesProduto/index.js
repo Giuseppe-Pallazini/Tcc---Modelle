@@ -55,7 +55,7 @@ export default function Index(){
                 qtd:1
             })
             storage('carrinho', carrinho)
-            toast.dark("🛒Item Adicionado ao Carrinho")
+            toast.dark("🛒 Item Adicionado ao Carrinho")
         }
     }
 

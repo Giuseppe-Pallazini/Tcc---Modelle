@@ -51,6 +51,7 @@
 
         font-family: 'inter';
         color: #fff;
+        margin-top: 1em;
     }
     .cab-busca{
         display: flex;
@@ -117,12 +118,12 @@
         flex-direction: row;
         .cab-user-nome{
             margin-right: 0.5em;
-            margin-top: 1.8em;
+            margin-top: 1.7em;
         }
         .cab-user-img{
             height: 1em;
             margin-right: 1em;
-            margin-top: 2em;
+            margin-top: 1.8em;
         }
     }
 }
