@@ -1,0 +1,62 @@
+.main-rodapé{
+    display: flex;
+    flex-direction: column;
+    background-color: #99889C;
+    height: 28vh;
+
+
+    .rodape-modelle{
+        font-family: 'caviar';
+        font-size: 2em;
+        color: #fff;
+        margin-top: 2em;
+        margin-left: 2em;
+    }
+    .rodape-hr{
+        margin-top: 1em;
+        margin-left: 4em;
+        width: 70em;
+    }
+    .rodape-div-informações{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 1em;
+        color: #fff;
+        font-size: 1em ;
+        font-family: 'caviar';
+    }
+
+    .rodape-info-brasil{
+        display: flex;
+        flex-direction: row;
+    }
+    .rodape-logo-brasil{
+        font-size: 1em;
+        margin-left: 2em
+    }
+    .rodape-txtBrasil{
+        margin-left: .2em;
+        font-style: bold;
+    }
+
+    .rodape-sigaNos{
+        margin-right: 1em;
+    }
+    .rodape-condições{
+        margin-right: 2em;
+    }
+    .rodape-informações-2{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: #fff;
+        margin-top: 6em;
+    }
+    .rodape-Allrightsreserved{
+        margin-left: 1em;
+    }
+    .rodape-info-localização{
+        margin-right: 1em;
+    }
+}

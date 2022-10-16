@@ -1,12 +1,12 @@
-import './index.scss'
+import './index.scss';
 import '../../assets/common/index.scss'
-import Camiseta from '../../../assets/image/camiseta-preta-versace.png';
-
+import Camiseta from '../../assets/image/camiseta-preta-versace.png';
 
 export default function Index(){
     return(
-        <main className='main-cardProduto-carrinho'>
-            <div className='div-carrinho-infoProd'>
+        <main className="main-carrinho-produtos">
+            <div className='div-carrinho-cards-produtos'>
+                    <div className='div-carrinho-infoProd'>
                         <div className='carrinho-div-imgProd'>
                             <img src={Camiseta} alt='img-produto' />
                         </div>
@@ -17,16 +17,16 @@ export default function Index(){
                             </div>
 
                             <div className='div-carrinho-informações-tituloProd'>
-                                <h1 className='carrinho-nomeProd'> Camiseta Versace</h1>
+                                <h1 className='carrinho-nomeProd'> CAMISETA VERSACE</h1>
                             </div>
 
                             <div className='div-carrinho-informações-corProd'>
-                                <p className='carrinho-textCor'> Cor: </p>
+                                <p className='carrinho-textCor'> Cor </p>
                                 <input className='carrinho-valorCor' type='color' />
                             </div>
 
                             <div className='div-carrinho-informações-tamanho'> 
-                                <p className='carrinho-textTamanho'>Tamanho: </p>
+                                <p className='carrinho-textTamanho'>Tamanho </p>
                                 <p className='carrinho-valorTamanho'>M</p>
                             </div>
 
@@ -40,9 +40,12 @@ export default function Index(){
                                     <p className='carrinho-textValor'>R$ </p>
                                     <p className='carrinho-valorProd'> 1.345,00 </p>
                                 </div>
+
                             </div>
                         </div>
                     </div>
+                    <hr className='quebra-hr' />
+            </div>
         </main>
     );
 }

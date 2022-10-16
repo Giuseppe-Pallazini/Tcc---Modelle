@@ -5,6 +5,7 @@
         display: flex;
         flex-direction: column;
     }
+
     .div-carrinho-titulo{
         display: flex;
         justify-content: center;
@@ -14,211 +15,140 @@
         font-size: 2em;
         font-family: 'caviar';
     }
-    .div-carrinho-infoProd{
-        display: flex;
-        flex-direction: row;
-        margin-right: 5em;
-        margin-top: 5em;
-        margin-bottom: 3em;
-        width: 43em;
-        height: 24em;
-        border: 1px solid black;
-    }
-    .carrinho-div-imgProd{
-        margin-top: .5em;
-    }
+
     .div-carrinho-informações{
         display: flex;
+        flex-direction: row;
         justify-content: space-around;
-        align-items: center;
-        height: 40vh;
+        
     }
     .carrinho-div-informações-prod{
         display: flex;
         flex-direction: column;
-        margin-top: 1em;
-    }
-
-    .div-carrinho-infromações-id{
-        display: flex;
-        flex-direction: row;
-    }
-    .carrinho-p-ID{
-        font-size: 0.5em;
-        font-family: 'caviar';   
-        opacity: 50%;       
-    }
-    .carrinho-p-info-id{
-        opacity: 50%;
-        font-size: 0.5em;
-        font-family: 'caviar';
-        margin-left: 1em;
-    }
-        
-    .div-carrinho-informações-tituloProd{
-        margin-top: .5em;
-    }
-    .carrinho-nomeProd{
-        margin-left: .2em;
-        font-size: 1.5em;
-        font-weight: 900;
-        font-family: 'caviar';
-    }
-
-    .div-carrinho-informações-corProd{
-        display: flex;
-        flex-direction: row;
-        margin-top: 2em;
-    }
-    .carrinho-textCor{
-        font-size: 1em;
-        font-family: 'caviar';
-        font-weight: 900;
-    }
-    .carrinho-valorCor{
-        margin-left: 5em;
-        width: 2em;
-        border: none;
     }
     
-
-    .div-carrinho-informações-tamanho{
-        display: flex;
-        flex-direction: row;
-    }
-    .carrinho-textTamanho{
-        font-size: 1em;
-        font-family: 'caviar';         
-    }
-    .carrinho-div-img-prod{
-        margin-top: -1em;
-    }
-
-    .div-carrinho-informaões-qtdProd{
-        display: flex;
-        flex-direction: row; 
-        margin-top: 5em;
-    }
-    .carrinho-div-input-qtd{
-        display: flex;
-        flex-direction: row;
-    }
-    .carrinho-diminuir-qtd{
-        font-size: 2em;
-        margin-right: .3em;
-        padding-bottom: .5em;
-        opacity: 80%;
-    }
-    .carrinho-input-qtd{
-        text-align: center;
-        margin-top: .8em;
-        width: 6em;
-        height: 2.5em;
-        opacity: 80%;
-        border: 1px solid black;
-    }
-    .carrinho-almentar-qtd{
-        font-size: 2em;
-        margin-left: .3em;
-        padding-bottom: .2em;
-        opacity: 80%;
-    }
-
-    .div-carrinho-valorProd{
-        display: flex;
-        flex-direction: row;
-    }
-    .carrinho-textValor{
-        font-size: 1.5em;
-        font-family: 'caviar';
-        margin-top: .6em;
-        opacity: 70%;
-        margin-left: 1em;
-    }
-    .carrinho-valorProd{
-        font-size: 1.5em;
-        opacity: 70%;
-        font-family: 'caviar';
-        margin-top: .6em;
-        margin-left: .5em;
-    }
-
     .div-carrinho-infoPag{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 22em;
+        height: 33em;
+        background-color: #ffb7000e;
     }
     .div-carrinho-logoModelle{
-
+        margin-left: 1em;
+        margin-top: -1em;
     }
     .carrinho-logo-modelle{
-
+        width: 10em;
+        height: 11.5em;
     }
     .div-carrinho-info-Prazo{
         display: flex;
         flex-direction: row;
+        margin-top: 2em;
     }
     .carrinho-logo-frete{
-
+        width: 2em;
+        height: 1.5em;
+        margin-right: 1.3em;
     }
     .carrinho-p-prazo{
-
+        margin-top: -1em;
+        font-size: 1em;
+        font-family: 'caviar';
     }
     .carrinho-p-infoFrete{
-
+        font-size: .7em;
+        margin-top: .4em;
+        margin-left: .4em;
+        opacity: 70%;
+        font-family: 'caviar';
     }
 
     .div-carrinho-info-formasPagamento{
         display: flex;
         flex-direction: row;
+        margin-top: 3em;
+        margin-right: 5em;
     }
     .carrinho-logo-pagamento{
-
+        width: 2em;
+        height: 1.5em;
+        margin-right: 1.3em;
     }
     .carrinho-p-formas{
-
+        margin-top: -.7em;
+        font-size: 1em;
+        font-family: 'caviar';
     }
     .carrinho-p-infoPagamento{
-
+        font-size: .7em;
+        margin-top: .4em;
+        opacity: 70%;
+        font-family: 'caviar';
     }
     .div-carrinho-info-subtotal{
         display: flex;
         flex-direction: row;
+        margin-top: 3em;
+        margin-left: 1em;
     }
     .carrinho-p-subtotal{
+        font-size: 1em;
+        font-family: 'caviar';
+        font-weight: 500;
 
     }
     .div-carrinho-valor-subtotal{
         display: flex;
         flex-direction: row;
+        margin-left: 6em;
     }
     .carrinho-p-textSubtotal-valor{
-
+        font-size: 1em;
+        font-family: 'caviar';
+        font-weight: 500;
     }
     .carrinhho-valor-subtotal{
-
+        margin-left: 1em;
+        font-size: 1em;
+        font-family: 'caviar';
+        opacity: 80%;
+        font-weight: 500;
     }
     .div-carrinho-info-total{
         display: flex;
         flex-direction: row;
-    }
-    .carrinho-p-subtotal{
-
+        margin-left: 1em;
+        margin-top: .5em;
     }
     .div-carrinho-valor-total{
         display: flex;
         flex-direction: row;
+        margin-left: 8em;
     }
     .carrinho-p-textTotal-valor{
-
+        font-size: 1em;
+        font-family: 'caviar';
+        font-weight: 500;
     }
     .carrinhho-valor-total{
-
+        opacity: 80%;
+        margin-left: 1em;
+        font-size: 1em;
+        font-family: 'caviar';
+        font-weight: 500;
     }
     .div-carrinho-info-continuar{
-
+        margin-top: 1em;
+        margin-left: 1em;
     }
     .carrinho-botão-continuar{
-            
+        width: 20em;
+        height: 3em; 
+        background-color: #fff;
     }
 
 }

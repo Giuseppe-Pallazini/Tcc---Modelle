@@ -1,0 +1,136 @@
+.main-carrinho-produtos{
+    display: flex;
+    flex-direction: column;
+    .div-carrinho-infoProd{
+        display: flex;
+        flex-direction: row;
+        margin-right: 5em;
+        margin-top: 3em;
+        margin-bottom: 2em;
+        width: 43em;
+        height: 24em;
+        //border: .5px solid black;
+    }
+    .quebra-hr{
+        margin-left: 3em;
+        width: 40em;
+    }
+    .carrinho-div-imgProd{
+        margin-top: .5em;
+    }
+    .div-carrinho-informações{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 40vh;
+    }
+    .carrinho-div-informações-prod{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1em;
+    }
+
+    .div-carrinho-infromações-id{
+        display: flex;
+        flex-direction: row;
+    }
+    .carrinho-p-ID{
+        font-size: 0.5em;
+        font-family: 'caviar';   
+        opacity: 50%;       
+    }
+    .carrinho-p-info-id{
+        opacity: 50%;
+        font-size: 0.5em;
+        font-family: 'caviar';
+        margin-left: 1em;
+    }
+        
+    .div-carrinho-informações-tituloProd{
+        margin-top: .5em;
+    }
+    .carrinho-nomeProd{
+        margin-left: .2em;
+        font-size: 1em;
+        font-style: bold;
+        font-family: 'caviar';
+    }
+
+    .div-carrinho-informações-corProd{
+        display: flex;
+        flex-direction: row;
+        margin-top: 2em;
+    }
+    .carrinho-textCor{
+        font-size: 1em;
+        font-family: 'caviar';
+        font-weight: 900;
+    }
+    .carrinho-valorCor{
+        margin-left: 5em;
+        width: 2em;
+        border: none;
+    }
+    
+
+    .div-carrinho-informações-tamanho{
+        display: flex;
+        flex-direction: row;
+    }
+    .carrinho-textTamanho{
+        font-size: 1em;
+        font-family: 'caviar';         
+    }
+    .carrinho-div-img-prod{
+        margin-top: -1em;
+    }
+
+    .div-carrinho-informaões-qtdProd{
+        display: flex;
+        flex-direction: row; 
+        margin-top: 5em;
+    }
+    .carrinho-div-input-qtd{
+        display: flex;
+        flex-direction: row;
+    }
+    .carrinho-diminuir-qtd{
+        font-size: 2em;
+        margin-right: .3em;
+        padding-bottom: .5em;
+        opacity: 80%;
+    }
+    .carrinho-input-qtd{
+        text-align: center;
+        margin-top: .8em;
+        width: 6em;
+        height: 2.5em;
+        opacity: 80%;
+        border: 1px solid black;
+    }
+    .carrinho-almentar-qtd{
+        font-size: 2em;
+        margin-left: .3em;
+        padding-bottom: .2em;
+        opacity: 80%;
+    }
+
+    .div-carrinho-valorProd{
+        display: flex;
+        flex-direction: row;
+    }
+    .carrinho-textValor{
+        font-size: 1.5em;
+        font-family: 'caviar';
+        margin-top: .6em;
+        opacity: 70%;
+        margin-left: 1em;
+    }
+    .carrinho-valorProd{
+        font-size: 1.5em;
+        opacity: 70%;
+        font-family: 'caviar';
+        margin-top: .6em;
+        margin-left: .5em;
+    }
+}
