@@ -3,6 +3,8 @@ import storage from 'local-storage'
 import Cabecalho from '../../../components/cabecalhouser'
 import CardUsuario from '../../../components/cardProdutoUsuario'
 
+import { toast } from 'react-toastify';
+
 import './index.scss';
 import '../../../assets/common/index.scss'
 import {useEffect, useState, useRef} from 'react'
@@ -41,7 +43,21 @@ export default function Index(){
         return API_URL + '/' + imagem;
     }
 
+    function adicionarCarrinho(){
+        let carrinho = [];
+        if(storage('carrinho')){
+            carrinho = storage('carrinho')
+        }
 
+        if(!carrinho.find(item => item.id === id)){
+            carrinho.push({
+                id:id,
+                qtd:1
+            })
+            storage('carrinho', carrinho)
+            toast.dark("🛒Item Adicionado ao Carrinho")
+        }
+    }
 
     return(
        <main className='main-detalhes'>
@@ -96,7 +112,7 @@ export default function Index(){
                     </div>
 
                     <div className='detalhes-bt' >
-                        <button className='detalhes-add-carrinho' >Adicionar ao Carrinho</button>
+                        <button className='detalhes-add-carrinho' onClick={adicionarCarrinho} >Adicionar ao Carrinho</button>
                         <button className='detalhes-comprar' >Comprar</button>
                     </div>
                 </div>
