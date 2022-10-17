@@ -15,6 +15,9 @@ import { buscarPorNome, listarTodos, removerProduto, buscarImagem } from '../../
 
 import { API_URL } from '../../api/config.js';
 
+import { confirmAlert } from 'react-confirm-alert'
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
+
 
  
 
@@ -38,14 +41,24 @@ export default function Index(){
         setProduto(resp); 
     }
 
-    async function deletarProduto(id){
-        try {
-           await removerProduto(id);
-           await carregarProduto();
-            toast.dark('Produto removido com sucesso!')
-        } catch (err) {
-            console.log(err);
-        }
+    async function deletarProduto(id, nome){
+        confirmAlert({
+            title: ' Remover Produto',
+            message: `Confirmar remoção do ${nome}`,
+            buttons: [
+                {
+                    label: 'sim',
+                    onClick: async () => {
+                        const resposta = await removerProduto(id);
+                        await carregarProduto();
+                        toast.dark('Produto removido com sucesso!')
+                    }
+                },
+                {
+                    label: 'não'
+                }
+            ]
+        })
     }
 
     function mostrarImagem(imagem) {
@@ -72,7 +85,6 @@ export default function Index(){
         function formatarPreco(preco){
             return preco.toFixed(2);
         }
-        
 
 
     return(
@@ -86,7 +98,7 @@ export default function Index(){
             {produto.map(item => 
                 <div className='gerenciarProd-card-1'>
                         <div className='gerenciarProd-div-icons'>
-                                    <img src={LogoRemover} alt='logo' className='logo-remover' onClick={() => deletarProduto(item.produto)} />
+                                    <img src={LogoRemover} alt='logo' className='logo-remover' onClick={() => deletarProduto(item.produto, item.nome)} />
                                     <div>
                                         <img src={LogoEditar} alt='logo' className='logo-editar' onClick={() => editarProduto(item.produto)} />
                                     </div>

@@ -15,7 +15,7 @@ export default function Index(){
 
                 <div className='cab-canvas'>
                     <select className='cab-canvas-gerenc' name="Gerenciamento">
-                        <option className='cab-canvas-dc' value="Gerenciamento">Gerenciamento</option>
+                        <Link to='/admin/gerenciarProd' className='cab-canvas-dc' value="Gerenciamento">Gerenciamento </Link>
                         <option className='cab-canvas-dc' value="Usuario">Usuarios</option>
                         <option className='cab-canvas-dc' value="Pedidos">Pedidos</option>
                         <option className='cab-canvas-dc' value="Produtos">Produtos</option>
