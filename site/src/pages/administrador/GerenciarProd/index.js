@@ -26,19 +26,6 @@ export default function Index(){
                     <div className='div-titulo-gerenciar'>
                         <h1 className='gerenciarProd-titulo'> Gerenciar produtos </h1>
                     </div>
-
-                    <div className='div-titulo-gerenciar'>
-                        <div className='div-nome-mes'>
-                            <p className='gerenciarProd-fevereiro'> Fevereiro</p>
-                            <img src={IconSeta} alt='logo' className='gerenciarProd-logo-buscar' /> 
-                        </div>
-                        <div className='select-mes'>
-                            <input type='text' className='input-mes' placeholder='Mês: ' />
-                        </div>
-                        <div className='select-ano'>
-                            <input type='text' className='input-ano' placeholder='Ano:  ' />
-                        </div>
-                    </div>
                 </div>
 
  

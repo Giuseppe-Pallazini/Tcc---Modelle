@@ -15,6 +15,8 @@ import { alterarProduto, buscarImagem, buscarProdutoPorId, inserirProduto, salva
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { API_URL } from '../../../api/config';
+import { IMaskInput } from 'react-imask';
+import { confirmAlert } from 'react-confirm-alert';
 
 
 export default function CadastroProduto() {
@@ -196,6 +198,7 @@ export default function CadastroProduto() {
     }, [])
 
     return (
+        
         <main className='cadastro'>
             <Cabecalho />
 
@@ -275,7 +278,8 @@ export default function CadastroProduto() {
                 <section className='cadastro-section-2'>
                     <input className='cadastro-section-2-input1' type='text' placeholder='Nome do produto' value={nome} onChange={e => setNome(e.target.value)} />
                     <input className='cadastro-section-2-input2' type='text' placeholder='Complemento do produto' value={complementoProduto}  onChange={e => setComplementoProduto(e.target.value)} />
-                    <input className='cadastro-section-2-input3' type='text' placeholder='Valor (R$)' value={preco} onChange={e => setPreco(e.target.value)} />
+                    <IMaskInput mask="R$ 000.000.000.000.000" className='cadastro-section-2-input3' type='text' placeholder='Valor (R$)' value={preco} onChange={e => setPreco(e.target.value)} />
+
 
                     <div className='cadastro-section2-div1'>
                         <div className='cadastro-section2-div1-1'>
@@ -285,8 +289,9 @@ export default function CadastroProduto() {
 
                         <div className='cadastro-section2-div2'>
                             <p className='cadastro-section2-div2-p'> Juros </p>
-                            <input className='cadastro-section2-div2-input' type='text' placeholder='0' value={juros} onChange={e => setJuros(e.target.value)} />
+                            <input className='cadastro-section2-div2-input' type='text' placeholder='%' value={juros} onChange={e => setJuros(e.target.value)} />
                         </div>
+
 
                         <div className='cadastro-section2-div3'>
                             <p> Disponivel</p>

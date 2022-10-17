@@ -149,6 +149,12 @@
         width: 20em;
         height: 3em; 
         background-color: #fff;
+        transition: 170ms ease-in-out;
+    }
+    .carrinho-botão-continuar:hover {
+        background-color: #19110B;
+        color: white;
+        cursor: pointer;
     }
 
 }
