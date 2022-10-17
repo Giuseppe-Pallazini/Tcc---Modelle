@@ -1,6 +1,6 @@
 import './index.scss';
 import '../../assets/common/index.scss'
-
+import { Link } from 'react-router-dom';
 import IconBrasil from '../../assets/image/icon-brasil-rodapé.png'
 
 export default function Index(){
@@ -16,13 +16,17 @@ export default function Index(){
                 </div>
 
                 <p className='rodape-contato'>Contato</p>
-                
-                <p className='rodape-QueméModelle'>Quem é Modelle?</p>
 
+                <Link to='/user/sobreModelle'>
+                    <p className='rodape-QueméModelle'>Quem é Modelle?</p>
+                </Link>
                 <p className='rodape-sigaNos'>Siga-nos</p>
 
-                <p className='rodape-condições'>Condições legais e privacide </p>
+                <Link to='/user/condicoesEPrivacidade'>
+                    <p className='rodape-condições'>Condições legais e privacide </p>
+                </Link>
            </div>
+
 
            <div className='rodape-informações-2'>
                 <p className='rodape-Allrightsreserved'>All rights reserved ©</p>
