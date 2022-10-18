@@ -1,7 +1,7 @@
 import './index.scss';
 
 import Cabecalho from '../../../components/cabecalhouser';
-import ProdutoCarrinho from '../../../components/cardProdutoCarrinho'
+import ProdutoCarrinho from '../../../components/cardProdutoCarrinho/index'
 import Rodape from '../../../components/Rodapé'
 import LogoModelle from '../../../assets/image/logo-modelle.png'
 import LogoCaminhão from '../../../assets/image/logo-caminhão.png'
@@ -37,7 +37,7 @@ export default function Index(){
             setItens(temp)
 
         }
-
+ 
     }
 
     useEffect(() => {
@@ -45,6 +45,7 @@ export default function Index(){
     }, [])
 
     return(
+
        <main className='main-carrinho'>
             <Cabecalho />
 
@@ -54,15 +55,14 @@ export default function Index(){
                 </div>
                 <div className='div-carrinho-informações'>
                     <div className='div-carrinho-cards-produtos'>
-                        <ProdutoCarrinho />
-
-                        <ProdutoCarrinho />   
-                
-                        <ProdutoCarrinho />                       
+                       {itens.map(item => 
+                          <ProdutoCarrinho item={item} />
+                        )}
+                  
                     </div>
                     
                     <div className='div-carrinho-infoPag'>
-
+                        
                         <div className='div-carrinho-logoModelle' >
                             <img className='carrinho-logo-modelle' src={LogoModelle} alt='logo-modelle' />
                         </div>
@@ -106,7 +106,6 @@ export default function Index(){
                         </div>
                     </div>
                 </div>
-
                 <Rodape />
             </section>
         </main> 

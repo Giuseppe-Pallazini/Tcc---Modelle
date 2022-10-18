@@ -2,7 +2,7 @@ import './index.scss';
 import '../../assets/common/index.scss'
 import Camiseta from '../../assets/image/camiseta-preta-versace.png';
 
-export default function Index(){
+export default function Index(props){
     return(
         <main className="main-carrinho-produtos">
             <div className='div-carrinho-cards-produtos'>
@@ -17,7 +17,7 @@ export default function Index(){
                             </div>
 
                             <div className='div-carrinho-informações-tituloProd'>
-                                <h1 className='carrinho-nomeProd'> CAMISETA VERSACE</h1>
+                                <h1 className='carrinho-nomeProd'> {props.item.produto.nome.produto} </h1>
                             </div>
 
                             <div className='div-carrinho-informações-corProd'>
