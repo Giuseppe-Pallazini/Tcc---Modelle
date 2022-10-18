@@ -8,8 +8,42 @@ import LogoCaminhão from '../../../assets/image/logo-caminhão.png'
 import LogoCartão from '../../../assets/image/logo-cartão.png'
 
 import '../../../assets/common/index.scss'
+import { useEffect, useState } from 'react';
+import Storage from 'local-storage'
+import { buscarProdutoPorId } from '../../../api/produtoAPI';
 
 export default function Index(){
+
+    const [itens, setItens] = useState([]);
+
+  
+
+
+    async function carregarCarrinho(){
+        let carrinho = Storage('carrinho')
+        if (carrinho) {
+
+            let temp = [];
+
+            for (let produto of carrinho){
+               let x = await buscarProdutoPorId(produto.id);
+               temp.push({
+                   produto: x,
+                   qtd: produto.qtd
+               })
+            }
+
+            console.log(temp)
+            setItens(temp)
+
+        }
+
+    }
+
+    useEffect(() => {
+        carregarCarrinho();
+    }, [])
+
     return(
        <main className='main-carrinho'>
             <Cabecalho />
