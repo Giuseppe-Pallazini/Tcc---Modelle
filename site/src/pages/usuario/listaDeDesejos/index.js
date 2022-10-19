@@ -19,6 +19,13 @@ export default function Index(){
                 </div>
              
                     <CardProd />
+
+                    <CardProd />
+
+                    <CardProd />
+                    
+                    <CardProd />
+
               
             </section>
 
