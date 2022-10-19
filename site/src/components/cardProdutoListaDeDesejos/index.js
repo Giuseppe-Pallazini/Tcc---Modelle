@@ -1,6 +1,7 @@
 import './index.scss';
 import '../../assets/common/index.scss'
 import Camiseta from '../../assets/image/camiseta-preta-versace.png';
+import IconCoracao from '../../assets/image/icon-coração.png'
 
 export default function Index(){
     return(
@@ -37,7 +38,7 @@ export default function Index(){
                     </div>
 
                     <div className='card-listadeDesejos-logoCoração'>
-                        <img src='' alt='logo-coração' />
+                        <img src={IconCoracao} alt='logo-coração' />
                     </div>
             </div>
         </main>

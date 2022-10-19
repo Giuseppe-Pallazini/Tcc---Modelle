@@ -6,8 +6,7 @@ import '../../../assets/common/index.scss'
 
 import Cabecalho from '../../../components/cabecalhouser/index.js'
 import Rodape from '../../../components/Rodapé/index.js'
-
-import CardProd from '../../../components/cardProdutoListaDeDesejos/index.js'
+import CardProd from '../../../components/cardProdutoListaDeDesejos'
 import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
@@ -18,9 +17,9 @@ export default function Index(){
                 <div className='Div-listaDeDesejos-titulo' >
                     <h1> LISTA DE DESEJOS </h1>
                 </div>
-                <div className='Div-listaDeDesejos-card'>
+             
                     <CardProd />
-                </div>
+              
             </section>
 
             <Rodape />

@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "popstate": "^1.0.0",
-    "react-router-dom": "^6.4.0"
-  }
-}
