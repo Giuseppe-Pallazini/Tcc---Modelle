@@ -11,12 +11,12 @@ export default function Index(props){
             <div className='div-carrinho-cards-produtos'>
                     <div className='div-carrinho-infoProd'>
                         <div className='carrinho-div-imgProd'>
-                            <img src={Camiseta} alt='img-produto' />
+                            <img src={props.item.produto.imagens} alt='img-produto' />
                         </div>
                         <div className='carrinho-div-informações-prod'>
                             <div className='div-carrinho-infromações-id'>
                                 <div className='carrinho-p-ID'>ID:</div> 
-                                <p className='carrinho-p-info-id'>01</p>
+                                <p className='carrinho-p-info-id'> {props.item.produto.info.id} </p>
                             </div>
 
                             <div className='div-carrinho-informações-tituloProd'>
@@ -35,7 +35,7 @@ export default function Index(props){
                             <div className='div-carrinho-informaões-qtdProd'>
                                 <div className='carrinho-div-input-qtd'>
                                     <p className='carrinho-diminuir-qtd'>-</p>
-                                    <input className='carrinho-input-qtd' type='text' placeholder='1' />
+                                    <p className='carrinho-input-qtd' type='text' placeholder='1' maxLength='0'> {props.item.produto.info.disponibilidades}</p>
                                     <p className='carrinho-almentar-qtd'>+</p>
                                 </div>
                                 <div className='div-carrinho-valorProd'>

@@ -42,7 +42,6 @@ export default function Index(){
 
     useEffect(() => {
         carregarCarrinho();
-
     }, [])
 
     return(

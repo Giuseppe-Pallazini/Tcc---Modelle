@@ -98,7 +98,7 @@ export default function Index(){
                     <div className='detalhes-info-tamanho'>
                         {produto.tamanho.map(item =>
                             <div className='detalhes-info-tamanhos-icon'>
-                                <p className='detalhes-info-tamanhos-txt' >P{item.tamanho}</p>
+                                <p className='detalhes-info-tamanhos-txt' > p {produto.info.tamanho}</p>
                             </div>
                         )}
                     </div>
