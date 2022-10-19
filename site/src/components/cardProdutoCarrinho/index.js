@@ -1,8 +1,11 @@
 import './index.scss';
 import '../../assets/common/index.scss'
 import Camiseta from '../../assets/image/camiseta-preta-versace.png';
+import { useEffect } from 'react';
 
 export default function Index(props){
+
+    
     return(
         <main className="main-carrinho-produtos">
             <div className='div-carrinho-cards-produtos'>
@@ -17,17 +20,16 @@ export default function Index(props){
                             </div>
 
                             <div className='div-carrinho-informações-tituloProd'>
-                                <h1 className='carrinho-nomeProd'> {props.item.produto.nome.produto} </h1>
+                                <h1 className='carrinho-nomeProd'> {props.item.produto.info.produto} </h1>
                             </div>
 
                             <div className='div-carrinho-informações-corProd'>
-                                <p className='carrinho-textCor'> Cor </p>
-                                <input className='carrinho-valorCor' type='color' />
+                                <p className='carrinho-textCor'> {props.item.produto.info.cor} </p>
                             </div>
 
                             <div className='div-carrinho-informações-tamanho'> 
                                 <p className='carrinho-textTamanho'>Tamanho </p>
-                                <p className='carrinho-valorTamanho'>M</p>
+                                <p className='carrinho-valorTamanho'> {props.item.produto.info.idTamanho} </p>
                             </div>
 
                             <div className='div-carrinho-informaões-qtdProd'>
@@ -38,7 +40,7 @@ export default function Index(props){
                                 </div>
                                 <div className='div-carrinho-valorProd'>
                                     <p className='carrinho-textValor'>R$ </p>
-                                    <p className='carrinho-valorProd'> 1.345,00 </p>
+                                    <p className='carrinho-valorProd'> {props.item.produto.info.preco} </p>
                                 </div>
 
                             </div>

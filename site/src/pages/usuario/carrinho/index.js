@@ -2,6 +2,7 @@ import './index.scss';
 
 import Cabecalho from '../../../components/cabecalhouser';
 import ProdutoCarrinho from '../../../components/cardProdutoCarrinho/index'
+import CardProduto from '../../../components/cardGerenciarProduto'
 import Rodape from '../../../components/Rodapé'
 import LogoModelle from '../../../assets/image/logo-modelle.png'
 import LogoCaminhão from '../../../assets/image/logo-caminhão.png'
@@ -21,27 +22,27 @@ export default function Index(){
 
     async function carregarCarrinho(){
         let carrinho = Storage('carrinho')
+        console.log(carrinho)
         if (carrinho) {
 
             let temp = [];
 
             for (let produto of carrinho){
-               let x = await buscarProdutoPorId(produto.id);
+               let p = await buscarProdutoPorId(produto.id);
+               console.log(p)
                temp.push({
-                   produto: x,
-                   qtd: produto.qtd
+                   produto: p,
+                   disp: produto.disponibilidade
                })
             }
-
-            console.log(temp)
             setItens(temp)
-
         }
  
     }
 
     useEffect(() => {
         carregarCarrinho();
+
     }, [])
 
     return(

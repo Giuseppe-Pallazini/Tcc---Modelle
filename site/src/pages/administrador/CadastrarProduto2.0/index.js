@@ -56,6 +56,7 @@ export default function CadastroProduto() {
     async function carregarProdutos(){
         if (!id) return;
 
+
         const r = await buscarProdutoPorId(id);
         setIdProduto(r.info.id);
         setNome(r.info.produto);
@@ -158,8 +159,8 @@ export default function CadastroProduto() {
         try {
 
             if(!id){
-            const precoProduto = Number(preco.replace(',', '.'));
-            const r = await inserirProduto(nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
+            console.log(preco)
+            const r = await inserirProduto(nome, complementoProduto, preco, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
             await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
 
             alert(r.id);
@@ -278,7 +279,7 @@ export default function CadastroProduto() {
                 <section className='cadastro-section-2'>
                     <input className='cadastro-section-2-input1' type='text' placeholder='Nome do produto' value={nome} onChange={e => setNome(e.target.value)} />
                     <input className='cadastro-section-2-input2' type='text' placeholder='Complemento do produto' value={complementoProduto}  onChange={e => setComplementoProduto(e.target.value)} />
-                    <IMaskInput mask="R$ 000.000.000.000.000" className='cadastro-section-2-input3' type='text' placeholder='Valor (R$)' value={preco} onChange={e => setPreco(e.target.value)} />
+                    <IMaskInput mask='000.000.000.000.000' className='cadastro-section-2-input3' type='text' placeholder='Valor (R$)' value={preco} onChange={e => setPreco(e.target.value)} />
 
 
                     <div className='cadastro-section2-div1'>
