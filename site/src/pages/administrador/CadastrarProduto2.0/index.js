@@ -285,12 +285,12 @@ export default function CadastroProduto() {
                     <div className='cadastro-section2-div1'>
                         <div className='cadastro-section2-div1-1'>
                             <p className='cadastro-section2-div1-1-p'> Parcela(s) </p>
-                            <input className='cadastro-section2-div1-input' type='text' placeholder='0' value={parcela}  onChange={e => setParcela(e.target.value)} />
+                            <input className='cadastro-section2-div1-input' type='text' placeholder='0' value={parcela} maxLength='2' onChange={e => setParcela(e.target.value)} />
                         </div>
 
                         <div className='cadastro-section2-div2'>
                             <p className='cadastro-section2-div2-p'> Juros </p>
-                            <input className='cadastro-section2-div2-input' type='text' placeholder='%' value={juros} onChange={e => setJuros(e.target.value)} />
+                            <input className='cadastro-section2-div2-input' type='text' placeholder='%' maxLength='2' value={juros} onChange={e => setJuros(e.target.value)} />
                         </div>
 
 
