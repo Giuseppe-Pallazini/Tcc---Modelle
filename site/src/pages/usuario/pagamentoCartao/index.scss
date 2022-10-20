@@ -1,0 +1,155 @@
+.main-pagamentoPrincipal{
+    display: flex;
+    flex-direction: column;
+
+    .section-pagamento-principal{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .div-pagamento-icons-situações{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5em;
+        background-color: #F2F2F2;
+        box-shadow: 4px 4px #C0C0C0;
+        width: 20em;
+    }
+    .icon-pagamento-localização{
+        margin-right: 1em;
+        width: 3.8em;
+        height: 3.8em;
+    }
+    .icon-pagamento-seta{
+        margin-right: 1em;
+        width: 2em;
+        height: 2em;
+    }
+    .icon-pagamento-cartão{
+        margin-right: 1em;
+        width: 3em;
+        height: 2.3em;
+    }
+
+    .div-pagamento-endereço-infosped{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 3em;
+        width: 100%;
+    }
+
+    .div-pagamento-preenchEnd{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 53em;
+    }
+    .pagamento-titulo-endereço{
+        font-size: 2em;
+        font-family: 'caviar';
+        font-weight: 900;
+        text-align: center;
+    }
+    .pagamento-PreenchEnd-l1{
+        margin-top: 3em;
+        display: flex;
+        flex-direction: row;
+        margin-left: 4em;
+    }
+
+    .pagamento-Preench-rua-p{
+        font-size: 1em;
+        font-family: 'caviar';
+    }
+    .pagamento-Preench-rua-input{
+        width: 45em;
+        height: 2.5em;
+        border: none;
+        opacity: 60%;
+        box-shadow: 4px 4px #C0C0C0;
+    }
+
+    .pagamento-Preench-numero{
+        margin-left: 2em;
+    }
+    .pagamento-Preench-numero-p{
+        font-size: 1em;
+        font-family: 'caviar';
+    }
+    .pagamento-Preench-numero-input{
+        width: 5em;
+        border: none;
+        height: 2.5em;
+        opacity: 60%;
+        box-shadow: 4px 4px #C0C0C0;
+    }
+
+
+    .pagamento-PreenchEnd-l2{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 1.5em;
+        margin-left: 4em;
+    }
+    
+    .pagamento-Preench-cidade-p{
+        font-size: 1em;
+        font-family: 'caviar';
+    }
+    .pagamento-Preench-cidade-input{
+        width: 18em;
+        border: none;
+        height: 2.5em;
+        opacity: 60%;
+        box-shadow: 4px 4px #C0C0C0;
+    }
+
+    .pagamento-Preench-bairro-p{
+        font-size: 1em;
+        font-family: 'caviar';
+    }
+    .pagamento-Preench-bairro-input{
+        width: 22em;
+        border: none;
+        height: 2.5em;
+        opacity: 60%;
+        box-shadow: 4px 4px #C0C0C0;
+    }
+    .pagamento-div-cep{
+        margin-right: 4.5em;
+    }
+    .pagamento-Preench-cep-p{
+        font-size: 1em;
+        font-family: 'caviar';
+    }
+    .pagamento-Preench-cep-input{
+        width: 5em;
+        border: none;
+        height: 2.5em;
+        opacity: 60%;
+        box-shadow: 4px 4px #C0C0C0;
+    }
+
+    .pagamento-PreenchEnd-l3{
+        margin-left: 4em;
+        margin-top: 1.5em;
+        margin-bottom: 3em;
+    }
+    .pagamento-Preench-complem-p{
+        font-size: 1em;
+        font-family: 'caviar';
+    }
+    .pagamento-Preench-comple-input{
+        width: 5em;
+        border: none;
+        height: 2.5em;
+        opacity: 60%;
+        box-shadow: 4px 4px #C0C0C0;
+    }   
+    
+}
