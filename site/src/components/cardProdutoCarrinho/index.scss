@@ -17,6 +17,14 @@
     }
     .carrinho-div-imgProd{
         margin-top: .5em;
+        margin-right: 1em;
+        width: 15em;
+        height: 15em;
+    }
+
+    .carrinho-div-imgProd-img {
+        width: 15em;
+        height: 15em;
     }
     .div-carrinho-informações{
         display: flex;
@@ -93,12 +101,16 @@
         flex-direction: row;
     }
     .carrinho-diminuir-qtd{
+        margin-top: .2em;
         font-size: 2em;
         margin-right: .3em;
         padding-bottom: .5em;
         opacity: 80%;
     }
     .carrinho-input-qtd{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         margin-top: .8em;
         width: 6em;
@@ -107,8 +119,9 @@
         border: 1px solid black;
     }
     .carrinho-almentar-qtd{
+        margin-top: .2em;
         font-size: 2em;
-        margin-left: .3em;
+        margin-left: .1em;
         padding-bottom: .2em;
         opacity: 80%;
     }
@@ -116,13 +129,15 @@
     .div-carrinho-valorProd{
         display: flex;
         flex-direction: row;
+        margin-left: 1em;
+        margin-top: .3em;
     }
     .carrinho-textValor{
         font-size: 1.5em;
         font-family: 'caviar';
         margin-top: .6em;
         opacity: 70%;
-        margin-left: 1em;
+        margin-left: 2em;
     }
     .carrinho-valorProd{
         font-size: 1.5em;

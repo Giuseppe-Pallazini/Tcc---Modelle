@@ -123,6 +123,13 @@
         flex-direction: row;
         margin-left: 1em;
         margin-top: .5em;
+
+        .carrinho-p-total {
+            font-size: 1em;
+            font-family: "caviar";
+            font-weight: 500;
+        }
+        
     }
     .div-carrinho-valor-total{
         display: flex;
@@ -146,10 +153,12 @@
         margin-left: 1em;
     }
     .carrinho-botão-continuar{
+        font-family: 'inter';
         width: 20em;
         height: 3em; 
-        background-color: #fff;
+        background-color: white;
         transition: 170ms ease-in-out;
+        border: none;
     }
     .carrinho-botão-continuar:hover {
         background-color: #19110B;
