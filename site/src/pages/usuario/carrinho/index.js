@@ -88,7 +88,7 @@ export default function Index(){
                             <p className='carrinho-p-subtotal'> SUBTOTAL</p>
                             <div className='div-carrinho-valor-subtotal'>
                                 <p className='carrinho-p-textSubtotal-valor'>R$ </p>
-                                <p className='carrinhho-valor-subtotal'>1.345,00</p>
+                                <p className='carrinhho-valor-subtotal'> 1.345,00 </p>
                             </div>
                         </div>
 
@@ -97,12 +97,12 @@ export default function Index(){
                             <p className='carrinho-p-total'> TOTAL</p>
                             <div className='div-carrinho-valor-total'>
                                 <p className='carrinho-p-textTotal-valor'>R$ </p>
-                                <p className='carrinhho-valor-total'>1.345,00</p>
+                                <p className='carrinhho-valor-total'> 1.345,00 </p>
                             </div>
                         </div>
 
                         <div className='div-carrinho-info-continuar'>
-                            <button className='carrinho-botão-continuar'>Continuar</button>
+                            <button className='carrinho-botão-continuar'> Continuar </button>
                         </div>
                     </div>
                 </div>

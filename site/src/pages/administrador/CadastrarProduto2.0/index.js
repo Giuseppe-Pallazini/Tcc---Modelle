@@ -256,7 +256,6 @@ export default function CadastroProduto() {
                     </div>
 
 
-
                     <div className='informacoes'>
 
                         <p className='comp'> Composição do Produto </p>
