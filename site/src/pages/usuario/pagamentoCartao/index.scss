@@ -5,7 +5,6 @@
     .section-pagamento-principal{
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
     .div-pagamento-icons-situações{
@@ -15,8 +14,13 @@
         align-items: center;
         margin-top: 1.5em;
         background-color: #F2F2F2;
-        box-shadow: 4px 4px #C0C0C0;
+        box-shadow: 2px 2px #C0C0C0; 
         width: 20em;
+    }
+    .pagamento-icones-situacoes{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .icon-pagamento-localização{
         margin-right: 1em;
@@ -38,7 +42,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-top: 3em;
+        align-items: center;
         width: 100%;
     }
 
@@ -70,7 +74,7 @@
         height: 2.5em;
         border: none;
         opacity: 60%;
-        box-shadow: 4px 4px #C0C0C0;
+        box-shadow: 2px 2px #C0C0C0;
     }
 
     .pagamento-Preench-numero{
@@ -85,7 +89,7 @@
         border: none;
         height: 2.5em;
         opacity: 60%;
-        box-shadow: 4px 4px #C0C0C0;
+        box-shadow: 2px 2px #C0C0C0;
     }
 
 
@@ -93,7 +97,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-top: 1.5em;
+        margin-top: 2.5em;
         margin-left: 4em;
     }
     
@@ -106,7 +110,7 @@
         border: none;
         height: 2.5em;
         opacity: 60%;
-        box-shadow: 4px 4px #C0C0C0;
+        box-shadow: 2px 2px #C0C0C0;
     }
 
     .pagamento-Preench-bairro-p{
@@ -118,7 +122,7 @@
         border: none;
         height: 2.5em;
         opacity: 60%;
-        box-shadow: 4px 4px #C0C0C0;
+        box-shadow: 2px 2px #C0C0C0;
     }
     .pagamento-div-cep{
         margin-right: 4.5em;
@@ -128,16 +132,16 @@
         font-family: 'caviar';
     }
     .pagamento-Preench-cep-input{
-        width: 5em;
+        width: 7em;
         border: none;
         height: 2.5em;
         opacity: 60%;
-        box-shadow: 4px 4px #C0C0C0;
+        box-shadow: 2px 2px #C0C0C0;
     }
 
     .pagamento-PreenchEnd-l3{
         margin-left: 4em;
-        margin-top: 1.5em;
+        margin-top: 2.5em;
         margin-bottom: 3em;
     }
     .pagamento-Preench-complem-p{
@@ -149,7 +153,158 @@
         border: none;
         height: 2.5em;
         opacity: 60%;
-        box-shadow: 4px 4px #C0C0C0;
+        box-shadow: 2px 2px #C0C0C0;
     }   
     
+
+    .div-pagamento-InfosPed{
+        display: flex;
+        flex-direction: column;
+        width: 18em;
+        height: 32em;
+        margin-bottom: 2em;
+        margin-right: 2em;
+        background-color: #ececec7c;
+        box-shadow: 2px 2px #C0C0C0;
+        //border: 1px solid black;
+    }
+    .pagamento-div-imgProd{
+        text-align: center;
+        margin-top: 2em;
+    }
+    .pagamento-div-imgProd img{
+        width: 8em;
+    }
+    .pagamento-infosPed-tituloProd{
+        font-size: 1em;
+        margin-top: 1em;
+        text-align: center;
+        border: none;   
+        color: rgb(55, 0, 255);
+        font-family: 'caviar';
+    }
+    .pagamento-div-qtdUnid{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: .8em;
+        font-size: .9em;
+        font-weight: 900;
+        font-family: 'caviar';
+        margin-left: 1.5em;
+
+    }
+    .pagamento-p-qtdUnid-prod{
+        margin-right: 2em;
+    }
+
+    .pagamento-div-datePed{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 1em;
+        font-size: .9em;
+        font-weight: 900;
+        font-family: 'caviar';
+        margin-left: 1.5em;
+
+    }
+    .pagamento-p-DtPed{
+        margin-right: 2em;
+    }
+
+
+    .pagamento-div-SubtotalPed{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: .8em;
+        font-size: .9em;
+        font-weight: 900;
+        font-family: 'caviar';
+        margin-left: 1.5em;
+
+    }
+    .pagamento-p-SubtotalPed{
+        margin-right: 2em;
+    }
+
+
+
+    .pagamento-div-EntregaPed{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 1.5em;
+        font-size: .9em;
+        font-weight: 900;
+        font-family: 'caviar';
+        margin-left: 1.5em;
+
+    }
+    .pagamento-p-EntregaPed{
+        margin-right: 2em;
+    }
+    .pagamento-p-InfoEntr{
+        font-size: .5em;
+        margin-left: 3em;
+    }
+
+
+    .pagamento-div-CupomPed{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 1.5em;
+        font-size: .9em;
+        font-weight: 900;
+        font-family: 'caviar';
+        margin-left: 1.5em;
+
+    }
+    .pagamento-p-cupom{
+        margin-right: 2em;
+    }
+
+
+    .pagamento-div-TotalPed{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: .3em;
+        font-size: .9em;
+        font-weight: 900;
+        font-family: 'caviar';
+        margin-left: 1.5em;
+
+    }
+    .pagamento-p-EntregaPed {
+        margin-right: 2em;
+    }
+
+    .pagamento-div-button{
+        margin-top: 3em;
+        text-align: center;
+    }
+    .pagamento-button-finalizarPed{
+        width: 15em;
+        height: 2.3em;
+        border: none;
+        background-color: #FFF;
+        box-shadow: 1px 2px #c0c0c0ce;
+    }
+    .pagamento-div-botao-proximo{
+        margin-left: 3em;
+    }
+    .pagamento-botao-proximo{
+        width: 100px;
+        height: 30px;
+        border: none;
+        font-size: 1em;
+        font-family: 'caviar';
+        border-radius: .5em;
+        background-color: #1B130D;
+        color: #FFF;
+        margin-left: 1em;
+    }
 }

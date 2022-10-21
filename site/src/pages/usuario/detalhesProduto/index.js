@@ -30,7 +30,7 @@ export default function Index(){
 
     function calcularJuros(juros, preco){
         let conta1 = preco / juros;
-        setConta(conta1)
+        return setConta(conta1)
     }
     
     function exibirImagemPrincipal(){
