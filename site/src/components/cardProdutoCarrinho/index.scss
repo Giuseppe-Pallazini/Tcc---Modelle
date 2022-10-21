@@ -41,6 +41,20 @@
     .div-carrinho-infromações-id{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        width: 28em;
+
+        .carrinho-img-remover{
+            width: 2em;
+            height: 2em;
+
+            cursor: pointer;
+            transition: .2s;
+        }
+        .carrinho-img-remover:hover{
+            width: 3em;
+            height: 3em;
+        }
     }
     .carrinho-p-ID{
         font-size: .7em;
@@ -55,9 +69,12 @@
     .div-carrinho-informações-tituloProd{
         margin-top: .5em;
     }
+
+    .div-carrinho-informacoes-complemento {
+        font-family: 'caviar';
+    }
     .carrinho-nomeProd{
-        margin-left: .2em;
-        font-size: 1em;
+        font-size: 1.3em;
         font-style: bold;
         font-family: 'caviar';
     }
@@ -70,7 +87,6 @@
     .carrinho-textCor{
         font-size: 1em;
         font-family: 'caviar';
-        font-weight: 900;
     }
     .carrinho-valorCor{
         margin-left: 5em;
@@ -95,10 +111,18 @@
         display: flex;
         flex-direction: row; 
         margin-top: 5em;
+
+        .div-carrinho-informacoes-subtotal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'caviar';
+        }
     }
     .carrinho-div-input-qtd{
         display: flex;
         flex-direction: row;
+        margin-right: 4em;
     }
     .carrinho-diminuir-qtd{
         margin-top: .2em;
@@ -118,7 +142,7 @@
         opacity: 80%;
         border: 1px solid black;
     }
-    .carrinho-almentar-qtd{
+    .carrinho-aumentar-qtd{
         margin-top: .2em;
         font-size: 2em;
         margin-left: .1em;
@@ -129,15 +153,13 @@
     .div-carrinho-valorProd{
         display: flex;
         flex-direction: row;
-        margin-left: 1em;
-        margin-top: .3em;
+        margin-top: .8em;
     }
     .carrinho-textValor{
         font-size: 1.5em;
         font-family: 'caviar';
         margin-top: .6em;
         opacity: 70%;
-        margin-left: 2em;
     }
     .carrinho-valorProd{
         font-size: 1.5em;

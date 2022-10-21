@@ -12,13 +12,20 @@ import '../../../assets/common/index.scss'
 import { useEffect, useState } from 'react';
 import Storage from 'local-storage'
 import { buscarProdutoPorId } from '../../../api/produtoAPI';
+import { toast } from 'react-toastify';
 
 export default function Index(){
-
     const [itens, setItens] = useState([]);
 
   
+    function removerItem(id) {
+        let carrinho = Storage('carrinho');
+        carrinho = carrinho.filter(item => item.id != id);
 
+        Storage('carrinho', carrinho);
+        carregarCarrinho();
+        toast.dark('Produto Removido!')
+    }
 
     async function carregarCarrinho(){
         let carrinho = Storage('carrinho')
@@ -29,10 +36,9 @@ export default function Index(){
 
             for (let produto of carrinho){
                let p = await buscarProdutoPorId(produto.id);
-               console.log(p)
                temp.push({
                    produto: p,
-                   disp: produto.disponibilidade
+                   qtd: produto.qtd,
                })
             }
             setItens(temp)
@@ -56,7 +62,7 @@ export default function Index(){
                 <div className='div-carrinho-informações'>
                     <div className='div-carrinho-cards-produtos'>
                        {itens.map(item => 
-                          <ProdutoCarrinho item={item} />
+                          <ProdutoCarrinho item={item} removerItem={removerItem} />
                         )}
                   
                     </div>

@@ -64,7 +64,7 @@ export default function Index(){
 
                 // ROTAS USUARIOS
 
-                <Route path='/user/landingPage'             element={< LandingPage />} />
+                <Route path='/'                             element={< LandingPage />} />
                 <Route path='/user/cadastro'                element={< Cadastro />} />
                 <Route path='/user/carrinho'                element={< Carrinho />} />
                 <Route path='/user/condicoesEPrivacidade'   element={< Condicoeseprivacidade />} />
