@@ -24,7 +24,6 @@ export default function Index(){
 
         Storage('carrinho', carrinho);
         carregarCarrinho();
-        toast.dark('Produto Removido!')
     }
 
     async function carregarCarrinho(){

@@ -16,8 +16,8 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { API_URL } from '../../../api/config';
 import { IMaskInput } from 'react-imask';
-import { confirmAlert } from 'react-confirm-alert';
-
+import {NumericFormat} from 'react-number-format'
+import { PatternFormat } from 'react-number-format';
 
 export default function CadastroProduto() {
     const [idProduto, setIdProduto] = useState();
@@ -159,8 +159,9 @@ export default function CadastroProduto() {
         try {
 
             if(!id){
-            console.log(preco)
-            const r = await inserirProduto(nome, complementoProduto, preco, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
+            const precoProduto = preco.replace(',', '.');
+            console.log(precoProduto);
+            const r = await inserirProduto(nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
             await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
 
             alert(r.id);
@@ -187,7 +188,6 @@ export default function CadastroProduto() {
         }
     }
 
-    
 
 
     useEffect(() => {
@@ -272,13 +272,16 @@ export default function CadastroProduto() {
                     </div>
 
                     <button onClick={salvarProduto} className='cadastro-section2-button'> Salvar </button>
+                    
 
                 </section>
 
                 <section className='cadastro-section-2'>
                     <input className='cadastro-section-2-input1' type='text' placeholder='Nome do produto' value={nome} onChange={e => setNome(e.target.value)} />
                     <input className='cadastro-section-2-input2' type='text' placeholder='Complemento do produto' value={complementoProduto}  onChange={e => setComplementoProduto(e.target.value)} />
-                    <IMaskInput mask='000.000.000.000.000' className='cadastro-section-2-input3' type='text' placeholder='Valor (R$)' value={preco} onChange={e => setPreco(e.target.value)} />
+                    <input className='cadastro-section-2-input3' type='number' placeholder='Valor (R$)' value={preco} onChange={e => setPreco(e.target.value)} />
+
+                    
 
 
                     <div className='cadastro-section2-div1'>

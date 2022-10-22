@@ -37,9 +37,9 @@ export default function Index(){
     }, [])
 
     async function carregarProduto(){
-        const resp = await listarTodos();
-        setProduto(resp); 
-    }
+            const resp = await listarTodos();
+            setProduto(resp); 
+        }
 
     async function deletarProduto(id, nome){
         confirmAlert({
@@ -59,6 +59,7 @@ export default function Index(){
                 }
             ]
         })
+    
     }
 
     function mostrarImagem(imagem) {
