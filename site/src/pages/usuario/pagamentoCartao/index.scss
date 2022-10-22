@@ -17,6 +17,11 @@
         box-shadow: 2px 2px #C0C0C0; 
         width: 20em;
     }
+
+    .section-separar{
+        display: flex;
+        flex-direction: row;
+    }
     .pagamento-icones-situacoes{
         display: flex;
         justify-content: center;
@@ -41,15 +46,14 @@
     .div-pagamento-endereço-infosped{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+
         width: 100%;
     }
 
     .div-pagamento-preenchEnd{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+
         width: 53em;
     }
     .pagamento-titulo-endereço{
@@ -160,12 +164,17 @@
     .div-pagamento-InfosPed{
         display: flex;
         flex-direction: column;
+
+
+
+
         width: 18em;
         height: 32em;
         margin-bottom: 2em;
         margin-right: 2em;
         background-color: #ececec7c;
         box-shadow: 2px 2px #C0C0C0;
+        padding-bottom: 1em;
         //border: 1px solid black;
     }
     .pagamento-div-imgProd{
@@ -176,6 +185,8 @@
         width: 8em;
     }
     .pagamento-infosPed-tituloProd{
+        display: flex;
+        justify-content: center;
         font-size: 1em;
         margin-top: 1em;
         text-align: center;
@@ -306,5 +317,20 @@
         background-color: #1B130D;
         color: #FFF;
         margin-left: 1em;
+    }
+
+    .div-pagamento-ped{
+        display: flex;
+        flex-direction: column;
+        
+        
+        overflow: scroll;
+        height: 30em;
+        width: 20em;
+        margin-right: 1em;
+    }
+
+    .pagamento-confirm{
+        margin-top: 2em;
     }
 }

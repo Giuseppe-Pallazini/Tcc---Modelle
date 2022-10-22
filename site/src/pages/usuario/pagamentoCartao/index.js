@@ -1,7 +1,8 @@
-import storage from 'local-storage'
+import Storage from 'local-storage'
 import './index.scss';
 import '../../../assets/common/index.scss'
 import { useNavigate } from 'react-router-dom';
+import { buscarProdutoPorId } from '../../../api/produtoAPI';
 
 import CabecalhoUser from '../../../components/cabecalhouser/index.js'
 import RodapeUser from '../../../components/Rodapé/index.js'
@@ -14,10 +15,44 @@ import LogoSeta from '../../../assets/image/set-tela-pagamentos.png'
 import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
+    const [itens, setItens] = useState([])
+
     const navigate = useNavigate();
     function abrirDetalhes(id){
         navigate(`/user/destalheProduto/${id}`)
     }
+
+    async function carregarItens(){
+        let carrinho = Storage('carrinho')
+        console.log(carrinho)
+        if (carrinho) {
+
+            let temp = [];
+
+            for (let produto of carrinho){
+               let p = await buscarProdutoPorId(produto.id);
+               temp.push({
+                   produto: p,
+                   qtd: produto.qtd,
+               })
+            }
+            setItens(temp)
+        }
+ 
+    }
+
+    function calcularTotal(){
+        let total = 0;
+        for(let item of itens){
+            total = total + item.qtd * item.produto.info.preco;
+        }
+
+        return total;
+    }
+
+    useEffect(() => {
+        carregarItens();
+    }, [])
 
 
     return(
@@ -36,7 +71,7 @@ export default function Index(){
                         </div>
                     </div>
                         
-                    
+                <section className='section-separar' >
                     <div className='div-pagamento-endereço-infosped'>
                         <div className='div-pagamento-preenchEnd'>
                             <h1 className='pagamento-titulo-endereço'> Endereço </h1>
@@ -74,48 +109,59 @@ export default function Index(){
                                 </div>
                             </div>
                         </div>
+                    </div>
+                <section>
+                        <section className='div-pagamento-ped' >
+                            {itens.map(item =>
+                            <div className='div-pagamento-InfosPed'> 
+                                <section>
+                                    <div className='pagamento-div-imgProd'>
+                                            <img src={ImagemProd} alt='imgProd-pagamento' />
+                                    </div>
+                                    <a onClick={abrirDetalhes} className='pagamento-infosPed-tituloProd'> {item.produto.info.produto} </a>
+
+                                    <div className='pagamento-div-qtdUnid'>
+                                            Unidades: <p className='pagamento-p-qtdUnid-prod'> {item.qtd}</p>
+                                    </div>
+
+                                    <div className='pagamento-div-datePed'>
+                                            Data: <p className='pagamento-p-DtPed'> 12 / 10 / 2006</p>
+                                    </div>
 
 
-                        <div className='div-pagamento-InfosPed'> 
-                              <div className='pagamento-div-imgProd'>
-                                    <img src={ImagemProd} alt='imgProd-pagamento' />
-                              </div>
-                              <a onClick={abrirDetalhes} className='pagamento-infosPed-tituloProd'> Camiseta versace </a>
+                                    <div className='pagamento-div-SubtotalPed'>
+                                                Subtotal: <p className='pagamento-p-SubtotalPed'>R$ <span>{item.qtd * item.produto.info.preco}</span></p>
+                                    </div>
 
-                              <div className='pagamento-div-qtdUnid'>
-                                    Unidades: <p className='pagamento-p-qtdUnid-prod'> 01</p>
-                              </div>
-
-                              <div className='pagamento-div-datePed'>
-                                    Data: <p className='pagamento-p-DtPed'> 12 / 10 / 2006</p>
-                              </div>
-
-
-                              <div className='pagamento-div-SubtotalPed'>
-                                        Subtotal: <p className='pagamento-p-SubtotalPed'>R$ <span>1.345,99</span></p>
-                              </div>
-
-                              <div className='pagamento-div-EntregaPed'>
-                                    Entrega: <p className='pagamento-p-EntregaPed'>R$ <span>0,00</span> </p>
-                              </div>
-                              <p className='pagamento-p-InfoEntr'>  Entrega em até 7 dias uteis  </p>
+                                    <div className='pagamento-div-EntregaPed'>
+                                            Entrega: <p className='pagamento-p-EntregaPed'>R$ <span>0,00</span> </p>
+                                    </div>
+                                    <p className='pagamento-p-InfoEntr'>  Entrega em até 7 dias uteis  </p>
 
 
 
-                              <div className='pagamento-div-CupomPed'>
-                                    Cupom: <p className='pagamento-p-cupom'> CHAMB162</p>
-                              </div>
-                            
-                              <div className='pagamento-div-TotalPed'>
-                                    Total: <p className='pagamento-p-EntregaPed'>R$ <span>340,00</span> </p>
-                              </div>
-                            
+                                    <div className='pagamento-div-CupomPed'>
+                                            Cupom: <p className='pagamento-p-cupom'> CHAMB162</p>
+                                    </div>
+                                    
+                                </section>
+                            </div>
+                            )}
+                            </section>
+                        <div className='pagamento-confirm' >
+
+                            <div className='pagamento-div-TotalPed'>
+                                Total: <p className='pagamento-p-EntregaPed'>R$ <span>{calcularTotal()}</span> </p>
+                            </div>
+                                    
                             <div className='pagamento-div-button'>
                                 <button className='pagamento-button-finalizarPed'>Finalizar Compra</button>
                             </div>
+                            
                         </div>
-                    </div>
-
+                    </section>
+                </section>
+                                
                     <div className='pagamento-div-botao-proximo'> 
                         <button className='pagamento-botao-proximo'> Proximo </button>
                     </div>
