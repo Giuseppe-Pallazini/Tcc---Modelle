@@ -1,4 +1,4 @@
-import { useParams,useNavigate, useAsyncError} from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import storage from 'local-storage'
 import Cabecalho from '../../../components/cabecalhouser'
 import CardUsuario from '../../../components/cardProdutoUsuario'
@@ -7,31 +7,25 @@ import { toast } from 'react-toastify';
 
 import './index.scss';
 import '../../../assets/common/index.scss'
-import {useEffect, useState, useRef} from 'react'
+import {useEffect, useState} from 'react'
 import { buscarProdutoPorIdUsuario } from '../../../api/produtoAPI';
 import { API_URL } from '../../../api/config';
 
 export default function Index(){
     const [produto, setProduto] = useState({info: {},tamanho: [], imagens: []});
-    const [conta, setConta] = useState(0);
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
 
     const { id } = useParams();
 
     async function carregarPagina(){
         const r =await buscarProdutoPorIdUsuario(id);
+        console.log(r)
         setProduto(r)
     }
 
     useEffect(() => {
         carregarPagina();
-        calcularJuros();
-    }, [])
-
-    function calcularJuros(juros, preco){
-        let conta1 = preco / juros;
-        return setConta(conta1)
-    }
+    })
     
     function exibirImagemPrincipal(){
         if(produto.imagens.length > 0){
@@ -59,6 +53,17 @@ export default function Index(){
         }
     }
 
+    function formatarPreco(preco){
+        let a = preco.toFixed(2);
+        return a
+    }
+
+    // function buscarNomeTamanho(id) {
+    //     const cat = produto.tamanho.find(item => item.id == id);
+    //     return cat.tamanho;
+    // }
+
+
     return(
        <main className='main-detalhes'>
             <Cabecalho/>
@@ -70,7 +75,7 @@ export default function Index(){
                     <div>
 
                         {produto.imagens.map((item,pos) =>
-                            <img className='imagens-produto' src={exibirImagemProdutos(item)} onClick={() => setImagemPrincipal(pos)} />    
+                            <img className='imagens-produto' src={exibirImagemProdutos(item)} onClick={() => setImagemPrincipal(pos)} alt="" />    
                         )}
                     </div>
                 </div>
@@ -84,23 +89,23 @@ export default function Index(){
                         {produto.info.complemento}
                     </p>
                     <h1 className='detalhes-info-preco' >
-                        R${produto.info.preco}
+                        R${formatarPreco(produto.info.preco * 1)}
                     </h1>
                     <h1>
                     </h1>
 
                     <div>
                         <p>
-                            {produto.info.juros}x de R$ {conta} sem juros
+                            {produto.info.juros}x de R$ {formatarPreco(produto.info.preco / produto.info.juros)} sem juros
                         </p>
                     </div>
-
+                    
                     <div className='detalhes-info-tamanho'>
-                        {produto.tamanho.map(item =>
+                    {produto.tamanho.map(item =>
                             <div className='detalhes-info-tamanhos-icon'>
-                                <p className='detalhes-info-tamanhos-txt' > p {produto.info.tamanho}</p>
+                                <p className='detalhes-info-tamanhos-txt' >{produto.tamanho}</p>
                             </div>
-                        )}
+                    )}
                     </div>
 
                     <div className='detalhes-cor' >

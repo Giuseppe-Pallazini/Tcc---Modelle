@@ -26,7 +26,6 @@ export default async function ListarTodosProdutos() {
     
     inner join tb_produto_imagem
     on tb_produto_imagem.id_produto = tb_produto.id_produto
-    
 
     inner join tb_marca
     on tb_marca.id_marca = tb_produto.id_marca
@@ -40,6 +39,7 @@ export default async function ListarTodosProdutos() {
         nm_categoria,
         nm_marca,
         vl_disponivel
+;
 ;`
 
     const [linhas] = await con.query(comando);
@@ -71,8 +71,10 @@ export async function ListarTodosProdutosPorId(id) {
 
 export async function ListarTodosTamanhosporId(idProduto) {
  
-    const comando = `select id_tamanho as id
+    const comando = `select nm_tamanho as id
                     from tb_produto_tamanho
+                    inner join tb_tamanho
+                    on tb_tamanho.id_tamanho = tb_produto_tamanho.id_tamanho
                     where id_produto = ?
                     `
 

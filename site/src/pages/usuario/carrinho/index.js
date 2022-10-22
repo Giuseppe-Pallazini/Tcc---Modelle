@@ -47,7 +47,17 @@ export default function Index(){
 
     useEffect(() => {
         carregarCarrinho();
+        calcularTotal();
     }, [])
+
+    function calcularTotal(){
+        let total = 0;
+        for(let item of itens){
+            total = total + item.qtd * item.produto.info.preco;
+        }
+
+        return total;
+    }
 
     return(
 
@@ -102,7 +112,7 @@ export default function Index(){
                             <p className='carrinho-p-total'> TOTAL</p>
                             <div className='div-carrinho-valor-total'>
                                 <p className='carrinho-p-textTotal-valor'>R$ </p>
-                                <p className='carrinhho-valor-total'> 1.345,00 </p>
+                                <p className='carrinhho-valor-total'> {calcularTotal()} </p>
                             </div>
                         </div>
 

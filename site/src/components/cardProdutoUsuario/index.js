@@ -29,14 +29,15 @@ export default function Index(){
     const navigate = useNavigate();
 
 
-    useEffect(()  => {
-        carregarProduto();
-    }, [])
 
     async function carregarProduto(){
         const resp = await listarTodos();
         setProduto(resp); 
     }
+
+    useEffect(()  => {
+        carregarProduto();
+    }, [])
 
     function mostrarImagem(imagem) {
         if (typeof (imagem) == 'object') {
@@ -81,7 +82,7 @@ export default function Index(){
 
                         <p className='card-info-complemento' >{item.complementoProduto}</p>
                     
-                        <p className='card-info-preco' >R$ {formatarPreco(item.preco)}</p>
+                        <p className='card-info-preco' >R$ {formatarPreco(item.preco * 1)}</p>
                     </div>
                 </div>
             )}  
