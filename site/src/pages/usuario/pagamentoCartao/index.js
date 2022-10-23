@@ -9,6 +9,7 @@ import RodapeUser from '../../../components/Rodapé/index.js'
 
 import LogoLocalizacao from '../../../assets/image/imagem-localização.png'
 import LogoCartao from '../../../assets/image/logo-cartão.png'
+import LogoPix from '../../../assets/image/icone-pix.png'
 import LogoFinalizado from '../../../assets/image/logo-finalizado.png'
 import ImagemProd from '../../../assets/image/camiseta-preta-versace.png'
 import LogoSeta from '../../../assets/image/set-tela-pagamentos.png'
@@ -16,6 +17,9 @@ import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
     const [itens, setItens] = useState([])
+
+    const [mostrarInfosPag, setMostrarInfosPag] = useState(false)
+    const showOrHide = () => setMostrarInfosPag(true)
 
     const navigate = useNavigate();
     function abrirDetalhes(id){
@@ -60,7 +64,6 @@ export default function Index(){
             <CabecalhoUser />
 
                  <section className='section-pagamento-principal'>
-
                     <div className='pagamento-icones-situacoes'>
                         <div className='div-pagamento-icons-situações'>
                             <img src={LogoLocalizacao} alt='logo-localização' className='icon-pagamento-localização' />
@@ -143,7 +146,6 @@ export default function Index(){
                                     <div className='pagamento-div-CupomPed'>
                                             Cupom: <p className='pagamento-p-cupom'> CHAMB162</p>
                                     </div>
-                                    
                                 </section>
                             </div>
                             )}
@@ -163,9 +165,78 @@ export default function Index(){
                 </section>
                                 
                     <div className='pagamento-div-botao-proximo'> 
-                        <button className='pagamento-botao-proximo'> Proximo </button>
+                        <button className='pagamento-botao-proximo' onClick={showOrHide}> Proximo </button>
                     </div>
 
+
+                { mostrarInfosPag ? 
+                    <div>
+                    <div className='pagamento-div-titulo-infoPag'>
+                        <h1>Pagamento</h1>
+                    </div>
+                        
+                    <div className='pagamento-formulario-pag'>
+                        <div className='pagamento-div-icones'> 
+                            <div className='div-logo-cartãoPag'>
+                                <img src={LogoCartao} alt='logo-catão' />                            
+                            </div>
+                            <div className='div-logo-PixPag'>
+                                <img src={LogoPix} alt='logo-pix' />
+                            </div>
+                        </div>
+                        <div onClick={LogoCartao} className='pagamento-formulario-preech' >
+                            <div className='pagamento-infoCartaol1'>
+                                <div className='pagamento-infoCartao-nome'>
+                                    Nome do Titular <input type='text' placeholder='Ex: Giuseppe Pallazini'/> 
+                                </div>
+
+                                <div className='pagamento-infoCartao-Cvv'>
+                                    Cvv <input type='text' placeholder='Ex: 545'/> 
+                                </div>
+                            </div>
+
+                            <div className='pagamento-infoCartaol2'>
+                                <div className='pagamento-infoCartao-numero'>
+                                    Numero do cartão <input type='text' placeholder='Ex: 1111 1111 1111 1111'/> 
+                                </div>
+
+                                <div className='pagamento-infoCartao-validade'>
+                                    Vaidade <input type='text' placeholder='Ex: 10/10'/> 
+                                </div>
+                            </div>
+
+                            <div className='pagamento-infoCartaol3'>
+                                <div className='div-pagamento-tpCartão'>
+                                    Tipo do Cartão
+                                    <select name='Tipo do cartão' className='pagamento-select-tpCartão'>
+                                        <option className='pagamento-option-tpCartão'> Débito </option>
+                                        <option className='pagamento-option-tpCartão'> Crédito </option>
+                                    </select>
+                                </div>
+                                
+                                <div className='div-pagamento-QtdParcelas'>
+                                    Parcelas 
+                                    <select name='Quantidade de parcela' className='pagamento-select-qtdParcela'>
+                                        <option className='pagamento-option-qtdParcela'> 1 </option>
+                                        <option className='pagamento-option-qtdParcela'> 2 </option>
+                                        <option className='pagamento-option-qtdParcela'> 3 </option>
+                                        <option className='pagamento-option-qtdParcela'> 4 </option>
+                                        <option className='pagamento-option-qtdParcela'> 5 </option>
+                                        <option className='pagamento-option-qtdParcela'> 6 </option>
+                                        <option className='pagamento-option-qtdParcela'> 7 </option>
+                                        <option className='pagamento-option-qtdParcela'> 8 </option>
+                                        <option className='pagamento-option-qtdParcela'> 9 </option>
+                                        <option className='pagamento-option-qtdParcela'> 10 </option>
+                                        <option className='pagamento-option-qtdParcela'> 11</option>
+                                        <option className='pagamento-option-qtdParcela'> 12 </option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                : null }
                  </section>
 
             <RodapeUser />

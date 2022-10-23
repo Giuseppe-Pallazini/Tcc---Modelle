@@ -46,7 +46,8 @@
     .div-pagamento-endereço-infosped{
         display: flex;
         flex-direction: row;
-
+        margin-top: 3em;
+        height: 25em;
         width: 100%;
     }
 
@@ -55,6 +56,7 @@
         flex-direction: column;
 
         width: 53em;
+        margin-top: 2em;
     }
     .pagamento-titulo-endereço{
         font-size: 2em;
@@ -305,7 +307,9 @@
         box-shadow: 1px 2px #c0c0c0ce;
     }
     .pagamento-div-botao-proximo{
-        margin-left: 3em;
+        margin-top: -7em;
+        margin-bottom: 3em;
+        margin-left: 2em;
     }
     .pagamento-botao-proximo{
         width: 100px;
@@ -323,7 +327,6 @@
         display: flex;
         flex-direction: column;
         
-        
         overflow: scroll;
         height: 30em;
         width: 20em;
@@ -333,4 +336,173 @@
     .pagamento-confirm{
         margin-top: 2em;
     }
+
+
+    .pagamento-div-titulo-infoPag{
+        width: 53em;
+        margin-top: 3em;
+    }
+    .pagamento-div-titulo-infoPag h1{
+        font-size: 2em;
+        font-family: 'caviar';
+        font-weight: 900;
+        text-align: center;
+    }
+    .pagamento-div-icones{
+        display: flex;
+        flex-direction: row;
+        width: 50em;
+       
+    }
+
+    .div-logo-cartãoPag{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-left: 2em;
+        width: 8em;
+        height: 3em;
+        border-radius: .5em;
+        border: 1px solid black;
+    }
+    .div-logo-cartãoPag img{
+        width: 3em;
+        height: 2em;
+    }
+
+    .div-logo-PixPag{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        margin-left: 2em;
+        width: 8em;
+        height: 3em;
+        border-radius: .5em;
+    }
+    .div-logo-PixPag img{
+        width: 4.5em;
+        height: 1.7em;
+    }
+    .pagamento-formulario-pag{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+        width: 50em;
+        height: 20em;
+        margin-bottom: 2em;
+    }
+    .pagamento-infoCartaol1{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1em;
+        margin-left: 2em;
+    }
+    .pagamento-infoCartao-nome{
+        display: flex;
+        flex-direction: column;
+        font-family: 'caviar';
+        font-size: 1em ;
+    }
+    .pagamento-infoCartao-nome input{
+        opacity: 80%;
+        margin-top: .5em;
+        width: 35em;
+        height: 2em;
+        border: none;
+        box-shadow: 1px 2px #c0c0c0ce;
+    }
+
+
+    .pagamento-infoCartao-Cvv{
+        display: flex;
+        flex-direction: column;
+        font-family: 'caviar';
+        font-size: 1em ;
+        margin-left: 2em;
+    }
+    .pagamento-infoCartao-Cvv input{
+        opacity: 80%;
+        margin-top: .5em;
+        width: 10em;
+        height: 2em;
+        border: none;
+        box-shadow: 1px 2px #c0c0c0ce;
+    }
+
+
+    .pagamento-infoCartaol2{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1.2em;
+    }
+
+    .pagamento-infoCartao-numero{
+        display: flex;
+        flex-direction: column;
+        font-family: 'caviar';
+        font-size: 1em ;
+        margin-left: 2em;
+    }
+    .pagamento-infoCartao-numero input{
+        opacity: 80%;
+        margin-top: .5em;
+        width: 35em;
+        height: 2em;
+        border: none;
+        box-shadow: 1px 2px #c0c0c0ce;
+    }
+
+    .pagamento-infoCartao-validade{
+        display: flex;
+        flex-direction: column;
+        font-family: 'caviar';
+        font-size: 1em ;
+        margin-left: 2em;
+    }
+    .pagamento-infoCartao-validade input{
+        opacity: 80%;
+        margin-top: .5em;
+        width: 10em;
+        height: 2em;
+        border: none;
+        box-shadow: 1px 2px #c0c0c0ce;
+    }
+
+    .pagamento-infoCartaol3{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1em;
+        margin-left: 2em;
+    }
+
+    .div-pagamento-tpCartão{
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+        margin-top: 1em;
+    }
+    .pagamento-select-tpCartão{
+        margin-top: .5em;
+        width: 8em;
+
+    }
+    
+
+    .div-pagamento-QtdParcelas{
+        display: flex;
+        flex-direction: column;
+        margin-left: 4em;
+        margin-top: 1em;
+        font-size: 1em;
+    }
+    .pagamento-select-qtdParcela{
+        margin-top: .5em;
+        width: 5em;
+    }
+    .pagamento-option-qtdParcela{
+        
+    }   
+
 }
