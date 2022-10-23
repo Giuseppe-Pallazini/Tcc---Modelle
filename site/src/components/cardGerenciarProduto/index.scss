@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    cursor: auto;
+
 .div-input-buscar{
     position: absolute;
 }
@@ -14,32 +16,45 @@
     margin-left: 7em;
     border-radius: .3em;
     margin-bottom: 2em;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(250, 250, 250);
 
     box-shadow: 4px 4px rgb(226, 226, 226);
+
+    transition: .2s;
+
+}
+
+.gerenciarProd-card-1:hover {
+    transform: scale(1.02);
+
+    .gerenciarProd-div-icons {
+        overflow: visible;
+    }
 }
 
 .gerenciarProd-div-icons{
     display: flex;
     flex-direction: row;
     justify-content: end;
-    margin-right: 1.5em;
+    overflow: hidden;
+
+    .logo-remover{
+        width: 16px;
+        height: 16px;
+        opacity: 80%;
+        cursor: pointer;
+        margin-top: -1.5em;
+        margin-right: .5em;
+    }
+    .logo-editar{
+        margin-top: -1.5em;
+        width: 18px;
+        cursor: pointer;
+        height: 16px;
+    }
+
 }
-.logo-remover{
-    width: 16px;
-    height: 16px;
-    opacity: 80%;
-    cursor: pointer;
-    margin-top: -1.5em;
-    margin-right: .5em;
-}
-.logo-editar{
-    position: absolute;
-    margin-top: -1.5em;
-    width: 18px;
-    cursor: pointer;
-    height: 16px;
-}
+
 
 .gerenciarProd-imagem-card{
     margin-top: -1em;
@@ -222,9 +237,9 @@
     display: flex;
     flex-direction: row;
     justify-content: end;
-    margin-right: 1em;
     margin-bottom: .4em;
     margin-top: 1em;
+    margin-left: 1.3em;
 }
 .id-produto-card{
     font-family: 'caviar';

@@ -100,9 +100,7 @@ export default function Index(){
                 <div className='gerenciarProd-card-1'>
                         <div className='gerenciarProd-div-icons'>
                                     <img src={LogoRemover} alt='logo' className='logo-remover' onClick={() => deletarProduto(item.produto, item.nome)} />
-                                    <div>
-                                        <img src={LogoEditar} alt='logo' className='logo-editar' onClick={() => editarProduto(item.produto)} />
-                                    </div>
+                                    <img src={LogoEditar} alt='logo' className='logo-editar' onClick={() => editarProduto(item.produto)} />
                                 </div>
                                 <img src={mostrarImagem(item.ds_imagem)}  alt='imagem' className='gerenciarProd-imagem-card' />
                                 <h1 className='marca-produto-card'> 

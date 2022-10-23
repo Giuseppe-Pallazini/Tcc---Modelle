@@ -1,6 +1,7 @@
 .main-carrinho-produtos{
     display: flex;
     flex-direction: column;
+    overflow: scroll;
     .div-carrinho-infoProd{
         display: flex;
         flex-direction: row;
