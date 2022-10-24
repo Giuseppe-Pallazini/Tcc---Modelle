@@ -2,13 +2,16 @@ import './index.scss';
 import '../../assets/common/index.scss'
 import { buscarImagem, listarTodos } from '../../api/produtoAPI'
 import IconeRemover from '../../assets/image/remover-svg.svg'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {toast } from 'react-toastify'
+import CardTotalCarrinho from '../cardTotalCarrinho'
+
+
 
 import Storage, { remove } from 'local-storage'
 
 import { confirmAlert } from 'react-confirm-alert'
-import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export default function Index({ item: { produto: { info, imagens, tamanho }, qtd }, removerItem }) {
     const [qtdProduto, setQtdProduto] = useState(qtd);
@@ -20,7 +23,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
 
     function calcularSubTotal() {
         const subtotal = qtdProduto * info.preco;
-        return subtotal
+        return subtotal.toFixed(2)
     }
 
     function alterarQuantidade(novaQtd) {
@@ -29,7 +32,8 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
         let carrinho = Storage('carrinho');
         let itemStorage = carrinho.find(item => item.id == info.id);
         itemStorage.qtd = novaQtd;
-
+        info.qtd = novaQtd
+        
         Storage('carrinho', carrinho);
     }
 
@@ -54,6 +58,10 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
         const resp = await listarTodos();
         return resp; 
     }
+
+    useEffect(() => {
+        alterarQuantidade(1)
+    },[])
 
     async function remover() {
         confirmAlert({
@@ -113,13 +121,12 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                         <div className='div-carrinho-informaões-qtdProd'>
                             <p> Quant. </p>
                             <div className='carrinho-div-input-qtd'>
-                                <p className='carrinho-div-input-qtd-mais' onClick={contadorMenos}> - </p>
+                                <p className='carrinho-div-input-qtd-mais' onClick={contadorMenos} onChange={e => alterarQuantidade(e.target.value)}> - </p>
                                 <p className='carrinho-div-input-qtd-resultado'> {resultado} </p>
                                 <p className='carrinho-div-input-qtd-menos' onClick={contador} value={qtdProduto} onChange={e => alterarQuantidade(e.target.value)}> + </p>
                             </div>
                             <div className='div-carrinho-informacoes-subtotal'>
                                 <p> Subtotal: R$ <b> {calcularSubTotal()} </b> </p>
-
                             </div>
                         </div>
 
@@ -127,6 +134,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                 </div>
                 <hr className='quebra-hr' />
             </div>
+
         </main>
     );
 }

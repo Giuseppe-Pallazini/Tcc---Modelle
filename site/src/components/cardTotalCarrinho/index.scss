@@ -1,11 +1,7 @@
-.main-carrinho{
-    display: flex;
-    flex-direction: column;
+.main-card-total-carrinho {
 
-    .carrinho-section {
-        display: flex;
-        flex-direction: row;
-    }
+
+
     .section-carrinho-principal{
         display: flex;
         flex-direction: column;
@@ -174,5 +170,4 @@
         color: white;
         cursor: pointer;
     }
-
 }
