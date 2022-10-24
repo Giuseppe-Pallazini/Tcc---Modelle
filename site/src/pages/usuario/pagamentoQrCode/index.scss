@@ -1,0 +1,11 @@
+.pagamentoQrCode-main{
+    display: flex;
+    flex-direction: column;
+    .pagamentoQrcode-section-principal{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 58vh;
+    }
+}

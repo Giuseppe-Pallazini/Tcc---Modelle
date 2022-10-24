@@ -10,6 +10,10 @@ export default function Index(){
     return(
        <main>
            <CabecalhoAdm /> 
+           <section>
+             
+                
+           </section>
         </main> 
     );
 }

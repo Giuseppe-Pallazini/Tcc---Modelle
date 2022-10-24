@@ -16,9 +16,9 @@ export default function Index(){
                 </div>
 
                 <p className='rodape-contato'>Contato</p>
-
+ 
                 <Link to='/user/sobreModelle'>
-                    <p className='rodape-QueméModelle'>Quem é Modelle?</p>
+                    <p className='rodape-QuemEModelle'>Quem é Modelle?</p>
                 </Link>
                 <p className='rodape-sigaNos'>Siga-nos</p>
 
