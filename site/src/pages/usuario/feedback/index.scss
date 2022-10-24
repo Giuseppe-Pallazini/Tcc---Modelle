@@ -1,0 +1,52 @@
+.feedback-main{
+    display: flex;
+    flex-direction: column;
+    .feedback-section-principal{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 58vh;
+    }
+    .feedback-div-titulo{
+        margin-top: 2em;
+        margin-bottom: -2em;
+    }
+    .feedback-div-titulo h1{
+        font-size: 2.5em;
+        font-weight: 100;
+        font-family: 'caviar';
+    }
+    .feedback-div-textFeedback{
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+        font-weight: 600;
+        font-family: 'caviar';
+    }
+    .feedback-div-textFeedback textarea{
+        opacity: 70%;
+        margin-top: .5em;
+        height: 8em;
+        resize: none;
+        border: none;
+        width: 60em;
+        box-shadow: 2px 2px #c0c0c0ce;
+    }
+
+    .feedback-div-button{
+        text-align: center;
+        resize: none;
+    }
+    .feedback-div-button button{
+        font-size: 1em;
+        font-family: 'caviar';
+        font-weight: 500;
+        color: aliceblue;
+        background-color: black;
+        border: none;
+        cursor: pointer;
+        width: 15em;
+        height: 3em;
+    }
+}

@@ -217,18 +217,18 @@ export default function Index(){
                                 <div className='div-pagamento-QtdParcelas'>
                                     Parcelas 
                                     <select name='Quantidade de parcela' className='pagamento-select-qtdParcela'>
-                                        <option className='pagamento-option-qtdParcela'> 1 </option>
-                                        <option className='pagamento-option-qtdParcela'> 2 </option>
-                                        <option className='pagamento-option-qtdParcela'> 3 </option>
-                                        <option className='pagamento-option-qtdParcela'> 4 </option>
-                                        <option className='pagamento-option-qtdParcela'> 5 </option>
-                                        <option className='pagamento-option-qtdParcela'> 6 </option>
-                                        <option className='pagamento-option-qtdParcela'> 7 </option>
-                                        <option className='pagamento-option-qtdParcela'> 8 </option>
-                                        <option className='pagamento-option-qtdParcela'> 9 </option>
-                                        <option className='pagamento-option-qtdParcela'> 10 </option>
-                                        <option className='pagamento-option-qtdParcela'> 11</option>
-                                        <option className='pagamento-option-qtdParcela'> 12 </option>
+                                        <option className='pagamento-option-qtdParcela'> 1x </option>
+                                        <option className='pagamento-option-qtdParcela'> 2x</option>
+                                        <option className='pagamento-option-qtdParcela'> 3x </option>
+                                        <option className='pagamento-option-qtdParcela'> 4x </option>
+                                        <option className='pagamento-option-qtdParcela'> 5x </option>
+                                        <option className='pagamento-option-qtdParcela'> 6x </option>
+                                        <option className='pagamento-option-qtdParcela'> 7x </option>
+                                        <option className='pagamento-option-qtdParcela'> 8x</option>
+                                        <option className='pagamento-option-qtdParcela'> 9x </option>
+                                        <option className='pagamento-option-qtdParcela'> 10x </option>
+                                        <option className='pagamento-option-qtdParcela'> 11x </option>
+                                        <option className='pagamento-option-qtdParcela'> 12x </option>
                                     </select>
                                 </div>
 

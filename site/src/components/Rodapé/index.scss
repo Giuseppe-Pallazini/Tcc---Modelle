@@ -43,14 +43,15 @@
     .rodape-sigaNos{
         margin-right: 1em;
     }
-    .rodape-QueméModelle{
+    .rodape-QuemEModelle{
         font-size: 1em;
+        text-decoration: none;
         color: #fff;
-        border: none;
     }
     .rodape-condições{
         margin-right: 2em;
         font-size: 1em;
+        text-decoration: underline;
         color: #fff;
         border: none;
     }
@@ -62,9 +63,14 @@
         margin-top: 6em;
     }
     .rodape-Allrightsreserved{
+        margin-top: 1em;
         margin-left: 1em;
+        font-size: .8em;
     }
     .rodape-info-localização{
         margin-right: 1em;
+        margin-top: 1em;
+        margin-left: 1em;
+        font-size: .8em;
     }
 }
