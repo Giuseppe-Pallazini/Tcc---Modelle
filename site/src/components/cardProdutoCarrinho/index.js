@@ -4,18 +4,17 @@ import { buscarImagem, listarTodos } from '../../api/produtoAPI'
 import IconeRemover from '../../assets/image/remover-svg.svg'
 import { useEffect, useState } from 'react';
 import {toast } from 'react-toastify'
-import CardTotalCarrinho from '../cardTotalCarrinho'
 
-
-
-import Storage, { remove } from 'local-storage'
+import Storage from 'local-storage'
 
 import { confirmAlert } from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export default function Index({ item: { produto: { info, imagens, tamanho }, qtd }, removerItem }) {
     const [qtdProduto, setQtdProduto] = useState(qtd);
-    const [resultado, setResultado] = useState(1)
+    const [resultado, setResultado] = useState(1);
+
+    const [idTamanho, setIdTamanho] = useState();
 
     function mostrarImagem(imagem) {
         return buscarImagem(imagem)
@@ -32,7 +31,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
         let carrinho = Storage('carrinho');
         let itemStorage = carrinho.find(item => item.id == info.id);
         itemStorage.qtd = novaQtd;
-        info.qtd = novaQtd
+        //info.qtd = novaQtd
         
         Storage('carrinho', carrinho);
     }
@@ -60,7 +59,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
     }
 
     useEffect(() => {
-        alterarQuantidade(1)
+        alterarQuantidade()
     },[])
 
     async function remover() {
@@ -111,6 +110,8 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                         <div className='div-carrinho-informações-tamanho'>
                             <p className='carrinho-textTamanho'>Tamanho </p>
                             <p className='carrinho-valorTamanho'> {tamanho} </p>
+                            <div className='tam-conteiner'>
+                            </div>
                         </div>
 
                         <div className='div-carrinho-valorProd'>
@@ -121,7 +122,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                         <div className='div-carrinho-informaões-qtdProd'>
                             <p> Quant. </p>
                             <div className='carrinho-div-input-qtd'>
-                                <p className='carrinho-div-input-qtd-mais' onClick={contadorMenos} onChange={e => alterarQuantidade(e.target.value)}> - </p>
+                                <p className='carrinho-div-input-qtd-mais' value={qtdProduto} onClick={contadorMenos} onChange={e => alterarQuantidade(e.target.value)}> - </p>
                                 <p className='carrinho-div-input-qtd-resultado'> {resultado} </p>
                                 <p className='carrinho-div-input-qtd-menos' onClick={contador} value={qtdProduto} onChange={e => alterarQuantidade(e.target.value)}> + </p>
                             </div>
