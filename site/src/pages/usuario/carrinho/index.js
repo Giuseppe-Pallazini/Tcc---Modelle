@@ -12,9 +12,10 @@ import '../../../assets/common/index.scss'
 import { useEffect, useState } from 'react';
 import Storage from 'local-storage'
 import { buscarProdutoPorId } from '../../../api/produtoAPI';
-//import { toast } from 'react-toastify';
 
-//import storage from 'local-storage';
+import { Link } from 'react-router-dom';
+
+//import { toast } from 'react-toastify';
 
 export default function Index() {
     const [itens, setItens] = useState([]);
@@ -27,16 +28,20 @@ export default function Index() {
         carregarCarrinho();
     }
 
+    function qtdItens() {
+        return itens.length
+    }
+
     
     async function carregarCarrinho() {
         let carrinho = Storage('carrinho')
-        console.log(carrinho)
         if (carrinho) {
 
             let temp = [];
 
             for (let produto of carrinho) {
                 let p = await buscarProdutoPorId(produto.id);
+
                 temp.push({
                     produto: p,
                     qtd: produto.qtd,
@@ -47,15 +52,14 @@ export default function Index() {
 
     }
 
-    function calcularTotal() {
+    function calcularValorTotal() {
         let total = 0;
-        for (let item of itens) {
-            console.log(item.produto.info.qtd, item.produto.info.preco)
-            total = total + item.produto.info.preco * item.produto.info.qtd;
+        for(let item of itens) {
+            total = total + item.produto.info.preco * item.qtd;
         }
-
         return total.toFixed(2);
     }
+
 
     useEffect(() => {
         carregarCarrinho();
@@ -70,7 +74,7 @@ export default function Index() {
 
                 <div className='div-carrinho-cards-produtos'>
                     {itens.map(item =>
-                        <ProdutoCarrinho item={item} removerItem={removerItem} />
+                        <ProdutoCarrinho item={item} removerItem={removerItem} carregarCarrinho={carregarCarrinho} />
                     )}
 
                 </div>
@@ -101,21 +105,21 @@ export default function Index() {
                                 <img className='carrinho-logo-pagamento' src={LogoCartão} alt='logo-cartão' />
                                 <div>
                                     <p className='carrinho-p-formas'> Formas de pagamento</p>
-                                    <p className='carrinho-p-infoPagamento'>Cartão de credito, debito ou PIX</p>
+                                    <p className='carrinho-p-infoPagamento'>Cartão de credito, boleto ou PIX</p>
                                 </div>
                             </div>
 
-
                             <div className='div-carrinho-info-total'>
-                                <p className='carrinho-p-total'> TOTAL</p>
+                                <p className='carrinho-p-total'> Total: </p>
+                                <p className='carrinho-p-total-itens'> ({qtdItens()} Itens) </p>
                                 <div className='div-carrinho-valor-total'>
                                     <p className='carrinho-p-textTotal-valor'>R$ </p>
-                                    <p className='carrinhho-valor-total'> {calcularTotal()} </p>
+                                    <p className='carrinhho-valor-total'> {calcularValorTotal()} </p>
                                 </div>
                             </div>
 
                             <div className='div-carrinho-info-continuar'>
-                                <button className='carrinho-botão-continuar'> Continuar </button>
+                             <Link className='carrinho-botão-continuar' to="/user/pagamentoCartao"> Continuar </Link>
                             </div>
                         </div>
                     </div>

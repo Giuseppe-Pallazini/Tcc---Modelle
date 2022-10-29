@@ -1,19 +1,17 @@
 import './index.scss';
-import '../../assets/common/index.scss'
-import { buscarImagem, listarTodos } from '../../api/produtoAPI'
-import IconeRemover from '../../assets/image/remover-svg.svg'
+import '../../assets/common/index.scss';
+import { buscarImagem, listarTodos } from '../../api/produtoAPI';
+import IconeRemover from '../../assets/image/remover-svg.svg';
 import { useEffect, useState } from 'react';
-import {toast } from 'react-toastify'
+import {toast } from 'react-toastify';
 
-import Storage from 'local-storage'
+import Storage from 'local-storage';
 
-import { confirmAlert } from 'react-confirm-alert'
+import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
-export default function Index({ item: { produto: { info, imagens, tamanho }, qtd }, removerItem }) {
+export default function Index({ item: { produto: { info, imagens, tamanho }, qtd }, removerItem, carregarCarrinho}) {
     const [qtdProduto, setQtdProduto] = useState(qtd);
-    const [resultado, setResultado] = useState(1);
-
     const [idTamanho, setIdTamanho] = useState();
 
     function mostrarImagem(imagem) {
@@ -31,26 +29,8 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
         let carrinho = Storage('carrinho');
         let itemStorage = carrinho.find(item => item.id == info.id);
         itemStorage.qtd = novaQtd;
-        //info.qtd = novaQtd
-        
         Storage('carrinho', carrinho);
-    }
-
-    function contador() {
-        let a = resultado + 1;
-        if(resultado >= info.disponivel){
-            return document.getElementById("botaomais").disabled = false;
-        }
-
-        return setResultado(a), setQtdProduto(a)
-    }
-
-    function contadorMenos() {
-        let a = resultado - 1;
-        if(resultado <= 1){
-            return document.getElementById("botaomenos").disabled = false;
-        }
-        return setResultado(a), setQtdProduto(a)
+        carregarCarrinho();
     }
 
     async function carregarProduto(){
@@ -58,9 +38,6 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
         return resp; 
     }
 
-    useEffect(() => {
-        alterarQuantidade()
-    },[])
 
     async function remover() {
         confirmAlert({
@@ -122,9 +99,13 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                         <div className='div-carrinho-informaões-qtdProd'>
                             <p> Quant. </p>
                             <div className='carrinho-div-input-qtd'>
-                                <p className='carrinho-div-input-qtd-mais' value={qtdProduto} onClick={contadorMenos} onChange={e => alterarQuantidade(e.target.value)}> - </p>
-                                <p className='carrinho-div-input-qtd-resultado'> {resultado} </p>
-                                <p className='carrinho-div-input-qtd-menos' onClick={contador} value={qtdProduto} onChange={e => alterarQuantidade(e.target.value)}> + </p>
+                                <select onChange={e => alterarQuantidade(e.target.value)} value={qtdProduto}>
+                                    <option> 1 </option>
+                                    <option> 2 </option>
+                                    <option> 3 </option>
+                                    <option> 4 </option>
+                                    <option> 5 </option>
+                                </select>
                             </div>
                             <div className='div-carrinho-informacoes-subtotal'>
                                 <p> Subtotal: R$ <b> {calcularSubTotal()} </b> </p>

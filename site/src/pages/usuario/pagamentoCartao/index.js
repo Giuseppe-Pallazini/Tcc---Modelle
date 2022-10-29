@@ -1,8 +1,7 @@
-import Storage from 'local-storage'
 import './index.scss';
 import '../../../assets/common/index.scss'
 import { useNavigate } from 'react-router-dom';
-import { buscarProdutoPorId } from '../../../api/produtoAPI';
+import { buscarProdutoPorId, buscarImagem } from '../../../api/produtoAPI';
 
 import CabecalhoUser from '../../../components/cabecalhouser/index.js'
 import RodapeUser from '../../../components/Rodapé/index.js'
@@ -11,9 +10,11 @@ import LogoLocalizacao from '../../../assets/image/imagem-localização.png'
 import LogoCartao from '../../../assets/image/logo-cartão.png'
 import LogoPix from '../../../assets/image/icone-pix.png'
 import LogoFinalizado from '../../../assets/image/logo-finalizado.png'
-import ImagemProd from '../../../assets/image/camiseta-preta-versace.png'
 import LogoSeta from '../../../assets/image/set-tela-pagamentos.png'
 import {useEffect, useState, useRef} from 'react'
+import { IMaskInput } from 'react-imask'
+
+import Storage from 'local-storage'
 
 export default function Index(){
     const [itens, setItens] = useState([])
@@ -26,6 +27,13 @@ export default function Index(){
         navigate(`/user/destalheProduto/${id}`)
     }
 
+    function dataAtual() {
+        const timeElapsed = Date.now();
+        const today = new Date(timeElapsed);
+        return today.toLocaleDateString();
+        
+    }
+
     async function carregarItens(){
         let carrinho = Storage('carrinho')
         console.log(carrinho)
@@ -33,7 +41,7 @@ export default function Index(){
 
             let temp = [];
 
-            for (let produto of carrinho){
+            for (let produto of carrinho) {
                let p = await buscarProdutoPorId(produto.id);
                temp.push({
                    produto: p,
@@ -52,6 +60,10 @@ export default function Index(){
         }
 
         return total;
+    }
+
+    function mostrarImagem(imagem) {
+        return buscarImagem(imagem)
     }
 
     useEffect(() => {
@@ -81,34 +93,34 @@ export default function Index(){
 
                             <div className='pagamento-PreenchEnd-l1'>
                                 <div>
-                                    <p className='pagamento-Preench-rua-p'>Rua:</p>
-                                    <input type='text' placeholder='Ex: Avenida Paulista' className='pagamento-Preench-rua-input' />
+                                    <p className='pagamento-Preench-rua-p'> Rua: </p>
+                                    <input type='text' placeholder='Avenida Paulista' className='pagamento-Preench-rua-input' />
                                 </div>
 
                                 <div className='pagamento-Preench-numero'>
                                     <p className='pagamento-Preench-numero-p'>N°</p>
-                                    <input type='text' placeholder='Ex: 124' className='pagamento-Preench-numero-input' />
+                                    <input type='text' placeholder='000' className='pagamento-Preench-numero-input' />
                                 </div>
                             </div>  
                             <div className='pagamento-PreenchEnd-l2'>
                                 <div className='pagamento-div-cidade'>
                                     <p className='pagamento-Preench-cidade-p'>Cidade:</p>
-                                    <input type='text' placeholder='Ex: São Paulo' className='pagamento-Preench-cidade-input' />
+                                    <input type='text' placeholder='São Paulo' className='pagamento-Preench-cidade-input' />
                                 </div>
                                 <div>
                                     <p className='pagamento-Preench-bairro-p'>Bairro:</p>
-                                    <input type='text' placeholder='Ex: Veleiros' className='pagamento-Preench-bairro-input' />
+                                    <input type='text' placeholder='Veleiros' className='pagamento-Preench-bairro-input' />
                                 </div>
                                 <div className='pagamento-div-cep'>
                                     <p className='pagamento-Preench-cep-p'>CEP:</p>
-                                    <input type='text' placeholder='Ex: 04545-213' className='pagamento-Preench-cep-input' />
+                                    <IMaskInput mask='00000-000' type='text' placeholder='00000-111' className='pagamento-Preench-cep-input' />
                                 </div>
                             </div>
 
                             <div className='pagamento-PreenchEnd-l3'>
                                 <div>
                                 <p className='pagamento-Preench-complem-p'>Complemento:</p>
-                                    <input type='text' placeholder='Ex: Casa' className='pagamento-Preench-comple-input' />
+                                    <input type='text' placeholder='Apt 18' className='pagamento-Preench-comple-input' />
                                 </div>
                             </div>
                         </div>
@@ -119,7 +131,7 @@ export default function Index(){
                             <div className='div-pagamento-InfosPed'> 
                                 <section>
                                     <div className='pagamento-div-imgProd'>
-                                            <img src={ImagemProd} alt='imgProd-pagamento' />
+                                            <img src={mostrarImagem(item.produto.info.imagens)} alt='imgProd-pagamento' />
                                     </div>
                                     <a onClick={abrirDetalhes} className='pagamento-infosPed-tituloProd'> {item.produto.info.produto} </a>
 
@@ -128,7 +140,7 @@ export default function Index(){
                                     </div>
 
                                     <div className='pagamento-div-datePed'>
-                                            Data: <p className='pagamento-p-DtPed'> 12 / 10 / 2006</p>
+                                            Data: <p className='pagamento-p-DtPed'> {dataAtual()} </p>
                                     </div>
 
 
@@ -170,7 +182,7 @@ export default function Index(){
 
 
                 { mostrarInfosPag ? 
-                    <div>
+                    <section>
                     <div className='pagamento-div-titulo-infoPag'>
                         <h1>Pagamento</h1>
                     </div>
@@ -235,7 +247,7 @@ export default function Index(){
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
                 : null }
                  </section>
 
