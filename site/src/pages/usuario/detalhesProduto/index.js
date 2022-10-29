@@ -19,7 +19,6 @@ export default function Index(){
 
     async function carregarPagina(){
         const r =await buscarProdutoPorIdUsuario(id);
-        console.log(r)
         setProduto(r)
     }
 

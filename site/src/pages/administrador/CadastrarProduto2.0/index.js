@@ -88,7 +88,6 @@ export default function CadastroProduto() {
         if (r.imagens.length > 3) {
             setImagem4(r.imagens[3]);
         }
-   
     }
 
 
@@ -127,6 +126,11 @@ export default function CadastroProduto() {
         }
     }
 
+    function removerCategoria(id) {
+        const x = tamSelecionadas.filter(item => item != id);
+        setTamSelecionadas(x);
+    }
+
     function adicionarTamanho() {
         if (!idTamanho) return;
         
@@ -157,9 +161,8 @@ export default function CadastroProduto() {
 
     async function salvarProduto() {
         try {
-
-            if(!id){
             const precoProduto = preco.replace(',', '.');
+            if(!id){
             console.log(precoProduto);
             const r = await inserirProduto(nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
             await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
@@ -170,11 +173,8 @@ export default function CadastroProduto() {
             }
 
             else{
-                const precoProduto = Number(preco.replace(',', '.'));
-                const r = await alterarProduto(id, nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
-                await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
-    
-                alert(id);
+                await alterarProduto(id, nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
+                await salvarImagem(id, imagem, imagem2, imagem3, imagem4);
     
                 toast.dark(' ✔️ Produto alterado com sucesso!');
             }
@@ -204,7 +204,7 @@ export default function CadastroProduto() {
             <Cabecalho />
 
 
-            <h1 className='text-1'> Cadastro </h1>
+            <h1 className='text-1'> {id ? 'Alterar Produto' : 'Cadastro'}</h1>
 
 
             <div className='cadastro-sections'>
@@ -315,7 +315,7 @@ export default function CadastroProduto() {
                         <div className='aa'><label></label>
                             <div className='tam-conteiner'>
                                 {tamSelecionadas.map(id =>
-                                    <div className='tam-selecionada'>
+                                    <div className='tam-selecionada' onClick={() => removerCategoria(id)} >
                                         {buscarNomeTamanho(id)}
                                     </div>
                                 )}

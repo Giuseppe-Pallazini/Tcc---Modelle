@@ -4,7 +4,7 @@ import { Router } from 'express';
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
 import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
 import { alterarProduto, buscarPorNome, listarTodosProdutos, removerProdutoImagensDiferentes, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
-import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId  } from '../repository/mostrarprodutorepository.js'
+import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId, ListarTodosTamanhosporIdUser  } from '../repository/mostrarprodutorepository.js'
 import { removerProdutoImagem, removerProdutoTamanho } from '../repository/removerProdutoRepository.js';
 
 const server = Router();
@@ -40,21 +40,17 @@ server.post('/admin/produto', async (req, resp) => {
     }
 })
 
-server.put('/admin/produto/imagem/:id', upload.array('imagens'), async (req, resp) => {
+server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
     try {
 
         const id = req.params.id;
         const imagens = req.files;
-        const imgs = req.body;
-        
-        console.log(id)
-        console.log(imagens);
-        console.log(imgs);
-
-
         // const imagensPermanecem = req.body.imagens.filter(item => item != 'undefined');
 
-        // await removerProdutoImagensDiferentes(imagensPermanecem);
+        // if (imagensPermanecem.length > 0)
+        //     await removerProdutoImagensDiferentes(imagensPermanecem);
+        // else
+        //     await removerProdutoImagem(id);
 
         for (const imagem of imagens) {
             await salvarProdutoImagem(id, imagem.path)
@@ -63,7 +59,7 @@ server.put('/admin/produto/imagem/:id', upload.array('imagens'), async (req, res
         resp.status(204).send();
 
     } catch (err) {
-        resp.status(204).send({
+        resp.status(400).send({
             erro: err.message
         })
     }
@@ -108,7 +104,7 @@ server.get('/admin/produto/:id', async (req, resp) => {
 }
 )
 
-server.put('/admin/produto/alterar/:id', upload.array('imagens'), async (req, resp) => {
+server.put('/admin/produto/:id', async (req, resp) => {
     try{
         const id = req.params.id;
         const produto = req.body;
@@ -120,11 +116,11 @@ server.put('/admin/produto/alterar/:id', upload.array('imagens'), async (req, re
     
 
         // Remover tamanhos
-        //await removerProdutoTamanho(id);
+        await removerProdutoTamanho(id);
 
         await alterarProduto(id, produto)
 
-        for(let idTam of produto.tamanho){
+        for(let idTam of produto.tamanhos){
             const tam = buscarTamanhoPorId(idTam);
 
             if(tam != undefined){
@@ -136,7 +132,7 @@ server.put('/admin/produto/alterar/:id', upload.array('imagens'), async (req, re
     }
     
     catch(err){
-    
+        console.log(err)
     }
 }
 )
@@ -146,7 +142,7 @@ server.get('/api/produto/:id', async (req, resp) => {
         const id = req.params.id;
 
         const produto =  await ListarTodosProdutosPorId(id);
-        const tamanho = await ListarTodosTamanhosporId(id);
+        const tamanho = await ListarTodosTamanhosporIdUser(id);
         const imagens = await ListarTodosImagensporId(id);
         
 
@@ -158,6 +154,9 @@ server.get('/api/produto/:id', async (req, resp) => {
 
     }
     catch(err){
+        resp.status(400).send({
+            erro: err.message
+        })
         console.log(err)
     }
 }

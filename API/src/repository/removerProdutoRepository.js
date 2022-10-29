@@ -47,12 +47,12 @@ export async function removerProdutoCategoria(id_produto){
 //     return resp.affectedRows;
 // }
 
-export async function removerProdutoImagem(id_produto){
+export async function removerProdutoImagem(idProduto){
     const comando = `
              delete from tb_produto_imagem
                     where id_produto = ?
     `
-    const [resp] = await con.query(comando, [id_produto])
+    const [resp] = await con.query(comando, [idProduto])
     return resp.affectedRows;
 }
 

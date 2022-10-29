@@ -71,6 +71,17 @@ export async function ListarTodosProdutosPorId(id) {
 
 export async function ListarTodosTamanhosporId(idProduto) {
  
+    const comando = `select id_tamanho as id
+                    from tb_produto_tamanho
+                    where id_produto = ?
+                    `
+
+    const [linhas] = await con.query(comando, [idProduto]);
+    return linhas.map(item => item.id);
+}
+
+export async function ListarTodosTamanhosporIdUser(idProduto) {
+ 
     const comando = `select nm_tamanho as id
                     from tb_produto_tamanho
                     inner join tb_tamanho

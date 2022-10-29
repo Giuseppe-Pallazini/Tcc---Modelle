@@ -29,7 +29,7 @@ export async function inserirProduto( nome, complementoProduto, preco, composica
 
 export async function alterarProduto(id, nome, complementoProduto, preco, composicao, detalhes, juros, parcela,disponivel, cor, idMarca, catSelecionadas, modSelecionadas, tamSelecionadas,
     ) {
-   const r = await api.put('/admin/produto/alterar/' + id, 
+   const r = await api.put('/admin/produto/' + id, 
    {
        nome: nome,
        complementoProduto: complementoProduto , 
@@ -74,7 +74,7 @@ export async function salvarImagem(id, imagem, imagem2, imagem3, imagem4){
     form.append('imagens', imagem3);
     form.append('imagens', imagem4);
 
-    const r = await api.put('/admin/produto/imagem/' + id, form, {
+    const r = await api.put(`/admin/produto/${id}/imagem`, form, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }

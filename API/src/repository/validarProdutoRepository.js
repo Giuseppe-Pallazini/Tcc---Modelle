@@ -139,7 +139,7 @@ export async function salvarProdutoImagem(idProduto, imagemPath) {
                                   values (?, ?)
     `
 
-    const [resp] = await con.query(comando, [idProduto, imagemPath])
+    const [resp] = await con.query(comando, [idProduto, imagemPath]);
 }
 
 export async function removerProdutoImagensDiferentes(imagens) {
