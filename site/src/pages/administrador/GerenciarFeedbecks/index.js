@@ -11,10 +11,12 @@ export default function Index(){
     return(
        <main className='main-gerenciarUsuarios'>
             <CabecalhoAdm />
-                <h1 className='gerenciarFeedbacks-h1'>FeedBacks</h1>
-            <section className='section-table'>
-                
+            <section className='section-tables-gerenciar'> 
                 <div>
+                    <h1 className='gerenciarFeedbacks-h1'>FeedBacks</h1>
+                </div>
+                
+                <div className='div-table'>
                     <table className='gerenciarUser-table'>
                         <thead className='gereciarFeed-thead-table'>
                             <tr className='gereciarFeed-tr-titulo'>
@@ -37,7 +39,6 @@ export default function Index(){
                                 </td>
                             </tr>
 
-
                             <tr className='gereciarFeed-tr'>
                                 <td className='gereciarFeed-td' >Vitão</td>
                                 <td className='gereciarFeed-td' >Vg9459544@gmail.com</td>                               
@@ -48,19 +49,7 @@ export default function Index(){
                                     <img src={LogoLupa} alt='logo-lupa' />
                                 </td>
                             </tr>
-                
 
-                            <tr className='gereciarFeed-tr'>
-                                <td className='gereciarFeed-td' >Vitão</td>
-                                <td className='gereciarFeed-td' >Vg9459544@gmail.com</td>                               
-                                <td className='gereciarFeed-td-mensagem' >Atedimento é otimo!!!.....</td>
-                                <td className='gereciarFeed-td' ># 01</td>
-                                <td>
-                                    
-                                    <img src={LogoLupa} alt='logo-lupa' />
-                                </td>
-                            </tr>
-                
                         </tbody>
                     </table>
                 </div>
