@@ -1,50 +1,71 @@
-.main-gerenciarUsuarios{
+.main-gerenciar{
     display: flex;
     flex-direction: column;
     font-family: 'caviar';
     
-    .gerenciarUsuarios-h1{
+    .gerenciar-h1 h1{
         text-align: center;
-        margin-bottom: -3em;
-        margin-top: 2em;
+        margin-bottom: 1em;
+        font-size: 2em;
+        margin-top: 1em;
     }
-    .section-table{
+    .section-tables{
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
 
         height: 80vh;
     }
-    .gerenciarUser-table{
-        width: 100%;
+
+    .div-filtro-buscarAdm{
+        display: flex;
+        align-items: center;
+        margin-top: 2em;
+        margin-left: 4em;
+    }
+    .div-filtro-buscarAdm input{
+        width: 5em;
+        border: none;
+        font-size: .8em;
+        font-family: 'caviar';
+        font-weight: 900;
+    }
+    .div-filtro-buscarAdm img{
+        width: 20px;
+        cursor: pointer;
+    }
+    .gerenciar-table{
         border-collapse: collapse;
+        overflow: scroll;
         margin-top: 50px;
         width: 60em;
+        margin-bottom: 5em;
         box-shadow: 1px 1px #c0c0c0ce;
     }
-    .gereciarUser-thead-table {
+    .gereciar-thead-table {
         background-color: #5e5e5e;
         width: 50em;
     }
-    .gereciarUser-tr-titulo th{
-        text-align: left;
+    .gereciar-tr-titulo th{
+        text-align: center;
         color: #ffffff;
         padding: 25px 45px;
         font-size: 14px;
         text-shadow: 0px 1px 4px rgba(217, 217, 217, 0.5);
     }
-    .gereciarUser-tbody{
+    .gereciar-tbody{
         align-items: center;
         width: 15em;
     }
-    .gereciarUser-tbody tr:hover{
+    .gereciar-tbody tr:hover{
         background-color: #e1e1e1;
         width: 15em;
     }
-    .gereciarUser-td{
+    .gereciar-td{
         margin-left: 3em;
+        text-align: center;
         font-weight: 400;
-        padding: 25px 10px;
+        height: 4em;
     }
 
     td img {

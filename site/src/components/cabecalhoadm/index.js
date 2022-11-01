@@ -9,8 +9,13 @@ export default function Index(){
         <header>
             <nav className='cab'>
                 <div className='cab-admin'>
-                    <img className='cab-admin-img' src={Imagem1} alt=""/>
+                <div className='cab-div-exit'>
+                    <Link className='cab-exit' to='/admin/home'>
+                        <img className='cab-admin-img' src={Imagem1} alt=""/>
+                    </Link>
                     <span className='cab-admin-user'>Administrador</span>
+                </div>
+                    
                 </div>
 
                 <div className='cab-canvas'>

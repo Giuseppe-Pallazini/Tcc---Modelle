@@ -1,0 +1,26 @@
+.main-menuUsuario{
+    display: flex;
+    flex-direction: column;
+
+    .div-meusPedidos{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+    .div-meusPedidos img{
+        width: 1.3em;
+        height: 1.3em;
+    }
+    .div-meusPedidos p{
+        font-family: 'caviar';
+        font-size: 1em;
+        font-weight: 400;
+        margin-left: .5em;
+    }
+
+    .div-filtroRoupas{
+        margin-top: 1em;
+    }
+
+}

@@ -9,13 +9,18 @@
         .cab-admin-img{
             position: relative;
             top: 1.5em;
-            left: 2em;
         }
         .cab-admin-user{
             position: relative;
             top: 1.2em;
-            left: 3em;
+            margin-left: -2em;
+            margin-top: .8em;
         }
+    }
+    .cab-div-exit{
+        display: flex;
+        flex-direction: row;
+        margin-top: -.3em;
     }
 
     .cab-canvas{

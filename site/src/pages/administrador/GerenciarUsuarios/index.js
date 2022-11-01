@@ -3,22 +3,30 @@ import { useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
 import CabecalhoAdm from '../../../components/cabecalhoadm'
 
-import LogoRemover from '../../../assets/image/logo-remover.svg'
-import LogoEditar from '../../../assets/image/logo-editar.svg'
+
+import Logolixeira from '../../../assets/image/logo-lixeira.png'
+import LogoLupa from '../../../assets/image/logo-lupa.png'
+
 import '../../../assets/common/index.scss'
 import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
     return(
-       <main className='main-gerenciarUsuarios'>
-            <CabecalhoAdm />
+       <main className='main-gerenciar'>
+            <CabecalhoAdm />         
 
-            <h1 className='gerenciarUsuarios-h1'>Usuarios</h1>
-            <section className='section-table'>
+            <div className='div-filtro-buscarAdm'>
+                <input placeholder='Buscar'/><img className='' src={LogoLupa} alt='logoLupa' /> 
+            </div>
+
+            <section className='section-tables'>
+                <div className='gerenciar-h1'>
+                    <h1>Usuarios</h1>
+                </div>
                 <div>
-                    <table className='gerenciarUser-table'>
-                        <thead className='gereciarUser-thead-table'>
-                            <tr className='gereciarUser-tr-titulo'>
+                    <table className='gerenciar-table'>
+                        <thead className='gereciar-thead-table'>
+                            <tr className='gereciar-tr-titulo'>
                                 <th>USUARIO</th>
                                 <th>E-MAIL</th>
                                 <th>Dt. Nascimento</th>
@@ -26,41 +34,41 @@ export default function Index(){
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody className='gereciarUser-tbody'>
-                            <tr className='gereciarUser-tr'>
-                                <td className='gereciarUser-td' >Vitão</td>
-                                <td className='gereciarUser-td' >Vg9459544@gmail.com</td>                               
-                                <td className='gereciarUser-td' >12 / 10 / 2006</td>
-                                <td className='gereciarUser-td' >11971218295</td>
+                        <tbody className='gereciar-tbody'>
+                            <tr className='gereciar-tr'>
+                                <td className='gereciar-td' >Vitão</td>
+                                <td className='gereciar-td' >Vg9459544@gmail.com</td>                               
+                                <td className='gereciar-td' >12 / 10 / 2006</td>
+                                <td className='gereciar-td' >11971218295</td>
                                 <td>
-                                    <img src={LogoEditar} alt='editar' />
                                     &nbsp;&nbsp;
-                                    <img src={LogoRemover} alt='remover' />
+                                    <img src={Logolixeira} alt='remover' />
                                 </td>
                             </tr>
-                          
-                            <tr className='gereciarUser-tr'>
-                                <td className='gereciarUser-td' >Vitão</td>
-                                <td className='gereciarUser-td' >Vg9459544@gmail.com</td>                               
-                                <td className='gereciarUser-td' >12 / 10 / 2006</td>
-                                <td className='gereciarUser-td' >11971218295</td>
+
+
+                            <tr className='gereciar-tr'>
+                                <td className='gereciar-td' >Vitão</td>
+                                <td className='gereciar-td' >Vg9459544@gmail.com</td>                               
+                                <td className='gereciar-td' >12 / 10 / 2006</td>
+                                <td className='gereciar-td' >11971218295</td>
                                 <td>
-                                    <img src={LogoEditar} alt='editar' />
                                     &nbsp;&nbsp;
-                                    <img src={LogoRemover} alt='remover' />
+                                    <img src={Logolixeira} alt='remover' />
                                 </td>
                             </tr>
-                            <tr className='gereciarUser-tr'>
-                                <td className='gereciarUser-td' >Vitão</td>
-                                <td className='gereciarUser-td' >Vg9459544@gmail.com</td>                               
-                                <td className='gereciarUser-td' >12 / 10 / 2006</td>
-                                <td className='gereciarUser-td' >11971218295</td>
+
+                            <tr className='gereciar-tr'>
+                                <td className='gereciar-td' >Vitão</td>
+                                <td className='gereciar-td' >Vg9459544@gmail.com</td>                               
+                                <td className='gereciar-td' >12 / 10 / 2006</td>
+                                <td className='gereciar-td' >11971218295</td>
                                 <td>
-                                    <img src={LogoEditar} alt='editar' />
                                     &nbsp;&nbsp;
-                                    <img src={LogoRemover} alt='remover' />
+                                    <img src={Logolixeira} alt='remover' />
                                 </td>
                             </tr>
+                        
                         </tbody>
                     </table>
                 </div>
