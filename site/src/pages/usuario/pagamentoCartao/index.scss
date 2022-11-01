@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: column;
 
+    a:visited, a:link {
+        text-decoration: none;
+        color: inherit;
+    }
+
     .section-pagamento-principal{
         display: flex;
         flex-direction: column;
@@ -40,7 +45,7 @@
     .icon-pagamento-cartão{
         margin-right: 1em;
         width: 3em;
-        height: 2.3em;
+        height: 3em;
     }
 
     .div-pagamento-endereço-infosped{
@@ -177,7 +182,6 @@
         background-color: #ececec7c;
         box-shadow: 2px 2px #C0C0C0;
         padding-bottom: 1em;
-        //border: 1px solid black;
     }
     .pagamento-div-imgProd{
         text-align: center;
@@ -190,11 +194,11 @@
         display: flex;
         justify-content: center;
         font-size: 1em;
+        font-family: 700;
         margin-top: 1em;
         text-align: center;
-
-        color: rgb(55, 0, 255);
         font-family: 'caviar';
+        cursor: pointer;
     }
     .pagamento-div-qtdUnid{
         display: flex;
@@ -299,12 +303,22 @@
         margin-top: 3em;
         text-align: center;
     }
+
     .pagamento-button-finalizarPed{
+        font-family: 'inter';
         width: 15em;
         height: 2.3em;
-        border: none;
+        border-radius: .3em;
+        padding: .4em .8em .4em .8em;
         background-color: #FFF;
         box-shadow: 1px 2px #c0c0c0ce;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    .pagamento-button-finalizarPed:hover {
+        background-color: #1B130D;
+        color: white;
     }
     .pagamento-div-botao-proximo{
         margin-top: -7em;
@@ -321,6 +335,7 @@
         background-color: #1B130D;
         color: #FFF;
         margin-left: 1em;
+        cursor: pointer;
     }
 
     .div-pagamento-ped{
@@ -335,6 +350,10 @@
 
     .pagamento-confirm{
         margin-top: 2em;
+    }
+
+    .pagamento-section {
+        width: 70%;
     }
 
 
@@ -364,7 +383,6 @@
         width: 8em;
         height: 3em;
         border-radius: .5em;
-        border: 1px solid black;
     }
     .div-logo-cartãoPag img{
         width: 3em;
@@ -473,8 +491,10 @@
     .pagamento-infoCartaol3{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         margin-top: 1em;
         margin-left: 2em;
+        width: 59%;
     }
 
     .div-pagamento-tpCartão{
@@ -485,8 +505,16 @@
     }
     .pagamento-select-tpCartão{
         margin-top: .5em;
-        width: 8em;
+        width: 11em;
+        padding: .2em;
+        border-radius: .3em;
+        font-family: 'inter';
+        box-shadow: 2px 2px #c0c0c0ce;
+        border: none;
+    }
 
+    .pagamento-select-tpCartão select {
+        display: none;
     }
     
 
@@ -499,7 +527,12 @@
     }
     .pagamento-select-qtdParcela{
         margin-top: .5em;
-        width: 5em;
+        width: 11em;
+        padding: .2em;
+        font-family: 'inter';
+        box-shadow: 2px 2px #c0c0c0ce;
+        border: none;
+        border-radius: .2em;
     }
     .pagamento-option-qtdParcela{
         

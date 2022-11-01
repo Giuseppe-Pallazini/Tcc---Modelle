@@ -1,4 +1,4 @@
-import { useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import storage from 'local-storage'
 import Cabecalho from '../../../components/cabecalhouser'
 import CardUsuario from '../../../components/cardProdutoUsuario'
@@ -7,52 +7,53 @@ import { toast } from 'react-toastify';
 
 import './index.scss';
 import '../../../assets/common/index.scss'
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import { buscarProdutoPorIdUsuario } from '../../../api/produtoAPI';
 import { API_URL } from '../../../api/config';
 
-export default function Index(){
-    const [produto, setProduto] = useState({info: {},tamanho: [], imagens: []});
+export default function Index() {
+    const [produto, setProduto] = useState({ info: {}, tamanho: [], imagens: [] });
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
 
     const { id } = useParams();
 
-    async function carregarPagina(){
-        const r =await buscarProdutoPorIdUsuario(id);
+    async function carregarPagina() {
+        const r = await buscarProdutoPorIdUsuario(id);
+        console.log(r);
         setProduto(r)
     }
 
     useEffect(() => {
         carregarPagina();
-    })
-    
-    function exibirImagemPrincipal(){
-        if(produto.imagens.length > 0){
+    }, [])
+
+    function exibirImagemPrincipal() {
+        if (produto.imagens.length > 0) {
             return API_URL + '/' + produto.imagens[imagemPrincipal]
         }
     }
 
-    function exibirImagemProdutos(imagem){
+    function exibirImagemProdutos(imagem) {
         return API_URL + '/' + imagem;
     }
 
-    function adicionarCarrinho(){
+    function adicionarCarrinho() {
         let carrinho = [];
-        if(storage('carrinho')){
+        if (storage('carrinho')) {
             carrinho = storage('carrinho')
         }
 
-        if(!carrinho.find(item => item.id === id)){
+        if (!carrinho.find(item => item.id === id)) {
             carrinho.push({
-                id:id,
-                qtd:1 
+                id: id,
+                qtd: 1
             })
             storage('carrinho', carrinho)
             toast.dark("🛒 Item Adicionado ao Carrinho")
         }
     }
 
-    function formatarPreco(preco){
+    function formatarPreco(preco) {
         let a = preco.toFixed(2);
         return a
     }
@@ -63,91 +64,86 @@ export default function Index(){
     // }
 
 
-    return(
-       <main className='main-detalhes'>
-            <Cabecalho/>
-        <div>
+    return (
+        <main className='main-detalhes'>
+            <Cabecalho />
+            <div>
 
-            <div className='div-detalhes'>
-                <div className='detalhes-imagens' >
-                    <img className='imagem-principal'  src={exibirImagemPrincipal()} alt='' />
-                    <div>
+                <div className='div-detalhes'>
+                    <div className='detalhes-imagens' >
+                        <img className='imagem-principal' src={exibirImagemPrincipal()} alt='' />
+                        <div>
 
-                        {produto.imagens.map((item,pos) =>
-                            <img className='imagens-produto' src={exibirImagemProdutos(item)} onClick={() => setImagemPrincipal(pos)} alt="" />    
-                        )}
+                            {produto.imagens.map((item, pos) =>
+                                <img className='imagens-produto' src={exibirImagemProdutos(item)} onClick={() => setImagemPrincipal(pos)} alt="" />
+                            )}
+                        </div>
                     </div>
-                </div>
 
-                <div className='detalhes-info'>
-                    <h1 className='detalhes-info-produto' >
-                        {produto.info.produto}
-                    </h1>
+                    <div className='detalhes-info'>
+                        <h1 className='detalhes-info-produto' >
+                            {produto.info.produto}
+                        </h1>
 
-                    <p className='detalhes-info-complemento' >
-                        {produto.info.complemento}
-                    </p>
-                    <h1 className='detalhes-info-preco' >
-                        R${formatarPreco(produto.info.preco * 1)}
-                    </h1>
-                    <h1>
-                    </h1>
-
-                    <div>
-                        <p>
-                            {produto.info.juros}x de R$ {formatarPreco(produto.info.preco / produto.info.juros)} sem juros
+                        <p className='detalhes-info-complemento' >
+                            {produto.info.complemento}
                         </p>
-                    </div>
-                    
-                    <div className='detalhes-info-tamanho'>
-                    {produto.tamanho.map(item =>
-                            <div className='detalhes-info-tamanhos-icon'>
-                                <p className='detalhes-info-tamanhos-txt' >{produto.tamanho}</p>
-                            </div>
-                    )}
+                        <h1 className='detalhes-info-preco' >
+                            R${formatarPreco(produto.info.preco * 1)}
+                        </h1>
+                        <h1>
+                        </h1>
+
+                        <div>
+                            <p>
+                                {produto.info.juros}x de R$ {formatarPreco(produto.info.preco / produto.info.juros)} sem juros
+                            </p>
+                        </div>
+
+                        <div className='detalhes-info-tamanho'>
+                            {produto.tamanho.map(item =>
+                                <div className='detalhes-info-tamanhos-icon'>
+                                    <p className='detalhes-info-tamanhos-txt' >{item}</p>
+                                </div>
+                            )}
+                        </div>
+
+                        <section className='detalhes-cor' style={{ backgroundColor: produto.info.cor }} >
+                        </section>
+
+                        <div className='detalhes-bt' >
+                            <button className='detalhes-add-carrinho' onClick={adicionarCarrinho} >Adicionar ao Carrinho</button>
+                            <button className='detalhes-comprar' >Comprar</button>
+                        </div>
                     </div>
 
-                    <div className='detalhes-cor' >
-                        <select>
-                            <option>
-                                {produto.info.cor}
-                            </option>
-                        </select>
-                    </div>
-
-                    <div className='detalhes-bt' >
-                        <button className='detalhes-add-carrinho' onClick={adicionarCarrinho} >Adicionar ao Carrinho</button>
-                        <button className='detalhes-comprar' >Comprar</button>
-                    </div>
                 </div>
 
-            </div>
 
+                <div className='detalhes-info-composicao'>
+                    <p className='detalhes-info-comp'>Composição</p>
 
-            <div className='detalhes-info-composicao'>
-                <p className='detalhes-info-comp'>Composição</p>
+                    <p className='detalhes-info-comp-1'>{produto.info.composicao}</p>
+                </div>
 
-                <p className='detalhes-info-comp-1'>{produto.info.composicao}</p>
-            </div>
+                <div className='detalhes-info-detalhes'>
+                    <p className='detalhes-info-detalhes-1'>{produto.info.detalhes}</p>
+                </div>
 
-            <div className='detalhes-info-detalhes'>
-                <p className='detalhes-info-detalhes-1'>{produto.info.detalhes}</p>
-            </div>
+                <div className='detalhes-divisoria' >
+                    <hr />
+                </div>
 
-            <div className='detalhes-divisoria' >
-                <hr/>
-            </div>
+                <div className='detalhes-recomendados' >
+                    <h1 className='detalhes-recomendos-txt' > Recomendados</h1>
 
-            <div className='detalhes-recomendados' >
-                <h1 className='detalhes-recomendos-txt' > Recomendados</h1>
+                    <div>
 
-                <div>
-                    
-                    <CardUsuario/>
-                    
+                        <CardUsuario />
+
+                    </div>
                 </div>
             </div>
-        </div>
-        </main> 
+        </main>
     );
 }
