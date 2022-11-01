@@ -3,42 +3,120 @@
 import CabecalhoAdm from '../../../components/cabecalhoadm'
 
 import './index.scss'
+import LogoLupa from '../../../assets/image/logo-lupa.png'
 import '../../../assets/common/index.scss'
 import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
-    const [resultado, setResultado] = useState(1)
-
-    function contador() {
-        let a = resultado + 1;
-        if(resultado >= 10){
-            return document.getElementById("botaomais").disabled = false;
-        }
-
-        return setResultado(a)
-    }
-
-    function contadorMenos() {
-        let a = resultado - 1;
-        if(resultado < 1){
-            return document.getElementById("botaomenos").disabled = false;
-        }
-        return setResultado(a)
-    }
-
     return(
-       <main className='t'>
-            <CabecalhoAdm />
+        <main className='main-gerenciar'>
+        <CabecalhoAdm />         
 
-            <h1> Oi </h1>
-        <div className='a'> 
-            <p id='botaomenos' onClick={contadorMenos}> - </p>
+        <div className='div-filtro-buscarAdm'>
+            <input placeholder='Buscar'/><img className='' src={LogoLupa} alt='logoLupa' /> 
+        </div>
 
-            {resultado}
+        <section className='section-tables'>
+            <div className='gerenciar-h1'>
+                <h1>Pedidos</h1>
+            </div>
+            <div>
+                <table className='gerenciar-table'>
+                    <thead className='gereciar-thead-table'>
+                        <tr className='gereciar-tr-titulo'>
+                            <th>Enviado para</th>
+                            <th>Produto</th>
+                            <th>Data</th>
+                            <th>N°</th>
+                            <th>Preço</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody className='gereciar-tbody'>
+                        <tr className='gereciar-tr'>
+                            <td className='gereciar-td' >Vitão</td>
+                            <td className='gereciar-td' >Camiseta Versace</td>                               
+                            <td className='gereciar-td' >12 / 10 / 2006</td>
+                            <td className='gereciar-td' ><span># </span>07</td>
+                            <td className='gereciar-td' ><span>R$ </span>1.954</td>
+                            <td>
+                                &nbsp;&nbsp;
+                                <img src={LogoLupa} alt='remover' />
+                            </td>
+                        </tr>
 
-             <p id='botaomais' onClick={contador}> + </p> 
+                        <tr className='gereciar-tr'>
+                            <td className='gereciar-td' >Vitão</td>
+                            <td className='gereciar-td' >Camiseta Versace</td>                               
+                            <td className='gereciar-td' >12 / 10 / 2006</td>
+                            <td className='gereciar-td' ><span># </span>07</td>
+                            <td className='gereciar-td' ><span>R$ </span>1.954</td>
+                            <td>
+                                &nbsp;&nbsp;
+                                <img src={LogoLupa} alt='remover' />
+                            </td>
+                        </tr>
 
-             </div>
-        </main> 
+                        <tr className='gereciar-tr'>
+                            <td className='gereciar-td' >Vitão</td>
+                            <td className='gereciar-td' >Camiseta Versace</td>                               
+                            <td className='gereciar-td' >12 / 10 / 2006</td>
+                            <td className='gereciar-td' ><span># </span>07</td>
+                            <td className='gereciar-td' ><span>R$ </span>1.954</td>
+                            <td>
+                                &nbsp;&nbsp;
+                                <img src={LogoLupa} alt='remover' />
+                            </td>
+                        </tr>
+
+                        <tr className='gereciar-tr'>
+                            <td className='gereciar-td' >Vitão</td>
+                            <td className='gereciar-td' >Camiseta Versace</td>                               
+                            <td className='gereciar-td' >12 / 10 / 2006</td>
+                            <td className='gereciar-td' ><span># </span>07</td>
+                            <td className='gereciar-td' ><span>R$ </span>1.954</td>
+                            <td>
+                                &nbsp;&nbsp;
+                                <img src={LogoLupa} alt='remover' />
+                            </td>
+                        </tr>
+                        <tr className='gereciar-tr'>
+                            <td className='gereciar-td' >Vitão</td>
+                            <td className='gereciar-td' >Camiseta Versace</td>                               
+                            <td className='gereciar-td' >12 / 10 / 2006</td>
+                            <td className='gereciar-td' ><span># </span>07</td>
+                            <td className='gereciar-td' ><span>R$ </span>1.954</td>
+                            <td>
+                                &nbsp;&nbsp;
+                                <img src={LogoLupa} alt='remover' />
+                            </td>
+                        </tr>
+                        <tr className='gereciar-tr'>
+                            <td className='gereciar-td' >Vitão</td>
+                            <td className='gereciar-td' >Camiseta Versace</td>                               
+                            <td className='gereciar-td' >12 / 10 / 2006</td>
+                            <td className='gereciar-td' ><span># </span>07</td>
+                            <td className='gereciar-td' ><span>R$ </span>1.954</td>
+                            <td>
+                                &nbsp;&nbsp;
+                                <img src={LogoLupa} alt='remover' />
+                            </td>
+                        </tr>
+                        <tr className='gereciar-tr'>
+                            <td className='gereciar-td' >Vitão</td>
+                            <td className='gereciar-td' >Camiseta Versace</td>                               
+                            <td className='gereciar-td' >12 / 10 / 2006</td>
+                            <td className='gereciar-td' ><span># </span>07</td>
+                            <td className='gereciar-td' ><span>R$ </span>1.954</td>
+                            <td>
+                                &nbsp;&nbsp;
+                                <img src={LogoLupa} alt='remover' />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main> 
     );
 }

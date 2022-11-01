@@ -42,13 +42,9 @@ export default function Index(){
 
                         <div className='home-adm-bt-linha2-card01'>
                             <Link to='/admin/gerenciarProd' className='homeAdm-botão-produto' > Produtos </Link>
-                            <Link to='/admin/cadastroproduto' className='homeAdm-botão-cadastro' > Cadastro </Link>
+                            <Link to='/admin/gerenciarFeedbecks' className='homeAdm-botão-cadastro' > FeedBacks </Link>
                         </div>
 
-
-                        <div className='home-adm-bt-linha3-card01'>
-                            <Link to='/admin/gerenciarFeedbecks' className='homeAdm-botão-feedbecks' > Feedbacks </Link>
-                        </div>
                     </div>
                 </div>
 
@@ -68,18 +64,13 @@ export default function Index(){
                         </div>
 
                         <div className='home-adm-bt-linha1-card02'>
-                            <Link to='/admin/cadastroprod' className='homeAdm-botão-addModelos' > Add. Modelo </Link>
-                            <Link to='/admin/gerenciarProd' className='homeAdm-botão-novidades' > Novidades </Link>
+                            <Link to='/admin/cadastroproduto' className='homeAdm-botão-addModelos' > Add. Produto </Link>
+                            <Link to='/admin/cadastrarCupom' className='homeAdm-botão-novidades' > Add. Cupom </Link>
                         </div>
 
                         <div className='home-adm-bt-linha2-card02'>
                             <Link to='/admin/alterarCard' className='homeAdm-botão-cardDestaque' > Card destaque </Link>
-                            <Link to='/admin/gerenciarProd' className='homeAdm-botão-colecao' > Coleção </Link>
-                        </div>
-
-                        <div className='home-adm-bt-linha3-card02'>
-                            <Link to='/admin/cadastrarCupom' className='homeAdm-botão-addCupom' > Add. cupom </Link>
-                            <Link to='/admin/alterarCarrolsel' className='homeAdm-botão-carrosel' > Carrosel </Link>
+                            <Link to='/admin/gerenciarProd' className='homeAdm-botão-colecao' > Alter. Carrossel </Link>
                         </div>
                     </div>
                 </div>
