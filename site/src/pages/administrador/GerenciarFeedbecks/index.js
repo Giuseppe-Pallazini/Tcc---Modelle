@@ -9,17 +9,21 @@ import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
     return(
-       <main className='main-gerenciarUsuarios'>
-            <CabecalhoAdm />
-            <section className='section-tables-gerenciar'> 
-                <div>
-                    <h1 className='gerenciarFeedbacks-h1'>FeedBacks</h1>
+        <main className='main-gerenciar'>
+            <CabecalhoAdm />         
+
+            <div className='div-filtro-buscarAdm'>
+                <input placeholder='Buscar'/><img className='' src={LogoLupa} alt='logoLupa' /> 
+            </div>
+
+            <section className='section-tables'>
+                <div className='gerenciar-h1'>
+                    <h1>Feedbacks</h1>
                 </div>
-                
-                <div className='div-table'>
-                    <table className='gerenciarUser-table'>
-                        <thead className='gereciarFeed-thead-table'>
-                            <tr className='gereciarFeed-tr-titulo'>
+                <div>
+                    <table className='gerenciar-table'>
+                        <thead className='gereciar-thead-table'>
+                            <tr className='gereciar-tr-titulo'>
                                 <th>USUARIO</th>
                                 <th>E-MAIL</th>
                                 <th>Mensagem</th>
@@ -27,29 +31,53 @@ export default function Index(){
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody className='gereciarFeed-tbody'>
-                            <tr className='gereciarFeed-tr'>
-                                <td className='gereciarFeed-td' >Vitão</td>
-                                <td className='gereciarFeed-td' >Vg9459544@gmail.com</td>                               
-                                <td className='gereciarFeed-td-mensagem' >Atedimento é otimo!!!.....</td>
-                                <td className='gereciarFeed-td' ># 01</td>
+                        <tbody className='gereciar-tbody'>
+                            <tr className='gereciar-tr'>
+                                <td className='gereciar-td' >Vitão</td>
+                                <td className='gereciar-td' >Vg9459544@gmail.com</td>                               
+                                <td className='gereciar-td' >Atendimento otimo!......</td>
+                                <td className='gereciar-td' >07</td>
                                 <td>
-                                    
-                                    <img src={LogoLupa} alt='logo-lupa' />
+                                    &nbsp;&nbsp;
+                                    <img src={LogoLupa} alt='remover' />
                                 </td>
                             </tr>
 
-                            <tr className='gereciarFeed-tr'>
-                                <td className='gereciarFeed-td' >Vitão</td>
-                                <td className='gereciarFeed-td' >Vg9459544@gmail.com</td>                               
-                                <td className='gereciarFeed-td-mensagem' >Atedimento é otimo!!!.....</td>
-                                <td className='gereciarFeed-td' ># 01</td>
+
+                            <tr className='gereciar-tr'>
+                                <td className='gereciar-td' >Vitão</td>
+                                <td className='gereciar-td' >Vg9459544@gmail.com</td>                               
+                                <td className='gereciar-td' >Atendimento otimo!......</td>
+                                <td className='gereciar-td' >07</td>
                                 <td>
-                                    
-                                    <img src={LogoLupa} alt='logo-lupa' />
+                                    &nbsp;&nbsp;
+                                    <img src={LogoLupa} alt='remover' />
                                 </td>
                             </tr>
 
+                            <tr className='gereciar-tr'>
+                                <td className='gereciar-td' >Vitão</td>
+                                <td className='gereciar-td' >Vg9459544@gmail.com</td>                               
+                                <td className='gereciar-td' >Atendimento otimo!......</td>
+                                <td className='gereciar-td' >07</td>
+                                <td>
+                                    &nbsp;&nbsp;
+                                    <img src={LogoLupa} alt='remover' />
+                                </td>
+                            </tr>
+
+                            <tr className='gereciar-tr'>
+                                <td className='gereciar-td' >Vitão</td>
+                                <td className='gereciar-td' >Vg9459544@gmail.com</td>                               
+                                <td className='gereciar-td' >Atendimento otimo!......</td>
+                                <td className='gereciar-td' >07</td>
+                                <td>
+                                    &nbsp;&nbsp;
+                                    <img src={LogoLupa} alt='remover' />
+                                </td>
+                            </tr>
+                            
+                        
                         </tbody>
                     </table>
                 </div>
