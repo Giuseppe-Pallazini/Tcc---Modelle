@@ -1,0 +1,48 @@
+.main-VerSeusPedidos{
+    display: flex;
+    flex-direction: column;
+
+    .div-botaoVoltar{
+        margin-left: 2em;
+        margin-top: 2em;
+    }
+    .div-botaoVoltar button{
+        width: 8em;
+        color: #fff;
+        background-color: black;
+        font-size: 1em;
+        font-family: 'caviar';
+        font-weight: 500;
+    }
+    .section-SeusPedidos{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+        margin-left: 15%;
+        align-items: flex-start;
+        //border: 1px solid black;
+        width: 75%;
+    }
+    .div-TituloSeusPedidos{
+        margin-left: 1em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .div-TituloSeusPedidos h1{
+        font-size: 2em;
+        font-family: 'caviar';
+        font-weight: 300;
+    }
+
+    .hr-divisorPed{
+        width: 60em;
+        color: black;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+    .div-boxSeusPedidos{
+        margin-bottom: 3em;
+    }
+
+
+}
