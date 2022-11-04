@@ -4,6 +4,7 @@ import { buscarImagem, listarTodos } from '../../api/produtoAPI';
 import IconeRemover from '../../assets/image/remover-svg.svg';
 import { useEffect, useState } from 'react';
 import {toast } from 'react-toastify';
+import { API_URL } from '../../api/config';
 
 import Storage from 'local-storage';
 
@@ -13,9 +14,16 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 export default function Index({ item: { produto: { info, imagens, tamanho }, qtd }, removerItem, carregarCarrinho}) {
     const [qtdProduto, setQtdProduto] = useState(qtd);
     const [idTamanho, setIdTamanho] = useState();
+    const [imagemPrincipal, setImagemPrincipal] = useState(0);
 
     function mostrarImagem(imagem) {
         return buscarImagem(imagem)
+    }
+
+    function exibirImagemPrincipal() {
+        if (imagens.length > 0) {
+            return API_URL + '/' + imagens[imagemPrincipal]
+        }
     }
 
     function calcularSubTotal() {
@@ -65,7 +73,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
             <div className='div-carrinho-cards-produtos'>
                 <div className='div-carrinho-infoProd'>
                     <div className='carrinho-div-imgProd'>
-                        <img className='carrinho-div-imgProd-img' src={mostrarImagem(imagens)} alt='img-produto' />
+                        <img className='carrinho-div-imgProd-img' src={exibirImagemPrincipal(imagens)} alt='img-produto' />
                     </div>
                     <div className='carrinho-div-informações-prod'>
                         <div className='div-carrinho-infromações-id'>
@@ -81,7 +89,8 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                         <div className='div-carrinho-informacoes-complemento'> {info.complemento} </div>
 
                         <div className='div-carrinho-informações-corProd'>
-                            <p className='carrinho-textCor'> {info.cor} </p>
+                            <p className='div-carrinho-informações-corProd-p'> Cor: </p>
+                            <p className='carrinho-textCor' style={{backgroundColor: info.cor}}></p>
                         </div>
 
                         <div className='div-carrinho-informações-tamanho'>
@@ -89,6 +98,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                             <p className='carrinho-valorTamanho'> {tamanho} </p>
                             <div className='tam-conteiner'>
                             </div>
+                            
                         </div>
 
                         <div className='div-carrinho-valorProd'>
@@ -108,7 +118,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                                 </select>
                             </div>
                             <div className='div-carrinho-informacoes-subtotal'>
-                                <p> Subtotal: R$ <b> {calcularSubTotal()} </b> </p>
+                                <p> Subtotal: <b> R$ {calcularSubTotal()} </b> </p>
                             </div>
                         </div>
 

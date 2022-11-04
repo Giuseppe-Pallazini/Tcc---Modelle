@@ -67,7 +67,6 @@ id_modelo					int,
 id_categoria				int
 );
 
-
 -- 9
 create table tb_produto_tamanho (
 id_produto_tamanho 		int primary key auto_increment,
@@ -78,7 +77,7 @@ foreign key (id_produto) references tb_produto (id_produto)
 );
 
 
--- 
+--    
 
 CREATE TABLE tb_produto_imagem (
     id_produto_imagem INT PRIMARY KEY AUTO_INCREMENT,
@@ -116,7 +115,8 @@ create table tb_pedido(
 	id_pedido			int primary key auto_increment,
     id_usuario			int,
     id_cupom			int,
-    dt_pedido			date,
+    dt_pedido           date,
+    cod_nota_fiscal     varchar(100),
     tp_frete			varchar(20),
     ds_endereco			varchar(60),
     nr_numero			int,
@@ -124,7 +124,6 @@ create table tb_pedido(
     nr_cep				int,
     ds_complemento		varchar(50),
     vl_frete			decimal(15,2),
-    vl_total			decimal(15,2),
     qtd_produto			int,
     ds_status			varchar(25),
     tp_pagamento		varchar(20),
@@ -136,25 +135,54 @@ create table tb_pedido_item(
 	id_produto_item		int primary key auto_increment,
 	id_pedido			int,
     id_produto			int,
+    qtd_produto			int,
+    vl_total			decimal(15,2),
+    
     foreign key (id_pedido)		references tb_pedido(id_pedido),
-    foreign key (id_produto)	references tb_produto(id_produto)
-);
-
-create table tb_pagamento_pix(
-	id_pagamento_pix	int primary key auto_increment,
-    id_produto			int,
-    nm_cpf				int,
-    ds_chave			varchar(200),
     foreign key (id_produto)	references tb_produto(id_produto)
 );
 
 create table tb_pagamento_cartao(
 	id_pagamento_cartao	int primary key auto_increment,
     id_produto			int,
-    nm_titular			varchar(50),
-	nr_cartao			int,
-    dt_validade			date,
+    nm_titular			varchar(200),
+	nr_cartao			varchar(200),
+    dt_vencimento		varchar(200),
     cod_seguranca		int,
-    nr_parcelas			int,
+    nr_parcelas			varchar(200),
     foreign key (id_produto)	references tb_produto(id_produto)
+);
+
+create table tb_imagem_destaque_feminino(
+	id_destaque_feminino	int primary key auto_increment,
+    img_fem_imagem_1			varchar(200),
+	img_fem_imagem_2			varchar(200),
+    ds_fem_desc_1				varchar(80),
+    ds_fem_desc_2				varchar(80)
+);
+
+create table tb_imagem_destaque_masculino(
+	id_destaque_masculino	int primary key auto_increment,
+    img_mas_imagem_1		varchar(500),
+    img_mas_imagem_2		varchar(500),
+    ds_mas_desc_1			varchar(50),
+    ds_mas_desc_2			varchar(50)
+);
+
+create table tb_imagem_carrosel_feminino(
+	id_carrosel_feminino	int primary key auto_increment,
+    img_carrosel_fem_img_1	varchar(500),
+    img_carrosel_fem_img_2	varchar(500),
+    img_carrosel_gem_img_3	varchar(500),
+    ds_carrosel_fem_desc_1	varchar(50),
+    ds_carrosel_fem_desc_2	varchar(50)
+);
+
+create table tb_imagem_carrosel_masculino(
+	id_carrosel_masculino	int primary key auto_increment,
+    img_carrosel_mas_img_1	varchar(500),
+    img_carrosel_mas_img_2	varchar(500),
+    img_carrosel_mas_img_3	varchar(500),
+    ds_carrosel_mas_desc_1	varchar(50),
+    ds_carrosel_mas_desc_2	varchar(50)
 );

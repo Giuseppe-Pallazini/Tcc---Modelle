@@ -60,7 +60,7 @@ export default function Index() {
             total = total + item.qtd * item.produto.info.preco;
         }
 
-        return total;
+        return total.toFixed(2);
     }
 
     function mostrarImagem(imagem) {

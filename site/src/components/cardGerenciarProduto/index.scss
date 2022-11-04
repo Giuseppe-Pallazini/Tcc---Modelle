@@ -22,6 +22,7 @@
 
     transition: .2s;
 
+    cursor: pointer;
 }
 
 .gerenciarProd-card-1:hover {
@@ -103,7 +104,7 @@
 .gerenciarProd-div-cor{
     display: flex;
     flex-direction: row;
-    margin-top: .8em;
+    margin: .2em 0em .2em 0em;
 }
 .cor-produto-card{
     font-family: 'caviar';
@@ -123,7 +124,6 @@
 .gerenciarProd-div-modelo{
     display: flex;
     flex-direction: row;
-    margin-top: .3em;
 }
 .modelo-produto-card{
     font-family: 'caviar';

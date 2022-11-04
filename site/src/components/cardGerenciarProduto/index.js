@@ -97,7 +97,7 @@ export default function Index(){
             </div>
 
             {produto.map(item => 
-                <div className='gerenciarProd-card-1'>
+                <div className='gerenciarProd-card-1' onClick={() => editarProduto(item.produto)}>
                         <div className='gerenciarProd-div-icons'>
                                     <img src={LogoRemover} alt='logo' className='logo-remover' onClick={() => deletarProduto(item.produto, item.nome)} />
                                     <img src={LogoEditar} alt='logo' className='logo-editar' onClick={() => editarProduto(item.produto)} />
@@ -115,7 +115,7 @@ export default function Index(){
 
                                 <div className='gerenciarProd-div-cor' >
                                     <p className='cor-produto-card'> Cor </p>
-                                    <p className='valorCor-produto-card'> {item.cor} </p>
+                                    <p className='valorCor-produto-card' style={{backgroundColor: item.cor}}> </p>
                                 </div>
                                 
                                 <div className='gerenciarProd-div-modelo' >
@@ -154,7 +154,7 @@ export default function Index(){
                                     <p className='valorId-produto-card'> {item.produto} </p>
                                 </div>
                             </div>
-            )}  
+            )}
         </main>
     )
 }
