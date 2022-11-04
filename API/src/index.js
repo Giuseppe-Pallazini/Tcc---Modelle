@@ -10,6 +10,7 @@ import ProdutoController from './controller/validarProdutoController.js'
 import MostrarProdutoController from './controller/mostrarprodutocontroller.js'
 import CadastroUsuarios from './controller/cadastroUsuarioController.js'
 import RemoverProduto  from './controller/removerProdutoController.js'
+import PedidoController from './controller/pedidoController.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -30,6 +31,7 @@ server.use(ProdutoController);
 server.use(MostrarProdutoController);
 server.use(CadastroUsuarios);
 server.use(RemoverProduto);
+server.use(PedidoController);
 
 server.use('/storage/fotoProduto', express.static('storage/fotoProduto'));
 

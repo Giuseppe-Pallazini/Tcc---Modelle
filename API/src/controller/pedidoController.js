@@ -1,10 +1,11 @@
 import { Router } from 'express'
-import { buscarCupom } from '../repository/cupomRepository';
-import { inserirPagamento, inserirPedido } from '../repository/pedidoRepository';
-import { acharCupom, criarNotaFiscal, criarNovoPedido } from '../services/novoProdutoService';
+import { buscarCupom } from '../repository/cupomRepository.js';
+import { ListarTodosProdutosPorId } from '../repository/mostrarprodutorepository.js';
+import { inserirPagamento, inserirPedido, inserirPedidoItem } from '../repository/pedidoRepository.js';
+import { acharCupom, criarNotaFiscal, criarNovoPedido } from '../services/novoProdutoService.js';
 const server = Router();
 
-server.post('api/pedido/:idUsuario/', async (req, resp) => {
+server.post('/api/pedido/:idUsuario/', async (req, resp) => {
     try{
         const { idUsuario } = req.params;
         const info = req.body;
@@ -17,10 +18,11 @@ server.post('api/pedido/:idUsuario/', async (req, resp) => {
         const idPagCriado = await inserirPagamento(idPedidoCriado, info.cartao);
 
         for (let item of info.produtos) {
-            const prod = await buscarProdu
-             
+            const prod = await ListarTodosProdutosPorId(item.id);
+            const idPedidoItemCriado = await inserirPedidoItem(idPedidoCriado, prod.id, item.qtd, prod.preco);
         }
 
+        resp.status(204).send();
 
 
 
@@ -32,3 +34,5 @@ server.post('api/pedido/:idUsuario/', async (req, resp) => {
     }
 
 })
+
+export default server;

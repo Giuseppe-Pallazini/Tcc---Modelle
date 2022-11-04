@@ -18,7 +18,6 @@ server.post('/admin/produto', async (req, resp) => {
 
         for (const idTamanho of produto.tamanhos) {
             const tam = await buscarTamanhoPorId(idTamanho);
-            console.log(tam);
 
             if (tam != undefined) {
                 await salvarProdutoTamanho(idProduto, idTamanho);
@@ -84,6 +83,27 @@ server.get('/produto/busca', async (req, resp) => {
 })
 
 server.get('/admin/produto/:id', async (req, resp) => {
+    try{
+        const id = req.params.id;
+
+        const produto =  await ListarTodosProdutosPorId(id);
+        const tamanho = await ListarTodosTamanhosporId(id);
+        const imagens = await ListarTodosImagensporId(id);
+
+        resp.send({
+            info: produto,
+            tamanho: tamanho,
+            imagens: imagens
+    })
+
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+)
+
+server.get('/produto/:id', async (req, resp) => {
     try{
         const id = req.params.id;
 

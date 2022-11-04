@@ -25,6 +25,7 @@ export async function inserirPedido(novoPedido) {
         novoPedido.status,
         novoPedido.tipoPagamento
     ]);
+    return info.insertId;
 }
 
 export async function inserirPagamento(idPedido, novoPagamento) {
@@ -50,5 +51,20 @@ export async function inserirPagamento(idPedido, novoPagamento) {
         novoPagamento.parcelas,
         nomePagamento.formaPagamento
     ]);
+    return info.affectedRows;
+}
+
+export async function inserirPedidoItem(idPedido, idProduto, qtd, preco) {
+    const comando = `
+        INSERT INTO tb_pedido_item (
+            id_pedido,
+            id_produto,
+            qtd_itens,
+            vl_produto
+        )
+        VALUES (?, ?, ?, ?)
+    `
+
+    const [info] = await con.query(comando, [idPedido, idProduto, qtd, preco]);
     return info.affectedRows;
 }

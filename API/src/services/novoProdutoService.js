@@ -1,6 +1,6 @@
 import randomstring from 'randomstring'
 
-import { buscarCupom } from '../repository/cupomRepository';
+import { buscarCupom } from '../repository/cupomRepository.js';
 
 export async function acharCupom(cod) {
 
@@ -21,7 +21,7 @@ export function criarNotaFiscal() {
     return randomstring.generate(11);
 }
 
-export function valorFrete(frete) {
+export function lerValorFrete(frete) {
     if (frete == 'Normal')
         return 10.0;
     else
@@ -31,7 +31,7 @@ export function valorFrete(frete) {
 
 export function criarNovoPedido(idUsuario, idCupom, info) {
     let agora = new Date();
-    let valorFrete = valorFrete(info.frete);
+    let valorFrete = lerValorFrete(info.frete);
     let notaFiscal = criarNotaFiscal();
 
 
