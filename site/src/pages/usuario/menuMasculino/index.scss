@@ -2,6 +2,26 @@
     display: flex;
     flex-direction: column;
 
+    .MenuMasculino-div-MeusPedidos-Titulo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 55%;
+    }
+
+    .MenuMasculino-div-titulo{
+        margin-top: 1.5em;
+    }
+    .MenuMasculino-div-titulo h1{
+        font-size: 2em;
+        font-family: 'caviar';
+        font-weight: 100;
+    }
+    .MenuMasculino-div-titulo hr{
+        width: 9em;
+        margin-top: .2em;
+        background-color: black;
+    }
     .div-meusPedidos{
         display: flex;
         flex-direction: row;
@@ -19,8 +39,34 @@
         margin-left: .5em;
     }
 
+
+    .MenuMasculino-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .MenuMasculino-div-filtroEcards{
+        display: flex;
+        flex-direction: row;
+    }
     .div-filtroRoupas{
-        margin-top: 1em;
+        border: 1px solid black;
+        width: 15em;
+        height: 60em;
+        margin-top: 2em;
+    }
+
+    .div-cards-Roupas{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        width: 60em;
+        margin-top: 2em;
+        margin-left: 2em;
+    }
+    .div-CardsProd{
+        margin-bottom: 2em;
     }
 
 }
