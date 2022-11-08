@@ -121,4 +121,39 @@
         margin-top: .8em;
         margin-left: 1em;   
     }
+
+    .div-carrossel{
+        display: flex;
+        justify-content: center;
+        margin-left: 1em;
+        height: 30em;
+        width: 19em;
+        border: 1px solid black;
+        overflow: hidden;
+        margin-bottom: 2em;   
+
+    }
+    .div-inputsMudarImagem{
+        display: none;
+    }
+    .div-imagens{
+        display: flex;
+        width: 400%;
+        height: 100%;
+    }
+
+    .label-images{
+        width: 5em;
+        height: 2em;
+        border: 1px solid black;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .6s;
+        margin-left: 1em;
+    }
+
+    #radio02:checked ~ .ima1{
+        margin-left: -20%;
+    }
+
 }
