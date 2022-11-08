@@ -8,6 +8,9 @@ import ImagemMeusPedidos from '../../../assets/image/logo-MeusPedidos.png'
 import CabecalhoUser from '../../../components/cabecalhouser'
 import Rodape from '../../../components/Rodapé'
 
+import Imagem01MenuMasculino from '../../../assets/image/imagem01-menuMasculino.png'
+import Imagem02MenuMasculino from '../../../assets/image/imagem02-menuMasculino.png'
+
 import CardProdutosMenuMasculino from '../../../components/CardProdutosMenu'
 
 import {useEffect, useState, useRef} from 'react'
@@ -84,6 +87,18 @@ export default function Index(){
 
                     <div className='Menu-div-buttomVerMais'>
                         <button> Ver mais...</button>
+                    </div>
+
+                    <div className='div-cardsEmDestaque'>
+                        <div className='div-cardEmDestaque-Img01'>
+                            <img src={Imagem01MenuMasculino} alt='imagem-01-menuMasculino' />
+                            <h3>ENCONTRE SUA MARCA FAVORITA COM DESCONTOS IMPERDÍVEIS, NA MODELLE.</h3>
+                        </div>
+
+                        <div className='div-cardEmDestaque-Img02'>
+                            <img src={Imagem02MenuMasculino} alt='imagem-01-menuMasculino' />
+                            <h3>JAQUETA DE MONOGRAMA EM REVESTIMENTO DE PEITO SIMPLES LVSE </h3>
+                        </div>
                     </div>
             </section>
             <Rodape />
