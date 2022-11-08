@@ -1,0 +1,146 @@
+.main-landingpage {
+    display: flex;
+    flex-direction: column;
+
+    a:link,
+    a:visited {
+        color: white;
+        text-decoration: none;
+    }
+
+    .landingpage-section1 {
+        display: flex;
+        background-image: url('../../../assets/image/landing-image1.png');
+        background-repeat: no-repeat;
+        height: 45em;
+
+
+        .section1-groups {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            width: 100%;
+
+            .section1-group-esquerda {
+                display: flex;
+                flex-direction: column;
+                border: 1px solid black;
+                justify-content: space-between;
+
+                .section1-div-logo {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .section1-div1-agrupamento {
+                    display: flex;
+                    justify-content: center;
+
+                    .section1-div1 {
+                        font-family: 'inter';
+                        font-size: .7em;
+                        color: white;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 50%;
+
+                        .section1-div1-nov, .section1-div1-hom, .section1-div1-mul {
+                            background-image: linear-gradient(transparent 0%, transparent 90%, #fff 20%, #fff 20%);
+                            background-repeat: no-repeat;
+                            background-size: 0% 100%;
+                            background-position-x: center;
+        
+                            transition: background-size 500ms;
+                        }
+                        
+                        .section1-div1-nov:hover, .section1-div1-hom:hover, .section1-div1-mul:hover {
+                            color: white;
+                            transition: 500ms;
+                            background-size: 100% 100%;
+                            background-position-x: center;
+                        }
+                    }
+                }
+
+
+
+                .section1-div2 {
+                    margin-bottom: 5em;
+
+                    .section1-div2-p1 {
+                        font-family: 'caviar';
+                        font-size: 2.5em;
+                        color: white;
+                        margin-bottom: 1em;
+                        width: 80%;
+                        text-align: center;
+                    }
+
+
+                    .section1-div2-link {
+                        font-family: 'caviar';
+                        color: white;
+                        border: 1px solid white;
+                        padding: .5em 1em;
+                        transition: .3s;
+                    }
+
+                    .section1-div2-link:hover {
+                        background-color: white;
+                        color: #BA918F;
+                    }
+
+                    .section1-div2-p2 {
+                        font-family: 'caviar';
+                        color: white;
+                        margin-top: 1em;
+                        font-size: .7em;
+                    }
+
+                }
+
+            }
+
+
+
+        }
+
+
+    }
+
+    .section-video {
+        display: flex;
+        flex-direction: row;
+
+        .video {
+            display: flex;
+            position: absolute;
+    
+        }
+
+        .text-info{
+            display: flex;
+            align-items: flex-end;
+            position: absolute;
+            height: 56%;
+       
+        }
+        .bt{
+            position: absolute;
+        }
+        .by{
+            margin-left: 9.5em;
+        }
+
+        .a {
+            display: flex;
+            align-items: flex-end;
+            position: absolute;
+            height: 60%;
+            border: 1px solid black;
+        }
+    }
+
+}

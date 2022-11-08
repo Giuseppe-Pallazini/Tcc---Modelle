@@ -23,9 +23,7 @@ server.post('/api/pedido/:idUsuario/', async (req, resp) => {
         }
 
         resp.status(204).send();
-
-
-
+        
     }
     catch (err) {
         resp.status(400).send({
