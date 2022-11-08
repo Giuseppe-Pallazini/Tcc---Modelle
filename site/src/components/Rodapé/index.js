@@ -17,12 +17,12 @@ export default function Index(){
 
                 <p className='rodape-contato'>Contato</p>
  
-                <Link to='/user/sobreModelle'>
+                <Link className='tag-link' to='/user/sobreModelle'>
                     <p className='rodape-QuemEModelle'>Quem é Modelle?</p>
                 </Link>
                 <p className='rodape-sigaNos'>Siga-nos</p>
 
-                <Link to='/user/condicoesEPrivacidade'>
+                <Link className='tag-link' to='/user/condicoesEPrivacidade'>
                     <p className='rodape-condições'>Condições legais e privacide </p>
                 </Link>
            </div>

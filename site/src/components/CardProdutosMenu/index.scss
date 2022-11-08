@@ -1,0 +1,63 @@
+.main-CardProdutosMenuMasculino{
+    display: flex;
+    flex-direction: column;
+
+    .CardProdutosMenuMasculino-div-imgs{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        box-shadow: 5px 3px 5px #e2e2e2;
+        //border: 1px solid black;
+
+        width: 17em;
+        height: 18em;
+    }
+    .logo-coração{
+        margin-top: .5em;
+        margin-right: .5em;
+        width: 1.1em;
+    }
+    .imagem-produto{
+        margin-top: .5em;
+        margin-right: 1em;
+    }
+    .div-CardProdutosMenuMasculino h1{
+        margin-left: 1em;
+        margin-top: .5em;
+        font-size: 1.3em;
+        margin-bottom: .2em;
+        font-family: 'caviar';
+    }
+
+    .div-CardProdutosMenuMasculino h3{
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 1.1em;
+        margin-left: 1.7em;
+        width: 22em;
+        max-height: 6em;
+        margin-top: .5em;
+        font-size: .8em;
+        margin-bottom: .2em;
+        font-family: 'caviar';
+    }
+
+    .div-MenuPreco{
+        display: flex;
+        flex-direction: row;
+        margin-left: 1.7em;
+        font-weight: 800;
+        opacity: 80%;
+        width: 18em;
+        max-height: 6em;
+        margin-top: 1.2em;
+        margin-bottom: .2em;
+        font-size: .8em;
+        font-family: 'caviar';
+    }
+
+    .div-MenuPreco p{
+        margin-left: .5em;
+    }
+
+}

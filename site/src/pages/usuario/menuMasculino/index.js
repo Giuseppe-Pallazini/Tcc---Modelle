@@ -6,8 +6,9 @@ import '../../../assets/common/index.scss'
 
 import ImagemMeusPedidos from '../../../assets/image/logo-MeusPedidos.png'
 import CabecalhoUser from '../../../components/cabecalhouser'
+import Rodape from '../../../components/Rodapé'
 
-import CardProdutosMenuMasculino from '../../../components/CardProdutosMenuMasculino'
+import CardProdutosMenuMasculino from '../../../components/CardProdutosMenu'
 
 import {useEffect, useState, useRef} from 'react'
 
@@ -59,11 +60,33 @@ export default function Index(){
                             <div className='div-CardsProd'>
                                 <CardProdutosMenuMasculino />
                             </div>
-                            
-                        </div>
+                            <div className='div-CardsProd'>
+                                <CardProdutosMenuMasculino />
+                            </div>
+                            <div className='div-CardsProd'>
+                                <CardProdutosMenuMasculino />
+                            </div>
+                            <div className='div-CardsProd'>
+                                <CardProdutosMenuMasculino />
+                            </div>
+                            <div className='div-CardsProd'>
+                                <CardProdutosMenuMasculino />
+                            </div>
 
+                            <div className='div-CardsProd'>
+                                <CardProdutosMenuMasculino />
+                            </div>
+                            <div className='div-CardsProd'>
+                                <CardProdutosMenuMasculino />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='Menu-div-buttomVerMais'>
+                        <button> Ver mais...</button>
                     </div>
             </section>
+            <Rodape />
         </main> 
     );
 }

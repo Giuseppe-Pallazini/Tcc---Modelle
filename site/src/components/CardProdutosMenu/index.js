@@ -9,12 +9,12 @@ export default function Index(){
             <div className='div-CardProdutosMenuMasculino'>
                 <div className='CardProdutosMenuMasculino-div-imgs'>
                     <img src={IconCoracao} alt='' className='logo-coração' />
-                    <img src={ImagemProd} alt='' className='logo-produto' />
+                    <img src={ImagemProd} alt='' className='imagem-produto' />
                 </div>
                     <h1>Burberry</h1>
-                    <h3>Bermuda de prais xadrex</h3>
+                    <h3>Bermuda de prais xadrez</h3>
 
-                <div>R$ <p>1,458,00</p></div>
+                <div className='div-MenuPreco'>R$ <p>1,458,00</p></div>
             </div>
         </main>
     );

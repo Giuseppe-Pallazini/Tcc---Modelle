@@ -52,6 +52,7 @@
         border: 1px solid black;
         width: 15em;
         height: 60em;
+        max-height: 60em;
         margin-top: 2em;
     }
 
@@ -60,13 +61,29 @@
         flex-direction: row;
         justify-content: space-around;
         flex-wrap: wrap;
-        border: 1px solid black;
+        //border: 1px solid black;
         width: 60em;
+        height: 85em;
+        max-height: 85em;
+        max-width: 60em ;
         margin-top: 2em;
+        margin-bottom: 1em;
         margin-left: 2em;
     }
     .div-CardsProd{
+        margin-top: 2em;
         margin-bottom: 2em;
+    }
+
+    .Menu-div-buttomVerMais{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .Menu-div-buttomVerMais button{
+        border: none;
+        background-color: #ffffff;  
+        margin-bottom: 3em;
     }
 
 }

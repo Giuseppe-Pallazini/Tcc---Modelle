@@ -152,37 +152,3 @@ create table tb_pagamento_cartao(
     nr_parcelas			varchar(200),
     foreign key (id_produto)	references tb_produto(id_produto)
 );
-
-create table tb_imagem_destaque_feminino(
-	id_destaque_feminino	int primary key auto_increment,
-    img_fem_imagem_1			varchar(200),
-	img_fem_imagem_2			varchar(200),
-    ds_fem_desc_1				varchar(80),
-    ds_fem_desc_2				varchar(80)
-);
-
-create table tb_imagem_destaque_masculino(
-	id_destaque_masculino	int primary key auto_increment,
-    img_mas_imagem_1		varchar(500),
-    img_mas_imagem_2		varchar(500),
-    ds_mas_desc_1			varchar(50),
-    ds_mas_desc_2			varchar(50)
-);
-
-create table tb_imagem_carrosel_feminino(
-	id_carrosel_feminino	int primary key auto_increment,
-    img_carrosel_fem_img_1	varchar(500),
-    img_carrosel_fem_img_2	varchar(500),
-    img_carrosel_gem_img_3	varchar(500),
-    ds_carrosel_fem_desc_1	varchar(50),
-    ds_carrosel_fem_desc_2	varchar(50)
-);
-
-create table tb_imagem_carrosel_masculino(
-	id_carrosel_masculino	int primary key auto_increment,
-    img_carrosel_mas_img_1	varchar(500),
-    img_carrosel_mas_img_2	varchar(500),
-    img_carrosel_mas_img_3	varchar(500),
-    ds_carrosel_mas_desc_1	varchar(50),
-    ds_carrosel_mas_desc_2	varchar(50)
-);
