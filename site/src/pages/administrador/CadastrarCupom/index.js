@@ -19,7 +19,7 @@ export default function Index(){
                 
 
                 <div className='cadastroCupom-descontoCupom'>   
-                    Desconto: <input type='range' min="0" max="100"/>
+                    Desconto:   
 
                 </div>
 

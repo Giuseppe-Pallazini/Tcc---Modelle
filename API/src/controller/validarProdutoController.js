@@ -44,12 +44,16 @@ server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, res
 
         const id = req.params.id;
         const imagens = req.files;
-        // const imagensPermanecem = req.body.imagens.filter(item => item != 'undefined');
 
-        // if (imagensPermanecem.length > 0)
-        //     await removerProdutoImagensDiferentes(imagensPermanecem);
-        // else
-        //     await removerProdutoImagem(id);
+        const imagensPermanecem = [];
+        if (req.body.imagens)
+            imagensPermanecem = req.body.imagens.filter(item => item != 'undefined');
+
+
+        if (imagensPermanecem.length > 0)
+            await removerProdutoImagensDiferentes(imagensPermanecem);
+        else
+            await removerProdutoImagem(id);
 
         for (const imagem of imagens) {
             await salvarProdutoImagem(id, imagem.path)
@@ -58,9 +62,7 @@ server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, res
         resp.status(204).send();
 
     } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
+        console.log(err)
     }
 
 })
