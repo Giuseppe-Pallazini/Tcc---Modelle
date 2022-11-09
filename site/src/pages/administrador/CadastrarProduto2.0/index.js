@@ -58,6 +58,7 @@ export default function CadastroProduto() {
 
 
         const r = await buscarProdutoPorId(id);
+        
         setIdProduto(r.info.id);
         setNome(r.info.produto);
         setComplementoProduto(r.info.complemento);
@@ -213,7 +214,7 @@ export default function CadastroProduto() {
                 <section className='cadastro-section-1'>
 
 
-                    <h2 className='text-2'> Adicionar foto(s) </h2>
+                    <h2 className='text-2'> {id ? 'Alterar foto(s)' : 'Adicionar foto(s)'} </h2>
 
 
                     <div className='insert-img-agrupamento'>
@@ -324,7 +325,7 @@ export default function CadastroProduto() {
 
                     <div className='cadastro-section2-div4'>
                         <p> Cor em destaque </p>
-                        <input className='cadastro-section2-div4-color' type='color' onChange={e => setCor(e.target.value)} />
+                        <input className='cadastro-section2-div4-color' type='color' value={cor} onChange={e => setCor(e.target.value)} />
                     </div>
 
                     <div className='cadastro-section2-div5'>
