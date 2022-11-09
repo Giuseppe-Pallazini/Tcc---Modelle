@@ -58,7 +58,16 @@ export function buscarImagem(imagem) {
 export async function listarTodos(){
     const resposta = await api.get('/admin/todasroupas')
     return resposta.data;
+}
 
+export async function listarProdutosMasculino(){
+    const resposta = await api.get('/api/filtro/masculino')
+    return resposta.data;
+}
+
+export async function listarProdutosFemininos(){
+    const resposta = await api.get('/api/filtro/feminino');
+    return resposta.data;
 }
 
 export async function buscarPorNome(nome){

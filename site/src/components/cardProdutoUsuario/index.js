@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import IconListaDesejo from '../../assets/image/lista-desejo.png'
 import IconLupa from '../../assets/image/logo-lupa.png'
 
-import { buscarPorNome, listarTodos, removerProduto, buscarImagem } from '../../api/produtoAPI'
+import { buscarPorNome, listarTodos, removerProduto, buscarImagem, listarProdutosMasculino, listarProdutosFemininos } from '../../api/produtoAPI'
 
 import { API_URL } from '../../api/config.js';
 import { useNavigate } from 'react-router-dom';
@@ -18,16 +18,20 @@ import { useNavigate } from 'react-router-dom';
 export default function Index(){
     const [produto, setProduto] = useState([]);
     const [modelo, setModelo] = useState([]);
-    // const [filtro, setFiltro] = useState('');
-    
-
-    // async function filtrar(){
-    //     const resp = await buscarPorNome(filtro);
-    //     setProduto(resp)
-    // }
+    const [filtro, setFiltro] = useState('');
 
     const navigate = useNavigate();
 
+    async function filtrarMasculino(){
+        const resp = await listarProdutosMasculino(filtro);
+        setProduto(resp)
+    }
+
+    
+    async function filtrarFeminino(){
+        const resp = await listarProdutosFemininos(filtro);
+        setProduto(resp)
+    }
 
 
     async function carregarProduto(){

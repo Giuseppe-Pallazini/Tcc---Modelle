@@ -48,10 +48,6 @@ insert into tb_categoria (nm_categoria)
 insert into tb_categoria (nm_categoria)
 		values ('Masculino');
         
-insert into tb_categoria (nm_categoria)
-		values('Novidades');
-
-
 -- insert modelos
 
 insert into tb_modelo (nm_modelo)
