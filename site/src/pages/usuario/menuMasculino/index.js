@@ -10,9 +10,13 @@ import Rodape from '../../../components/Rodapé'
 
 import Imagem01MenuMasculino from '../../../assets/image/imagem01-menuMasculino.png'
 import Imagem02MenuMasculino from '../../../assets/image/imagem02-menuMasculino.png'
-import Imagem1 from '../../../assets/image/image1-carrosel.png'
-import Imagem2 from '../../../assets/image/imagem-Biber.png'
-import Imagem3 from '../../../assets/image/image3-carrosel.png'
+// import Imagem1 from '../../../assets/image/image1-carrosel.png'
+// import Imagem2 from '../../../assets/image/imagem-Biber.png'
+// import Imagem3 from '../../../assets/image/image3-carrosel.png'
+// import ImagemNext from '../../../assets/image/icon-seta-carrossel.png'
+
+import Carrossel from '../../../components/carrossel'
+import ImagemNext from '../../../assets/image/icon-seta-carrossel-2.png'
 
 import CardProdutosMenuMasculino from '../../../components/CardProdutosMenu'
 
@@ -103,33 +107,16 @@ export default function Index(){
                             <h3>JAQUETA DE MONOGRAMA EM REVESTIMENTO DE PEITO SIMPLES LVSE </h3>
                         </div>
                     </div>
-
-                    <div className='div-carrossel'>
-                        <div className='div-imagens'>
-                            <div className='ima1'>
-                                <img src={Imagem1} alt='imagem-1' />
-                            </div>
-                            <div>
-                                <img src={Imagem2} alt='imagem-1' />
-                            </div>
-                            <div>
-                                <img src={Imagem3} alt='imagem-1' />
-                            </div>
-                            <div className='div-inputsMudarImagem'>
-                                <input type='radio' name='radio' id='radio01' checked/>
-                                <input type='radio' name='radio' id='radio02'/>
-                                <input type='radio' name='radio' id='radio03'/>
-                            </div>
-                        </div>
-
-                        
+                    <div className='div-hr-card-Destaque'>
+                        <hr className='hr-card-Destaque'/>
                     </div>
-                    <div>
-                            <label className='label-images' for='radio01'></label>
-                            <label className='label-images' for='radio01'></label>
-                            <label className='label-images' for='radio01'></label>
-                        </div>
+                
+                    <div className='div-carrossel'>
+                        <Carrossel />
+                    </div>
+                   
             </section>
+
             <Rodape />
         </main> 
     );

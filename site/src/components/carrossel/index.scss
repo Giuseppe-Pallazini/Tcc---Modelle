@@ -1,0 +1,33 @@
+.main-carrossel{
+    width: 100%;
+    div{
+        display: flex;
+        margin-top: 3em;
+    } 
+
+    img{
+        margin-left: 30em;
+    }
+    .img-01{
+        transition: transform .5s ease; 
+    }
+    .img-01:hover{
+        transform: scale(1.2);
+    }
+    .img-02{
+        width: 17em;
+        height: 28em;
+        transition: transform .5s ease; 
+    }
+    .img-02:hover{
+        transform: scale(1.1);
+    }
+    .img-03{
+        width: 18em;
+        height: 28em;
+        transition: transform .5s ease; 
+    }
+    .img-03:hover{
+        transform: scale(1.2);
+    }
+}
