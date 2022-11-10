@@ -45,30 +45,6 @@ export default function Index(){
                                     <img src={Logolixeira} alt='remover' />
                                 </td>
                             </tr>
-
-
-                            <tr className='gereciar-tr'>
-                                <td className='gereciar-td' >Vitão</td>
-                                <td className='gereciar-td' >Vg9459544@gmail.com</td>                               
-                                <td className='gereciar-td' >12 / 10 / 2006</td>
-                                <td className='gereciar-td' >11971218295</td>
-                                <td>
-                                    &nbsp;&nbsp;
-                                    <img src={Logolixeira} alt='remover' />
-                                </td>
-                            </tr>
-
-                            <tr className='gereciar-tr'>
-                                <td className='gereciar-td' >Vitão</td>
-                                <td className='gereciar-td' >Vg9459544@gmail.com</td>                               
-                                <td className='gereciar-td' >12 / 10 / 2006</td>
-                                <td className='gereciar-td' >11971218295</td>
-                                <td>
-                                    &nbsp;&nbsp;
-                                    <img src={Logolixeira} alt='remover' />
-                                </td>
-                            </tr>
-                        
                         </tbody>
                     </table>
                 </div>
