@@ -13,22 +13,26 @@ export default function Index(){
 
 
     function abrirNovidades(){
-        navigate(`/user/menuNovidades`)
+        navigate('/user/menuNovidades');
     }
 
     function abrirFeminino(){
-        navigate(`/user/menuFeminino`)
+        navigate('/user/menuFeminino');
     }
 
     function abrirMasculino(){
-        navigate(`/user/menuMasculino`)
+        navigate('/user/menuMasculino');
+    }
+
+    function abrirLanding(){
+        navigate('/');
     }
 
     return(
         <main>
             <nav className='cab-user'>
                 <div className='cab-user-txt'>
-                    <h1 className='cab-user-txt-1'>M o d e l l e</h1>
+                    <h1 className='cab-user-txt-1' onClick={abrirLanding}>M o d e l l e</h1>
                 </div>
 
                 <div className='cab-user-topicos'>
