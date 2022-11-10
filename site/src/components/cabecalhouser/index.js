@@ -5,8 +5,25 @@ import Imagem2 from '../../assets/image/logo-lupa.png'
 import Imagem3 from '../../assets/image/bolsa-lista-desejo.png'
 import Imagem4 from '../../assets/image/carrinho.svg'
 import Imagem5 from '../../assets/image/user.png'
+import {useNavigate} from 'react-router-dom'
 
 export default function Index(){
+    
+    const navigate = useNavigate();
+
+
+    function abrirNovidades(){
+        navigate(`/user/menuNovidades`)
+    }
+
+    function abrirFeminino(){
+        navigate(`/user/menuFeminino`)
+    }
+
+    function abrirMasculino(){
+        navigate(`/user/menuMasculino`)
+    }
+
     return(
         <main>
             <nav className='cab-user'>
@@ -24,15 +41,15 @@ export default function Index(){
                     </div>
                     
                     <div className='cab-topic'>
-                        <p> 
+                        <p onClick={abrirNovidades} className='cab-topic-nov'> 
                             Novidades
                         </p>
 
-                        <p>
+                        <p onClick={abrirFeminino} className='cab-topic-mul' >
                             Mulher
                         </p>
 
-                        <p>
+                        <p onClick={abrirMasculino} className='cab-topic-hom'>
                             Homem
                         </p>
                     </div>

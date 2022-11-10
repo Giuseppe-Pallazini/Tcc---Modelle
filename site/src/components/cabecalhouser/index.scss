@@ -42,6 +42,24 @@
 
         color: #fff;
 
+        .cab-topic-nov, .cab-topic-hom, .cab-topic-mul {
+            background-image: linear-gradient(transparent 0%, transparent 90%, #fff 20%, #fff 20%);
+            background-repeat: no-repeat;
+            background-size: 0% 100%;
+            background-position-x: center;
+
+            transition: background-size 500ms;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .cab-topic-nov:hover, .cab-topic-hom:hover, .cab-topic-mul:hover {
+            color: white;
+            transition: 500ms;
+            background-size: 100% 100%;
+            background-position-x: center;
+        }
+
     }
     }
     
