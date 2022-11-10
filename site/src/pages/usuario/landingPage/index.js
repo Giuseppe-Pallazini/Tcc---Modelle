@@ -48,7 +48,7 @@ export default function Index() {
                     </div>
                 </div>
 
-            </section>
+            </section> 
 
             <section className='section-video'>
 
@@ -62,8 +62,8 @@ export default function Index() {
                 <h2 className='text-info'> CELEBRE A SEDA </h2>
 
                 <div className='a'>
-                <button className='bt'> Compre agora </button>
-                <button className='by'> Descubra a campanha</button>
+                <a className='bt'> Compre agora </a>
+                <a className='by'> Descubra a campanha </a>
                 </div>
              
 
@@ -75,13 +75,11 @@ export default function Index() {
                 <div className='slides'>
 
 
-                    <div>
+                    <div className='fotos'>
 
-                        <img src={imagem2} alt='img-2' />
+                        <img className='image' src={imagem2} alt='img-2' />
 
                     </div>
-
-
 
 
                     <input type='radio' name='radio' id='radio1' checked />
@@ -90,12 +88,15 @@ export default function Index() {
 
                 </div>
 
-                <div>
+                <div className='textos'>
+
+                    <h1> Conscious </h1>
+                    <h2> Nanushka </h2>
+
+                    <p> Blazer Hathi com abotoamento simples. </p>
+                    <p> Lapelas, mangas longas, fechamento frontal por botões, bolso no busto com debrum, bolsos frontais com lapelas e detalhe de fenda. </p>
 
                 </div>
-
-
-
 
             </section>
 
