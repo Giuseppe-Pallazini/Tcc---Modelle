@@ -6,6 +6,7 @@ import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../rep
 import { alterarProduto, buscarPorNome, listarProdutosFemininos, listarProdutosMasculino, listarTodosProdutos, removerProdutoImagensDiferentes, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
 import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId, ListarTodosTamanhosporIdUser  } from '../repository/mostrarprodutorepository.js'
 import { removerProdutoImagem, removerProdutoTamanho } from '../repository/removerProdutoRepository.js';
+import { validarProduto } from '../services/ProdutoValidacao.js';
 
 const server = Router();
 const upload = multer({ dest: 'storage/fotoProduto' })
@@ -14,6 +15,9 @@ const upload = multer({ dest: 'storage/fotoProduto' })
 server.post('/admin/produto', async (req, resp) => {
     try {
         const produto = req.body;
+
+        await validarProduto(produto);
+
         const idProduto = await salvarProduto(produto)
 
         for (const idTamanho of produto.tamanhos) {
@@ -46,9 +50,9 @@ server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, res
         const imagens = req.files;
 
         const imagensPermanecem = [];
-        if (req.body.imagens)
+        if (req.body.imagens){
             imagensPermanecem = req.body.imagens.filter(item => item != 'undefined');
-
+        }
 
         if (imagensPermanecem.length > 0)
             await removerProdutoImagensDiferentes(imagensPermanecem);

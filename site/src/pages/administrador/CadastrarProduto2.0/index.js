@@ -184,7 +184,7 @@ export default function CadastroProduto() {
 
         }
         catch (err) {
-            toast.error('erro');
+            toast.error(err.response.data.erro);
             console.log(err)
         }
     }
