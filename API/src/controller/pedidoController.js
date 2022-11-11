@@ -15,6 +15,7 @@ server.post('/api/pedido/:idUsuario/', async (req, resp) => {
         const novoPedido = criarNovoPedido(idUsuario, idCupom, info);
 
         const idPedidoCriado = await inserirPedido(novoPedido);
+        console.log(idPedidoCriado)
         const idPagCriado = await inserirPagamento(idPedidoCriado, info.cartao);
 
         for (let item of info.produtos) {
@@ -26,6 +27,7 @@ server.post('/api/pedido/:idUsuario/', async (req, resp) => {
         
     }
     catch (err) {
+        //console.log(err)
         resp.status(400).send({
             erro: err.message
         })

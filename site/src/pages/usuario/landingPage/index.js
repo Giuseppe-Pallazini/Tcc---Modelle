@@ -14,6 +14,7 @@ import { useEffect, useState, useRef } from 'react'
 import { buscarProdutoPorId } from '../../../api/produtoAPI';
 
 import Carrossel from '../../../components/carrosselLandingPage'
+import Rodape from '../../../components/Rodapé';
 
 
 export default function Index() {
@@ -142,9 +143,10 @@ export default function Index() {
 
 
 
-            <section> </section>
-            <section> </section>
-            <section> </section>
+            <section>
+            </section>
+
+            <Rodape />
 
 
         </main>

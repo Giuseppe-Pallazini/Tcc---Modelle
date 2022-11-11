@@ -44,12 +44,12 @@ export async function inserirPagamento(idPedido, novoPagamento) {
 
     const [info] = await con.query(comando, [
         idPedido,
-        novoPagamento.nomeCartao,
-        novoPagamento.numeroCartao,
+        novoPagamento.nome,
+        novoPagamento.numero,
         novoPagamento.vencimento,
         novoPagamento.codSeguranca,
         novoPagamento.parcelas,
-        nomePagamento.formaPagamento
+        novoPagamento.formaPagamento
     ]);
     return info.affectedRows;
 }
