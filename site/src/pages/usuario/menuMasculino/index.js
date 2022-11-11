@@ -18,7 +18,7 @@ import Imagem02MenuMasculino from '../../../assets/image/imagem02-menuMasculino.
 import Carrossel from '../../../components/carrossel'
 import ImagemNext from '../../../assets/image/icon-seta-carrossel-2.png'
 
-import CardProdutosMenuMasculino from '../../../components/CardProdutosMenu'
+import CardProdutosMasculinos from '../../../components/carProdutosMenuMasculino'
 
 import {useEffect, useState, useRef} from 'react'
 
@@ -61,33 +61,7 @@ export default function Index(){
 
                         <div className='div-cards-Roupas'>
                             <div className='div-CardsProd'>
-                                <CardProdutosMenuMasculino />
-                            </div>
-
-                            <div className='div-CardsProd'>
-                                <CardProdutosMenuMasculino />
-                            </div>
-                            <div className='div-CardsProd'>
-                                <CardProdutosMenuMasculino />
-                            </div>
-                            <div className='div-CardsProd'>
-                                <CardProdutosMenuMasculino />
-                            </div>
-                            <div className='div-CardsProd'>
-                                <CardProdutosMenuMasculino />
-                            </div>
-                            <div className='div-CardsProd'>
-                                <CardProdutosMenuMasculino />
-                            </div>
-                            <div className='div-CardsProd'>
-                                <CardProdutosMenuMasculino />
-                            </div>
-
-                            <div className='div-CardsProd'>
-                                <CardProdutosMenuMasculino />
-                            </div>
-                            <div className='div-CardsProd'>
-                                <CardProdutosMenuMasculino />
+                                <CardProdutosMasculinos/>
                             </div>
                         </div>
                     </div>

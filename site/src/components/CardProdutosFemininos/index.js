@@ -22,8 +22,20 @@ export default function Index(){
 
     const navigate = useNavigate();
 
+    async function filtrarMasculino(){
+        const resp = await listarProdutosMasculino(filtro);
+        setProduto(resp)
+    }
+
+    
+    async function filtrarFeminino(){
+        const resp = await listarProdutosFemininos(filtro);
+        setProduto(resp)
+    }
+
+
     async function carregarProduto(){
-        const resp = await listarTodos();
+        const resp = await listarProdutosFemininos();
         setProduto(resp); 
     }
 

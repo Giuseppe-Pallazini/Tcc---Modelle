@@ -23,7 +23,7 @@ export default function Index(){
     const navigate = useNavigate();
 
     async function carregarProduto(){
-        const resp = await listarTodos();
+        const resp = await listarProdutosMasculino();
         setProduto(resp); 
     }
 

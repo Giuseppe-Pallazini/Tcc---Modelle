@@ -1,0 +1,138 @@
+.main-menuUsuario{
+    display: flex;
+    flex-direction: column;
+
+    .MenuMasculino-div-MeusPedidos-Titulo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 55%;
+    }
+
+    .MenuMasculino-div-titulo{
+        margin-top: 1.5em;
+    }
+    .MenuMasculino-div-titulo h1{
+        font-size: 2em;
+        font-family: 'caviar';
+        font-weight: 100;
+    }
+    .MenuMasculino-div-titulo hr{
+        width: 7em;
+        margin-top: .2em;
+        background-color: black;
+    }
+    .div-meusPedidos{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+    .div-meusPedidos img{
+        width: 1.3em;
+        height: 1.3em;
+    }
+    .div-meusPedidos p{
+        font-family: 'caviar';
+        font-size: 1em;
+        font-weight: 400;
+        margin-left: .5em;
+    }
+
+
+    .MenuMasculino-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .MenuMasculino-div-filtroEcards{
+        display: flex;
+        flex-direction: row;
+    }
+    .div-filtroRoupas{
+        border: 1px solid black;
+        width: 15em;
+        height: 60em;
+        max-height: 60em;
+        margin-top: 2em;
+    }
+
+    .div-cards-Roupas{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        //border: 1px solid black;
+        width: 60em;
+        height: 85em;
+        max-height: 85em;
+        max-width: 60em ;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        margin-left: 2em;
+    }
+    .div-CardsProd{
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .Menu-div-buttomVerMais{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .Menu-div-buttomVerMais button{
+        border: none;
+        background-color: #ffffff;  
+        margin-bottom: 3em;
+    }
+
+
+    .div-cardsEmDestaque{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
+    .div-cardEmDestaque-Img01 img{
+        width: 25em;
+    }
+    .div-cardEmDestaque-Img01 h3{
+        font-family: 'caviar';
+        font-size: .7em;
+        width: 32em;
+        font-weight: 900;
+        margin-top: .8em;
+        margin-left: 1em;
+    }
+
+
+
+    .div-cardEmDestaque-Img02{
+        margin-left: 3em;
+    }
+    .div-cardEmDestaque-Img02 img{
+        width: 25em;
+    }
+    .div-cardEmDestaque-Img02 h3{
+        font-family: 'caviar';
+        font-size: .7em;
+        font-weight: 900;
+        margin-top: .8em;
+        margin-left: 1em;   
+    }
+    .div-hr-card-Destaque{
+        display: flex;
+        justify-content: center;
+        width: 40em;
+    }
+    .div-carrossel{
+        width: 100%;
+        height: 70vh;
+    }
+
+    .img-next{
+        width: 18px;
+    }
+
+}

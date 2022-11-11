@@ -68,7 +68,7 @@ export default function Index(){
                 <Route path='/user/cadastro'                element={< Cadastro />} />
                 <Route path='/user/carrinho'                element={< Carrinho />} />
                 <Route path='/user/condicoesEPrivacidade'   element={< Condicoeseprivacidade />} />
-                <Route path='/user/destalheProduto/:id'     element={< DetalheProduto />} />
+                <Route path='/user/detalhesProduto/:id'     element={< DetalheProduto />} />
                 <Route path='/user/falhaNaPesquisa'         element={< FalhaNaPesquisa />} />
                 <Route path='/user/feedback'                element={< Feedback />} />
                 <Route path='/user/listaDeDesejos'          element={< ListaDeDesejos />} />
