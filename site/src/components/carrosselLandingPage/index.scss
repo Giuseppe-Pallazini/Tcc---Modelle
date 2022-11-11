@@ -1,0 +1,85 @@
+.main-carrossel-landingPage{
+    transition: all 0.4s;
+    overflow: hidden;
+    width: 100%;
+    div{
+        display: flex;
+        margin-top: 3em;
+    } 
+
+    .slides{
+        display: flex;
+        width: 5120px;
+ 
+
+    }
+
+    .img-01{
+        transition: transform .5s ease;
+        margin-left: 15em; 
+    }
+    .img-01:hover{
+        transform: scale(1.1);
+    }
+
+    .div-01 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10em;
+
+        .h1-01 {
+            font-family: 'inter';
+            font-size: 2em;
+            color: black;
+            margin-bottom: .3em;
+        }
+
+        .h3-01 {
+            font-family: 'caviar';
+            font-size: 26px;
+        }
+
+        .p1-01 {
+            font-family: 'caviar';
+            font-size: 1em;
+            margin-top: 3em;
+            margin-bottom: 3em;
+        }
+
+        .p2-01 {
+            font-family: 'caviar';
+            font-size: 12px;
+            width: 47%;
+            margin-bottom: 4em;
+        }
+        .link-01 {
+            font-family: 'caviar';
+            text-align: center;
+            color: white;
+            background-color: black;
+            width: 10%;
+            padding: .7em 1.2em .7em 1.2em;
+            cursor: pointer;
+        }
+    }
+
+    img {
+    }
+
+    .img-02{
+        width: 17em;
+        height: 28em;
+        transition: transform .5s ease; 
+    }
+    .img-02:hover{
+        transform: scale(1.1);
+    }
+    .img-03{
+        width: 18em;
+        height: 28em;
+        transition: transform .5s ease; 
+    }
+    .img-03:hover{
+        transform: scale(1.2);
+    }
+}

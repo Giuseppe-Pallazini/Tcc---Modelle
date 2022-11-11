@@ -34,7 +34,7 @@ export default function Index() {
 
     else if (storage('usuario-logado')) {
       setTimeout(() => {
-      navigate('/user/landingpage')
+      navigate('/')
       }, 2000)
     }
 

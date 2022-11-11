@@ -1,15 +1,71 @@
 import { Link, useNavigate } from 'react-router-dom'
-import storage from 'local-storage'
+import Storage from 'local-storage'
 
 
 import Imagem1 from '../../../assets/image/logo_transparent-branco(svg).svg';
 import Video1 from '../../../assets/video/aaa.mp4';
 import imagem2 from '../../../assets/image/img-produto-1.png';
+import iconCoracao from '../../../assets/image/icon-coracao.svg'
+import iconBolsa from '../../../assets/image/icon-bolsa.png'
+import iconUser from '../../../assets/image/icon-user.svg'
 import './index.scss';
 import '../../../assets/common/index.scss'
 import { useEffect, useState, useRef } from 'react'
+import { buscarProdutoPorId } from '../../../api/produtoAPI';
+
+import Carrossel from '../../../components/carrosselLandingPage'
+
 
 export default function Index() {
+    const [itens, setItens] = useState([]);
+
+    async function carregarCarrinho() {
+        let carrinho = Storage('carrinho')
+        if (carrinho) {
+
+            let temp = [];
+
+            for (let produto of carrinho) {
+                let p = await buscarProdutoPorId(produto.id);
+
+                temp.push({
+                    produto: p,
+                    qtd: produto.qtd,
+                })
+            }
+            setItens(temp)
+        }
+        
+    }
+
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 1,
+            slidesToSlide: 1// optional, default to 1.
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+            slidesToSlide: 2 // optional, default to 1.
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            slidesToSlide: 1 // optional, default to 1.
+        }
+    };
+
+    useEffect(() => {
+        carregarCarrinho()
+    },[])
+
+
+
+    function qtdItens() {
+        return itens.length
+    }
+
     return (
         <main className='main-landingpage'>
 
@@ -17,22 +73,23 @@ export default function Index() {
 
                 <div className='section1-groups'>
                     <div className='section1-group-esquerda'>
-                        <div>
+                        <div className='section1-group-esquerda-div1'>
                             <div className='section1-div-logo'>
                                 <img className='section1-logo' src={Imagem1} alt='img1' />
                             </div>
 
-                        <div className='section1-div1-agrupamento'>
-                            <div className='section1-div1'>
-                                <Link to='/user/menuNovidades' className='section1-div1-nov'> Novidades </Link>
-                                <Link to='/user/menuMasculino' className='section1-div1-hom'> Homem </Link>
-                                <Link to='user/menuFeminino' className='section1-div1-mul'> Mulher </Link>
+                            <div className='section1-div1-agrupamento'>
+                                <div className='section1-div1'>
+                                    <Link to='/user/menuNovidades' className='section1-div1-nov'> Novidades </Link>
+                                    <Link to='/user/menuMasculino' className='section1-div1-hom'> Homem </Link>
+                                    <Link to='user/menuFeminino' className='section1-div1-mul'> Mulher </Link>
+                                </div>
                             </div>
-                        </div>
                         </div>
 
                         <div>
                             <div className='section1-div2'>
+
                                 <p className='section1-div2-p1'> Novidades para elas</p>
                                 <Link className='section1-div2-link' to='/user/menuFeminino'> Confira os lançamentos </Link>
 
@@ -43,12 +100,20 @@ export default function Index() {
                     </div>
 
                     <div className='section1-group-direita'>
-                        <h1> Oi </h1>
+                        <div className='section1-group-direita-div1'>
+                            <Link to='/login'> <img src={iconUser} alt='iconUser' /> </Link>
+                            <div className='section1-group-direita-div1-group'>
+                            <Link to='/user/carrinho'> <img src={iconBolsa} alt='iconBolsa' /> </Link>
+                            <p className='section1-group-direita-div1-iconCarrinho'> {qtdItens()} </p>
+                            </div>
+                            <Link to='/user/listaDeDesejos'> <img src={iconCoracao} alt='iconCora' /> </Link>
+
+                        </div>
 
                     </div>
                 </div>
 
-            </section> 
+            </section>
 
             <section className='section-video'>
 
@@ -59,44 +124,18 @@ export default function Index() {
                 </video>
 
 
-                <h2 className='text-info'> CELEBRE A SEDA </h2>
+                <h1 className='text-info'> CELEBRE A SEDA </h1>
 
                 <div className='a'>
-                <a className='bt'> Compre agora </a>
-                <a className='by'> Descubra a campanha </a>
+                    <a className='bt'> Compre agora </a>
+                    <a className='by'> Descubra a campanha </a>
                 </div>
-             
-
 
             </section>
 
             <section className='section-slide'>
 
-                <div className='slides'>
-
-
-                    <div className='fotos'>
-
-                        <img className='image' src={imagem2} alt='img-2' />
-
-                    </div>
-
-
-                    <input type='radio' name='radio' id='radio1' checked />
-                    <input type='radio' name='radio' id='radio2' />
-                    <input type='radio' name='radio' id='radio3' />
-
-                </div>
-
-                <div className='textos'>
-
-                    <h1> Conscious </h1>
-                    <h2> Nanushka </h2>
-
-                    <p> Blazer Hathi com abotoamento simples. </p>
-                    <p> Lapelas, mangas longas, fechamento frontal por botões, bolso no busto com debrum, bolsos frontais com lapelas e detalhe de fenda. </p>
-
-                </div>
+                <Carrossel />
 
             </section>
 
