@@ -12,6 +12,8 @@ import CadastroUsuarios from './controller/cadastroUsuarioController.js'
 import RemoverProduto  from './controller/removerProdutoController.js'
 import PedidoController from './controller/pedidoController.js'
 
+import UsuariosController from './controller/listarUsuariosController.js'
+
 import express from 'express'
 import cors from 'cors'
 
@@ -32,6 +34,7 @@ server.use(MostrarProdutoController);
 server.use(CadastroUsuarios);
 server.use(RemoverProduto);
 server.use(PedidoController);
+server.use(UsuariosController);
 
 server.use('/storage/fotoProduto', express.static('storage/fotoProduto'));
 

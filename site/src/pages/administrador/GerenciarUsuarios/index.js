@@ -2,21 +2,69 @@ import './index.scss'
 import { useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
 import CabecalhoAdm from '../../../components/cabecalhoadm'
-
+import { toast } from 'react-toastify';
 
 import Logolixeira from '../../../assets/image/logo-lixeira.png'
 import LogoLupa from '../../../assets/image/logo-lupa.png'
+import { buscarUsuario, listarUsuarios, removerUsuario } from '../../../api/usuarioAPI'
 
 import '../../../assets/common/index.scss'
-import {useEffect, useState, useRef} from 'react'
+import {useEffect, useState} from 'react'
+
+import { confirmAlert } from 'react-confirm-alert'
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 
 export default function Index(){
+    const [produto,setProduto] = useState([]);
+    const [filtro, setFiltro] = useState();
+    
+    async function getUsuarios(){
+        const resp = await listarUsuarios()
+        setProduto(resp);
+    }
+
+    useEffect(() => {
+        getUsuarios();
+    }, []);
+
+    async function filtrar(){
+        const resp = await buscarUsuario(filtro);
+        setProduto(resp)
+    }
+
+    async function deletarUsuario(id, nome){
+        try{
+        confirmAlert({
+            title: ' Remover Usuario',
+            message: `Confirmar remoção do ${nome}`,
+            buttons: [
+                {
+                    label: 'sim',
+                    onClick: async () => {
+                        const resposta = await removerUsuario(id);
+                        await getUsuarios();
+                        toast.dark('Usuario removido com sucesso!')
+                    }
+                },
+                {
+                    label: 'não'
+                }
+            ]
+        })
+    
+    }
+    catch(err){
+        console.log(err)
+    }
+    }
+   
     return(
        <main className='main-gerenciar'>
             <CabecalhoAdm />         
 
             <div className='div-filtro-buscarAdm'>
-                <input placeholder='Buscar'/><img className='' src={LogoLupa} alt='logoLupa' /> 
+                <input  value={filtro} onChange={e => setFiltro(e.target.value)} placeholder='Buscar'/>
+                <img className='' src={LogoLupa} alt='logoLupa' onClick={filtrar} /> 
             </div>
 
             <section className='section-tables'>
@@ -35,16 +83,18 @@ export default function Index(){
                             </tr>
                         </thead>
                         <tbody className='gereciar-tbody'>
-                            <tr className='gereciar-tr'>
-                                <td className='gereciar-td' >Vitão</td>
-                                <td className='gereciar-td' >Vg9459544@gmail.com</td>                               
-                                <td className='gereciar-td' >12 / 10 / 2006</td>
-                                <td className='gereciar-td' >11971218295</td>
-                                <td>
-                                    &nbsp;&nbsp;
-                                    <img src={Logolixeira} alt='remover' />
-                                </td>
-                            </tr>
+                        {produto.map(item =>
+                                <tr className='gereciar-tr'>
+                                    <td className='gereciar-td' > {item.nome}</td>
+                                    <td className='gereciar-td' > {item.email}</td>                               
+                                    <td className='gereciar-td' > {item.dataNascimento}</td>
+                                    <td className='gereciar-td' > {item.telefone}</td>
+                                    <td>
+                                        &nbsp;&nbsp;
+                                        <img onClick={() => deletarUsuario(item.usuario, item.nome)} src={Logolixeira} alt='remover' />
+                                    </td>
+                                </tr>
+                        )}
                         </tbody>
                     </table>
                 </div>

@@ -26,8 +26,22 @@ export async function CadastroUsuario (nome, dtNascimento, telefone, email, senh
         senha: senha
     });
 
-    return r.data;
- 
+    return r.data; 
+}
+
+export async function listarUsuarios(){
+    const resposta = await api.get('/admin/listarUsuarios');
+    return resposta.data;
+}
+
+export async function  removerUsuario(id){
+    const resposta = await api.delete(`/admin/deletarUsuario/${id}`);
+    return resposta.data
+}
+
+export async function buscarUsuario(nome){
+    const resposta = await api.get(`/admin/buscarUsuario?nome=${nome}`)
+    return resposta.data;
 }
 
 //http://localhost:5000/usuario/login
