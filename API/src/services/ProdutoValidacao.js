@@ -14,7 +14,7 @@ export async function validarProduto(produto) {
     else if (isNaN(produto.parcela) || produto.parcela <= 0 || produto.parcela == undefined) {
         throw new Error('Parcela do produto é obrigatório!');
     }
-    else if (isNaN(produto.juros) || produto.juros <= 0 || produto.juros == undefined) {
+    else if (isNaN(produto.juros) || produto.juros < 0 || produto.juros == undefined) {
         throw new Error('Juros do produto é obrigatório!');
     }
     else if (isNaN(produto.disponivel) || produto.disponivel <= 0 || produto.disponivel == undefined) {
@@ -39,9 +39,9 @@ export async function validarProduto(produto) {
         throw new Error('Seleção de cor é obrigatoria!');
     }
 
-    const tam = await buscarTamanhoPorId(produto.tamanhos);
-    if (tam == undefined) {
-        throw new Error('Tamanho inválido');
-    }
+    // const tam = await buscarTamanhoPorId(produto.idTamanho);
+    // if (tam == undefined) {
+    //     throw new Error('Tamanho inválido');
+    // }
 
 }
