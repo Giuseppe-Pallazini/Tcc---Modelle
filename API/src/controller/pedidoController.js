@@ -15,19 +15,18 @@ server.post('/api/pedido/:idUsuario/', async (req, resp) => {
         const novoPedido = criarNovoPedido(idUsuario, idCupom, info);
 
         const idPedidoCriado = await inserirPedido(novoPedido);
-        console.log(idPedidoCriado)
         const idPagCriado = await inserirPagamento(idPedidoCriado, info.cartao);
 
         for (let item of info.produtos) {
             const prod = await ListarTodosProdutosPorId(item.id);
-            const idPedidoItemCriado = await inserirPedidoItem(idPedidoCriado, prod.id, item.qtd, prod.preco);
+            const idPedidoItemCriado = await inserirPedidoItem(idPedidoCriado, item.id, item.qtd, prod.preco);
         }
 
         resp.status(204).send();
         
     }
     catch (err) {
-        //console.log(err)
+        console.log(err)
         resp.status(400).send({
             erro: err.message
         })

@@ -37,7 +37,7 @@ export async function inserirPagamento(idPedido, novoPagamento) {
             dt_vencimento,
             cod_seguranca,
             nr_parcelas,
-            ds_forma_pagmento
+            ds_forma_pagamento 
         )
         VALUES (?, ?, ?, ?, ?, ?, ?)
     `
@@ -59,8 +59,8 @@ export async function inserirPedidoItem(idPedido, idProduto, qtd, preco) {
         INSERT INTO tb_pedido_item (
             id_pedido,
             id_produto,
-            qtd_itens,
-            vl_produto
+            qtd_produto,
+            vl_total
         )
         VALUES (?, ?, ?, ?)
     `
