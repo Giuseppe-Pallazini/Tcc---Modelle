@@ -28,8 +28,13 @@ export default function Index(){
     }, []);
 
     async function filtrar(){
-        const resp = await buscarUsuario(filtro);
-        setProduto(resp)
+        try {
+            const r = await buscarUsuario(filtro);
+            setProduto(r)
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
     async function deletarUsuario(id, nome){
@@ -63,7 +68,7 @@ export default function Index(){
             <CabecalhoAdm />         
 
             <div className='div-filtro-buscarAdm'>
-                <input  value={filtro} onChange={e => setFiltro(e.target.value)} placeholder='Buscar'/>
+                <input value={filtro} onChange={e => setFiltro(e.target.value)} placeholder='Buscar'/>
                 <img className='' src={LogoLupa} alt='logoLupa' onClick={filtrar} /> 
             </div>
 

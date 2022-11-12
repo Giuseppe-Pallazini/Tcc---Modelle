@@ -23,7 +23,7 @@ export async function removerUsuario(id_usuario) {
     return resp.affectedRows;
 }
 
-export async function buscarUsuario(nome, email){
+export async function buscarUsuario(nome){
     const comando = `
         select  id_usuario      as usuario,
         nm_usuario 		as nome,
@@ -32,8 +32,7 @@ export async function buscarUsuario(nome, email){
         ds_email		as email
         from tb_usuario
         where nm_usuario like ?
-        and ds_email like ?
     `
-    const [linhas] = await con.query(comando, [`%${nome}%`, `%${nome}}%`]);
+    const [linhas] = await con.query(comando, [`%${nome}%`]);
     return linhas
 }

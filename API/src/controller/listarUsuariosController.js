@@ -36,10 +36,10 @@ server.get('/admin/buscarUsuario', async (req, resp) => {
         if(!resposta){
             throw new Error('Usuario não encontrado');
         }
+        resp.status(200).send(resposta)
     } catch (err) {
-        resp.status(400).send({
-            erro:err.message
-        })
+        console.log(err);
+
     }
 })
 export default server;
