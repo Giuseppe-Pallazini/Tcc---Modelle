@@ -7,20 +7,20 @@
     .div-carrinho-infoProd{
         display: flex;
         flex-direction: row;
-        margin-right: 5em;
-        width: 43em;
+        justify-content: space-between;
         margin-top: 2em;
+        margin-left: 2em;
         height: 24em;
+        background-color: white;
     }
-    .quebra-hr{
-        margin-left: 3em;
-        width: 40em;
-    }
+
     .carrinho-div-imgProd{
-        margin-top: .5em;
+        margin-top: .3em;
         margin-right: 1em;
-        width: 15em;
-        height: 15em;
+        margin-left: .3em;
+        width: 20em;
+        height: 23.4em;
+        background-color: #F6F5F3;
     }
 
     .carrinho-div-imgProd-img {
@@ -43,7 +43,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 28em;
 
         .carrinho-img-remover{
             width: 2em;

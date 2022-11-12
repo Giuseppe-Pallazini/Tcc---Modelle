@@ -1,6 +1,7 @@
 .main-carrinho{
     display: flex;
     flex-direction: column;
+    background-color: #F6F5F3;
 
     a:link, a:visited  {
         color: white;
@@ -9,8 +10,9 @@
 
     .carrinho-section {
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid black;
     }
     .section-carrinho-principal{
         display: flex;
@@ -24,7 +26,13 @@
     }
     .carrinho-h1-titulo{
         font-size: 2em;
-        font-family: 'caviar';
+        font-family: 'inter';
+    }
+
+    .div1-carrinho {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .div-carrinho-informações{

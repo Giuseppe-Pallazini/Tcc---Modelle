@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from                   './pages/usuario/Login'
 import Cadastro from                './pages/usuario/cadastro'
 import Carrinho from                './pages/usuario/carrinho'
+import Carrinho2 from               './pages/usuario/carrinho2.0(TeOdeioVictor)'
 import Condicoeseprivacidade from   './pages/usuario/condicoes-Privacidade'
 import DetalheProduto from          './pages/usuario/detalhesProduto'
 import FalhaNaPesquisa from         './pages/usuario/falhaNaPesquisa'
@@ -67,6 +68,7 @@ export default function Index(){
                 <Route path='/'                             element={< LandingPage />} />
                 <Route path='/user/cadastro'                element={< Cadastro />} />
                 <Route path='/user/carrinho'                element={< Carrinho />} />
+                <Route path='/user/carrinho2'               element={< Carrinho2 />} />
                 <Route path='/user/condicoesEPrivacidade'   element={< Condicoeseprivacidade />} />
                 <Route path='/user/detalhesProduto/:id'     element={< DetalheProduto />} />
                 <Route path='/user/falhaNaPesquisa'         element={< FalhaNaPesquisa />} />

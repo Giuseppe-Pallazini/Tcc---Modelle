@@ -1,0 +1,154 @@
+.main-carrinho {
+
+
+
+
+    .just-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    .just-center-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .carrinho-section1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+
+        .carrinho-section1-div1 {
+                width: 63%;
+
+            .carrinho-h1-1 {
+                display: flex;
+                font-family: 'inter';   
+                font-size: 2.5em;
+                justify-content: flex-end;
+                margin-top: 1em;
+                margin-right: 1.5em;
+            }
+        }
+
+
+        .carrinho-section1-div2 {
+            display: flex;
+            flex-direction: column;
+            width: 37%;
+            background-color: white;
+            margin-top: 2em;
+
+            .carrinho-section1-div2-divImg {
+                display: flex;
+                justify-content: center;
+            }
+
+            .carrinho-section1-div2-img1 {
+                margin-top: 3em;
+            }
+
+
+            .carrinho-section1-div2-1{
+                display: flex;
+                flex-direction: row;
+                margin: 3em 0;
+
+                .carrinho-section1-div2-1-caminhao {
+                    margin: 0 2em 0 2em;
+                }
+                .carrinho-section1-div2-1-1 {
+
+                    .carrinho-section1-div2-1-1-p1 {
+                        font-family: 'inter';
+                    }
+
+                    .carrinho-section1-div2-1-1-p2 {
+                        font-family: 'inter';
+                        font-size: .7em;
+                        color: #989898;
+                    }
+                }
+            }
+
+            .carrinho-section1-div2-1-divHr {
+                display: flex;
+                justify-content: center;
+
+                .carrinho-section1-div2-1-hr {
+                    display: flex;
+                    justify-content: center;
+                    width: 70%;
+                }
+            }
+
+            .carrinho-section1-div2-2 {
+                display: flex;
+                flex-direction: row;
+                margin: 2em 0;
+
+                .carrinho-section1-div2-2-1 {
+                    
+
+                    .carrinho-section1-div2-2-1-p1 {
+                        font-family: 'inter';
+                        margin-left: 2em;
+                    }
+
+                    .carrinho-section1-div2-2-1-p2 {
+                        font-family: 'inter';
+                        font-size: .7em;
+                        color: #989898;
+                        margin-left: 2.9em;
+                    }
+                }
+            }
+
+            .carrinho-section1-div2-3 {
+                display: flex;
+                flex-direction: row;
+                justify-content:space-around;
+                width: 70%;
+                margin: 2em 0;
+
+                .carrinho-section1-div2-3-div1 {
+                    display: flex;
+
+                    .carrinho-section1-div2-3-p1 {
+                        font-family: 'caviar';
+                    }
+                }
+
+                
+                .carrinho-section1-div2-3-p2 {
+                    font-family: 'caviar';
+
+                }
+            }
+
+            .carrinho-section1-div2-4 {
+                display: flex;
+                justify-content: center;
+                margin: 1.3em 0;
+
+                .carrinho-section1-div2-4-Link {
+                    display: flex;
+                    justify-content: center;
+                    color: black;
+                    border: 1px solid black;
+                    width: 40%;
+                    transition: .3s;
+                    padding: 1em 3em;
+                }
+
+                .carrinho-section1-div2-4-Link:hover {
+                    color: white;
+                    background-color: #19110B;
+                }
+            }
+        }
+    }
+}
