@@ -212,3 +212,6 @@ select tb_produto.id_produto as produto,
         nm_marca,
         vl_disponivel
 ;
+
+
+select * from tb_usuario;

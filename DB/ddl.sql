@@ -7,7 +7,7 @@ create table tb_usuario (
 id_usuario 			int primary key auto_increment,
 nm_usuario 			varchar(100),
 dt_nascimento 		date,
-nr_telefone 		int,
+nr_telefone 		varchar(50),
 ds_email 			varchar(50),
 ds_senha 			varchar(50)
 );

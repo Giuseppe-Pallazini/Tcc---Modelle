@@ -22,7 +22,6 @@ export default function Index(){
         try {
             const novoUsuario = await CadastroUsuario(nome, dtNascimento, telefone, email, senha);
             toast.dark(' ✔️ Cadastro concluido com secesso!');
-
         }
         catch (err) {
             toast.dark(err);
@@ -84,8 +83,8 @@ export default function Index(){
                 <p className='cadastro-p-AllRightsReserved'> All rights reserved © </p>
             </section>
 
-            <section className='section-cadastro-cl2'>
-                <div className='div-cadastro-imagemMulher'>
+            <section className='section-cadastro-cl2' >
+                <div className='div-cadastro-imagemMulher' >
                     <img src={ImagemCadastroUsuario} alt='logo' className='cadastro-imagem-mulher' />
                 </div>
             </section>
