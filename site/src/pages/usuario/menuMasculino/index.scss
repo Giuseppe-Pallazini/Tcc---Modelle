@@ -17,6 +17,145 @@
         font-family: 'caviar';
         font-weight: 100;
     }
+
+    .filtro-titulo{
+        margin-top: .4em;
+        margin-left: 1em;
+        margin-bottom: .5em;
+    }
+    .filtro-titulo h1{
+        font-family: 'caviar';
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+
+    .filtro-marca{
+        margin-left: 1em;
+    }
+    .div-tituloMarcas h1{
+        font-size: 1.3em;
+        margin-left: .4em;
+        margin-bottom: .2em;
+    }
+    .div-valoresMarcas{
+        display: flex;
+        flex-direction: row;
+        margin-top: .4em;
+        margin-left: 1em;
+    }
+    .div-valoresMarcas img{
+        width: 18px;
+    }
+    .div-valoresMarcas p{
+        font-size: 1em;
+        font-family: 'caviar';
+        margin-left: 1em;
+    }
+    .div-filtroCores{
+        margin-left: 1em;
+        margin-top: 1em;
+    }
+    .div-tituloCoresPrinciapis{
+        font-size: 1em;
+        margin-left: .4em;
+        margin-bottom: .2em;
+    }
+    .div-tituloCoresPrinciapis h1{
+        font-size: 1.3em;
+        margin-left: .4em;
+        margin-bottom: .2em;
+    }
+
+    .div-inputsCores{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 9em;
+        width: 13em;
+        margin-left: 1em;
+    }
+
+    .div-inputsCores input{
+        width: 2em;
+        margin-top: 1em;
+        margin-left: .5em;
+
+    }
+
+
+    .filtro-Genero{
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+    .div-tituloGenero h1{
+        font-size: 1.3em;
+        margin-left: .4em;
+        margin-bottom: .2em;
+    }
+    .div-valoresGenero{
+        display: flex;
+        flex-direction: row;
+        margin-top: .4em;
+        margin-left: 1em;
+    }
+    .div-valoresGenero img{
+        width: 18px;
+    }
+    .div-valoresGenero p{
+        font-size: 1em;
+        font-family: 'caviar';
+        margin-left: 1em;
+    }
+
+
+    .filtro-Tamanho{
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+    .div-tituloTamanho h1{
+        font-size: 1.3em;
+        margin-left: .4em;
+        margin-bottom: .2em;
+    }
+    .div-valoresTamanho{
+        display: flex;
+        flex-direction: row;
+        margin-top: .4em;
+        margin-left: 1em;
+    }
+    .div-valoresTamanho img{
+        width: 18px;
+    }
+    .div-valoresTamanho p{
+        font-size: 1em;
+        font-family: 'caviar';
+        margin-left: 1em;
+    }
+
+    .filtro-roupas{
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+    .div-tituloroupasDisponiveis{
+        display: flex;
+        flex-direction: row;
+        margin-top: .4em;
+    }
+    .div-tituloroupasDisponiveis h1{
+        font-size: 1.3em;
+        margin-left: .4em;
+        margin-bottom: .2em;
+    }
+
+    .div-roupasDisponiveis{
+        margin-left: 1em;
+    }
+
+    .div-roupasDisponiveis p{
+        font-size: 1em;
+    }
+
     .MenuMasculino-div-titulo hr{
         width: 9em;
         margin-top: .2em;
@@ -49,11 +188,12 @@
         flex-direction: row;
     }
     .div-filtroRoupas{
-        border: 1px solid black;
         width: 15em;
-        height: 60em;
-        max-height: 60em;
+        height: 63em;
+        max-height: 63em;
         margin-top: 2em;
+        border: none;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
     }
 
     .div-cards-Roupas{
@@ -61,7 +201,6 @@
         flex-direction: row;
         justify-content: space-around;
         flex-wrap: wrap;
-        //border: 1px solid black;
         width: 60em;
         height: 85em;
         max-height: 85em;

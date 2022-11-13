@@ -10,10 +10,7 @@ import Rodape from '../../../components/Rodapé'
 
 import Imagem01MenuMasculino from '../../../assets/image/imagem01-menuMasculino.png'
 import Imagem02MenuMasculino from '../../../assets/image/imagem02-menuMasculino.png'
-// import Imagem1 from '../../../assets/image/image1-carrosel.png'
-// import Imagem2 from '../../../assets/image/imagem-Biber.png'
-// import Imagem3 from '../../../assets/image/image3-carrosel.png'
-// import ImagemNext from '../../../assets/image/icon-seta-carrossel.png'
+import LogoValorFiltro from '../../../assets/image/logo-valor-filtro.png'
 
 import Carrossel from '../../../components/carrossel'
 import ImagemNext from '../../../assets/image/icon-seta-carrossel-2.png'
@@ -48,14 +45,158 @@ export default function Index(){
                             </div>
 
                             <div className='filtro-marca'>
-                                <select>
-                                    <option>
-                                        marca
-                                    </option>
-                                    <option>
-                                        <p>Marca</p>
-                                    </option>
-                                </select>
+                                <div className='div-tituloMarcas'>
+                                    <h1>Marcas: </h1>
+                                </div>
+
+                                <div className='div-valoresMarcas'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Gucci</p>
+                                </div>
+                                
+                                <div className='div-valoresMarcas'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Balenciaga</p>
+                                </div>
+
+                                <div className='div-valoresMarcas'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Dolce & Gabbana</p>
+                                </div>
+
+                                <div className='div-valoresMarcas'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Burberry</p>
+                                </div>
+
+                                <div className='div-valoresMarcas'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Morley</p>
+                                </div>
+
+                                <div className='div-valoresMarcas'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Kenzo</p>
+                                </div>
+
+                                <div className='div-valoresMarcas'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Modelle</p>
+                                </div>
+
+                                <div className='div-valoresMarcas'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Zegna</p>
+                                </div>
+
+                                <div className='div-valoresMarcas'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Louis Vuitton</p>
+                                </div>
+
+                                <div className='div-valoresMarcas'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Versace</p>
+                                </div>
+
+                                <div className='div-valoresMarcas'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Off-White</p>
+                                </div>
+                            </div>
+
+                            <div className='div-filtroCores'>
+                                <div className='div-tituloCoresPrinciapis'>
+                                    <h1>Cores principais</h1>
+                                </div>
+
+                                <div className='div-inputsCores'>
+                                    <input type='color'/>
+                                    <input type='color'/>
+                                    <input type='color'/>
+                                    <input type='color'/>
+                                    <input type='color'/>
+                                    <input type='color'/>
+                                    <input type='color'/>
+                                    <input type='color'/>
+                                </div>
+                            </div>
+
+                            <div className='filtro-Genero'>
+                                <div className='div-tituloGenero'>
+                                    <h1>Genero: </h1>
+                                </div>
+
+                                <div className='div-valoresGenero'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Masculino</p>
+                                </div>
+                                
+                                <div className='div-valoresGenero'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p>Feminino</p>
+                                </div>
+                            </div>
+
+                            <div className='filtro-Tamanho'>
+                                <div className='div-tituloTamanho'>
+                                    <h1>Tamanho: </h1>
+                                </div>
+
+                                <div className='div-valoresTamanho'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p> XS / PP </p>
+                                </div>
+                                
+                                <div className='div-valoresTamanho'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p> S / P </p>
+                                </div>
+
+                                <div className='div-valoresTamanho'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p> M / M</p>
+                                </div>
+                                <div className='div-valoresTamanho'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p> L / G</p>
+                                </div>
+
+                                <div className='div-valoresTamanho'>
+                                    <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+                                    <p> XL / GG</p>
+                                </div>
+                            </div>
+
+                            <div className='filtro-roupas'>
+                                <div className='div-tituloroupasDisponiveis' >
+                                    <h1>Roupas</h1>
+                                </div>
+
+                                <div className='div-roupasDisponiveis'>
+                                    <p>Blusas (4)</p>
+                                </div>
+                                <div className='div-roupasDisponiveis'>
+                                    <p>Calças (6)</p>
+                                </div>
+                                <div className='div-roupasDisponiveis'>
+                                    <p>Moletons (5)</p>
+                                </div>
+                                <div className='div-roupasDisponiveis'>
+                                    <p>Casacos / Jaquetas (8)</p>
+                                </div>
+                                <div className='div-roupasDisponiveis'>
+                                    <p>Shorts e Bermudas (3)</p>
+                                </div>
+                                <div className='div-roupasDisponiveis'>
+                                    <p>Polos (15)</p>
+                                </div>
+                                <div className='div-roupasDisponiveis'>
+                                    <p>Suéters (11)</p>
+                                </div>
+                                <div className='div-roupasDisponiveis'>
+                                    <p>Blusas (4)</p>
+                                </div>
                             </div>
                         </div>
 
