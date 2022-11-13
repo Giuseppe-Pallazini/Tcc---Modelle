@@ -6,19 +6,29 @@ import { buscarProdutoPorId, buscarImagem } from '../../../api/produtoAPI';
 import CabecalhoUser from '../../../components/cabecalhouser/index.js'
 import RodapeUser from '../../../components/Rodapé/index.js'
 
-import LogoLocalizacao from '../../../assets/image/imagem-localização.png'
 import LogoCartao from '../../../assets/image/creditcardwithlines_121985.svg'
 import LogoPix from '../../../assets/image/icone-pix.png'
-import LogoFinalizado from '../../../assets/image/logo-finalizado.png'
-import LogoSeta from '../../../assets/image/set-tela-pagamentos.png'
+
 import { useEffect, useState, useRef } from 'react'
 import { IMaskInput } from 'react-imask'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify';
+
 
 import Storage from 'local-storage'
+import { salvarNovoPedido } from '../../../api/pedidoAPI';
 
 export default function Index() {
     const [itens, setItens] = useState([])
+
+    const [cupom, setCupom] = useState('')
+    const [frete, setFrete] = useState('')
+    const [nome, setNome] = useState('')
+    const [numero, setNumero] = useState('')
+    const [vencimento, setVencimento] = useState('')
+    const [cvv, setCvv] = useState('')
+    const [tipo, setTipo] = useState('')
+    const [parcela, setParcela] = useState('')
 
     const [mostrarInfosPag, setMostrarInfosPag] = useState(false)
     const showOrHide = () => setMostrarInfosPag(true)
@@ -67,6 +77,35 @@ export default function Index() {
         return buscarImagem(imagem)
     }
 
+    async function salvarPedido() {
+
+        let produtos = Storage('carrinho');
+        let id = Storage('cliente-logado').id;
+
+        let pedido =
+        {
+            cupom: cupom,
+            frete: frete,
+            tipoPagamento: "Cartão",
+            cartao:
+            {
+                nome: nome,
+                numero: numero,
+                vencimento: vencimento,
+                codSeguranca: cvv,
+                formaPagamento: tipo,
+                parcelas: parcela
+            },
+            produtos: produtos
+        }
+
+        const r = await salvarNovoPedido(id, pedido)
+        toast.dark('Pedido inserido com sucesso!');
+        Storage('carrinho', []);
+        navigate('/');
+
+    }
+
     useEffect(() => {
         carregarItens();
     }, [])
@@ -77,15 +116,6 @@ export default function Index() {
             <CabecalhoUser />
 
             <section className='section-pagamento-principal'>
-                <div className='pagamento-icones-situacoes'>
-                    <div className='div-pagamento-icons-situações'>
-                        <img src={LogoLocalizacao} alt='logo-localização' className='icon-pagamento-localização' />
-                        <img src={LogoSeta} alt='logo-seta' className='icon-pagamento-seta' />
-                        <img src={LogoCartao} alt='logo-cartão' className='icon-pagamento-cartão' />
-                        <img src={LogoSeta} alt='logo-seta' className='icon-pagamento-seta' />
-                        <img src={LogoFinalizado} alt='logo-confirmado' className='icon-pagamento-confirmado' />
-                    </div>
-                </div>
 
                 <section className='section-separar' >
                     <div className='div-pagamento-endereço-infosped'>
