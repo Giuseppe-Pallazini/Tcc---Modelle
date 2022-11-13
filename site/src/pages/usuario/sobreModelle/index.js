@@ -4,6 +4,7 @@ import storage from 'local-storage'
 import Cabecalho from '../../../components/cabecalhouser/index.js'
 import Rodape from '../../../components/Rodapé/index.js'
 import ImagemSobreModelle from '../../../assets/image/imagem-sobreModelle.png'
+import { Link } from 'react-router-dom'
 import './index.scss';
 import '../../../assets/common/index.scss'
 import {useEffect, useState, useRef} from 'react'
@@ -19,7 +20,9 @@ export default function Index(){
                 <section className='sobreModelle-section-principal'> 
                     <div className='sobreModelle-titulo-btn'>
                         <div className='sobreModelle-div-botão'>
-                            <button onclick='window.history.back()' className='sobreModelle-botão-voltar'>Voltar</button>
+                            <Link to='/'>
+                                <button className='condições-botão-voltar'> Voltar</button>
+                            </Link>  
                         </div>
 
                         <div className='sobreModelle-div-titulo'>

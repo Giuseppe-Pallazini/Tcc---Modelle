@@ -201,5 +201,110 @@
            
         }
     }
+    .section-slide{
+        margin-bottom: 2em;
+    }
 
+    .section-cardsMarcas{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 3em;
+        margin-bottom: 2em;
+        background-color: rgb(241, 241, 241);
+        width: 100%;
+    }
+        .div-cardOffWhite{
+            display: flex;
+            flex-direction: column;
+            margin-top: 2em;
+            margin-left: 2em;
+            
+        }
+        .div-cardOffWhite img{
+            width: 33em;
+            cursor: pointer;
+        }
+
+        .div-cardOffWhite h3{
+            font-size: 1em;
+            font-weight: 700;
+            margin-top: .8em;
+            color: #000;
+            margin-left: 1em;
+            font-family: 'caviar';
+            width: 33em;
+            margin-bottom: 2em;
+        }
+        .div-cardOffWhite img:hover{
+            transform: scale(1.02);
+            transition: .8s;
+        }
+
+        .div-cardDolceGabbana{
+            display: flex;
+            flex-direction: column;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+        .div-cardDolceGabbana img{
+            height: 44em;
+            margin-top: 2em;
+            cursor: pointer;
+        }
+        
+        .div-cardDolceGabbana h3{
+            font-size: 1em;
+            margin-top: .8em;
+            font-weight: 700;
+            margin-left: 1.5em;
+            color: #000;
+            font-family: 'caviar';
+            width: 33em;
+            margin-bottom: 2em;
+        }
+
+        .div-cardDolceGabbana img:hover{
+            transform: scale(1.02);
+            transition: .8s;
+        }
+        
+        .section-descubraModelle{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2em;
+            margin-bottom: 3em;
+            width: 100%;
+            height: 10em;
+
+            .div-texto-descubraModelle{
+                margin-top: 2em;
+                margin-bottom: 2em;
+            }
+            .div-texto-descubraModelle h1{
+                font-size: 2em;
+                font-family: 'caviar';
+                font-weight: 100;
+            }
+            .botao-descubraModelle{
+                font-family: 'caviar';
+                font-size: 1em;
+                background-color: #fff;
+                color: #000;
+                width: 13em;
+                cursor: pointer;
+                margin-bottom: 2em;
+                height: 3em;
+                border: 1px solid black;
+            }
+            .botao-descubraModelle:hover{
+                transform: scale(1.1);
+                transition: 1s;
+                background-color: #000000;
+                color: #ffffff;
+            }
+
+        }
 }

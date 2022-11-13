@@ -8,6 +8,8 @@ import imagem2 from '../../../assets/image/img-produto-1.png';
 import iconCoracao from '../../../assets/image/icon-coracao.svg'
 import iconBolsa from '../../../assets/image/icon-bolsa.png'
 import iconUser from '../../../assets/image/icon-user.svg'
+import ImgCardOffWhite from '../../../assets/image/card-offWhite.png'
+import ImgCardDouceGabbana from '../../../assets/image/card-douceEgabbana.png'
 import './index.scss';
 import '../../../assets/common/index.scss'
 import { useEffect, useState, useRef } from 'react'
@@ -143,7 +145,27 @@ export default function Index() {
 
 
 
-            <section>
+            <section className='section-cardsMarcas'>
+                <div className='div-cardOffWhite'>
+                    <img src={ImgCardOffWhite} alt='imagem card landing page' />
+                    <h3>Felicidade esta em se vestir com OFF-White, celebre cada comendo com a marca.</h3>
+                </div>
+
+                <div className='div-cardDolceGabbana'>
+                    <img src={ImgCardDouceGabbana} alt='imagem card landing page' />
+                    <h3> Eternize seu amor pela marca com a seleção de peças finas, na Modelle</h3>
+                </div>
+            </section>
+
+            <section className='section-descubraModelle'>
+                <div className='div-texto-descubraModelle'>
+                    <h1>Descubra Modelle</h1>
+                </div>
+                <div>
+                    <Link to='/login'>
+                        <button className='botao-descubraModelle'>Descubra</button>
+                    </Link>
+                </div>
             </section>
 
             <Rodape />
