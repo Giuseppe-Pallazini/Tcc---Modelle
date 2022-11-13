@@ -14,6 +14,8 @@ import PedidoController from './controller/pedidoController.js'
 
 import UsuariosController from './controller/listarUsuariosController.js'
 import FiltroUserController from './controller/filtroUserController.js'
+import FiltroFemininoController from './controller/filtroFeminino.js'
+import FiltroNovidadesController from './controller/filtroNovidades.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -37,6 +39,8 @@ server.use(RemoverProduto);
 server.use(PedidoController);
 server.use(UsuariosController);
 server.use(FiltroUserController);
+server.use(FiltroFemininoController);
+server.use(FiltroNovidadesController);
 
 server.use('/storage/fotoProduto', express.static('storage/fotoProduto'));
 

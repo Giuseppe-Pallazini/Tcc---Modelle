@@ -10,10 +10,7 @@ import Rodape from '../../../components/Rodapé'
 
 import Imagem01MenuMasculino from '../../../assets/image/imagem01-menuMasculino.png'
 import Imagem02MenuMasculino from '../../../assets/image/imagem02-menuMasculino.png'
-// import Imagem1 from '../../../assets/image/image1-carrosel.png'
-// import Imagem2 from '../../../assets/image/imagem-Biber.png'
-// import Imagem3 from '../../../assets/image/image3-carrosel.png'
-// import ImagemNext from '../../../assets/image/icon-seta-carrossel.png'
+import LogoValorFiltro from '../../../assets/image/logo-valor-filtro.png'
 
 import Carrossel from '../../../components/carrossel'
 import ImagemNext from '../../../assets/image/icon-seta-carrossel-2.png'
@@ -41,13 +38,12 @@ export default function Index(){
                 </div>
 
                 <section className='MenuMasculino-section'>
-                    <div className='MenuMasculino-div-filtroEcards'>
-                        <div className='div-cards-Roupas'>
+
+
+
                             <div className='div-CardsProd'>
                                 <CardProdutosFemininos/>
                             </div>
-                        </div>
-                    </div>
 
                     <div className='Menu-div-buttomVerMais'>
                         <button> Ver mais...</button>
