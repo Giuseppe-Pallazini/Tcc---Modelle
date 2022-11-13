@@ -1,4 +1,4 @@
-import { buscarMarcaBalenciaga, buscarMarcaBurberry, buscarMarcaDolceGabanna, buscarMarcaGucci, buscarMarcaKenzo, buscarMarcaLouisVuitton, buscarMarcaModelle, buscarMarcaMorley, buscarMarcaPrada, buscarMarcaVersace, buscarMarcaZegna } from "../repository/filtroMasculino.js";
+import { buscarMarcaBalenciaga, buscarMarcaBurberry, buscarMarcaDolceGabanna, buscarMarcaGucci, buscarMarcaKenzo, buscarMarcaLouisVuitton, buscarMarcaModelle, buscarMarcaMorley, buscarMarcaVersace, buscarMarcaZegna, buscarMarcaPrada ,buscarTamanhoG, buscarTamanhoGG, buscarTamanhoM, buscarTamanhoP, buscarTamanhoPP, buscarModeloCamisa, buscarModeloCalca, buscarModeloMoletom, buscarModeloCasaco, buscarModeloBermuda, buscarModeloPolo, buscarModeloSueter, buscarModeloBlusa } from "../repository/filtroMasculino.js";
 
 import { Router } from "express";
 const server = Router();
@@ -113,17 +113,6 @@ server.get('/api/filtro/marca/versace', async (req, resp) => {
     }
 })
 
-server.get('/api/filtro/marca/versace', async (req, resp) => {
-    try {
-        const x = await buscarMarcaVersace();
-        resp.status(200).send(x);
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-})
-
 server.get('/api/filtro/marca/prada', async (req, resp) => {
     try {
         const x = await buscarMarcaPrada();
@@ -134,4 +123,148 @@ server.get('/api/filtro/marca/prada', async (req, resp) => {
         })
     }
 })
+
+server.get('/api/filtro/tamanho/pp', async (req, resp) => {
+    try {
+        const x = await buscarTamanhoPP();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/api/filtro/tamanho/p', async (req, resp) => {
+    try {
+        const x = await buscarTamanhoP();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/api/filtro/tamanho/m', async (req, resp) => {
+    try {
+        const x = await buscarTamanhoM();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/api/filtro/tamanho/g', async (req, resp) => {
+    try {
+        const x = await buscarTamanhoG();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/api/filtro/tamanho/gg', async (req, resp) => {
+    try {
+        const x = await buscarTamanhoGG();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/api/filtro/modelo/camisa', async (req, resp) => {
+    try {
+        const x = await buscarModeloCamisa();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/api/filtro/modelo/calca', async (req, resp) => {
+    try {
+        const x = await buscarModeloCalca();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/api/filtro/modelo/moletom', async (req, resp) => {
+    try {
+        const x = await buscarModeloMoletom();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/api/filtro/modelo/casaco', async (req, resp) => {
+    try {
+        const x = await buscarModeloCasaco();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/api/filtro/modelo/bermuda', async (req, resp) => {
+    try {
+        const x = await buscarModeloBermuda();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})  
+
+server.get('/api/filtro/modelo/polo', async (req, resp) => {
+    try {
+        const x = await buscarModeloPolo();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/api/filtro/modelo/sueter', async (req, resp) => {
+    try {
+        const x = await buscarModeloSueter();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/api/filtro/modelo/blusa', async (req, resp) => {
+    try {
+        const x = await buscarModeloBlusa();
+        resp.status(200).send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
 export default server;

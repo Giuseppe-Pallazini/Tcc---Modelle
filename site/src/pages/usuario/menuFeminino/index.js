@@ -42,23 +42,6 @@ export default function Index(){
 
                 <section className='MenuMasculino-section'>
                     <div className='MenuMasculino-div-filtroEcards'>
-                        <div className='div-filtroRoupas'>
-                            <div className='filtro-titulo'>
-                                <h1>Filtrar por: </h1>
-                            </div>
-
-                            <div className='filtro-marca'>
-                                <select>
-                                    <option>
-                                        marca
-                                    </option>
-                                    <option>
-                                        <p>Marca</p>
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-
                         <div className='div-cards-Roupas'>
                             <div className='div-CardsProd'>
                                 <CardProdutosFemininos/>

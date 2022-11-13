@@ -12,7 +12,7 @@ import { buscarPorNome, listarTodos, removerProduto, buscarImagem, listarProduto
 import { API_URL } from '../../api/config.js';
 import { useNavigate } from 'react-router-dom';
 import LogoValorFiltro from '../../assets/image/logo-valor-filtro.png'
-import { filtroMarcaBalenciaga, filtroMarcaBurberry, filtroMarcaDolceGabanna, filtroMarcaGucci, filtroMarcaKenzo, filtroMarcaLouisVuitton, filtroMarcaModelle, filtroMarcaMorley, filtroMarcaPrada, filtroMarcaVersace, filtroMarcaZegna } from '../../api/filtroAPI';
+import { filtroMarcaBalenciaga, filtroMarcaBurberry, filtroMarcaDolceGabanna, filtroMarcaGucci, filtroMarcaKenzo, filtroMarcaLouisVuitton, filtroMarcaModelle, filtroMarcaMorley, filtroMarcaPrada, filtroMarcaVersace, filtroMarcaZegna, filtroModeloBermuda, filtroModeloBlusa, filtroModeloCalca, filtroModeloCamisa, filtroModeloCasaco, filtroModeloMoletom, filtroModeloPolo, filtroModeloSueter, filtroTamanhoG, filtroTamanhoGG, filtroTamanhoM, filtroTamanhoP, filtroTamanhoPP } from '../../api/filtroAPI';
 
 
 
@@ -84,6 +84,74 @@ export default function Index(){
         setProduto(resp);
     }
 
+    //FILTRO POR TAMANHO
+
+    async function filtroPP(){
+        const resp = await filtroTamanhoPP();
+        setProduto(resp);
+    }
+
+    async function filtroP(){
+        const resp = await filtroTamanhoP();
+        setProduto(resp);
+    }
+
+    async function filtroM(){
+        const resp = await filtroTamanhoM();
+        setProduto(resp);
+    }
+
+    async function filtroG(){
+        const resp = await filtroTamanhoG();
+        setProduto(resp);
+    }
+
+    async function filtroGG(){
+        const resp = await filtroTamanhoGG();
+        setProduto(resp);
+    }
+
+    //FILTRAR POR MODELOS
+
+    async function filtroCamisa(){
+        const resp = await filtroModeloCamisa();
+        setProduto(resp);
+    }
+
+    async function filtroCalca(){
+        const resp = await filtroModeloCalca();
+        setProduto(resp);
+    }
+
+    async function filtroMoletom(){
+        const resp = await filtroModeloMoletom();
+        setProduto(resp);
+    }
+
+    async function filtroCasaco(){
+        const resp = await filtroModeloCasaco();
+        setProduto(resp);
+    }
+
+    async function filtroBermuda(){
+        const resp = await filtroModeloBermuda();
+        setProduto(resp);
+    }
+
+    async function filtroPolo(){
+        const resp = await filtroModeloPolo();
+        setProduto(resp);
+    }
+
+    async function filtroSueter(){
+        const resp = await filtroModeloSueter();
+        setProduto(resp);
+    }
+
+    async function filtroBlusa(){
+        const resp = await filtroModeloBlusa();
+        setProduto(resp);
+    }
 
     useEffect(()  => {
         carregarProduto();
@@ -206,26 +274,26 @@ export default function Index(){
 
                                     <div className='div-valoresTamanho'>
                                         <img src={LogoValorFiltro} alt='logo-valores-filtro' />
-                                        <p> XS / PP </p>
+                                        <p onClick={filtroPP} > XS / PP </p>
                                     </div>
                                     
                                     <div className='div-valoresTamanho'>
                                         <img src={LogoValorFiltro} alt='logo-valores-filtro' />
-                                        <p> S / P </p>
+                                        <p onClick={filtroP} > S / P </p>
                                     </div>
 
                                     <div className='div-valoresTamanho'>
                                         <img src={LogoValorFiltro} alt='logo-valores-filtro' />
-                                        <p> M / M</p>
+                                        <p onClick={filtroM} > M / M</p>
                                     </div>
                                     <div className='div-valoresTamanho'>
                                         <img src={LogoValorFiltro} alt='logo-valores-filtro' />
-                                        <p> L / G</p>
+                                        <p onClick={filtroG} > L / G</p>
                                     </div>
 
                                     <div className='div-valoresTamanho'>
                                         <img src={LogoValorFiltro} alt='logo-valores-filtro' />
-                                        <p> XL / GG</p>
+                                        <p onClick={filtroGG} > XL / GG</p>
                                     </div>
                                 </div>
 
@@ -235,28 +303,28 @@ export default function Index(){
                                     </div>
 
                                     <div className='div-roupasDisponiveis'>
-                                        <p>Blusas (4)</p>
+                                        <p onClick={filtroCamisa} >Camisa (4)</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p>Calças (6)</p>
+                                        <p onClick={filtroCalca} >Calças (6)</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p>Moletons (5)</p>
+                                        <p onClick={filtroMoletom} >Moletons (5)</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p>Casacos / Jaquetas (8)</p>
+                                        <p onClick={filtroCasaco} >Casacos / Jaquetas (8)</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p>Shorts e Bermudas (3)</p>
+                                        <p onClick={filtroBermuda} >Shorts e Bermudas (3)</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p>Polos (15)</p>
+                                        <p onClick={filtroPolo} >Polos (15)</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p>Suéters (11)</p>
+                                        <p onClick={filtroSueter} >Suéters (11)</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p>Blusas (4)</p>
+                                        <p onClick={filtroBlusa}>Blusas (4)</p>
                                     </div>
                                 </div>
                             </div>

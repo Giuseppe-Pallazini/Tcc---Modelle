@@ -58,3 +58,72 @@ export async function filtroMarcaPrada(){
     const resposta = await api.get('/api/filtro/marca/prada');
     return resposta.data;
 }
+
+//FILTRAR PRO TAMANHO
+
+export async function filtroTamanhoPP(){
+    const resposta = await api.get('/api/filtro/tamanho/pp');
+    return resposta.data;
+}
+
+export async function filtroTamanhoP(){
+    const resposta = await api.get('/api/filtro/tamanho/p');
+    return resposta.data;
+}
+
+export async function filtroTamanhoM(){
+    const resposta = await api.get('/api/filtro/tamanho/m');
+    return resposta.data;
+}
+
+export async function filtroTamanhoG(){
+    const resposta = await api.get('/api/filtro/tamanho/g');
+    return resposta.data;
+}
+
+export async function filtroTamanhoGG(){
+    const resposta = await api.get('/api/filtro/tamanho/gg');
+    return resposta.data;
+}
+
+//FILTRAR POR MODELOS
+
+export async function filtroModeloCamisa(){
+    const resposta = await api.get('/api/filtro/modelo/camisa');
+    return resposta.data;
+}
+
+export async function filtroModeloCalca(){
+    const resposta = await api.get('/api/filtro/modelo/calca');
+    return resposta.data;
+}
+
+export async function filtroModeloMoletom(){
+    const resposta = await api.get('/api/filtro/modelo/moletom');
+    return resposta.data;
+}
+
+export async function filtroModeloCasaco(){
+    const resposta = await api.get('/api/filtro/modelo/casaco');
+    return resposta.data;
+}
+
+export async function filtroModeloBermuda(){
+    const resposta = await api.get('/api/filtro/modelo/bermuda');
+    return resposta.data;
+}
+
+export async function filtroModeloPolo(){
+    const resposta = await api.get('/api/filtro/modelo/polo');
+    return resposta.data;
+}
+
+export async function filtroModeloSueter(){
+    const resposta = await api.get('/api/filtro/modelo/sueter');
+    return resposta.data;
+}
+
+export async function filtroModeloBlusa(){
+    const resposta = await api.get('/api/filtro/modelo/blusa');
+    return resposta.data;
+}

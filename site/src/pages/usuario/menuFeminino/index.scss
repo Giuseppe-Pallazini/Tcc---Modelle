@@ -1,6 +1,6 @@
 .main-menuUsuario{
     display: flex;
-    flex-direction: column;
+    flex-direction: column  ;
 
     .MenuMasculino-div-MeusPedidos-Titulo{
         display: flex;
@@ -62,13 +62,11 @@
         justify-content: space-around;
         flex-wrap: wrap;
         //border: 1px solid black;
-        width: 60em;
         height: 85em;
         max-height: 85em;
         max-width: 60em ;
         margin-top: 2em;
         margin-bottom: 1em;
-        margin-left: 2em;
     }
     .div-CardsProd{
         margin-top: 2em;
