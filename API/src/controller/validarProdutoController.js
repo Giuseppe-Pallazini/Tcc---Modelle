@@ -3,7 +3,7 @@ import { Router } from 'express';
 
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
 import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
-import { alterarProduto, buscarPorNome, listarProdutosFemininos, listarProdutosMasculino, listarTodosProdutos, removerProdutoImagensDiferentes, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
+import { alterarProduto, buscarMarcaGucci, buscarPorNome, listarProdutosFemininos, listarProdutosMasculino, listarTodosProdutos, removerProdutoImagensDiferentes, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
 import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId, ListarTodosTamanhosporIdUser  } from '../repository/mostrarprodutorepository.js'
 import { removerProdutoImagem, removerProdutoTamanho } from '../repository/removerProdutoRepository.js';
 import { validarProduto } from '../services/ProdutoValidacao.js';
@@ -188,12 +188,16 @@ server.get('/api/produto/:id', async (req, resp) => {
 }
 )
 
+//Filtragem Cabeçalho user
+
 server.get('/api/filtro/masculino', async (req, resp) => {
     try {
         const x = await listarProdutosMasculino();
         resp.send(x);
     } catch (err) {
-        
+        resp.status(400).send({
+            erro: err.message
+        })
     }
 })
 
@@ -202,7 +206,9 @@ server.get('/api/filtro/feminino', async (req, resp) => {
         const x = await listarProdutosFemininos();
         resp.send(x);
     } catch (err) {
-        
+        resp.status(400).send({
+            erro: err.message
+        })
     }
 })
 
