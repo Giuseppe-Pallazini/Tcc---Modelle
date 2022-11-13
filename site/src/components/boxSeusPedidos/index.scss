@@ -46,16 +46,20 @@
         font-size: 1em;
         margin-top: 1em;
         line-height: .4em;
-        font-family: 'caviar';
+        font-family: 'caviar-bold';
     }
     .div-informacoesda-cl1 p{
         margin-left: .5em;
+        font-family: 'caviar';
     }
     .div-informacoesda-cl2{
-        font-family: 'caviar';
+        font-family: 'caviar-bold';
         font-size: 1em;
         margin-top: 1em;
         width: 10em;
+    }
+    .div-informacoesda-cl2 span{
+        font-family: 'caviar';
     }
 
 
@@ -67,11 +71,12 @@
         font-size: 1em;
         margin-top: 1em;
         margin-right: 1em;
-        font-family: 'caviar';
+        font-family: 'caviar-bold';
     }
     .div-informacoesda-cl3 span{
         margin-top: .2em;
         text-align: start;
+        font-family: 'caviar';
         width: 14em;
     }
     .div-cl4-infos01{
@@ -82,6 +87,9 @@
         display: flex;
         flex-direction: row;
         font-size: 1em;
+        font-family: 'caviar-bold';
+    }
+    .div-informacoesda-cl4 p{
         font-family: 'caviar';
     }
 
@@ -110,7 +118,7 @@
         margin-top: .2em;
         font-size: 1em;
         font-weight: 700;
-        font-family: 'caviar';
+        font-family: 'caviar-bold';
     }
     .faixaPreta-InformacoesDetalhes-cl1 span{
         font-weight: 100;
@@ -127,7 +135,7 @@
         font-size: 1em;
         font-family: 'caviar';
     }
-    .faixaPreta-InformacoesDetalhes-cl2{
+    .faixaPreta-InformacoesDetalhes-cl2 span{
         font-weight: 100;
     }
 
@@ -183,7 +191,7 @@
     }
     .infoProd-Descrições h3{
         font-size: 1em;
-        font-family: 'caviar';
+        font-family: 'caviar-bold';
         font-weight: 100;
         width: 10em;
     }
@@ -196,7 +204,7 @@
     }
     .infoProd-desc{
         font-size: .8em;
-        font-family: 'caviar';
+        font-family: 'caviar-bold';
         font-weight: 500;
         opacity: 90%;
         margin-top: .2em;
@@ -229,8 +237,14 @@
         border-radius: 1em;
         height: 3em;
         font-size: .8em;
+        background-color: #fff;
         font-family: 'caivar';
         border: 2px solid black;
+    }
+    .infoPed-btnFeedback button:hover{
+        background-color: #000;
+        transition: .8s;
+        color: #fff;
     }
 
     .infoPed-btnComprarNovamente{
@@ -243,7 +257,13 @@
         height: 3em;
         font-size: .8em;
         font-family: 'caivar';
+        background-color: #fff;
         border: 2px solid black;
+    }
+    .infoPed-btnComprarNovamente button:hover{
+        background-color: #000;
+        transition: .8s;
+        color: #fff;
     }
 
     .infoPed-ConfirmaçãoPed{

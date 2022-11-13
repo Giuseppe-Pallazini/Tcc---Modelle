@@ -6,28 +6,43 @@
     } 
 
     img{
-        margin-left: 30em;
+        margin-top: 2em;
+    }
+
+    img:hover{
+        transform: scale(1.05);
+        transition: 1s;
     }
     .img-01{
         transition: transform .5s ease; 
-    }
-    .img-01:hover{
-        transform: scale(1.2);
     }
     .img-02{
         width: 17em;
         height: 28em;
         transition: transform .5s ease; 
     }
-    .img-02:hover{
-        transform: scale(1.1);
-    }
     .img-03{
         width: 18em;
         height: 28em;
         transition: transform .5s ease; 
     }
-    .img-03:hover{
-        transform: scale(1.2);
+
+    .div-textoCarrousel{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: -2em;
+    }
+    .div-textoCarrousel h1{
+        font-family: 'caviar-bold';
+        font-size: 2em;
+        text-align: center;
+        width: 10em;
+    }
+    .div-textoCarrousel{
+        font-family: 'caviar-bold';
+        font-size: 1em;
+        text-align: center;
     }
 }

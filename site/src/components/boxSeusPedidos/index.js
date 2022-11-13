@@ -18,7 +18,7 @@ export default function Index(){
                 
                 <div className='div-informaçõesdoPedido'>
                     <div className='div-cl1-infos01'>
-                        <div className='div-informacoesda-cl1' >Pedido<p>  01</p></div>
+                        <div className='div-informacoesda-cl1' >Pedido<p>01</p></div>
                         <div className='div-informacoesda-cl1' >Enviado por:<p>  Modelle</p></div>
                         <div className='div-informacoesda-cl1' >Forma de pagamento<p> cartão</p></div>
                     </div>

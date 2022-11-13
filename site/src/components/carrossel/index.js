@@ -29,21 +29,38 @@ export default function Index() {
     };
     return (
         <main className='main-carrossel'>
+
             <Carousel 
               autoPlaySpeed={1500}
               infinite={true} responsive={responsive}>
-             
                 <div>
-                    <img className='img-01' src={Imagem1} alt='imagem-carrossel'/>
-                    <h1> Oi </h1>
+                    <div className='div-textoCarrousel'>
+                        <h1>EXPERIMENTE A MODELLE</h1>
+                        <p>e você? Está esperando o que?</p>
+
+                        <img className='img-01' src={Imagem1} alt='imagem-carrossel'/>
+                    </div>
+                   
                 </div>
             
                 <div>
-                    <img className='img-02' src={Imagem2} alt='imagem-carrossel'/>
+                    <div className='div-textoCarrousel'>
+                        <h1>EXPERIMENTE A MODELLE</h1>
+                        <p>e você? Está esperando o que?</p>
+
+                        <img className='img-02' src={Imagem2} alt='imagem-carrossel'/>
+                    </div>
+                    
                 </div>
           
                 <div>
-                    <img className='img-03' src={Imagem3} alt='imagem-carrossel'/>
+                    <div className='div-textoCarrousel'>
+                        <h1>EXPERIMENTE A MODELLE</h1>
+                        <p>e você? Está esperando o que?</p>
+
+                         <img className='img-03' src={Imagem3} alt='imagem-carrossel'/>
+                    </div>
+                   
                 </div>
             </Carousel>;
         </main>
