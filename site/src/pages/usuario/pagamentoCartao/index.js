@@ -11,8 +11,6 @@ import CabecalhoUser from '../../../components/cabecalhouser/index.js'
 import RodapeUser from '../../../components/Rodapé/index.js'
 import LogoCartao from '../../../assets/image/creditcardwithlines_121985.svg'
 
-
-
 import Storage from 'local-storage'
 import { salvarNovoPedido } from '../../../api/pedidoAPI';
 
@@ -71,9 +69,12 @@ export default function Index() {
     async function salvarPedido() {
 
         let produtos = Storage('carrinho');
-        let id = Storage('admin-logado').id;
-
-        let pedido =
+        let id = '';
+        let pedido = ''
+        
+        if (Storage('usuario-logado')) {
+            id = Storage('usuario-logado').id
+            pedido =
         {
             cupom: cupom,
             frete: frete,
@@ -93,6 +94,32 @@ export default function Index() {
                 parcelas: parcela
             },
             produtos: produtos
+        }
+        }
+
+        else if (Storage('admin-logado')) {
+            id = Storage('admin-logado').id;
+            pedido =
+        {
+            cupom: cupom,
+            frete: frete,
+            tipoPagamento: "Cartão",
+            endereco: endereco,
+            numerocasa: numerocasa,
+            cidade: cidade,
+            cep: cep,
+            complemento: complemento,
+            cartao:
+            {
+                nome: nome,
+                numero: numero,
+                vencimento: vencimento,
+                codSeguranca: cvv,
+                formaPagamento: tipo,
+                parcelas: parcela
+            },
+            produtos: produtos
+        }
         }
 
         const r = await salvarNovoPedido(id, pedido)
@@ -242,7 +269,7 @@ export default function Index() {
 
                                 <div className='pagamento-infoCartaol2'>
                                     <div className='pagamento-infoCartao-numero'>
-                                        Numero do cartão <input type='text' value={numero} onChange={e => setNumero(e.target.value)} />
+                                        Numero do cartão <IMaskInput mask='0000 0000 0000 0000  ' type='text' value={numero} onChange={e => setNumero(e.target.value)} />
                                     </div>
 
                                     <div className='cupom'>

@@ -86,9 +86,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                         <select value={tamProduto}>
                             <option>
                                 {produto.tamanho.map(item =>
-                                    <div className='detalhes-info-tamanhos-icon'>
-                                        <p className='detalhes-info-tamanhos-txt' > {item} </p>
-                                    </div>
+                                        <p> {item} </p>
                                 )}
                             </option>
 

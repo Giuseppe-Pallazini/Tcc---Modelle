@@ -45,7 +45,7 @@ export default function Index() {
                 temp.push({
                     produto: p,
                     qtd: produto.qtd,
-                    tam: produto.Tamanhos
+                    tam: produto.tamanho
                 })
             }
             setItens(temp)
