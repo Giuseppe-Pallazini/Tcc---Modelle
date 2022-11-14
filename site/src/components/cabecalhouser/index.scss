@@ -18,7 +18,7 @@
         font-weight: 400;
         font-size: 2.5em;
         width: 3em;
-        margin-top: 0.5em;
+        margin-top: 0.8em;
         cursor: pointer;
         user-select: none;
     }       
@@ -29,9 +29,6 @@
     .cab-user-logo{
         display: flex;
         justify-content: center;
-    }
-    .cab-user-divisoria{
-        width: 18em;
     }
     .cab-topic{
         width: 15em;
@@ -103,6 +100,7 @@
         }
         .cab-user-lista-img{
             height: 1.3em;
+            cursor: pointer;
             margin-right: 1em;
             margin-top: 1.6em;
         }
@@ -149,19 +147,29 @@
         }
     }
 
-    @media(max-width: 414px){
-        .cab-user-topicos{
-
+    .div-iconeSair{
+        margin-top: 1.5em;
+        margin-right: 1em;
+        cursor: pointer;
+        .icone-sair{   
+            color: #fff;
+            width: 22px;
         }
+    }
+
+    @media(max-width: 414px){
         .cab-user{
-            width: 100%;
+
+        .cab-user-txt{
+            width: 2em ;
         }
         .cab-user-txt-1{
-            font-size: .8em;
+            font-size: 5em;
         }
-        .cab-user-txt{
-            width: 5em;
-            height: 2em;
+
+        .cab-user-topicos{
+            margin-left: .5em;
+        }
         }
     }
 }

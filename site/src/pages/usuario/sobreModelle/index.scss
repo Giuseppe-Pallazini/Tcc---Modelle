@@ -1,6 +1,23 @@
 .main-sobreModelle{
     display: flex;
     flex-direction: column;
+    .div-titulo-btn{
+        display: flex;
+        flex-direction: row; 
+    }
+    .condições-div-botão{
+        margin-top: 1em;   
+        margin-left: 2em;
+    }
+    .condições-botão-voltar{
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        font-size: 1em;
+        font-family: 'caviar';
+        width: 6em;
+        height: 2em;
+    }
     .sobreModelle-section-principal{
         display: flex;
         flex-direction: column;

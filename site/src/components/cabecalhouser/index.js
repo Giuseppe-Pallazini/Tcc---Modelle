@@ -5,6 +5,7 @@ import Imagem2 from '../../assets/image/logo-lupa.png'
 import Imagem3 from '../../assets/image/bolsa-lista-desejo.png'
 import Imagem4 from '../../assets/image/carrinho.svg'
 import Imagem5 from '../../assets/image/user.png'
+import ImagemSair from '../../assets/image/logo-sair.png'
 import {useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
 
@@ -89,8 +90,8 @@ export default function Index(){
                         <img className='cab-user-img' src={Imagem5} alt='' />
                     </div>
 
-                    <div onClick={sair}>
-                        <p> Sair </p>
+                    <div onClick={sair} className='div-iconeSair' >
+                        <img src={ImagemSair} alt='logo-sair' className='icone-sair' />
                     </div>
                 </div>
             </nav>
