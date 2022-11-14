@@ -11,9 +11,14 @@ export async function inserirPedido(novoPedido) {
             tp_frete,
             vl_frete,
             ds_status,
-            tp_pagamento
+            tp_pagamento,
+            ds_endereco,			
+            nr_numero,		
+            ds_cidade,		
+            nr_cep,		
+            ds_complemento	
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `
     const [info] = await con.query(comando, [
         novoPedido.idUsuario,

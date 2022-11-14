@@ -89,7 +89,6 @@ export default function Index() {
             toast.dark('Pedido inserido com sucesso!');
             Storage('carrinho', []);
             navigate('/');
-
         }
 
     
