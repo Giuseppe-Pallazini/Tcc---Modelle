@@ -16,14 +16,18 @@ export async function listarTamanhos() {
 
   export async function buscarTamanhoPorId(id) {
     const comando = `
-	  select id_tamanho           as id,
-             nm_tamanho         as tamanhos
-        from tb_tamanho
-       where id_tamanho = ?; 
+	  select tb_produto.id_produto,
+        nm_tamanho
+        from tb_produto
+        inner join tb_produto_tamanho
+        on tb_produto_tamanho.id_produto = tb_produto.id_produto
+        inner join tb_tamanho
+        on tb_tamanho.id_tamanho = tb_produto_tamanho.id_tamanho
+        where tb_produto_tamanho.id_produto like ? 
       `
 
-    const [linhas] = await con.query(comando, [id]);
-    return linhas[0];
+    const linhas = await con.query(comando, [id]);
+    return linhas;
   }
 
   export async function salvarProdutoTamanho(idProduto, idTamanho) {

@@ -1,154 +1,221 @@
-create database ModelleDB;
-
 use ModelleDB;
 
--- 1
-create table tb_usuario (
-id_usuario 			int primary key auto_increment,
-nm_usuario 			varchar(100),
-dt_nascimento 		date,
-nr_telefone 		varchar(50),
-ds_email 			varchar(50),
-ds_senha 			varchar(50)
-);
 
--- 2
-create table tb_login (
-id_login   int primary key auto_increment,
-id_usuario int,
-ds_email   varchar(100),
-ds_senha   varchar(100),
-foreign key (id_usuario) references tb_usuario (id_usuario)
-);
+insert into tb_login (ds_email, ds_senha)
+	values('admin','1234');
+insert into tb_login (ds_email, ds_senha)
+	values('usuario','1234');
+--
 
 
--- ---------------------------------------------------------------------------------------------------------
--- 3
-create table tb_marca (
-id_marca		int primary key auto_increment,
-nm_marca		varchar(200)
-);
+select
+		id_login 			id,
+		ds_email			email,
+        ds_senha            senha
+from    tb_login
+where   ds_email = 			'admin'
+and 	ds_senha = 			'1234';
+--
 
--- 4
-create table tb_tamanho (
-id_tamanho		int primary key auto_increment,
-nm_tamanho		varchar(200)
-);
+-- 21
+select 
+	id_produto				id,
+	nm_produto				nome,
+    nm_prod_complemento 	Complemento,
+    vl_preco				Preço,
+    ds_composicao			Composição,
+    ds_detalhes				Detalhes,
+    vl_juros				Juros,
+    vl_parcela				Parcela,
+    vl_disponivel			Disponibilidade,
+    ds_cor					Cor,
+    id_marca				Id_Marca,
+    id_modelo				Id_Modelo,
+    id_categoria			Id_Categoria
+from tb_produto;
 
-
--- 5
-create table tb_modelo (
-id_modelo 		int primary key auto_increment,
-nm_modelo		varchar(200)
-);
-
-
--- 6
-create table tb_categoria (
-id_categoria	int primary key auto_increment,
-nm_categoria	varchar(200)
-);
-
-
--- 7
-create table tb_produto (
-id_produto 					int primary key auto_increment,
-nm_produto 					varchar(100),
-nm_prod_complemento 		varchar(100),
-vl_preco 					decimal(15,2),
-ds_composicao 				varchar(400),
-ds_detalhes 				varchar(400),
-vl_juros					int,
-vl_parcela					int,
-vl_disponivel				int,
-ds_cor						varchar(100),
-id_marca					int,
-id_modelo					int,
-id_categoria				int
-);
-
--- 9
-create table tb_produto_tamanho (
-id_produto_tamanho 		int primary key auto_increment,
-id_tamanho				int,
-id_produto				int,
-foreign key (id_tamanho) references tb_tamanho (id_tamanho),
-foreign key (id_produto) references tb_produto (id_produto)
-);
+select * from tb_produto_tamanho;
+select * from tb_modelo;
+select * from tb_categoria;
+select * from tb_produto_imagem;
 
 
---    
 
-CREATE TABLE tb_produto_imagem (
-    id_produto_imagem INT PRIMARY KEY AUTO_INCREMENT,
-    ds_imagem VARCHAR(500),
-    id_produto INT,
-    FOREIGN KEY (id_produto)
-        REFERENCES tb_produto (id_produto)
-);
 
-create table tb_produto_feedback(
-	id_produto_feedback int primary key auto_increment,
-	id_usuario          int,
-    id_produto			int,
-    ds_mensagem			varchar(100),
-    foreign key (id_produto)	references tb_produto (id_produto),
-    foreign key (id_usuario)	references tb_usuario (id_usuario)
-);
+-- insert categrias
 
-create table tb_lista_desejos(
-	id_usuario_favorito	int primary key auto_increment,
-    id_usuario			int,
-    id_produto			int,
-	foreign key (id_produto)	references tb_produto (id_produto),
-    foreign key (id_usuario)	references tb_usuario (id_usuario)
-);
+insert into tb_categoria (nm_categoria)
+		values ('Feminino');
+        
+insert into tb_categoria (nm_categoria)
+		values ('Masculino');
+        
+insert into tb_categoria (nm_categoria)
+		values('Novidades');
 
-create table tb_cupom(
-	id_cupom			int primary key auto_increment,
-    cod_cupom			varchar(10),
-    vl_cupom			decimal(15,2),
-    qtd_disponivel		int
-);
 
-create table tb_pedido(
-	id_pedido			int primary key auto_increment,
-    id_usuario			int,
-    id_cupom			int,
-    dt_pedido           date,
-    cod_nota_fiscal     varchar(100),
-    tp_frete			varchar(20),
-    ds_endereco			varchar(60),
-    nr_numero			int,
-    ds_cidade			varchar(40),
-    nr_cep				int,
-    ds_complemento		varchar(50),
-    vl_frete			decimal(15,2),
-    qtd_produto			int,
-    ds_status			varchar(25),
-    tp_pagamento		varchar(20),
-	foreign key (id_usuario)	references tb_usuario (id_usuario),
-	foreign key (id_cupom)	references tb_cupom	 (id_cupom)
-);
+-- insert modelos
 
-create table tb_pedido_item(
-	id_produto_item		int primary key auto_increment,
-	id_pedido			int,
-    id_produto			int,
-    qtd_produto			int,
-    vl_total			decimal(15,2),
+insert into tb_modelo (nm_modelo)
+            values     ('Camisa');
+insert into tb_modelo (nm_modelo)
+            values     ('Calça');
+insert into tb_modelo (nm_modelo)
+            values     ('Bermuda');
+insert into tb_modelo (nm_modelo)
+            values     ('Blusa');
+insert into tb_modelo (nm_modelo)
+            values     ('Suéter');
+insert into tb_modelo (nm_modelo)
+            values     ('Relogio');
+insert into tb_modelo (nm_modelo)
+            values     ('Polo');
+insert into tb_modelo (nm_modelo)
+            values     ('Moletom');
+insert into tb_modelo (nm_modelo)
+            values     ('Casaco');
+
+
+-- insert Tamanhos
+insert into tb_tamanho (nm_tamanho)
+            values      ('PP');
+insert into tb_tamanho (nm_tamanho)
+            values      ('P');
+insert into tb_tamanho (nm_tamanho)
+            values      ('M');
+insert into tb_tamanho (nm_tamanho)
+            values      ('G');
+insert into tb_tamanho (nm_tamanho)
+            values      ('GG');
+
+
+-- insert Marcas
+
+insert into tb_marca (nm_marca)
+            values    ('Gucci');
+
+insert into tb_marca (nm_marca)
+            values   ('Balenciaga');
+
+insert into tb_marca (nm_marca)
+            values    ('Dolce & Gabbana');
+
+insert into tb_marca (nm_marca)
+            values    ('Burberry');
+
+insert into tb_marca (nm_marca)
+            values   ('Morley');
+
+insert into tb_marca (nm_marca)
+            values   ('Kenzo');
+
+insert into tb_marca (nm_marca)
+            values    ('Modelle');
+
+insert into tb_marca (nm_marca)
+            values   ('Zegna');
+
+insert into tb_marca (nm_marca)
+            values   ('Louis Vuitton');
+
+insert into tb_marca (nm_marca)
+            values   ('Prada');
+
+insert into tb_marca (nm_marca)
+            values    ('Versace');
+
+
+-- Inner Join da tabela de cadastro
+
+select tb_produto.id_produto, tb_produto.nm_produto, tb_produto.nm_prod_complemento, tb_produto.vl_preco, tb_produto.ds_cor, tb_modelo.nm_modelo
+		, tb_categoria.nm_categoria, tb_tamanho.nm_tamanho, tb_marca.nm_marca
+from tb_produto
+
+inner join tb_modelo
+on tb_modelo.id_modelo = tb_produto.id_produto
+inner join tb_categoria
+on tb_categoria.id_categoria = tb_produto.id_produto
+inner join tb_tamanho
+on tb_tamanho.id_tamanho = tb_produto.id_produto
+inner join tb_marca
+on tb_marca.id_marca = tb_produto.id_produto;
+
+-- -------------------------
+
+
+
+select tb_produto.id_produto,
+       nm_produto,
+       nm_prod_complemento,
+       vl_preco,
+       ds_cor,
+       nm_modelo,
+       nm_categoria,
+       id_tamanho,
+       nm_marca
+from tb_produto
+
+inner join tb_modelo
+on tb_modelo.id_modelo = tb_produto.id_produto
+
+inner join tb_categoria
+on tb_categoria.id_categoria = tb_produto.id_produto
+inner join tb_produto_tamanho
+on tb_produto_tamanho.id_produto = tb_produto.id_produto
+inner join tb_marca
+on tb_marca.id_marca = tb_produto.id_produto
+
+    group by tb_produto.id_produto,
+       nm_produto,
+       nm_prod_complemento,
+       vl_preco,
+       ds_cor,
+       nm_modelo,
+       id_tamanho,
+       nm_marca,
+	   nm_modelo,
+       nm_categoria
+;
+
+
+-- inner Join do gerenciar Produtos
+
+select tb_produto.id_produto as produto,
+    nm_produto as nome,
+    nm_prod_complemento as complementoProduto,
+    vl_preco as preco,
+    ds_cor as cor,
+    nm_modelo as idModelo,
+    nm_categoria as idCategoria,
+    count(nm_tamanho) as idTamanho,
+    nm_marca as idMarca,
+    vl_disponivel as disponibilidade,
+    ds_imagem
+        from tb_produto
+
+    inner join tb_modelo
+    on tb_modelo.id_modelo = tb_produto.id_modelo
+    inner join tb_categoria
+    on tb_categoria.id_categoria = tb_produto.id_categoria
+    inner join tb_produto_tamanho
+    on tb_produto_tamanho.id_produto = tb_produto.id_produto
+    inner join tb_tamanho
+    on tb_tamanho.id_tamanho = tb_produto_tamanho.id_tamanho
     
-    foreign key (id_pedido)		references tb_pedido(id_pedido),
-    foreign key (id_produto)	references tb_produto(id_produto)
-);
+    inner join tb_produto_imagem
+    on tb_produto_imagem.id_produto = tb_produto.id_produto
 
-create table tb_pagamento_cartao(
-	id_pagamento_cartao	int primary key auto_increment,
-    id_produto			int,
-    nm_titular			varchar(200),
-	nr_cartao			varchar(200),
-    dt_vencimento		varchar(200),
-    cod_seguranca		int,
-    nr_parcelas			varchar(200),
-    foreign key (id_produto)	references tb_produto(id_produto)
-);
+    inner join tb_marca
+    on tb_marca.id_marca = tb_produto.id_marca
+
+    group by tb_produto.id_produto,
+        nm_produto,
+        nm_prod_complemento,
+        vl_preco,
+        ds_cor,
+        nm_modelo,
+        nm_categoria,
+        nm_marca,
+        vl_disponivel
+;
+

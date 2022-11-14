@@ -3,6 +3,8 @@ use ModelleDB;
 
 insert into tb_login (ds_email, ds_senha)
 	values('admin','1234');
+insert into tb_login (ds_email, ds_senha)
+	values('usuario','1234');
 --
 
 
@@ -48,6 +50,10 @@ insert into tb_categoria (nm_categoria)
 insert into tb_categoria (nm_categoria)
 		values ('Masculino');
         
+insert into tb_categoria (nm_categoria)
+		values('Novidades');
+
+
 -- insert modelos
 
 insert into tb_modelo (nm_modelo)
@@ -213,5 +219,3 @@ select tb_produto.id_produto as produto,
         vl_disponivel
 ;
 
-
-select * from tb_usuario;
