@@ -23,7 +23,7 @@ from    tb_login
 where   ds_email = 			'admin'
 and 	ds_senha = 			'1234';
 --
-
+select * from tb_usuario;
 -- 21
 select 
 	id_produto				id,
@@ -225,4 +225,3 @@ select tb_produto.id_produto as produto,
         nm_marca,
         vl_disponivel
 ;
-
