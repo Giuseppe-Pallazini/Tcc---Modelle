@@ -2,17 +2,15 @@ import './index.scss';
 import '../../../assets/common/index.scss'
 import { useNavigate } from 'react-router-dom';
 import { buscarProdutoPorId, buscarImagem } from '../../../api/produtoAPI';
+import { useEffect, useState, useRef } from 'react'
+import { IMaskInput } from 'react-imask'
+import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom'
 
 import CabecalhoUser from '../../../components/cabecalhouser/index.js'
 import RodapeUser from '../../../components/Rodapé/index.js'
-
 import LogoCartao from '../../../assets/image/creditcardwithlines_121985.svg'
-import LogoPix from '../../../assets/image/icone-pix.png'
 
-import { useEffect, useState, useRef } from 'react'
-import { IMaskInput } from 'react-imask'
-import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify';
 
 
 import Storage from 'local-storage'
@@ -20,6 +18,9 @@ import { salvarNovoPedido } from '../../../api/pedidoAPI';
 
 export default function Index() {
     const [itens, setItens] = useState([])
+
+    const [mostrarInfosPag, setMostrarInfosPag] = useState(false)
+    const showOrHide = () => setMostrarInfosPag(true)
 
     const [cupom, setCupom] = useState('')
     const [frete, setFrete] = useState('')
@@ -30,8 +31,6 @@ export default function Index() {
     const [tipo, setTipo] = useState('')
     const [parcela, setParcela] = useState('')
 
-    const [mostrarInfosPag, setMostrarInfosPag] = useState(false)
-    const showOrHide = () => setMostrarInfosPag(true)
 
     const navigate = useNavigate();
     function abrirDetalhes(id) {
@@ -64,6 +63,36 @@ export default function Index() {
 
     }
 
+    async function salvarPedido() {
+
+            let produtos = Storage('carrinho');
+            let id = Storage('admin-logado').id;
+
+            let pedido =
+            {
+                cupom: cupom,
+                frete: frete,
+                tipoPagamento: "Cartão",
+                cartao:
+                {
+                    nome: nome,
+                    numero: numero,
+                    vencimento: vencimento,
+                    codSeguranca: cvv,
+                    formaPagamento: tipo,
+                    parcelas: parcela
+                },
+                produtos: produtos
+            }
+
+            const r = await salvarNovoPedido(id, pedido)
+            toast.dark('Pedido inserido com sucesso!');
+            Storage('carrinho', []);
+            navigate('/');
+
+        }
+
+    
     function calcularTotal() {
         let total = 0;
         for (let item of itens) {
@@ -75,35 +104,6 @@ export default function Index() {
 
     function mostrarImagem(imagem) {
         return buscarImagem(imagem)
-    }
-
-    async function salvarPedido() {
-
-        let produtos = Storage('carrinho');
-        let id = Storage('cliente-logado').id;
-
-        let pedido =
-        {
-            cupom: cupom,
-            frete: frete,
-            tipoPagamento: "Cartão",
-            cartao:
-            {
-                nome: nome,
-                numero: numero,
-                vencimento: vencimento,
-                codSeguranca: cvv,
-                formaPagamento: tipo,
-                parcelas: parcela
-            },
-            produtos: produtos
-        }
-
-        const r = await salvarNovoPedido(id, pedido)
-        toast.dark('Pedido inserido com sucesso!');
-        Storage('carrinho', []);
-        navigate('/');
-
     }
 
     useEffect(() => {
@@ -178,7 +178,7 @@ export default function Index() {
                                         <div className='pagamento-div-SubtotalPed'>
                                             Subtotal: <p className='pagamento-p-SubtotalPed'>R$ <span>{item.qtd * item.produto.info.preco}</span></p>
                                         </div>
-                           
+
 
                                         <div className='pagamento-div-EntregaPed'>
                                             Entrega: <p className='pagamento-p-EntregaPed'>R$ <span>0,00</span> </p>
@@ -200,7 +200,7 @@ export default function Index() {
                                 Total: <p className='pagamento-p-EntregaPed'>R$ <span>{calcularTotal()}</span> </p>
                             </div>
                         </div>
-                        <Link to="/user/seusPedidos" className='pagamento-button-finalizarPed'>Finalizar Compra </Link>
+                        <button className='pagamento-button-finalizarPed' onClick={salvarPedido}> Finalizar Compra </button>
                     </section>
                 </section>
 
@@ -219,35 +219,37 @@ export default function Index() {
                                 <div className='div-logo-cartãoPag'>
                                     <img src={LogoCartao} alt='logo-catão' />
                                 </div>
-                                <div className='div-logo-PixPag'>
-                                    <img src={LogoPix} alt='logo-pix' />
-                                </div>
+
                             </div>
                             <div onClick={LogoCartao} className='pagamento-formulario-preech' >
                                 <div className='pagamento-infoCartaol1'>
                                     <div className='pagamento-infoCartao-nome'>
-                                        Nome do Titular <input type='text' placeholder='Ex: Giuseppe Pallazini' />
+                                        Nome do Titular <input type='text' value={nome} onChange={e => setNome(e.target.value)} />
                                     </div>
 
                                     <div className='pagamento-infoCartao-Cvv'>
-                                        Cvv <input type='text' placeholder='Ex: 545' />
+                                        Cvv <input type='text' value={cvv} onChange={e => setCvv(e.target.value)} />
                                     </div>
                                 </div>
 
                                 <div className='pagamento-infoCartaol2'>
                                     <div className='pagamento-infoCartao-numero'>
-                                        Numero do cartão <input type='text' placeholder='Ex: 1111 1111 1111 1111' />
+                                        Numero do cartão <input type='text' value={numero} onChange={e => setNumero(e.target.value)} />
+                                    </div>
+
+                                    <div className='cupom'>
+                                        Cupom <input type='text' value={cupom} onChange={e => setCupom(e.target.value)} />
                                     </div>
 
                                     <div className='pagamento-infoCartao-validade'>
-                                        Vaidade <input type='text' placeholder='Ex: 10/10' />
+                                        Vencimento <input type='text' value={vencimento} onChange={e => setVencimento(e.target.value)} />
                                     </div>
                                 </div>
 
                                 <div className='pagamento-infoCartaol3'>
                                     <div className='div-pagamento-tpCartão'>
                                         Tipo do Cartão
-                                        <select name='Tipo do cartão' className='pagamento-select-tpCartão'>
+                                        <select name='Tipo do cartão' className='pagamento-select-tpCartão' value={tipo} onChange={e => setTipo(e.target.value)}>
                                             <option className='pagamento-option-tpCartão'> Débito </option>
                                             <option className='pagamento-option-tpCartão'> Crédito </option>
                                         </select>
@@ -255,7 +257,7 @@ export default function Index() {
 
                                     <div className='div-pagamento-QtdParcelas'>
                                         Parcelas
-                                        <select name='Quantidade de parcela' className='pagamento-select-qtdParcela'>
+                                        <select name='Quantidade de parcela' className='pagamento-select-qtdParcela' value={parcela} onChange={e => setParcela(e.target.value)}>
                                             <option className='pagamento-option-qtdParcela'> 1x sem juros </option>
                                             <option className='pagamento-option-qtdParcela'> 2x sem juros</option>
                                             <option className='pagamento-option-qtdParcela'> 3x sem juros</option>
