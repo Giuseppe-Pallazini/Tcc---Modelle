@@ -29,6 +29,11 @@ export default function Index() {
     const [vencimento, setVencimento] = useState('')
     const [cvv, setCvv] = useState('')
     const [tipo, setTipo] = useState('')
+    const [endereco, setEndereco] = useState('')
+    const [numerocasa, setNumeroCasa] = useState('')
+    const [cidade, setCidade] = useState('')
+    const [cep, setCep] = useState('')
+    const [complemento, setComplemento] = useState('')
     const [parcela, setParcela] = useState('')
 
 
@@ -65,33 +70,40 @@ export default function Index() {
 
     async function salvarPedido() {
 
-            let produtos = Storage('carrinho');
-            let id = Storage('admin-logado').id;
+        let produtos = Storage('carrinho');
+        let id = Storage('admin-logado').id;
 
-            let pedido =
+        let pedido =
+        {
+            cupom: cupom,
+            frete: frete,
+            tipoPagamento: "Cartão",
+            endereco: endereco,
+            numerocasa: numerocasa,
+            cidade: cidade,
+            cep: cep,
+            complemento: complemento,
+            cartao:
             {
-                cupom: cupom,
-                frete: frete,
-                tipoPagamento: "Cartão",
-                cartao:
-                {
-                    nome: nome,
-                    numero: numero,
-                    vencimento: vencimento,
-                    codSeguranca: cvv,
-                    formaPagamento: tipo,
-                    parcelas: parcela
-                },
-                produtos: produtos
-            }
-
-            const r = await salvarNovoPedido(id, pedido)
-            toast.dark('Pedido inserido com sucesso!');
-            Storage('carrinho', []);
-            navigate('/');
+                nome: nome,
+                numero: numero,
+                vencimento: vencimento,
+                codSeguranca: cvv,
+                formaPagamento: tipo,
+                parcelas: parcela
+            },
+            produtos: produtos
         }
 
-    
+        const r = await salvarNovoPedido(id, pedido)
+        toast.dark('Pedido inserido com sucesso!');
+        Storage('carrinho', []);
+        navigate('/');
+    }
+
+
+
+
     function calcularTotal() {
         let total = 0;
         for (let item of itens) {
@@ -124,33 +136,30 @@ export default function Index() {
                             <div className='pagamento-PreenchEnd-l1'>
                                 <div>
                                     <p className='pagamento-Preench-rua-p'> Rua: </p>
-                                    <input type='text' placeholder='Avenida Paulista' className='pagamento-Preench-rua-input' />
+                                    <input type='text' className='pagamento-Preench-rua-input' value={endereco} onChange={e => setEndereco(e.target.value)} />
                                 </div>
 
                                 <div className='pagamento-Preench-numero'>
                                     <p className='pagamento-Preench-numero-p'>N°</p>
-                                    <input type='text' placeholder='000' className='pagamento-Preench-numero-input' />
+                                    <input type='text' className='pagamento-Preench-numero-input' value={numerocasa} onChange={e => setNumeroCasa(e.target.value)} />
                                 </div>
                             </div>
                             <div className='pagamento-PreenchEnd-l2'>
                                 <div className='pagamento-div-cidade'>
                                     <p className='pagamento-Preench-cidade-p'>Cidade:</p>
-                                    <input type='text' placeholder='São Paulo' className='pagamento-Preench-cidade-input' />
+                                    <input type='text' className='pagamento-Preench-cidade-input' value={cidade} onChange={e => setCidade(e.target.value)} />
                                 </div>
-                                <div>
-                                    <p className='pagamento-Preench-bairro-p'>Bairro:</p>
-                                    <input type='text' placeholder='Veleiros' className='pagamento-Preench-bairro-input' />
-                                </div>
+
                                 <div className='pagamento-div-cep'>
                                     <p className='pagamento-Preench-cep-p'>CEP:</p>
-                                    <IMaskInput mask='00000-000' type='text' placeholder='00000-111' className='pagamento-Preench-cep-input' />
+                                    <IMaskInput mask='00000-000' type='text' className='pagamento-Preench-cep-input' value={cep} onChange={e => setCep(e.target.value)} />
                                 </div>
                             </div>
 
                             <div className='pagamento-PreenchEnd-l3'>
                                 <div>
                                     <p className='pagamento-Preench-complem-p'>Complemento:</p>
-                                    <input type='text' placeholder='Apt 18' className='pagamento-Preench-comple-input' />
+                                    <input type='text' placeholder='Apt 18' className='pagamento-Preench-comple-input' value={complemento} onChange={e => setComplemento(e.target.value)} />
                                 </div>
                             </div>
                         </div>
