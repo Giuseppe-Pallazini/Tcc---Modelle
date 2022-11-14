@@ -6,7 +6,14 @@ insert into tb_login (ds_email, ds_senha)
 insert into tb_login (ds_email, ds_senha)
 	values('usuario','1234');
 --
-
+select 
+        nm_tamanho
+        from tb_produto
+        inner join tb_produto_tamanho
+        on tb_produto_tamanho.id_produto = tb_produto.id_produto
+        inner join tb_tamanho
+        on tb_tamanho.id_tamanho = tb_produto_tamanho.id_tamanho
+        where tb_produto_tamanho.id_produto like 1;
 
 select
 		id_login 			id,
