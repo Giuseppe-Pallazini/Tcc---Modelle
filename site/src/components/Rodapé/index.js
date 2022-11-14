@@ -31,7 +31,7 @@ export default function Index(){
            <div className='rodape-informações-2'>
                 <p className='rodape-Allrightsreserved'>All rights reserved ©</p>
 
-                <p className='rodape-info-localização'>Rua Fidêncio Ramos, 302 CEP 04551-010 São Paulo, SP, Brasil CNPJ 32.331.472/0001-13</p>
+                <p className='rodape-info-localizacao'>Rua Fidêncio Ramos, 302 CEP 04551-010 São Paulo, SP, Brasil CNPJ 32.331.472/0001-13</p>
            </div>
         </main>
     );

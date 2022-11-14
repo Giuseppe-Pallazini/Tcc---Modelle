@@ -5,6 +5,7 @@
     height:6.5em;
 
     background: linear-gradient(90.04deg, #8B7CA1 0.07%, #E7CB83 120.16%);    
+
     .cab-user-txt{
     width: 139px;
     height: 53px;
@@ -145,6 +146,22 @@
             height: 1em;
             margin-right: 1em;
             margin-top: 1.8em;
+        }
+    }
+
+    @media(max-width: 414px){
+        .cab-user-topicos{
+
+        }
+        .cab-user{
+            width: 100%;
+        }
+        .cab-user-txt-1{
+            font-size: .8em;
+        }
+        .cab-user-txt{
+            width: 5em;
+            height: 2em;
         }
     }
 }

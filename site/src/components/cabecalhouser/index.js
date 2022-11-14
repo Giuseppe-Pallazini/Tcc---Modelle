@@ -82,6 +82,8 @@ export default function Index(){
                         <p className='cab-user-nome'>Usuario</p>
                         <img className='cab-user-img' src={Imagem5} alt='' />
                     </div>
+
+                    <div></div>
                 </div>
             </nav>
         </main>

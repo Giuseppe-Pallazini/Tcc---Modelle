@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     background-color: #99889C;
-    height: 23vh;
-
+    width: 100%;
 
     .rodape-modelle{
         font-family: 'caviar';
@@ -15,7 +14,7 @@
     .rodape-hr{
         margin-top: 1em;
         margin-left: 4em;
-        width: 70em;
+        width: 90%;
     }
     .rodape-div-informações{
         display: flex;
@@ -68,12 +67,43 @@
     .rodape-Allrightsreserved{
         margin-top: 2.5em;
         margin-left: 1em;
+        margin-bottom: 1em;
         font-size: .8em;
     }
-    .rodape-info-localização{
+    .rodape-info-localizacao{
         margin-right: 1em;
         margin-top: 1em;
         margin-left: 1em;
         font-size: .8em;
+    }
+
+    @media (max-width: 414px){
+        .rodape-logo-brasil{
+            width: 2em;
+            height: 2em;
+        }
+        .rodape-modelle{
+            font-size: 1.2em;
+            margin-left: 1.3em;
+        }
+        .rodape-div-informações{
+            font-size: .5em;
+        }
+        .rodape-hr{
+            width: 90%;
+            margin-left: 1.3em;
+        }
+
+        .rodape-info-localizacao{
+            font-size: .5em;
+            margin-left: 2em;
+            margin-bottom: 1em;
+            width: 40%;
+        }
+        .rodape-Allrightsreserved{
+            font-size: .5em;
+            margin-top: 2em;
+            width: 35% ;
+        }   
     }
 }
