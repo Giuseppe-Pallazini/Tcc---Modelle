@@ -73,8 +73,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
             <div className='div-carrinho-cards-produtos'>
                 <div className='div-carrinho-infoProd'>
                     <div className='carrinho-div-imgProd'>
-                        <img //className='carrinho-div-imgProd-img' src={exibirImagemPrincipal(imagens)} alt='img-produto' 
-                        />
+                        <img className='carrinho-div-imgProd-img' src={exibirImagemPrincipal(imagens)} alt='img-produto' />
 
                     </div>
                     <div className='carrinho-div-informações-prod'>

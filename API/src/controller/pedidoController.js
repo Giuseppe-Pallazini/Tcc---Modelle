@@ -13,7 +13,7 @@ server.post('/api/pedido/:idUsuario/', async (req, resp) => {
         const idCupom = await acharCupom(info.cupom);
 
         const novoPedido = criarNovoPedido(idUsuario, idCupom, info);
-
+        console.log(novoPedido)
         const idPedidoCriado = await inserirPedido(novoPedido);
         const idPagCriado = await inserirPagamento(idPedidoCriado, info.cartao);
 

@@ -37,14 +37,18 @@ export function criarNovoPedido(idUsuario, idCupom, info) {
 
     return {
         idUsuario: idUsuario,
-        idEndereco: info.idEndereco,
         idCupom: idCupom,
         data: agora,
         notaFiscal: notaFiscal,
         tipoFrete: info.frete,
         valorFrete: valorFrete,
         status: 'Confirmando Pagamento',
-        tipoPagamento: 'Cartão'
+        tipoPagamento: 'Cartão',
+        endereco: info.endereco,
+        numero: info.numero,
+        cidade: info.cidade,
+        cep: info.cep,
+        complemento: info.complemento
 
     }
 }

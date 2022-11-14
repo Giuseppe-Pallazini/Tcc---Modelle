@@ -28,7 +28,12 @@ export async function inserirPedido(novoPedido) {
         novoPedido.tipoFrete,
         novoPedido.valorFrete,
         novoPedido.status,
-        novoPedido.tipoPagamento
+        novoPedido.tipoPagamento,
+        novoPedido.endereco,
+        novoPedido.numero,
+        novoPedido.cidade,
+        novoPedido.cep,
+        novoPedido.complemento
     ]);
     return info.insertId;
 }

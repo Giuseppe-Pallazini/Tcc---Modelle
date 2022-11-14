@@ -73,7 +73,6 @@ export default function Index() {
                     <div className='detalhes-imagens' >
                         <img className='imagem-principal' src={exibirImagemPrincipal()} alt='' />
                         <div>
-
                             {produto.imagens.map((item, pos) =>
                                 <img className='imagens-produto' src={exibirImagemProdutos(item)} onClick={() => setImagemPrincipal(pos)} alt="" />
                             )}
