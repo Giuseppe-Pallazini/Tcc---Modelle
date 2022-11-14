@@ -6,6 +6,7 @@ import Imagem3 from '../../assets/image/bolsa-lista-desejo.png'
 import Imagem4 from '../../assets/image/carrinho.svg'
 import Imagem5 from '../../assets/image/user.png'
 import {useNavigate} from 'react-router-dom'
+import storage from 'local-storage'
 
 export default function Index(){
     
@@ -26,6 +27,11 @@ export default function Index(){
 
     function abrirLanding(){
         navigate('/');
+    }
+
+    function sair(){
+        storage.remove('usuario-logado')
+        navigate('/')
     }
 
     return(
@@ -83,7 +89,9 @@ export default function Index(){
                         <img className='cab-user-img' src={Imagem5} alt='' />
                     </div>
 
-                    <div></div>
+                    <div onClick={sair}>
+                        <p> Sair </p>
+                    </div>
                 </div>
             </nav>
         </main>
