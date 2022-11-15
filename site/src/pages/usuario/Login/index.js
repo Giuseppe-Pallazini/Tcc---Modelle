@@ -77,24 +77,24 @@ export default function Index() {
       <section className="section-login">
 
         <div className="div-dashboard-login">
-          <img className='div-dashboard-login-img1' src={Imagem1} alt=''/>
-          <h1 className='div-dashboard-login-tit1' >Inicie Sessão</h1>
-          
+            <img className='div-dashboard-login-img1' src={Imagem1} alt=''/>
+            <h1 className='div-dashboard-login-tit1' >Inicie Sessão</h1>
+            
 
-          <input className='div-dashboard-login-usuario' type="text" placeholder="Usuário" value={email} onChange={e => setEmail(e.target.value)}/>
-          <input className='div-dashboard-login-senha' type="password" placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)} />
-          
-          <div className='div-dashboard-login-erro'>
-            {erro}
-          </div>
-          
-          <button className='div-dashboard-bt' onClick={entrarClick} disabled={carregando} >Login</button>
-          
-          <Link className='div-dashboard-desc2' to={'/user/recuperarSenha'}> Esqueceu a senha </Link>
+            <input className='div-dashboard-login-usuario' type="text" placeholder="Usuário" value={email} onChange={e => setEmail(e.target.value)}/>
+            <input className='div-dashboard-login-senha' type="password" placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)} />
+            
+            <div className='div-dashboard-login-erro'>
+              {erro} aaaaaaaa
+            </div>
+            
+            <button className='div-dashboard-bt' onClick={entrarClick} disabled={carregando} >Login</button>
+            
+            <Link className='div-dashboard-desc2' to={'/user/recuperarSenha'}> Esqueceu a senha </Link>
 
-          <Link className='div-dashboard-desc3' to={'/user/cadastro'}> Criar Conta </Link>
+            <Link className='div-dashboard-desc3' to={'/user/cadastro'}> Criar Conta </Link>
 
-          <p className='div-dashboard-desc4'>All rights reserved &copy; </p>
+            <p className='div-dashboard-desc4'>All rights reserved &copy; </p>
 
         </div>
 

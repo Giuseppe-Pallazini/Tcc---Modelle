@@ -1,147 +1,154 @@
 .main-login{
+    display: flex;
+    flex-direction: column;
 
     .section-login{
         display: flex;
         flex-direction: row;
-        .div-dashboard-login{
-            display: flex;
-            flex-direction: column;
-            textarea:focus, input:focus {
-                box-shadow: 0 0 0 0;
-                outline: 0;
-            }
-
-            a:link, a:visited, a:focus {
-                text-decoration: none;
-                color: default;
-            }
-
-            .div-dashboard-login-img1{
-                position: absolute;
-                width: 140px;
-                height: 124px;
-                left: 219px;
-                top: 186px;
-            }
-
-            .div-dashboard-login-tit1{
-                position: absolute;
-                width: 261px;
-                height: 35px;
-                left: 159px;
-                top: 374px;
-
-                font-family: 'caviar';
-                font-size: 40px;
-                line-height: 46px;
-            }
-
-            .div-dashboard-login-usuario{
-                position: absolute;
-                width: 25em;
-                height: 20px;
-                left: 120px;
-                top: 500px;
-                
-                font-family: 'caviar';
-                font-size: 15px;
-                line-height: 14px;
-
-                border: 0px;
-                border-bottom: 1px solid #000;
-            }
-
-            .div-dashboard-login-senha{
-                position: absolute;
-                width: 25em;
-                height: 20px;
-                left: 120px;
-                top: 560px;
-                
-                font-family: 'caviar';
-                font-size: 15px;
-                line-height: 14px;
-
-                border: 0px;
-                border-bottom: 1px solid #000;
-            }
-
-            .div-dashboard-login-erro {
-                position: relative;
-                top: 38em;
-                left: 13.5em;
-            
-            }
-
-                
-            .div-dashboard-bt{
-                position: absolute;
-                left: 120px;
-                top: 677px;
-
-                font-family: 'caviar';
-                font-size: 20px;
-                line-height: 25px;
-
-                color: #FFFFFF;
-
-                background-color: #000000;
-                width: 365px;
-                height: 43px;
-                
-                border: 0px;
-                cursor: pointer;
-            }
-
-                .div-dashboard-desc2{
-                    position: absolute;
-                    width: 101px;
-                    height: 13px;
-                    left: 120px;
-                    top: 730px;
-
-                    font-family: 'caviar';
-                    font-size: 12px;
-                    line-height: 14px;
-                }
-
-                .div-dashboard-desc3{
-                    position: absolute;
-                    width: 70px;
-                    height: 13px;
-                    left: 120px;
-                    top: 750px;
-
-                    font-family: 'caviar';
-                    font-size: 12px;
-                    line-height: 14px;
-                }
-
-                .div-dashboard-desc4{
-                    position: absolute;
-                    width: 100px;
-                    height: 15px;
-                    left: 30px;
-                    top: 900px;
-
-                    font-family: 'caviar';
-                    font-size: 10px;
-                    line-height: 12px;
-                }
-
-        }
-
-        .div-imagem{
-            .div-imagem-1{
-                position: absolute;
-                width: 708px;
-                height: 100%;
-                left: 572px;
-                top: 0px;
-                filter: blur(2px);
-            }
-        }
+    }
+    .div-dashboard-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+    }
+    .div-dashboard-login-img1{
+        margin-top: 30%;
+        width: 10em;
+    }
+    .div-dashboard-login-tit1{
+        margin-top: 1em;
+        font-family: 'caviar';
+        font-size: 2.5em;
     }
 
+    .div-dashboard-login-usuario{
+        width: 48%;
+        font-family: 'caviar';
+        font-size: 15px;
+        margin-top: 5em;
+        border: 0px;
+        border-bottom: 1px solid #000;
+    }
+
+    .div-dashboard-login-senha{
+        width: 48%;
+        font-family: 'caviar';
+        font-size: 15px;
+        margin-top: 1em;
+        border: 0px;
+        border-bottom: 1px solid #000;
+    }
+
+    .div-dashboard-login-erro{
+        margin-top: 2em;
+    }
+
+    .div-dashboard-bt{
+        font-family: 'caviar';
+        font-size: 20px;
+        width: 50%;
+        margin-top: .3em;
+        color: #FFFFFF;
+        background-color: #000000;
+        
+        border: 0px;
+        cursor: pointer;
+    }
+
+    .div-dashboard-desc2{
+        width: 9em;
+        height: 13px;
+        margin-top: 1em;
+        margin-right: 31%;
+        font-family: 'caviar';
+        font-size: 0.7em;
+    }
+
+    .div-dashboard-desc3{
+        width: 9em;
+        height: 13px;
+        margin-top: 1em;
+        margin-right: 31%;
+        font-family: 'caviar';
+        font-size: 0.7em;
+    }
+
+    .div-dashboard-desc4{
+        width: 25%;
+        height: 15px;
+        margin-right: 70%;
+        margin-top: 60%;
+        font-family: 'caviar';
+        font-size: .8em;
+    }
+        
+    .div-imagem-1{
+        height: 50%;
+        width: 50%;
+        filter: blur(2px);
+    }
+
+    @media(max-width: 414px){
+        .main-login{
+            width: 414px;
+            height: 100%;
+            border: 1px solid black;
+        }
+        .section-login{
+            display: flex;
+            flex-direction: row;
+            margin-left: 12%;
+            
+        }
+        .div-dashboard-login{
+            display: flex;
+            align-items: center;
+            margin-left: -3em;
+            height: 110%;
+            width: 100%;
+        }
+        .div-dashboard-login-img1{
+            margin-left: 2em;
+        }
+        .div-dashboard-login-tit1{
+            text-align: center;
+            margin-left: 1em;
+            width: 8em;
+        }
+
+        .div-dashboard-login-usuario{
+            width: 60%;
+            margin-left: 2em;
+        }
+    
+        .div-dashboard-login-senha{
+            width: 60%;
+            margin-left: 2em;
+        }   
+
+        .div-dashboard-bt{
+            width: 65%;
+            margin-left: 1.5em;
+        }
+    
+        .div-dashboard-desc2{
+            margin-left: 1.5em;
+        }
+    
+        .div-dashboard-desc3{
+            margin-left: 1.5em;
+        }
+
+
+        .div-imagem-1{
+            display: none;
+        }
+        .div-dashboard-desc4{
+           width: 50%;
+           margin-top: 75%;
+           margin-left: 8em;
+        }
+    }
 
 }
