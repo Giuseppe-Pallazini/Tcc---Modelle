@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 import './index.scss';
 import '../../../assets/common/index.scss'
 import { useState } from 'react'
+import { IMaskInput } from 'react-imask';
 
 export default function Index(){
     const [nome, setNome] = useState('');
@@ -24,7 +25,7 @@ export default function Index(){
             toast.dark(' ✔️ Cadastro concluido com secesso!');
         }
         catch (err) {
-            toast.dark(err);
+            toast.error(err.response.data.erro);
             console.log(err)
         }
     }
@@ -51,7 +52,7 @@ export default function Index(){
                         </div>
 
                         <div className='div-cadastro-inputs' >
-                            <input type='text' maxLength="13" className='cadastro-inputs' placeholder='Telefone' onChange={e => setTelefone(e.target.value)} />
+                            <IMaskInput mask='(00)00000-0000' type='text' maxLength="14" className='cadastro-inputs' placeholder='Telefone' onChange={e => setTelefone(e.target.value)} />
                         </div>
 
                         <div className='div-cadastro-inputs'>
@@ -63,12 +64,12 @@ export default function Index(){
                         </div>
 
                         <div className='div-cadastro-inputs'>
-                            <input type='password' maxLength="8" className='cadastro-inputs' placeholder='Senha' onChange={e => setSenha(e.target.value)} />
+                            <input type='password' className='cadastro-inputs' placeholder='Senha' onChange={e => setSenha(e.target.value)} />
                         </div>
                             <p className='cadastro-p-qtdCaracteres'> A senha deve conter de 6 a 8 caracteres </p>
 
                         <div className='div-cadastro-inputs-confirmarSenha'>
-                            <input type='password' maxLength="8" className='cadastro-inputs' placeholder='Confrirmar Senha' />
+                            <input type='password' className='cadastro-inputs' placeholder='Confrirmar Senha' />
                         </div>
 
                         <div>

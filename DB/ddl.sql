@@ -4,17 +4,26 @@ use ModelleDB;
 
 -- 1
 create table tb_usuario (
-id_usuario 			int primary key auto_increment,
-nm_usuario 			varchar(100),
-dt_nascimento 		date,
-nr_telefone 		int,
-ds_email 			varchar(50),
-ds_senha 			varchar(50)
+	id_usuario 			int primary key auto_increment,
+	nm_usuario 			varchar(100),
+	dt_nascimento 		date,
+	nr_telefone 		varchar(50),
+	ds_email 			varchar(50),
+	ds_senha 			varchar(50)
 );
 select * from tb_usuario;
 
 insert into tb_usuario (nm_usuario, dt_nascimento, nr_telefone, ds_email, ds_senha)
+	values 			   ('admin', 20010112, '(11)980165866', 'asdasd@gmail.com', '1234');
+
+insert into tb_usuario (nm_usuario, dt_nascimento, nr_telefone, ds_email, ds_senha)
 	values 			   ('usuario', 20010112, 11999, 'asdasd@gmail.com', '1234');
+
+     select id_usuario					id,
+            nm_usuario					nome
+       from tb_usuario
+      where ds_email = 'juan@hotmail.com'
+        and ds_senha = '1234';
 
 -- 2
 create table tb_login (
@@ -22,10 +31,10 @@ id_login   int primary key auto_increment,
 id_usuario int,
 ds_email   varchar(50),
 ds_senha   varchar(50),
-foreign key (id_usuario) references tb_usuario (id_usuario) -- ,
--- foreign key (ds_email) references tb_usuario (ds_email),
--- foreign key (ds_senha) references tb_usuario (ds_senha)
+foreign key (id_usuario) references tb_usuario (id_usuario)
 );
+
+select * from tb_usuario;
 
 
 -- ---------------------------------------------------------------------------------------------------------

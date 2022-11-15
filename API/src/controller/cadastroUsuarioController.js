@@ -8,6 +8,8 @@ import CadastrarUsuario from '../repository/cadastroUsuarioRepository.js';
        const novoUsuario = req.body;
         if(!novoUsuario.nome.trim())
           throw new Error('Seu nome é obrigatorio');
+        if(novoUsuario.nome == "admin")
+          throw new Error('Nome invalido');
         if(!novoUsuario.dtNascimento.trim())
           throw new Error('Sua data de nascimento é obrigatoria!');
         if(!novoUsuario.telefone.trim())
