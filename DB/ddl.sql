@@ -7,14 +7,14 @@ create table tb_usuario (
 	id_usuario 			int primary key auto_increment,
 	nm_usuario 			varchar(100),
 	dt_nascimento 		date,
-	nr_telefone 		int,
+	nr_telefone 		varchar(50),
 	ds_email 			varchar(50),
 	ds_senha 			varchar(50)
 );
 select * from tb_usuario;
 
 insert into tb_usuario (nm_usuario, dt_nascimento, nr_telefone, ds_email, ds_senha)
-	values 			   ('admin', 20010112, 11999, 'asdasd@gmail.com', '1234');
+	values 			   ('admin', 20010112, '(11)980165866', 'asdasd@gmail.com', '1234');
 
 insert into tb_usuario (nm_usuario, dt_nascimento, nr_telefone, ds_email, ds_senha)
 	values 			   ('usuario', 20010112, 11999, 'asdasd@gmail.com', '1234');
