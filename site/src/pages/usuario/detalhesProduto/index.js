@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import storage from 'local-storage'
 import Cabecalho from '../../../components/cabecalhouser'
 import CardUsuario from '../../../components/cardProdutoUsuario'
@@ -14,6 +14,8 @@ import { API_URL } from '../../../api/config';
 export default function Index() {
     const [produto, setProduto] = useState({ info: {}, tamanho: [], imagens: [] });
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
+
+    const Navigate = useNavigate();
 
     const { id } = useParams();
 
@@ -56,6 +58,24 @@ export default function Index() {
     function formatarPreco(preco) {
         let a = preco.toFixed(2);
         return a
+    }
+
+    function compraDireta() {
+        let carrinho = [];
+        if (storage('carrinho')) {
+            carrinho = storage('carrinho')
+
+        }
+
+        if (!carrinho.find(item => item.id === id)) {
+            carrinho.push({
+                id: id,
+                qtd: 1
+            })
+            storage('carrinho', carrinho)
+            toast.dark("🛒 Item Adicionado ao Carrinho")
+        }
+        Navigate('/user/pagamentoCartao')
     }
 
     // function buscarNomeTamanho(id) {
@@ -112,7 +132,7 @@ export default function Index() {
 
                         <div className='detalhes-bt' >
                             <button className='detalhes-add-carrinho' onClick={adicionarCarrinho} >Adicionar ao Carrinho</button>
-                            <button className='detalhes-comprar' >Comprar</button>
+                            <button className='detalhes-comprar' onClick={compraDireta}>Comprar</button>
                         </div>
                     </div>
 

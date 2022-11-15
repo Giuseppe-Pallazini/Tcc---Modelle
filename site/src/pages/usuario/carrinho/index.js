@@ -11,6 +11,7 @@ import LogoCartão from '../../../assets/image/logo-cartão.png'
 import '../../../assets/common/index.scss'
 import { useEffect, useState } from 'react';
 import Storage from 'local-storage'
+import { navigate, useNavigate } from 'react-router-dom';
 import { buscarProdutoPorId } from '../../../api/produtoAPI';
 
 import { Link } from 'react-router-dom';
@@ -19,6 +20,8 @@ import { Link } from 'react-router-dom';
 
 export default function Index() {
     const [itens, setItens] = useState([]);
+
+    const navigate = useNavigate();
 
     function removerItem(id) {
         let carrinho = Storage('carrinho');
@@ -63,6 +66,9 @@ export default function Index() {
 
 
     useEffect(() => {
+        if (!Storage('usuario-logado')){
+            navigate('/login')
+        }
         carregarCarrinho();
     }, [])
 

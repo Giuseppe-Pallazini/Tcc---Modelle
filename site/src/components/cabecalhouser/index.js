@@ -8,6 +8,7 @@ import Imagem5 from '../../assets/image/user.png'
 import ImagemSair from '../../assets/image/logo-sair.png'
 import {useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
+import { useEffect } from 'react'
 
 export default function Index(){
     
@@ -34,6 +35,7 @@ export default function Index(){
         storage.remove('usuario-logado')
         navigate('/')
     }
+
 
     return(
         <main>
