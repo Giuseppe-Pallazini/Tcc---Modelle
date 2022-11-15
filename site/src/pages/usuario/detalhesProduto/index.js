@@ -1,7 +1,6 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import storage from 'local-storage'
 import Cabecalho from '../../../components/cabecalhouser'
-import CardUsuario from '../../../components/cardProdutoUsuario'
 
 import { toast } from 'react-toastify';
 
@@ -10,6 +9,10 @@ import '../../../assets/common/index.scss'
 import { useEffect, useState } from 'react'
 import { buscarProdutoPorIdUsuario } from '../../../api/produtoAPI';
 import { API_URL } from '../../../api/config';
+import CardUsuario1 from '../../../components/CardDetalhes1'
+import CardUsuario2 from '../../../components/CardDetalhes2'
+import CardUsuario3 from '../../../components/CardDetalhes3'
+
 
 export default function Index() {
     const [produto, setProduto] = useState({ info: {}, tamanho: [], imagens: [] });
@@ -78,12 +81,6 @@ export default function Index() {
         Navigate('/user/pagamentoCartao')
     }
 
-    // function buscarNomeTamanho(id) {
-    //     const cat = produto.tamanho.find(item => item.id == id);
-    //     return cat.tamanho;
-    // }
-
-
     return (
         <main className='main-detalhes'>
             <Cabecalho />
@@ -138,7 +135,6 @@ export default function Index() {
 
                 </div>
 
-
                 <div className='detalhes-info-composicao'>
                     <p className='detalhes-info-comp'>Composição</p>
 
@@ -156,9 +152,13 @@ export default function Index() {
                 <div className='detalhes-recomendados' >
                     <h1 className='detalhes-recomendos-txt' > Recomendados</h1>
 
-                    <div>
+                    <div className='detalhes-recomendados-cards'>
 
-                        <CardUsuario />
+                        <CardUsuario1/>
+                        
+                        <CardUsuario2/>
+                        
+                        <CardUsuario3/>
 
                     </div>
                 </div>

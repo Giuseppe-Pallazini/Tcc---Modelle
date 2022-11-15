@@ -60,6 +60,24 @@ export async function listarTodos(){
     return resposta.data;
 }
 
+//CARD DETALHES
+
+export async function listarTodos1(){
+    const resposta = await api.get('/admin/todasroupas/detalhes/1')
+    return resposta.data;
+}
+
+export async function listarTodos2(){
+    const resposta = await api.get('/admin/todasroupas/detalhes/2')
+    return resposta.data;
+}
+
+export async function listarTodos3(){
+    const resposta = await api.get('/admin/todasroupas/detalhes/3')
+    return resposta.data;
+}
+
+
 export async function listarProdutosMasculino(){
     const resposta = await api.get('/api/filtro/masculino')
     return resposta.data;
@@ -107,5 +125,4 @@ export async function buscarProdutoPorId(id){
 export async function buscarProdutoPorIdUsuario(id){
     const resposta = await api.get('/api/produto/' + id)
     return resposta.data;
-
 }

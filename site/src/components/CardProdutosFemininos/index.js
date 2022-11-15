@@ -253,23 +253,6 @@ export default function Index(){
                                     </div>
                                 </div>
 
-                                <div className='div-filtroCores'>
-                                    <div className='div-tituloCoresPrinciapis'>
-                                        <h1>Cores principais</h1>
-                                    </div>
-
-                                    <div className='div-inputsCores'>
-                                        <input type='color'/>
-                                        <input type='color'/>
-                                        <input type='color'/>
-                                        <input type='color'/>
-                                        <input type='color'/>
-                                        <input type='color'/>
-                                        <input type='color'/>
-                                        <input type='color'/>
-                                    </div>
-                                </div>
-
                                 <div className='filtro-Tamanho'>
                                     <div className='div-tituloTamanho'>
                                         <h1>Tamanho: </h1>
@@ -306,28 +289,28 @@ export default function Index(){
                                     </div>
 
                                     <div className='div-roupasDisponiveis'>
-                                        <p onClick={filtroCamisa} >Camisa (4)</p>
+                                        <p onClick={filtroCamisa} >Camisas</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p onClick={filtroCalca} >Calças (6)</p>
+                                        <p onClick={filtroCalca} >Calças</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p onClick={filtroMoletom} >Moletons (5)</p>
+                                        <p onClick={filtroMoletom} >Moletons</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p onClick={filtroCasaco}>Casacos / Jaquetas (8)</p>
+                                        <p onClick={filtroCasaco}>Casacos / Jaquetas</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p onClick={filtroBermuda} >Shorts e Bermudas (3)</p>
+                                        <p onClick={filtroBermuda} >Shorts e Bermudas</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p onClick={filtroPolo}>Polos (15)</p>
+                                        <p onClick={filtroPolo}>Polos</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p onClick={filtroSueter} >Suéters (11)</p>
+                                        <p onClick={filtroSueter} >Suéters</p>
                                     </div>
                                     <div className='div-roupasDisponiveis'>
-                                        <p onClick={filtroBlusa} >Blusas (4)</p>
+                                        <p onClick={filtroBlusa} >Blusas</p>
                                     </div>
                                 </div>
                             </div>

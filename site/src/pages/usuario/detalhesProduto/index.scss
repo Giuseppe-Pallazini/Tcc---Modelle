@@ -151,6 +151,14 @@
     .detalhes-recomendados{
         margin-top: 2em;
         margin-left: 3.8em;
+        .detalhes-recomendados-cards{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin-right: 15em;
+            margin-top: 3em;
+        }
     }
 
 }

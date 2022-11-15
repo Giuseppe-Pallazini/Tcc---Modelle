@@ -8,12 +8,41 @@ import Imagem5 from '../../assets/image/user.png'
 import ImagemSair from '../../assets/image/logo-sair.png'
 import {useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
+import { buscarProdutoPorId } from '../../api/produtoAPI'
 
 export default function Index(){
-    
+
+    const [itens, setItens] = useState([]);
     const navigate = useNavigate();
 
+    async function carregarCarrinho() {
+        let carrinho = storage('carrinho')
+        if (carrinho) {
+
+            let temp = [];
+
+            for (let produto of carrinho) {
+                let p = await buscarProdutoPorId(produto.id);
+
+                temp.push({
+                    produto: p,
+                    qtd: produto.qtd,
+                })
+            }
+            setItens(temp)
+        }
+    }
+
+    useEffect(() => {
+        carregarCarrinho()
+    },[])
+    
+
+    function qtdItens() {
+        return itens.length
+    }
 
     function abrirNovidades(){
         navigate('/user/menuNovidades');
@@ -27,13 +56,24 @@ export default function Index(){
         navigate('/user/menuMasculino');
     }
 
+    function abrirCarrinho(){
+        navigate('/user/carrinho');
+    }
+
     function abrirLanding(){
         navigate('/');
     }
 
+
     function sair(){
+        if(storage('usuario-logado')){
         storage.remove('usuario-logado')
+        toast.dark("Conta deslogada com Sucesso")
         navigate('/')
+        }
+        else if(!storage('usuario-logado')){
+            toast.dark("Você não está logado")
+        }
     }
 
 
@@ -80,9 +120,9 @@ export default function Index(){
                     </div>
 
                     <div className='cab-carrinho' >
-                        <img className='cab-user-carrinho' src={Imagem4} alt=''/>
+                        <img onClick={abrirCarrinho} className='cab-user-carrinho' src={Imagem4} alt=''/>
                         <div className='cab-user-carrinho-div'>
-                            <span className='cab-user-carrinho-num'>0</span>
+                            <span className='cab-user-carrinho-num'> {qtdItens()} </span>
                         </div>
 
                     </div>
