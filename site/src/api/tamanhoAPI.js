@@ -10,6 +10,6 @@ export async function ListarTamanho() {
 }
 
 export async function ListarTamanhoPorId(id) {
-    const r = await api.get(`/api/tamanho/${id}`);
+    const r = await api.get(`/api/tamanhos/${id}`);
     return r.data
 }

@@ -53,6 +53,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
 
     async function carregarTamanhoId(id) {
         const r = await ListarTamanhoPorId(id);
+        console.log(r)
         return r
     }
 
@@ -65,7 +66,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
 
     useEffect(() => {
         carregarPagina();
-        carregarTamanhoId(1);
+        carregarTamanhoId();
     }, [])
 
     return (
@@ -92,7 +93,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                         <select value={idTamanho}>
                             <option selected disabled hidden>Selecione</option>
                             {tamanho.map(item =>
-                                <option className='cadastro-section2-div3-select-option' value={item.id}> {item} </option>
+                                <option className='cadastro-section2-div3-select-option'> {item} </option>
                             )}
                         </select>
 

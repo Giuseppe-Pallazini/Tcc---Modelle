@@ -27,7 +27,7 @@ export async function listarTamanhos() {
       `
 
     const [linhas] = await con.query(comando, [id]);
-    return [linhas];
+    return linhas;
   }
 
   export async function salvarProdutoTamanho(idProduto, idTamanho) {
