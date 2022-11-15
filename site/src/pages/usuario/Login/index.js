@@ -85,7 +85,7 @@ export default function Index() {
             <input className='div-dashboard-login-senha' type="password" placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)} />
             
             <div className='div-dashboard-login-erro'>
-              {erro} aaaaaaaa
+              {erro}
             </div>
             
             <button className='div-dashboard-bt' onClick={entrarClick} disabled={carregando} >Login</button>
