@@ -12,6 +12,14 @@ import '../../../assets/common/index.scss'
 import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
+
+    const navigate = useNavigate();
+
+    function sair(){
+        storage.remove('admin-logado')
+        navigate('/')
+    }
+
     return(
        <main className='main-homeAdmin'>
             <nav>
@@ -20,7 +28,7 @@ export default function Index(){
                     <span className='cab-admin-user'>Administrador</span>
                 </div>
 
-                <div className='cab-exit'>
+                <div onClick={sair} className='cab-exit'>
                     <img className='cab-exit-1' src={Imagem2} alt="" />
                     </div>
                 </nav>

@@ -1,4 +1,4 @@
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { toast } from 'react-toastify';
 import ImagemCadastroUsuario from '../../../assets/image/imagem-cadastro-usuario.png'
@@ -10,19 +10,44 @@ import './index.scss';
 import '../../../assets/common/index.scss'
 import { useState } from 'react'
 import { IMaskInput } from 'react-imask';
+import validator from 'validator';
 
-export default function Index(){
+export default function Index() {
     const [nome, setNome] = useState('');
     const [dtNascimento, setDtNascimento] = useState('');
     const [telefone, setTelefone] = useState('');
     const [email, setEmail] = useState('');
+    const [email2, setEmail2] = useState('');
     const [senha, setSenha] = useState('');
+    const [senha2, setSenha2] = useState('');
 
+    const navigate = useNavigate()
 
     async function cadastrarUsuario() {
         try {
-            const novoUsuario = await CadastroUsuario(nome, dtNascimento, telefone, email, senha);
-            toast.dark(' ✔️ Cadastro concluido com secesso!');
+            if (validator.isEmail(email)) {
+
+                if (email != email2) {
+                    toast.warn('Emails não coincidem')
+                }
+
+                if (senha != senha2) {
+                    toast.warn('Senhas não coincidem')
+                }
+                
+                else {
+                const novoUsuario = await CadastroUsuario(nome, dtNascimento, telefone, email, senha);
+                toast.dark(' ✔️ Cadastro concluido com secesso!');
+                navigate('/')
+                }
+
+            }
+
+            else {
+                toast.warn('Email inválido')
+            }
+
+
         }
         catch (err) {
             toast.error(err.response.data.erro);
@@ -32,14 +57,15 @@ export default function Index(){
 
 
 
-    return(
-       <main className='main-cadastro-usuario'>
+
+    return (
+        <main className='main-cadastro-usuario'>
             <section className='section-cadastro-cl1'>
                 <div>
-                <img src={LogoModelle} alt='logo' className='logo-modelle' />
+                    <img src={LogoModelle} alt='logo' className='logo-modelle' />
 
-                <h1 className='cadastro-titulo-criarConta' > Criar conta </h1>
-                    
+                    <h1 className='cadastro-titulo-criarConta' > Criar conta </h1>
+
                     <div className='cadastro-div-camposObrigatorios' >
                         <p className='cadastro-p-camposObrigatorios'> * Campos obrigatorios </p>
 
@@ -52,32 +78,31 @@ export default function Index(){
                         </div>
 
                         <div className='div-cadastro-inputs' >
-                            <IMaskInput mask='(00)00000-0000' type='text' maxLength="14" className='cadastro-inputs' placeholder='Telefone' onChange={e => setTelefone(e.target.value)} />
+                            <IMaskInput mask='(00) 00000-0000' type='text' maxLength="15" className='cadastro-inputs' placeholder='Telefone' onChange={e => setTelefone(e.target.value)} />
                         </div>
 
                         <div className='div-cadastro-inputs'>
-                            <input type='text' className='cadastro-inputs' placeholder='Email' onChange={e => setEmail(e.target.value)}/>
+                            <input type='text' className='cadastro-inputs' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
                         </div>
 
                         <div className='div-cadastro-inputs'>
-                            <input type='text' className='cadastro-inputs' placeholder='Confirmar email' />
+                            <input type='text' className='cadastro-inputs' placeholder='Confirmar email' value={email2} onChange={e => setEmail2(e.target.value)} />
                         </div>
 
                         <div className='div-cadastro-inputs'>
-                            <input type='password' className='cadastro-inputs' placeholder='Senha' onChange={e => setSenha(e.target.value)} />
+                            <input type='password' className='cadastro-inputs' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
                         </div>
-                            <p className='cadastro-p-qtdCaracteres'> A senha deve conter de 6 a 8 caracteres </p>
+                        <p className='cadastro-p-qtdCaracteres'> A senha deve conter no mínimo 6 caracteres. </p>
 
                         <div className='div-cadastro-inputs-confirmarSenha'>
-                            <input type='password' className='cadastro-inputs' placeholder='Confrirmar Senha' />
+                            <input type='password' className='cadastro-inputs' placeholder='Confrirmar Senha' value={senha2} onChange={e => setSenha2(e.target.value)} />
                         </div>
 
                         <div>
-                            <p className='erro-senhar-email'> A senhas não correspondem </p>
                             <button className='butao-criarConta' onClick={cadastrarUsuario} > Criar conta </button>
-                        </div> 
+                        </div>
 
-                        <Link to='/login' className='cadastro-jaPossuoConta'>Ja possuo Conta </Link>                   
+                        <Link to='/login' className='cadastro-jaPossuoConta'>Ja possuo Conta </Link>
                     </div>
                 </div>
 
@@ -89,6 +114,6 @@ export default function Index(){
                     <img src={ImagemCadastroUsuario} alt='logo' className='cadastro-imagem-mulher' />
                 </div>
             </section>
-       </main> 
+        </main>
     );
 }

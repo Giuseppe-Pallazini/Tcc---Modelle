@@ -11,12 +11,14 @@ import Storage from 'local-storage';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import { useParams } from 'react-router-dom';
+import { ListarTamanhoPorId } from '../../api/tamanhoAPI';
 
 export default function Index({ item: { produto: { info, imagens, tamanho }, qtd }, removerItem, carregarCarrinho }) {
     const [produto, setProduto] = useState({ info: {}, tamanho: [], imagens: [] });
     const [qtdProduto, setQtdProduto] = useState(qtd);
-    const [tamProduto, setTamProduto] = useState(tamanho);
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
+    const [idTamanho, setIdTamanho] = useState();
+
 
     const { id } = useParams();
     
@@ -36,15 +38,6 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
         carregarCarrinho();
     }
 
-    function alterarTamanho(novoTam) {
-        setTamProduto(novoTam)
-
-        let carrinho = Storage('carrinho');
-        let itemStorage = carrinho.find(item => item.id == info.id);
-        itemStorage.tam = novoTam;
-        Storage('carrinho', carrinho);
-        carregarCarrinho();
-    }
 
     function exibirImagemPrincipal() {
         if (imagens.length > 0) {
@@ -58,8 +51,21 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
         return resp;
     }
 
+    async function carregarTamanhoId(id) {
+        const r = await ListarTamanhoPorId(id);
+        return r
+    }
+
+    // function buscarNomeTamanho(id) {
+    //     const cat = tamanho.find(item => item.id == id);
+    //     return cat.tamanho;
+    // }
+
+
+
     useEffect(() => {
         carregarPagina();
+        carregarTamanhoId(1);
     }, [])
 
     return (
@@ -74,7 +80,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
 
                 <div>
                     <p> ID: {info.id} </p>
-                    <p> {info.produto} </p>
+                    <p className='cor'> {info.produto} </p>
                     <hr />
                     <div>
                         <p> Cor </p>
@@ -83,13 +89,11 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                     <div>
                         <p> Tamanho: </p>
 
-                        <select value={tamProduto}>
-                            <option>
-                                {produto.tamanho.map(item =>
-                                        <p> {item} </p>
-                                )}
-                            </option>
-
+                        <select value={idTamanho}>
+                            <option selected disabled hidden>Selecione</option>
+                            {tamanho.map(item =>
+                                <option className='cadastro-section2-div3-select-option' value={item.id}> {item} </option>
+                            )}
                         </select>
 
 

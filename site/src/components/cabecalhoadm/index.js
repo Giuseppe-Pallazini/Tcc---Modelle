@@ -1,10 +1,19 @@
 import './index.scss'
 import Imagem1 from '../../assets/image/img-user.png'
 import Imagem2 from '../../assets/image/img-exit.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import storage from 'local-storage'
  
 
 export default function Index(){
+
+    const navigate = useNavigate();
+
+    function sair(){
+        storage.remove('admin-logado')
+        navigate('/')
+    }
+
     return(
         <header>
             <nav className='cab'>
@@ -38,9 +47,9 @@ export default function Index(){
                     </select>
                 </div>
 
-                <Link className='cab-exit' to='/admin/home'>
-                    <img className='cab-exit-1' src={Imagem2} alt="" header/>
-                </Link>
+                <div onClick={sair} className='cab-exit'>
+                         <img className='cab-exit-1' src={Imagem2} alt=''/>
+                </div>
             </nav>
         </header>
     )

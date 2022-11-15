@@ -19,8 +19,7 @@ server.get('/api/tamanho', async (req, resp) => {
 
 server.get('/api/tamanho/:id', async (req, resp) => {
     try {
-        const id = req.params
-        const linhas = await buscarTamanhoPorId(id);
+        const linhas = await buscarTamanhoPorId(req.params.id);
         resp.send(linhas);
     }
     catch (err) {

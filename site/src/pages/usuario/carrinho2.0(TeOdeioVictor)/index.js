@@ -14,6 +14,7 @@ import Storage from 'local-storage'
 import { buscarProdutoPorId } from '../../../api/produtoAPI';
 
 import { Link } from 'react-router-dom';
+import { ListarTamanhoPorId } from '../../../api/tamanhoAPI';
 
 //import { toast } from 'react-toastify';
 

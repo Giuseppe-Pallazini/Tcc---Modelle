@@ -15,9 +15,6 @@ import { alterarProduto, buscarImagem, buscarProdutoPorId, inserirProduto, salva
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { API_URL } from '../../../api/config';
-import { IMaskInput } from 'react-imask';
-import {NumericFormat} from 'react-number-format'
-import { PatternFormat } from 'react-number-format';
 
 export default function CadastroProduto() {
     const [idProduto, setIdProduto] = useState();
