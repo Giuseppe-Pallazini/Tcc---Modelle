@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { API_URL } from '../../api/config';
 
+import IconRemover from '../../assets/image/icon-remover-carrinho.svg'
+
 import Storage from 'local-storage';
 
 import { confirmAlert } from 'react-confirm-alert';
@@ -21,7 +23,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
 
 
     const { id } = useParams();
-    
+
     async function carregarPagina() {
         const r = await buscarProdutoPorIdUsuario(id);
         setProduto(r)
@@ -62,6 +64,11 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
     //     return cat.tamanho;
     // }
 
+    function calcularSubTotal() {
+        const subtotal = qtdProduto * info.preco;
+        return subtotal.toFixed(2)
+    }
+
 
 
     useEffect(() => {
@@ -74,49 +81,68 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
 
             <section className='carrinho-section1'>
 
-                <div>
-                    <img className='carrinho-div-imgProd-img' //src={exibirImagemPrincipal()} alt='img-produto'
-                    />
-                </div>
-
-                <div>
-                    <p> ID: {info.id} </p>
-                    <p className='cor'> {info.produto} </p>
-                    <hr />
-                    <div>
-                        <p> Cor </p>
-                        <p style={{ backgroundColor: info.cor }}></p>
+                <div className='carrinho-section1-div-1'>
+                    <div className='carrinho-div-imgProd'>
+                        <img className='carrinho-div-imgProd-img' src={exibirImagemPrincipal()} alt='img-produto' />
                     </div>
-                    <div>
-                        <p> Tamanho: </p>
 
-                        <select value={idTamanho}>
-                            <option selected disabled hidden>Selecione</option>
-                            {tamanho.map(item =>
-                                <option className='cadastro-section2-div3-select-option'> {item} </option>
-                            )}
-                        </select>
+                    <div className='carrinho-section1-div-1-1'>
 
 
-                    </div>
-                    <hr />
-                    <div>
-                        <p> Qtd: </p>
-                        <div className='carrinho-div-input-qtd'>
-                            <select onChange={e => alterarQuantidade(e.target.value)} value={qtdProduto}>
-                                <option> 1 </option>
-                                <option> 2 </option>
-                                <option> 3 </option>
-                                <option> 4 </option>
-                                <option> 5 </option>
-                            </select>
+                        <div className='carrinho-section1-div-1-2'>
+                            <div className='carrinho-section1-div-1-2-divP'>
+                                <p> <img src={IconRemover} /> Remover </p>
+                            </div>
+                            <p> ID: {info.id} </p>
+                            <p className='cor'> {info.produto} </p>
+                            <hr />
                         </div>
-                    </div>
-                    <div>
-                        <p> Subtotal: { } </p>
+
+
+                        <div className='carrinho-section1-div-1-3'>
+                            <div>
+                                <p> Cor </p>
+                                <p style={{ backgroundColor: info.cor }}></p>
+                            </div>
+                            <div>
+                                <p> Tamanho: </p>
+
+                                <select value={idTamanho}>
+                                    <option selected disabled hidden>Selecione</option>
+                                    {tamanho.map(item =>
+                                        <option className='cadastro-section2-div3-select-option'> {item} </option>
+                                    )}
+                                </select>
+
+
+                            </div>
+                            <hr />
+                        </div>
+
+
+                        <div className='carrinho-section1-div-1-4'>
+                            <div>
+                                <p> Qtd: </p>
+                                <div className='carrinho-div-input-qtd'>
+                                    <select onChange={e => alterarQuantidade(e.target.value)} value={qtdProduto}>
+                                        <option> 1 </option>
+                                        <option> 2 </option>
+                                        <option> 3 </option>
+                                        <option> 4 </option>
+                                        <option> 5 </option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <p> Subtotal:  R$ <b> {calcularSubTotal()} </b> </p>                    
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
-
             </section>
 
         </main>

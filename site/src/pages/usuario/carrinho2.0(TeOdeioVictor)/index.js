@@ -74,7 +74,7 @@ export default function Index() {
             <section className='carrinho-section1'>
 
                 <div className='carrinho-section1-div1'>
-                    <h1 className='carrinho-h1-1'> SEU CARRINHO </h1>
+                    <h1 className='carrinho-h1-1'> CARRINHO </h1>
 
                     {itens.map(item =>
                         <ProdutoCarrinho2 item={item} removerItem={removerItem} carregarCarrinho={carregarCarrinho} />
