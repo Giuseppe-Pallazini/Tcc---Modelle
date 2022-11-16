@@ -11,24 +11,15 @@ import Storage from 'local-storage'
 export default function Index(){
     const [produto, setProduto] = useState([]);
 
-    const {setIdProduto} = useState(Storage('usuario-logado').id);
+    const {IdProduto} = useState(Storage('usuario-logado').id);
 
-    function carregarUsuario(){
-
-        let id = '';
-
-        if(Storage('usuario-logado')){
-        id = Storage('usuario-logado').id;
-        let usuario = Storage('usuario-logado');
-        setIdProduto(id);
-
-        let a = visualizarPedidoPorId(setIdProduto);
-        return a
+    async function carregarUsuario(id){
+        let a = await visualizarPedidoPorId(id);
+        setProduto(a)
         }
-    }
     
 useEffect(() => {
-    carregarUsuario();
+    carregarUsuario(IdProduto);
 }, [])
 
 
