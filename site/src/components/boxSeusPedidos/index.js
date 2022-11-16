@@ -1,23 +1,38 @@
 import './index.scss'
 import '../../assets/common/index.scss'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import ImgProd from '../../assets/image/img-Prod.png'
 import IconsFluxo from '../../assets/image/icons-fluxo.png'
 import { useEffect, useState } from 'react'
-import { buscarImagem, visualizarPedido } from '../../api/produtoAPI'
+import { buscarImagem, visualizarPedidoPorId } from '../../api/produtoAPI'
 import { API_URL } from '../../api/config'
+import Storage from 'local-storage'
 
 export default function Index(){
     const [produto, setProduto] = useState([]);
 
-    async function carregarProduto(){
-        const resp = await visualizarPedido();
-        setProduto(resp); 
-    }
+    const {setIdProduto} = useState(Storage('usuario-logado').id);
 
-    useEffect(() => {
-        carregarProduto();
-    }, [])
+    function carregarUsuario(){
+
+        let id = '';
+
+        if(Storage('usuario-logado')){
+        id = Storage('usuario-logado').id;
+        let usuario = Storage('usuario-logado');
+        setIdProduto(id);
+
+        let a = visualizarPedidoPorId(setIdProduto);
+        return a
+        }
+    }
+    
+useEffect(() => {
+    carregarUsuario();
+}, [])
+
+
+
 
     function mostrarImagem(imagem) {
             return buscarImagem(imagem)

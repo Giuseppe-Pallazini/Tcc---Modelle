@@ -131,6 +131,11 @@ export async function visualizarPedido(){
     return resposta.data;
 }
 
+export async function visualizarPedidoPorId(id){
+    const resposta = await api.get(`/api/listarPedidos/${id}`)
+    return resposta.data;
+}
+
 export async function inserirCupom( codCupom, valor, quantidade) {
    const r = await api.post('/cadastrar/cupom', 
    {
