@@ -2,9 +2,9 @@ import multer from 'multer'
 import { Router } from 'express';
 
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
-import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho } from '../repository/tamanhoRepository.js'
+import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho, buscarTamanhoPorIdAdmin } from '../repository/tamanhoRepository.js'
 import { alterarProduto, buscarMarcaGucci, buscarPorNome, listarProdutosFemininos, listarProdutosMasculino, listarTodosProdutos, removerProdutoImagensDiferentes, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
-import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId, ListarTodosTamanhosporIdUser  } from '../repository/mostrarprodutorepository.js'
+import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId, ListarTodosTamanhosporIdUser, ListarTodosTamanhosporIdAdmin  } from '../repository/mostrarprodutorepository.js'
 import { removerProdutoImagem, removerProdutoTamanho } from '../repository/removerProdutoRepository.js';
 import { validarProduto } from '../services/ProdutoValidacao.js';
 
@@ -21,7 +21,7 @@ server.post('/admin/produto', async (req, resp) => {
         const idProduto = await salvarProduto(produto)
 
         for (const idTamanho of produto.tamanhos) {
-            const tam = await buscarTamanhoPorId(idTamanho);
+            const tam = await buscarTamanhoPorIdAdmin(idTamanho);
 
             if (tam != undefined) {
                 await salvarProdutoTamanho(idProduto, idTamanho);
@@ -45,7 +45,6 @@ server.post('/admin/produto', async (req, resp) => {
 
 server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, resp) => {
     try {
-
         const id = req.params.id;
         const imagens = req.files;
 
@@ -64,8 +63,10 @@ server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, res
         }
 
         resp.status(204).send();
-
     } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
         console.log(err)
     }
 
@@ -93,7 +94,7 @@ server.get('/admin/produto/:id', async (req, resp) => {
         const id = req.params.id;
 
         const produto =  await ListarTodosProdutosPorId(id);
-        const tamanho = await ListarTodosTamanhosporId(id);
+        const tamanho = await ListarTodosTamanhosporIdAdmin(id);
         const imagens = await ListarTodosImagensporId(id);
 
         resp.send({
@@ -104,6 +105,9 @@ server.get('/admin/produto/:id', async (req, resp) => {
 
     }
     catch(err){
+        resp.status(400).send({
+            erro: err.message
+        })
         console.log(err)
     }
 }
@@ -125,6 +129,9 @@ server.get('/produto/:id', async (req, resp) => {
 
     }
     catch(err){
+        resp.status(400).send({
+            erro: err.message
+        })
         console.log(err)
     }
 }
@@ -147,7 +154,7 @@ server.put('/admin/produto/:id', async (req, resp) => {
         await alterarProduto(id, produto)
 
         for(let idTam of produto.tamanhos){
-            const tam = buscarTamanhoPorId(idTam);
+            const tam = buscarTamanhoPorIdAdmin(idTam);
 
             if(tam != undefined){
                 await salvarProdutoTamanho(id, idTam)
@@ -158,6 +165,9 @@ server.put('/admin/produto/:id', async (req, resp) => {
     }
     
     catch(err){
+        resp.status(400).send({
+            erro: err.message
+        })
         console.log(err)
     }
 }

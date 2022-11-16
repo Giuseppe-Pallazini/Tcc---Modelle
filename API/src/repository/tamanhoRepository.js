@@ -14,6 +14,18 @@ export async function listarTamanhos() {
     
   }
 
+  export async function buscarTamanhoPorIdAdmin(id) {
+    const comando = `
+        select id_tamanho         as id,
+               nm_tamanho         as tamanho
+          from tb_tamanho
+         where id_tamanho = ?
+    `
+
+    const [linhas] = await con.query(comando, [id]);
+    return linhas[0];
+}
+
   export async function buscarTamanhoPorId(id) {
     const comando = `
     select 

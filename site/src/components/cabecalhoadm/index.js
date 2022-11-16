@@ -3,6 +3,7 @@ import Imagem1 from '../../assets/image/img-user.png'
 import Imagem2 from '../../assets/image/img-exit.png'
 import { Link, useNavigate } from 'react-router-dom'
 import storage from 'local-storage'
+import { toast } from 'react-toastify'
  
 
 export default function Index(){

@@ -113,14 +113,16 @@ export default function CadastroProduto() {
 
     function buscarNomeTamanho(id) {
         const cat = tamanho.find(item => item.id == id);
+        console.log(cat)
         return cat.tamanho;
     }
 
     function adicionarTamanho() {
+        if (!idTamanho) return;
+        
         if (!tamSelecionadas.find(item => item == idTamanho)) {
             const tamanhos = [...tamSelecionadas, idTamanho];
             setTamSelecionadas(tamanhos);
-            console.log(setTamSelecionadas)
         }
     }
 

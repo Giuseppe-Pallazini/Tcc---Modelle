@@ -223,6 +223,17 @@ export async function ListarTodosTamanhosporId(idProduto) {
     return linhas.map(item => item.id);
 }
 
+export async function ListarTodosTamanhosporIdAdmin(idProduto) {
+ 
+    const comando = `select id_tamanho as id
+    from tb_produto_tamanho
+    where id_produto = ?
+                    `
+
+    const [linhas] = await con.query(comando, [idProduto]);
+    return linhas.map(item => item.id);
+}
+
 export async function ListarTodosTamanhosporIdUser(idProduto) {
  
     const comando = `select nm_tamanho as id

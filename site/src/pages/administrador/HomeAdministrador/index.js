@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 
 import '../../../assets/common/index.scss'
 import {useEffect, useState, useRef} from 'react'
+import { toast } from 'react-toastify'
 
 export default function Index(){
 
@@ -17,6 +18,7 @@ export default function Index(){
 
     function sair(){
         storage.remove('admin-logado')
+        toast.dark("Admin deslogado com sucesso");
         navigate('/')
     }
 

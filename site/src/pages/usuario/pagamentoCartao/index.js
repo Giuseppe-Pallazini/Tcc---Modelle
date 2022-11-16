@@ -35,13 +35,10 @@ export default function Index(produto) {
     const [cidade, setCidade] = useState('')
     const [cep, setCep] = useState('')
     const [complemento, setComplemento] = useState('')
-    const [parcela, setParcela] = useState('')
+    const [parcelas, setParcelas] = useState('')
 
 
     const navigate = useNavigate();
-    function abrirDetalhes(id) {
-        navigate(`/user/detalhesProduto/${id}`)
-    }
 
     function dataAtual() {
         const timeElapsed = Date.now();
@@ -94,7 +91,7 @@ export default function Index(produto) {
                     vencimento: vencimento,
                     codSeguranca: cvv,
                     formaPagamento: tipo,
-                    parcelas: parcela
+                    parcelas: parcelas
                 },
                 produtos: produtos
             }
@@ -119,7 +116,7 @@ export default function Index(produto) {
                     vencimento: vencimento,
                     codSeguranca: cvv,
                     formaPagamento: tipo,
-                    parcelas: parcela
+                    parcelas: parcelas
                 },
                 produtos: produtos
             }
@@ -214,7 +211,7 @@ export default function Index(produto) {
                                         <div className='pagamento-div-imgProd'>
                                             <img src={mostrarImagem(item.produto.imagens[0])} alt='imgProd-pagamento' />
                                         </div>
-                                        <a onClick={abrirDetalhes} className='pagamento-infosPed-tituloProd'> <b> {item.produto.info.produto} </b> </a>
+                                        <a className='pagamento-infosPed-tituloProd'> <b> {item.produto.info.produto} </b> </a>
 
                                         <div className='pagamento-div-qtdUnid'>
                                             Unidades: <p className='pagamento-p-qtdUnid-prod'> {item.qtd} </p>
@@ -292,7 +289,7 @@ export default function Index(produto) {
                                     </div>
 
                                     <div className='pagamento-infoCartao-validade'>
-                                        Vencimento <input type='text' value={vencimento} onChange={e => setVencimento(e.target.value)} />
+                                        Vencimento <IMaskInput mask='00/00' maxLength='5' type='text' value={vencimento} onChange={e => setVencimento(e.target.value)} />
                                     </div>
                                 </div>
 
@@ -307,19 +304,19 @@ export default function Index(produto) {
 
                                     <div className='div-pagamento-QtdParcelas'>
                                         Parcelas
-                                        <select name='Quantidade de parcela' className='pagamento-select-qtdParcela' value={parcela} onChange={e => setParcela(e.target.value)}>
-                                            <option className='pagamento-option-qtdParcela'> 1 </option>
-                                            <option className='pagamento-option-qtdParcela'> 2</option>
-                                            <option className='pagamento-option-qtdParcela'> 3</option>
-                                            <option className='pagamento-option-qtdParcela'> 4</option>
-                                            <option className='pagamento-option-qtdParcela'> 5</option>
-                                            <option className='pagamento-option-qtdParcela'> 6</option>
-                                            <option className='pagamento-option-qtdParcela'> 7</option>
-                                            <option className='pagamento-option-qtdParcela'> 8</option>
-                                            <option className='pagamento-option-qtdParcela'> 9</option>
-                                            <option className='pagamento-option-qtdParcela'> 10</option>
-                                            <option className='pagamento-option-qtdParcela'> 11</option>
-                                            <option className='pagamento-option-qtdParcela'> 12</option>
+                                        <select name='Quantidade de parcela' className='pagamento-select-qtdParcela' value={parcelas} onChange={e => setParcelas(e.target.value)}>
+                                            <option className='pagamento-option-qtdParcela' value={1}> 1 </option>
+                                            <option className='pagamento-option-qtdParcela' value={2}> 2</option>
+                                            <option className='pagamento-option-qtdParcela' value={3}> 3</option>
+                                            <option className='pagamento-option-qtdParcela' value={4}> 4</option>
+                                            <option className='pagamento-option-qtdParcela' value={5}> 5</option>
+                                            <option className='pagamento-option-qtdParcela' value={6}> 6</option>
+                                            <option className='pagamento-option-qtdParcela' value={7}> 7</option>
+                                            <option className='pagamento-option-qtdParcela' value={8}> 8</option>
+                                            <option className='pagamento-option-qtdParcela' value={9}> 9</option>
+                                            <option className='pagamento-option-qtdParcela' value={10}> 10</option>
+                                            <option className='pagamento-option-qtdParcela' value={11}> 11</option>
+                                            <option className='pagamento-option-qtdParcela' value={12}> 12</option>
                                         </select>
                                     </div>
 
