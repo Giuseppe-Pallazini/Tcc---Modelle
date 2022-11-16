@@ -23,7 +23,7 @@ export default function Index(){
     }
 
     useEffect(()=> {
-        if (!Storage('usuario-logado')) {
+        if (storage('usuario-logado')) {
             navigate('/login')
         }
     })

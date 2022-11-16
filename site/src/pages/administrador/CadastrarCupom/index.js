@@ -8,11 +8,27 @@ import '../../../assets/common/index.scss'
 
 
 import { useEffect, useState, useRef } from 'react'
+import { toast } from 'react-toastify'
+import { inserirCupom } from '../../../api/produtoAPI'
 
 
 
 
 export default function Index() {
+    const [codCupom, setCodCupom] = useState();
+    const [quantidade, setQuantidade] = useState();
+    const [valor, setValor] = useState();
+
+    async function cadastrarCupom(){
+        try {
+            const novoCupom = await inserirCupom(codCupom, valor, quantidade);
+            toast.dark(' ✔️ Cupom cadastrado com secesso!');
+
+        } catch (err) {
+            toast.error(err.response.data.erro);
+            console.log(err)
+        }
+    }
 
     const navigate = useNavigate();
 
@@ -55,7 +71,7 @@ export default function Index() {
                 </div>
 
 
-                <button className='bt-cadastro'> Cadastrar </button>
+                <button className='bt-cadastro' onClick={cadastrarCupom} > Cadastrar </button>
 
 
 

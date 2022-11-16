@@ -125,3 +125,14 @@ export async function buscarProdutoPorIdUsuario(id){
     const resposta = await api.get('/api/produto/' + id)
     return resposta.data;
 }
+
+export async function inserirCupom( codCupom, valor, quantidade) {
+   const r = await api.post('/cadastrar/cupom', 
+   {
+        codCupom,
+        valor,
+        quantidade
+   }
+   );
+   return r.data;
+}
