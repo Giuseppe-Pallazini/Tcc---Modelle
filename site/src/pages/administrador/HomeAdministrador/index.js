@@ -22,6 +22,12 @@ export default function Index(){
         navigate('/')
     }
 
+    useEffect(()=> {
+        if (!Storage('usuario-logado')) {
+            navigate('/login')
+        }
+    })
+
     return(
        <main className='main-homeAdmin'>
             <nav>

@@ -15,7 +15,7 @@ import LogoCartao from '../../../assets/image/creditcardwithlines_121985.svg'
 import Storage from 'local-storage'
 import { salvarNovoPedido } from '../../../api/pedidoAPI';
 
-export default function Index(produto) {
+export default function Index() {
     const [itens, setItens] = useState([])
 
     const [mostrarInfosPag, setMostrarInfosPag] = useState(false)

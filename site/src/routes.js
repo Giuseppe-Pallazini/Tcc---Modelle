@@ -29,8 +29,6 @@ import GerenciarProd from       '../src/pages/administrador/GerenciarProd'
 import AlterarCard from         '../src/pages/administrador/AlterarCard'
 import AlterarCassolsel from    '../src/pages/administrador/AlterarCarrousel'
 import CadastroCupom from       '../src/pages/administrador/CadastrarCupom'
-import GerenciarFeedbecks from  '../src/pages/administrador/GerenciarFeedbecks'
-import DetalhesFeedbecks from   '../src/pages/administrador/DetalhesFeedbecks'
 import GerenciarPed from        '../src/pages/administrador/GerenciarPed'
 import DetalhesPed from         '../src/pages/administrador/DetalhesPed'
 import GerenciarUsuarios from   '../src/pages/administrador/GerenciarUsuarios'
@@ -53,8 +51,6 @@ export default function Index(){
                 <Route path='/admin/alterarCard'            element={< AlterarCard />} />
                 <Route path='/admin/alterarCarrolsel'       element={< AlterarCassolsel />} />
                 <Route path='/admin/cadastrarCupom'         element={< CadastroCupom />} />
-                <Route path='/admin/gerenciarFeedbecks'     element={< GerenciarFeedbecks />} />
-                <Route path='/admin/detalhesFeedbecks'      element={< DetalhesFeedbecks />} />
                 <Route path='/admin/gerenciarPed'           element={< GerenciarPed />} />
                 <Route path='/admin/detalhesPed'            element={< DetalhesPed />} />
                 <Route path='/admin/gerenciarUsuarios'      element={< GerenciarUsuarios />} />

@@ -188,9 +188,10 @@ export default function CadastroProduto() {
         }
     }
 
-
-
     useEffect(() => {
+        if (!Storage('usuario-logado')) {
+            navigate('/login')
+        }
         carregarMarca();
         carregarTamanho();
         carregarModelo();

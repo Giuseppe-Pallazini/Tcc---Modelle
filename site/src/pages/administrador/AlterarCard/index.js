@@ -17,9 +17,6 @@ export default function Index(){
 
                 <div className='div-escolher-painelEditar'> </div>
 
-
-                
-
             </section>
 
         </main> 

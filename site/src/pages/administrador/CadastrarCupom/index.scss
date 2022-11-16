@@ -1,15 +1,82 @@
-.main-cadastroCupom{
-    display: flex;   
+.main-cadastroCupom {
+    display: flex;
     flex-direction: column;
-    .section-cadastroCupom{
+
+    .section-cadastroCupom {
         display: flex;
         flex-direction: column;
         height: 100%;
-
         align-items: center;
         justify-content: center;
-        .cadastroCupom-divCodigo{
-            
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
+
+        .info-cup {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-family: 'caviar';
+
+            margin-top: 3em;
+        }
+
+        .linha {
+            margin-top: 1em;
+
+            color: #D9D9D9;
+
+            height: 2px;
+            width: 765px;
+            left: 282px;
+            top: 288px;
+            border-radius: 0px;
+
+        }
+
+        .image-desconto {
+            margin-left: 1em;
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'caviar';
+
+            margin-top: 6em;
+        }
+
+        .desconto {
+            margin-top: 2em;
+        }
+
+        .quantidade {
+            margin-top: 2em;
+        }
+
+        .bt-cadastro {
+            margin-top: 3em;
+            font-family: 'caviar';
+            color: white;
+            background-color: black;
+            padding: .5em 3em;
+            transition: .3s;
+            margin-left: 4em;
+
+            transition: .5s;
+        }
+
+        .bt-cadastro:hover{
+        
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+         
+        }
+
     }
 }
