@@ -14,20 +14,16 @@ export default function Index(){
            <CabecalhoAdm /> 
            <section className='section-cadastroCupom'>
                 <div className='cadastroCupom-divCodigo'>
-                    Código do cupom:?<input type='text'/>
+                    <span>Código do cupom: </span>
+                    <input type='text'/>
                 </div>
                 
 
                 <div className='cadastroCupom-descontoCupom'>   
-                    Desconto:   
+                    
+                    <span>Desconto: </span>
+                    <input type='text'/>  
 
-                </div>
-
-                <div>
-                    <input type='range' id='vol' name='vol' value='50' min='0' max='100'
-                        oninput='display.value=value' onchange='display.value=value' />
-                    <input type='text' id='display' value='50'
-                        oninput='vol.value=value' onchange='vol.value=value' />
                 </div>
            </section>
         </main> 

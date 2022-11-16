@@ -1,0 +1,15 @@
+.main-cadastroCupom{
+    display: flex;   
+    flex-direction: column;
+    .section-cadastroCupom{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        align-items: center;
+        justify-content: center;
+        .cadastroCupom-divCodigo{
+            
+        }
+    }
+}
