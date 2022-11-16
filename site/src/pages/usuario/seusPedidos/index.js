@@ -8,6 +8,7 @@ import BoxSeusPedidos from '../../../components/boxSeusPedidos'
 import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
+    
     return(
        <main className='main-VerSeusPedidos'>
             <Cabecalho />

@@ -430,7 +430,7 @@ group by tb_produto.id_produto,
 
 export async function listarPedidos() {
     const comando =
-        `	select 
+        `	 select 
         tb_pedido.id_pedido    as idPedido,
         tp_pagamento     as pagamento,
         ds_endereco        as Endereço,
@@ -449,7 +449,9 @@ export async function listarPedidos() {
         nm_marca        as marcaProduto,
         ds_cor            as corProduto,
         vl_preco        as valorProduto,
-        qtd_produto        as qtdProduto
+        qtd_produto        as qtdProduto,
+        
+        ds_imagem			as imagem
     from tb_pedido
     
         inner join tb_produto
@@ -462,7 +464,10 @@ export async function listarPedidos() {
         on tb_pedido_item.id_produto_item = tb_pedido.id_pedido
     
         inner join tb_usuario
-        on tb_usuario.id_usuario = tb_pedido.id_pedido;`
+        on tb_usuario.id_usuario = tb_pedido.id_pedido
+        
+        inner join tb_produto_imagem
+        on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto`
 
     const [linhas] = await con.query(comando);
     return linhas;

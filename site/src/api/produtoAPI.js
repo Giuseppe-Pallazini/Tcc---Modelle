@@ -126,6 +126,11 @@ export async function buscarProdutoPorIdUsuario(id){
     return resposta.data;
 }
 
+export async function visualizarPedido(){
+    const resposta = await api.get('/api/listarPedidos')
+    return resposta.data;
+}
+
 export async function inserirCupom( codCupom, valor, quantidade) {
    const r = await api.post('/cadastrar/cupom', 
    {
