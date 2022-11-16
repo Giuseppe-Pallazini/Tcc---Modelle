@@ -92,7 +92,7 @@ export default function Index(){
                                 <tr className='gereciar-tr'>
                                     <td className='gereciar-td' > {item.nome}</td>
                                     <td className='gereciar-td' > {item.email}</td>                               
-                                    <td className='gereciar-td' > {item.dataNascimento}</td>
+                                    <td className='gereciar-td' > {item.dataNascimento.substr(0,10)}</td>
                                     <td className='gereciar-td' > {item.telefone}</td>
                                     <td>
                                         &nbsp;&nbsp;
