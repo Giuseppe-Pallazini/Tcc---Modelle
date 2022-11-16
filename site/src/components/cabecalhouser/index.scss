@@ -160,16 +160,18 @@
     @media(max-width: 414px){
         .cab-user{
 
-        .cab-user-txt{
-            width: 2em ;
-        }
-        .cab-user-txt-1{
-            font-size: 5em;
-        }
+            .cab-user-txt{
 
-        .cab-user-topicos{
-            margin-left: .5em;
-        }
+                    width: 2em ;
+                }
+                .cab-user-txt-1{
+                    font-size: 0em;
+                    display: none;
+                }
+
+                .cab-user-topicos{
+                    margin-left: .5em;
+                }
         }
     }
 }

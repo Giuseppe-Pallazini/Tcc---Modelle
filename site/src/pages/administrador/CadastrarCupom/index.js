@@ -64,7 +64,7 @@ export default function Index() {
                     <div className='desconto'>
 
                         <span> Desconto: </span>
-                        <IMaskInput mask='00.00' type='number' value={valor} onChange={e => setValor(e.target.value)} />
+                        <IMaskInput mask='00.00' type='number' value={valor} onChange={e => setValor(e.target.valueP)} />
 
                     </div>
 
