@@ -6,7 +6,7 @@ import Imagem3 from '../../assets/image/bolsa-lista-desejo.png'
 import Imagem4 from '../../assets/image/carrinho.svg'
 import Imagem5 from '../../assets/image/user.png'
 import ImagemSair from '../../assets/image/logo-sair.png'
-import {useNavigate} from 'react-router-dom'
+import {Navigate, useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
@@ -60,6 +60,10 @@ export default function Index(){
 
     function abrirLanding(){
         navigate('/');
+    }
+
+    function linkLogin() {
+        navigate('/login')
     }
 
 
@@ -127,8 +131,7 @@ export default function Index(){
                     </div>
 
                     <div className='cab-user-1' >
-                        <p className='cab-user-nome'>Usuario</p>
-                        <img className='cab-user-img' src={Imagem5} alt='' />
+                        <img onClick={linkLogin} className='cab-user-img' src={Imagem5} alt='' />
                     </div>
 
                     <div onClick={sair} className='div-iconeSair' >

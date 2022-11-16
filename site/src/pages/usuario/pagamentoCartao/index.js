@@ -297,7 +297,6 @@ export default function Index() {
                                     <div className='div-pagamento-tpCartão'>
                                         Tipo do Cartão
                                         <select name='Tipo do cartão' className='pagamento-select-tpCartão' value={tipo} onChange={e => setTipo(e.target.value)}>
-                                            <option className='pagamento-option-tpCartão'> Débito </option>
                                             <option className='pagamento-option-tpCartão'> Crédito </option>
                                         </select>
                                     </div>
