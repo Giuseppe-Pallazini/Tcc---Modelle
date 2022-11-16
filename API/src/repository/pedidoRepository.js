@@ -30,7 +30,7 @@ export async function inserirPedido(novoPedido) {
         novoPedido.status,
         novoPedido.tipoPagamento,
         novoPedido.endereco,
-        novoPedido.numero,
+        novoPedido.numerocasa,
         novoPedido.cidade,
         novoPedido.cep,
         novoPedido.complemento

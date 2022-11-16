@@ -3,6 +3,8 @@ import { buscarCupom } from '../repository/cupomRepository.js';
 import { ListarTodosProdutosPorId } from '../repository/mostrarprodutorepository.js';
 import { inserirPagamento, inserirPedido, inserirPedidoItem } from '../repository/pedidoRepository.js';
 import { acharCupom, criarNotaFiscal, criarNovoPedido } from '../services/novoProdutoService.js';
+import { validarPagamento } from '../services/pagamentoCartaoValidacao.js';
+import { validarnovoPedido } from '../services/pagamentoValidacao.js';
 const server = Router();
 
 server.post('/api/pedido/:idUsuario/', async (req, resp) => {
@@ -15,7 +17,11 @@ server.post('/api/pedido/:idUsuario/', async (req, resp) => {
         const novoPedido = criarNovoPedido(idUsuario, idCupom, info);
         console.log(novoPedido)
         const idPedidoCriado = await inserirPedido(novoPedido);
-        const idPagCriado = await inserirPagamento(idPedidoCriado, info.cartao);
+        await validarnovoPedido(novoPedido);
+        await inserirPagamento(idPedidoCriado, info.cartao);
+        console.log(inserirPagamento)
+        await validarPagamento(info.cartao)
+        
 
         for (let item of info.produtos) {
             const prod = await ListarTodosProdutosPorId(item.id);

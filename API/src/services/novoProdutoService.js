@@ -45,7 +45,7 @@ export function criarNovoPedido(idUsuario, idCupom, info) {
         status: 'Confirmando Pagamento',
         tipoPagamento: 'Cartão',
         endereco: info.endereco,
-        numero: info.numero,
+        numerocasa: info.numerocasa,
         cidade: info.cidade,
         cep: info.cep,
         complemento: info.complemento

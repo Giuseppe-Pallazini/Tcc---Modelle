@@ -40,7 +40,7 @@ export default function Index(produto) {
 
     const navigate = useNavigate();
     function abrirDetalhes(id) {
-        navigate(`/user/destalheProduto/${id}`)
+        navigate(`/user/detalhesProduto/${id}`)
     }
 
     function dataAtual() {
@@ -70,7 +70,7 @@ export default function Index(produto) {
     }
 
     async function salvarPedido() {
-
+    try{
         let produtos = Storage('carrinho');
         let id = '';
         let pedido = ''
@@ -129,6 +129,12 @@ export default function Index(produto) {
         toast.dark('Pedido inserido com sucesso!');
         Storage('carrinho', []);
         navigate('/');
+
+    }
+    catch(err){
+        toast.error(err.response.data.erro);
+
+    }
     }
 
 
@@ -145,7 +151,6 @@ export default function Index(produto) {
 
     function mostrarImagem(imagem) {
         return buscarImagem(imagem)
-
     }
 
 
@@ -184,7 +189,7 @@ export default function Index(produto) {
 
                                 <div className='pagamento-Preench-numero'>
                                     <p className='pagamento-Preench-numero-p'>N°</p>
-                                    <input type='text' className='pagamento-Preench-numero-input' value={numerocasa} onChange={e => setNumeroCasa(e.target.value)} />
+                                    <input type='text' className='pagamento-Preench-numero-input' value={numerocasa} onChange={e => setNumeroCasa(Number(e.target.value))} />
                                 </div>
 
                                 <div className='pagamento-div-cep'>
