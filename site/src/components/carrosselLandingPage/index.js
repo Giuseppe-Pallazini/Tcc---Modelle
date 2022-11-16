@@ -3,8 +3,8 @@ import '../../assets/common/index.scss'
 import { Link } from 'react-router-dom';
 
 import Imagem1 from '../../assets/image/img1-carrossel-landingpage.png'
-import Imagem2 from '../../assets/image/imagem-Biber.png'
-import Imagem3 from '../../assets/image/image3-carrosel.png'
+import Imagem2 from '../../assets/image/imagem02-carroussel.png'
+import Imagem3 from '../../assets/image/imagem03-carroussel.png'
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -47,12 +47,32 @@ export default function Index() {
                     </div>
                 </div>
             
-                <div>
+                <div className='slides-2' >
                     <img className='img-02' src={Imagem2} alt='imagem-carrossel'/>
+                    <div className='div-01'> 
+                    <h1 className='h1-01'> Conscious </h1>
+                    <h3 className='h3-01'> Nanushka</h3>
+
+                    <p className='p1-01'> Blazer de lã com abotoamento simples </p>
+
+                    <p className='p2-01'> Blazer de lã com abotoamento simples Café, lã, colarinho inglês, fechamento frontal por botões, mangas longas, bolso com fenda no busto e fenda inglesa posterior. </p>
+
+                    <Link to='/user/menuNovidades' className='link-01'> Descubra </Link>
+                    </div>
                 </div>
           
-                <div>
+                <div className='slides-3' >
                     <img className='img-03' src={Imagem3} alt='imagem-carrossel'/>
+                    <div className='div-01'> 
+                    <h1 className='h1-01'> Conscious </h1>
+                    <h3 className='h3-01'> Nanushka</h3>
+
+                    <p className='p1-01'> Cinto dupla face Dailey </p>
+
+                    <p className='p2-01'> Cinto dupla face Dailey Amarelo manteiga, modelagem dupla face, ferragem dourada, fechamento por fivelas e perfurações.</p>
+
+                    <Link to='/user/menuNovidades' className='link-01'> Descubra </Link>
+                    </div>
                 </div>
             </Carousel>;
         </main>
