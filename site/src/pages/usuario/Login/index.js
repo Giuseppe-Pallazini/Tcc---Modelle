@@ -92,7 +92,7 @@ export default function Index() {
             
             <Link className='div-dashboard-desc2' to={'/user/recuperarSenha'}> Esqueceu a senha </Link>
 
-            <Link className='div-dashboard-desc3' to={'/user/cadastro'}> Criar Conta </Link>
+            <Link className='div-dashboard-desc3' to={'/user/cadastro2'}> Criar Conta </Link>
 
             <p className='div-dashboard-desc4'>All rights reserved &copy; </p>
 
