@@ -6,20 +6,16 @@ import CabecalhoAdm from '../../../components/cabecalhoadm'
 import desc from '../../../assets/image/descontto.svg'
 import '../../../assets/common/index.scss'
 
-
 import { useEffect, useState, useRef } from 'react'
 import { toast } from 'react-toastify'
 import { inserirCupom } from '../../../api/produtoAPI'
-
-
-
 
 export default function Index() {
     const [codCupom, setCodCupom] = useState();
     const [quantidade, setQuantidade] = useState();
     const [valor, setValor] = useState();
 
-    async function cadastrarCupom(){
+    async function cadastrarCupom() {
         try {
             const novoCupom = await inserirCupom(codCupom, valor, quantidade);
             toast.dark(' ✔️ Cupom cadastrado com secesso!');
@@ -50,7 +46,7 @@ export default function Index() {
                     <div className='cupom'>
 
                         <span> Código do cupom: </span>
-                        <input type='text' value={codCupom} className='desc' onChange={e => setCodCupom(e.target.value)}/>
+                        <input type='text' value={codCupom} className='desc' onChange={e => setCodCupom(e.target.value)} />
 
                     </div>
 
@@ -70,10 +66,7 @@ export default function Index() {
 
                 </div>
 
-
                 <button className='bt-cadastro' onClick={cadastrarCupom} > Cadastrar </button>
-
-
 
             </section>
         </main>

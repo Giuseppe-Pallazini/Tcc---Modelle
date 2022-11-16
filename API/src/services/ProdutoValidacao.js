@@ -1,6 +1,5 @@
 import { buscarTamanhoPorId } from "../repository/tamanhoRepository.js";
 
-
 export async function validarProduto(produto) {
     if (produto.nome == undefined || produto.nome == '') {
         throw new Error('Nome do produto é obrigatório!');

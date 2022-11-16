@@ -135,9 +135,6 @@ export default function Index() {
     }
     }
 
-
-
-
     function calcularTotal() {
         let total = 0;
         for (let item of itens) {
@@ -150,8 +147,6 @@ export default function Index() {
     function mostrarImagem(imagem) {
         return buscarImagem(imagem)
     }
-
-
 
     useEffect(() => {
         if (!Storage('usuario-logado')) {
