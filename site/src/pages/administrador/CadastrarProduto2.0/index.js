@@ -16,6 +16,8 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { API_URL } from '../../../api/config';
 
+import storage from 'local-storage';
+
 export default function CadastroProduto() {
     const [idProduto, setIdProduto] = useState();
     const [nome, setNome] = useState();
@@ -190,7 +192,7 @@ export default function CadastroProduto() {
     }
 
     useEffect(() => {
-        if (!Storage('usuario-logado')) {
+        if (!storage('admin-logado')) {
             navigate('/login')
         }
         carregarMarca();

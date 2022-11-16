@@ -5,12 +5,15 @@ import ImagemCadastroUsuario from '../../../assets/image/imagem-cadastro-usuario
 import LogoModelle from '../../../assets/image/logo-modelle.svg'
 import { CadastroUsuario } from '../../../api/usuarioAPI'
 
+import { login } from '../../../api/usuarioAPI.js'
+
 import { Link } from 'react-router-dom'
 import './index.scss';
 import '../../../assets/common/index.scss'
 import { useState } from 'react'
 import { IMaskInput } from 'react-imask';
 import validator from 'validator';
+import storage from 'local-storage';
 
 export default function Index() {
     const [nome, setNome] = useState('');
@@ -20,6 +23,8 @@ export default function Index() {
     const [email2, setEmail2] = useState('');
     const [senha, setSenha] = useState('');
     const [senha2, setSenha2] = useState('');
+    const [erroEmail, setErroEmail] = useState('');
+    const [erroSenha, setErroSenha] = useState('')
 
     const navigate = useNavigate()
 
@@ -28,17 +33,21 @@ export default function Index() {
             if (validator.isEmail(email)) {
 
                 if (email != email2) {
-                    toast.warn('Emails não coincidem')
+                    setErroEmail('Emails não coincidem')
                 }
 
                 if (senha != senha2) {
-                    toast.warn('Senhas não coincidem')
+                    setErroSenha('Senhas não coincidem')
+                }
+
+                else if (senha.length < 6) {
+                    setErroSenha('Senha de conter no mínimo 6 caracteres')
                 }
                 
                 else {
                 const novoUsuario = await CadastroUsuario(nome, dtNascimento, telefone, email, senha);
                 toast.dark(' ✔️ Cadastro concluido com secesso!');
-                navigate('/')
+                navigate('/login')
                 }
 
             }
@@ -88,18 +97,19 @@ export default function Index() {
                         <div className='div-cadastro-inputs'>
                             <input type='text' className='cadastro-inputs' placeholder='Confirmar email' value={email2} onChange={e => setEmail2(e.target.value)} />
                         </div>
+                        <p className='erro'> <b> {erroEmail} </b> </p>
 
                         <div className='div-cadastro-inputs'>
                             <input type='password' className='cadastro-inputs' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
                         </div>
-                        <p className='cadastro-p-qtdCaracteres'> A senha deve conter no mínimo 6 caracteres. </p>
 
                         <div className='div-cadastro-inputs-confirmarSenha'>
                             <input type='password' className='cadastro-inputs' placeholder='Confrirmar Senha' value={senha2} onChange={e => setSenha2(e.target.value)} />
                         </div>
+                        <p className='erro'> <b> {erroSenha} </b> </p>
 
                         <div>
-                            <button className='butao-criarConta' onClick={cadastrarUsuario} > Criar conta </button>
+                            <button className='butao-criarConta' disabled onClick={cadastrarUsuario} > Criar conta </button>
                         </div>
 
                         <Link to='/login' className='cadastro-jaPossuoConta'>Ja possuo Conta </Link>

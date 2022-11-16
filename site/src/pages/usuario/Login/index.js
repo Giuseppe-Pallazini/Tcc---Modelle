@@ -90,9 +90,7 @@ export default function Index() {
             
             <button className='div-dashboard-bt' onClick={entrarClick} disabled={carregando} >Login</button>
             
-            <Link className='div-dashboard-desc2' to={'/user/recuperarSenha'}> Esqueceu a senha </Link>
-
-            <Link className='div-dashboard-desc3' to={'/user/cadastro2'}> Criar Conta </Link>
+            <Link className='div-dashboard-desc3' to={'/user/cadastro'}> Criar Conta </Link>
 
             <p className='div-dashboard-desc4'>All rights reserved &copy; </p>
 

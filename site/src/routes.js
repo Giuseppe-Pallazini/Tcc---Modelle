@@ -16,8 +16,6 @@ import MenuFeminino from            './pages/usuario/menuFeminino'
 import MenuMasculino from           './pages/usuario/menuMasculino'
 import MenuNovidades from           './pages/usuario/menuNovidades'
 import PagamentoCartao from         '../src/pages/usuario/pagamentoCartao'
-import RecuperarSenha from          './pages/usuario/recuperarSenha'
-import EnviarCodigo from            './pages/usuario/recuperarSenha-codigo'
 import SeusPedidos from             './pages/usuario/seusPedidos'
 import SobreModelle from            './pages/usuario/sobreModelle'
 
@@ -72,8 +70,6 @@ export default function Index(){
                 <Route path='/user/menuMasculino'           element={< MenuMasculino />} />
                 <Route path='/user/menuNovidades'           element={< MenuNovidades />} />
                 <Route path='/user/pagamentoCartao'         element={< PagamentoCartao />} />
-                <Route path='/user/recuperarSenha'          element={< RecuperarSenha />} />
-                <Route path='/user/enviarCodigo'            element={< EnviarCodigo />} />
                 <Route path='/user/seusPedidos'             element={< SeusPedidos />} />
                 <Route path='/user/sobreModelle'            element={< SobreModelle />} />
 

@@ -4,6 +4,7 @@ import Imagem2 from '../../assets/image/img-exit.png'
 import { Link, useNavigate } from 'react-router-dom'
 import storage from 'local-storage'
 import { toast } from 'react-toastify'
+import { useEffect } from 'react'
  
 
 export default function Index(){
@@ -14,6 +15,12 @@ export default function Index(){
         storage.remove('admin-logado')
         navigate('/')
     }
+
+    useEffect(() => {
+        if (!storage('admin-logado')) {
+            navigate('/login')
+        }
+    },[])
 
     return(
         <header>
