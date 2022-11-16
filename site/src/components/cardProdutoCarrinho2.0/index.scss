@@ -45,10 +45,20 @@
                                 flex-direction: row;
                                 font-family: 'caviar';
                                 font-size: .8em;
+                                transition: .3s;
 
+                                .image {
+                                    transition: .3s;
+                                }
+                                
                                 .carrinho-section1-div-1-2-divImg-1-p {
                                     margin-left: .7em;
                                 }
+                                
+                            }
+
+                            .carrinho-section1-div-1-2-divImg-1:hover {
+                                transform: scale(1.2);
                             }
                         }
                     }
@@ -132,6 +142,7 @@
                     .carrinho-section1-div-1-4-div1-p {
                         font-family: 'caviar-bold';
                         font-size: 1em;
+                        margin-right: .3em;
                     }
 
                     .carrinho-section1-div-1-4-div1-div2 {
