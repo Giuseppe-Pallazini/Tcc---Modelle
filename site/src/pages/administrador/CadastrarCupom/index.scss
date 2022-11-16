@@ -1,4 +1,3 @@
-
 .main-cadastroCupom {
     display: flex;
     flex-direction: column;
@@ -55,6 +54,11 @@
             margin-top: 2em;
         }
 
+        .desc {
+            border: none;
+            border-bottom: 1px solid #000;
+        }
+
         .quantidade {
             margin-top: 2em;
         }
@@ -67,16 +71,15 @@
             padding: .5em 3em;
             transition: .3s;
             margin-left: 4em;
-
             transition: .5s;
         }
 
-        .bt-cadastro:hover{
-        
+        .bt-cadastro:hover {
+
             background-color: white;
             border: 1px solid black;
             color: black;
-         
+
         }
 
     }
