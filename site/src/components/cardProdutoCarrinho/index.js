@@ -13,7 +13,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export default function Index({ item: { produto: { info, imagens, tamanho }, qtd }, removerItem, carregarCarrinho}) {
     const [qtdProduto, setQtdProduto] = useState(qtd);
-    const [idTamanho, setIdTamanho] = useState();
+    const [tamProduto, setTamProduto] = useState(tamanho);
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
 
     function mostrarImagem(imagem) {

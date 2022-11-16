@@ -19,7 +19,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
     const [produto, setProduto] = useState({ info: {}, tamanho: [], imagens: [] });
     const [qtdProduto, setQtdProduto] = useState(qtd);
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
-    const [idTamanho, setIdTamanho] = useState();
+    const [tamProduto, setTamProduto] = useState(tamanho);
 
 
     const { id } = useParams();
@@ -36,6 +36,16 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
         let carrinho = Storage('carrinho');
         let itemStorage = carrinho.find(item => item.id == info.id);
         itemStorage.qtd = novaQtd;
+        Storage('carrinho', carrinho);
+        carregarCarrinho();
+    }
+
+    function alterarTamanho(novoTam) {
+        setTamProduto(novoTam)
+
+        let carrinho = Storage('carrinho');
+        let itemStorage = carrinho.find(item => item.id == info.id);
+        itemStorage.tam = novoTam;
         Storage('carrinho', carrinho);
         carregarCarrinho();
     }
@@ -69,6 +79,27 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
         return subtotal.toFixed(2)
     }
 
+    async function remover() {
+        confirmAlert({
+            title: ' Remover Produto?',
+            message: `Confirmar remoção do ${info.produto}?`,
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: async () => {
+                        const resposta = await removerItem(info.id)
+                        await carregarProduto();
+                        toast.dark(' ✔️ Produto removido com sucesso!')
+                    }
+                },
+                {
+                    label: 'Não'
+                }
+            ]
+        })
+    }
+
+
 
 
     useEffect(() => {
@@ -90,41 +121,45 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
 
 
                         <div className='carrinho-section1-div-1-2'>
-                            <div className='carrinho-section1-div-1-2-divP'>
-                                <p> <img src={IconRemover} /> Remover </p>
+                            <div className='carrinho-section1-div-1-2-1'>
+                                <div className='carrinho-section1-div-1-2-divImg'>
+                                    <div onClick={remover} className='carrinho-section1-div-1-2-divImg-1'>
+                                        <img src={IconRemover} />
+                                        <p className='carrinho-section1-div-1-2-divImg-1-p'> Remover </p>
+                                    </div>
+                                </div>
                             </div>
-                            <p> ID: {info.id} </p>
-                            <p className='cor'> {info.produto} </p>
+                            <div className='carrinho-section1-div-1-2-2'>
+                                <p className='carrinho-section1-div-1-2-p1'> ID: {info.id} </p>
+                                <p className='carrinho-section1-div-1-2-p2'> {info.produto} </p>
+                            </div>
                             <hr />
                         </div>
 
 
                         <div className='carrinho-section1-div-1-3'>
-                            <div>
-                                <p> Cor </p>
-                                <p style={{ backgroundColor: info.cor }}></p>
+                            <div className='carrinho-section1-div-1-3-div1'>
+                                <p className='carrinho-section1-div-1-3-div1-p1'> <b> Cor </b> </p>
+                                <p className='carrinho-section1-div-1-3-div1-p2' style={{ backgroundColor: info.cor }}></p>
                             </div>
-                            <div>
-                                <p> Tamanho: </p>
+                            <div className='carrinho-section1-div-1-3-div2'>
+                                <p className='carrinho-section1-div-1-3-div2-p'> <b>  Tamanho: </b> </p>
 
-                                <select value={idTamanho}>
+                                <select className='carrinho-section1-div-1-3-div2-select' value={tamProduto} onChange={e => alterarTamanho(e.target.value)}>
                                     <option selected disabled hidden>Selecione</option>
                                     {tamanho.map(item =>
                                         <option className='cadastro-section2-div3-select-option'> {item} </option>
                                     )}
                                 </select>
-
-
                             </div>
-                            <hr />
                         </div>
 
-
+                        <hr className='hr' />
                         <div className='carrinho-section1-div-1-4'>
-                            <div>
-                                <p> Qtd: </p>
-                                <div className='carrinho-div-input-qtd'>
-                                    <select onChange={e => alterarQuantidade(e.target.value)} value={qtdProduto}>
+                            <div className='carrinho-section1-div-1-4-div1'>
+                                <p className='carrinho-section1-div-1-4-div1-p'> Qtd: </p>
+                                <div className='carrinho-section1-div-1-4-div1-div2'>
+                                    <select className='carrinho-section1-div-1-4-div1-div2-select' onChange={e => alterarQuantidade(e.target.value)} value={qtdProduto}>
                                         <option> 1 </option>
                                         <option> 2 </option>
                                         <option> 3 </option>
@@ -136,7 +171,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
 
 
                             <div>
-                                <p> Subtotal:  R$ <b> {calcularSubTotal()} </b> </p>                    
+                                <p> Subtotal:  R$ <b> {calcularSubTotal()} </b> </p>
                             </div>
                         </div>
 
