@@ -124,7 +124,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                             <div className='carrinho-section1-div-1-2-1'>
                                 <div className='carrinho-section1-div-1-2-divImg'>
                                     <div onClick={remover} className='carrinho-section1-div-1-2-divImg-1'>
-                                        <img src={IconRemover} />
+                                        <img className='image' src={IconRemover} />
                                         <p className='carrinho-section1-div-1-2-divImg-1-p'> Remover </p>
                                     </div>
                                 </div>
