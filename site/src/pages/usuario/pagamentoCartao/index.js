@@ -212,7 +212,7 @@ export default function Index(produto) {
                                 <div className='div-pagamento-InfosPed'>
                                     <section>
                                         <div className='pagamento-div-imgProd'>
-                                            <img src={mostrarImagem(item.produto.imagens)} alt='imgProd-pagamento' />
+                                            <img src={mostrarImagem(item.produto.imagens[0])} alt='imgProd-pagamento' />
                                         </div>
                                         <a onClick={abrirDetalhes} className='pagamento-infosPed-tituloProd'> <b> {item.produto.info.produto} </b> </a>
 
