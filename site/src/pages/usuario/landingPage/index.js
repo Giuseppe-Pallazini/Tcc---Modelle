@@ -126,12 +126,13 @@ export default function Index() {
 
                 </video>
 
+                <div className='div-text-video'>
+                    <h1 className='text-info'> CELEBRE A SEDA </h1>
 
-                <h1 className='text-info'> CELEBRE A SEDA </h1>
-
-                <div className='a'>
-                    <a className='bt'> Compre agora </a>
-                    <a className='by'> Descubra a campanha </a>
+                    <div className='a'>
+                        <a className='bt'> Compre agora </a>
+                        <a className='by'> Descubra a campanha </a>
+                    </div>
                 </div>
 
             </section>
