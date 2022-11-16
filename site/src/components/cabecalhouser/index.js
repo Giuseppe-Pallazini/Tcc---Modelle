@@ -13,8 +13,8 @@ import { toast } from 'react-toastify'
 import { buscarProdutoPorId } from '../../api/produtoAPI'
 
 export default function Index(){
-
     const [itens, setItens] = useState([]);
+
     const navigate = useNavigate();
 
     async function carregarCarrinho() {
@@ -35,9 +35,7 @@ export default function Index(){
         }
     }
 
-    useEffect(() => {
-        carregarCarrinho()
-    },[])
+
     
 
     function qtdItens() {
@@ -57,7 +55,7 @@ export default function Index(){
     }
 
     function abrirCarrinho(){
-        navigate('/user/carrinho');
+        navigate('/user/carrinho2');
     }
 
     function abrirLanding(){
@@ -76,12 +74,17 @@ export default function Index(){
         }
     }
 
+    
+    useEffect(() => {
+        carregarCarrinho()
+        qtdItens()
+    },[])
 
     return(
         <main>
             <nav className='cab-user'>
                 <div className='cab-user-txt'>
-                    <h1 className='cab-user-txt-1' onClick={abrirLanding}>M o d e l l e</h1>
+                    <h1 className='cab-user-txt-1' onClick={abrirLanding}> M o d e l l e </h1>
                 </div>
 
                 <div className='cab-user-topicos'>
@@ -109,10 +112,6 @@ export default function Index(){
                 </div>
 
                 <div className='cab-menu'>
-                    <div className='cab-busca'>
-                        <img className='cab-user-logo-lupa' src={Imagem2} alt='' />
-                        <p className='cab-user-txt-2'>Buscar</p>
-                    </div> 
 
                     <div className='cab-lista'>                        
                         <p className='cab-user-lista'>Lista de desejos</p>
