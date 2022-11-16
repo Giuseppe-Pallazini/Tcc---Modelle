@@ -13,12 +13,11 @@ import { listarCategoria } from '../../../api/categoriaAPI'
 import { alterarProduto, buscarImagem, buscarProdutoPorId, inserirProduto, salvarImagem } from '../../../api/produtoAPI'
 
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { API_URL } from '../../../api/config';
 
 export default function CadastroProduto() {
     const [idProduto, setIdProduto] = useState();
-
     const [nome, setNome] = useState();
     const [complementoProduto, setComplementoProduto] = useState();
     const [preco, setPreco] = useState();
@@ -49,6 +48,8 @@ export default function CadastroProduto() {
     const [tamSelecionadas, setTamSelecionadas] = useState([]);
 
     const { id } = useParams();
+
+    const navigate = useNavigate();
 
     async function carregarProdutos(){
         if (!id) return;
