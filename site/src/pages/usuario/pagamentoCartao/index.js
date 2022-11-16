@@ -123,7 +123,7 @@ export default function Index() {
         }
 
         const r = await salvarNovoPedido(id, pedido)
-        toast.dark('Pedido inserido com sucesso!');
+        toast.dark('Compra realizada com sucesso!');
         Storage('carrinho', []);
         navigate('/');
 
@@ -275,7 +275,7 @@ export default function Index() {
                                     </div>
 
                                     <div className='pagamento-infoCartao-Cvv'>
-                                        Cvv <input type='text' value={cvv} onChange={e => setCvv(e.target.value)} />
+                                        Cvv <IMaskInput mask="000" maxLength='3' type='text' value={cvv} onChange={e => setCvv(e.target.value)} />
                                     </div>
                                 </div>
 
@@ -298,6 +298,7 @@ export default function Index() {
                                         Tipo do Cartão
                                         <select name='Tipo do cartão' className='pagamento-select-tpCartão' value={tipo} onChange={e => setTipo(e.target.value)}>
                                             <option className='pagamento-option-tpCartão'> Crédito </option>
+                                            <option className='pagamento-option-tpCartão'> Débito </option>
                                         </select>
                                     </div>
 

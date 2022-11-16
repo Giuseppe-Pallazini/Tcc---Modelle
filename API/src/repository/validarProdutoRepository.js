@@ -448,7 +448,6 @@ export async function listarPedidos() {
         nm_produto        as    nomeProduto,
         nm_marca        as marcaProduto,
         ds_cor            as corProduto,
-        nm_tamanho        as tamanhoProduto,
         vl_preco        as valorProduto,
         qtd_produto        as qtdProduto
     from tb_pedido
@@ -458,12 +457,6 @@ export async function listarPedidos() {
     
         inner join tb_marca
         on tb_marca.id_marca = tb_produto.id_produto
-    
-        inner join tb_produto_tamanho
-        on tb_produto_tamanho.id_produto = tb_produto.id_produto
-    
-        inner join tb_tamanho
-        on tb_tamanho.id_tamanho = tb_produto_tamanho.id_tamanho
     
         inner join tb_pedido_item
         on tb_pedido_item.id_produto_item = tb_pedido.id_pedido
