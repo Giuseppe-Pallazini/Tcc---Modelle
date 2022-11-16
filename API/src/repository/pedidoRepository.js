@@ -70,7 +70,7 @@ export async function inserirPedidoItem(idPedido, idProduto, qtd,tam, preco) {
             id_pedido,
             id_produto,
             qtd_produto,
-            ds_tam,
+            ds_tamanho,
             vl_total
         )
         VALUES (?, ?, ?, ?, ?)

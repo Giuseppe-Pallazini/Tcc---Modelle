@@ -129,6 +129,8 @@ create table tb_cupom(
 insert into tb_cupom (cod_cupom, vl_cupom, qtd_disponivel)
 	values			 ('chambin', 12.00, 3);
     
+use modelleDB;    
+
 select * from tb_cupom;
 
 create table tb_pedido(
@@ -175,6 +177,7 @@ create table tb_pedido_item(
 	id_pedido			int,
     id_produto			int,
     qtd_produto			int,
+    ds_tamanho			varchar(10),
     vl_total			decimal(15,2),
     foreign key (id_pedido)		references tb_pedido(id_pedido),
     foreign key (id_produto)	references tb_produto(id_produto)
@@ -186,7 +189,7 @@ create table tb_pagamento_cartao(
     nm_cartao			varchar(200),
 	nr_cartao			varchar(200),
     dt_vencimento		varchar(200),
-    cod_seguranca		int,
+    cod_seguranca		varchar(200),
     nr_parcelas			int,
     ds_forma_pagamento	varchar(200),
     foreign key (id_pedido)	references tb_pedido(id_pedido)

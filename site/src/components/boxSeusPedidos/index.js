@@ -98,7 +98,7 @@ export default function Index(){
                                             <div className='cor' style={{ backgroundColor: item.corProduto }}>
                                             </div> 
                                         </div>
-                                        <div className='infoProd-desc' >Tamanho: <span>M</span></div>
+                                        <div className='infoProd-desc' >Tamanho: <span>{item.tamanho}</span></div>
                                         <div className='infoProd-desc' >Valor unitario: <span>{item.valorProduto}</span></div>
                                         <div className='infoProd-desc' >Quantidade: <span> {item.qtdProduto}</span></div>
 

@@ -56,9 +56,6 @@ insert into tb_categoria (nm_categoria)
         
 insert into tb_categoria (nm_categoria)
 		values ('Masculino');
-        
-insert into tb_categoria (nm_categoria)
-		values('Novidades');
 
 
 -- insert modelos
@@ -225,3 +222,177 @@ select tb_produto.id_produto as produto,
         nm_marca,
         vl_disponivel
 ;
+
+use modelleDB;
+
+select * from tb_pedido;
+
+select * from tb_produto;
+
+
+select tb_produto.id_produto as produto,
+		nm_produto as nome,
+		nm_prod_complemento as complementoProduto,
+		vl_preco as preco,
+		ds_cor as cor,
+		nm_modelo as idModelo,
+		nm_categoria as idCategoria,
+		count(nm_tamanho) as idTamanho,
+		nm_marca as idMarca,
+		vl_disponivel as disponibilidade,
+		ds_imagem
+        from tb_produto
+
+    inner join tb_modelo
+    on tb_modelo.id_modelo = tb_produto.id_modelo
+    inner join tb_categoria
+    on tb_categoria.id_categoria = tb_produto.id_categoria
+    inner join tb_produto_tamanho
+    on tb_produto_tamanho.id_produto = tb_produto.id_produto
+    inner join tb_tamanho
+    on tb_tamanho.id_tamanho = tb_produto_tamanho.id_tamanho
+    
+    inner join tb_produto_imagem
+    on tb_produto_imagem.id_produto = tb_produto.id_produto
+
+    inner join tb_marca
+    on tb_marca.id_marca = tb_produto.id_marca
+
+    group by tb_produto.id_produto,
+        nm_produto,
+        nm_prod_complemento,
+        vl_preco,
+        ds_cor,
+        nm_modelo,
+        nm_categoria,
+        nm_marca,
+        vl_disponivel;
+        
+        select * from tb_produto_tamanho;
+        
+		select id_tamanho         as id,
+               nm_tamanho         as tamanho
+          from tb_tamanho
+         where id_tamanho = 1;
+
+select * from tb_pedido;
+         
+select 
+    tb_pedido.id_pedido    as idPedido,
+    tp_pagamento     as pagamento,
+    ds_endereco        as Endereço,
+    nr_numero         as NumeroEndereço,
+    ds_cidade         as Cidade,
+    nr_cep            as Cep,
+    ds_complemento     as Complemento,
+
+    vl_total        as totalItem,
+    vl_frete        as valorDoFrete,
+    dt_pedido     as dataDoPedido,
+    nm_usuario        as nomeUsuario,
+    ds_status        as statudDoPedido,
+
+    nm_produto        as    nomeProduto,
+    nm_marca        as marcaProduto,
+    ds_cor            as corProduto,
+    vl_preco        as valorProduto,
+    qtd_produto        as qtdProduto
+from tb_pedido
+
+    inner join tb_produto
+    on tb_produto.id_produto = tb_pedido.id_pedido
+
+    inner join tb_marca
+    on tb_marca.id_marca = tb_produto.id_produto
+
+    inner join tb_produto_tamanho
+    on tb_produto_tamanho.id_produto = tb_produto.id_produto
+
+    inner join tb_tamanho
+    on tb_tamanho.id_tamanho = tb_produto_tamanho.id_tamanho
+
+    inner join tb_pedido_item
+    on tb_pedido_item.id_produto_item = tb_pedido.id_pedido
+
+    inner join tb_usuario
+    on tb_usuario.id_usuario = tb_pedido.id_pedido;
+    
+    select * from tb_cupom;
+    
+    select * from tb_pedido;
+    
+    select id_tamanho as id
+			from tb_produto_tamanho
+		where id_produto = 6;
+    
+    select * from tb_pagamento_cartao;
+    
+    use modelleDB;
+    
+    select 
+    tb_pedido.id_pedido    as idPedido,
+	tp_pagamento     as pagamento,
+    ds_endereco        as Endereço,
+    nr_numero         as NumeroEndereço,
+    ds_cidade         as Cidade,
+    nr_cep            as Cep,
+    ds_complemento     as Complemento
+
+    from tb_pedido
+	inner join tb_pedido_item
+    on tb_pedido_item.id_produto_item = tb_pedido.id_pedido
+    ;
+ 
+ select * from tb_pedido;
+ 
+ select * from tb_pagamento_cartao;
+ 
+ select * from tb_produto_tamanho;
+ 
+ select * from tb_tamanho;
+ 
+ select * from tb_usuario;
+ 
+ use modelleDB;
+ 
+ select * from tb_tamanho;
+ 
+ select 
+        tb_pedido.id_pedido    as idPedido,
+        tp_pagamento     as pagamento,
+        ds_endereco        as Endereço,
+        nr_numero         as NumeroEndereço,
+        ds_cidade         as Cidade,
+        nr_cep            as Cep,
+        ds_complemento     as Complemento,
+    
+        vl_total        as totalItem,
+        vl_frete        as valorDoFrete,
+        dt_pedido     as dataDoPedido,
+        nm_usuario        as nomeUsuario,
+        ds_status        as statudDoPedido,
+        ds_tamanho		as tamanho,
+    
+        nm_produto        as    nomeProduto,
+        nm_marca        as marcaProduto,
+        ds_cor            as corProduto,
+        vl_preco        as valorProduto,
+        qtd_produto        as qtdProduto,
+        
+        ds_imagem			as imagem
+    from tb_pedido
+    
+        inner join tb_produto
+        on tb_produto.id_produto = tb_pedido.id_pedido
+    
+        inner join tb_marca
+        on tb_marca.id_marca = tb_produto.id_produto
+    
+        inner join tb_pedido_item
+        on tb_pedido_item.id_produto_item = tb_pedido.id_pedido
+    
+        inner join tb_usuario
+        on tb_usuario.id_usuario = tb_pedido.id_pedido
+        
+        inner join tb_produto_imagem
+        on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto;

@@ -450,6 +450,7 @@ export async function listarPedidos() {
         ds_cor            as corProduto,
         vl_preco        as valorProduto,
         qtd_produto        as qtdProduto,
+        ds_tamanho          as tamanho,
         
         ds_imagem			as imagem
     from tb_pedido
