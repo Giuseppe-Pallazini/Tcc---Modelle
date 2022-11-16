@@ -16,18 +16,12 @@ export default function Index(){
                 <button>Voltar</button>
             </div>
             <section className='section-SeusPedidos'>
-                <div className='div-TituloSeusPedidos'>
-                    <h1>Seus pedidos: </h1>
-                </div>
-                <div className='div-boxSeusPedidos'>
-                    <BoxSeusPedidos />
-                </div>
-
-                <hr className='hr-divisorPed' />
-                
-                <div className='div-boxSeusPedidos'>
-                    <BoxSeusPedidos />
-                </div>
+                    <div className='div-TituloSeusPedidos'>
+                        <h1>Seus pedidos: </h1>
+                    </div>
+                    <div className='div-boxSeusPedidos'>
+                        <BoxSeusPedidos />
+                    </div>
             </section>
         </main> 
     );

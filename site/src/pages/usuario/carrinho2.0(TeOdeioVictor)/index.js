@@ -11,7 +11,7 @@ import LogoCartão from '../../../assets/image/logo-cartão.png'
 import '../../../assets/common/index.scss'
 import { useEffect, useState } from 'react';
 import Storage from 'local-storage'
-import { buscarProdutoPorId } from '../../../api/produtoAPI';
+import { buscarProdutoPorId, buscarProdutoPorIdUsuario } from '../../../api/produtoAPI';
 
 import { Link } from 'react-router-dom';
 import { ListarTamanhoPorId } from '../../../api/tamanhoAPI';
@@ -41,7 +41,7 @@ export default function Index() {
             let temp = [];
 
             for (let produto of carrinho) {
-                let p = await buscarProdutoPorId(produto.id);
+                let p = await buscarProdutoPorIdUsuario(produto.id);
 
                 temp.push({
                     produto: p,

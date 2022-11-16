@@ -427,3 +427,50 @@ group by tb_produto.id_produto,
     const [linhas] = await con.query(comando);
     return linhas;
 }
+
+export async function listarPedidos() {
+    const comando =
+        `	select 
+        tb_pedido.id_pedido    as idPedido,
+        tp_pagamento     as pagamento,
+        ds_endereco        as Endereço,
+        nr_numero         as NumeroEndereço,
+        ds_cidade         as Cidade,
+        nr_cep            as Cep,
+        ds_complemento     as Complemento,
+    
+        vl_total        as totalItem,
+        vl_frete        as valorDoFrete,
+        dt_pedido     as dataDoPedido,
+        nm_usuario        as nomeUsuario,
+        ds_status        as statudDoPedido,
+    
+        nm_produto        as    nomeProduto,
+        nm_marca        as marcaProduto,
+        ds_cor            as corProduto,
+        nm_tamanho        as tamanhoProduto,
+        vl_preco        as valorProduto,
+        qtd_produto        as qtdProduto
+    from tb_pedido
+    
+        inner join tb_produto
+        on tb_produto.id_produto = tb_pedido.id_pedido
+    
+        inner join tb_marca
+        on tb_marca.id_marca = tb_produto.id_produto
+    
+        inner join tb_produto_tamanho
+        on tb_produto_tamanho.id_produto = tb_produto.id_produto
+    
+        inner join tb_tamanho
+        on tb_tamanho.id_tamanho = tb_produto_tamanho.id_tamanho
+    
+        inner join tb_pedido_item
+        on tb_pedido_item.id_produto_item = tb_pedido.id_pedido
+    
+        inner join tb_usuario
+        on tb_usuario.id_usuario = tb_pedido.id_pedido;`
+
+    const [linhas] = await con.query(comando);
+    return linhas;
+}
