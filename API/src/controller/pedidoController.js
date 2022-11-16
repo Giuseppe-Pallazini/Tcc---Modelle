@@ -25,7 +25,7 @@ server.post('/api/pedido/:idUsuario/', async (req, resp) => {
 
         for (let item of info.produtos) {
             const prod = await ListarTodosProdutosPorId(item.id);
-            const idPedidoItemCriado = await inserirPedidoItem(idPedidoCriado, item.id, item.qtd, prod.preco);
+            const idPedidoItemCriado = await inserirPedidoItem(idPedidoCriado, item.id, item.qtd, item.tam, prod.preco);
         }
 
         resp.status(204).send();

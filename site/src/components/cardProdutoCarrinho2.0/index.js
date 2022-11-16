@@ -145,7 +145,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                             <div className='carrinho-section1-div-1-3-div2'>
                                 <p className='carrinho-section1-div-1-3-div2-p'> <b>  Tamanho: </b> </p>
 
-                                <select className='carrinho-section1-div-1-3-div2-select' value={tamProduto} onChange={e => alterarTamanho(e.target.value)}>
+                                <select className='carrinho-section1-div-1-3-div2-select' onChange={e => alterarTamanho(e.target.value)}>
                                     <option selected disabled hidden>Selecione</option>
                                     {tamanho.map(item =>
                                         <option className='cadastro-section2-div3-select-option'> {item} </option>

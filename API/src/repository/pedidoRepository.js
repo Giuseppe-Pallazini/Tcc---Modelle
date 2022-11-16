@@ -64,17 +64,18 @@ export async function inserirPagamento(idPedido, novoPagamento) {
     return info.affectedRows;
 }
 
-export async function inserirPedidoItem(idPedido, idProduto, qtd, preco) {
+export async function inserirPedidoItem(idPedido, idProduto, qtd,tam, preco) {
     const comando = `
         INSERT INTO tb_pedido_item (
             id_pedido,
             id_produto,
             qtd_produto,
+            ds_tam,
             vl_total
         )
-        VALUES (?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?)
     `
 
-    const [info] = await con.query(comando, [idPedido, idProduto, qtd, preco]);
+    const [info] = await con.query(comando, [idPedido, idProduto, qtd, tam, preco]);
     return info.affectedRows;
 }

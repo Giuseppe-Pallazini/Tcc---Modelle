@@ -50,14 +50,14 @@ export default function Index() {
                     <div className='cupom'>
 
                         <span> Código do cupom: </span>
-                        <input type='text' value={codCupom} onChange={e => setCodCupom(e.target.value)}/>
+                        <input type='text' value={codCupom} className='desc' onChange={e => setCodCupom(e.target.value)}/>
 
                     </div>
 
                     <div className='quantidade'>
 
                         <span> Quantidade: </span>
-                        <IMaskInput mask='00.00' type='number' value={quantidade} onChange={e => setQuantidade(e.target.value)} />
+                        <IMaskInput mask='00.00' type='number' className='desc' value={quantidade} onChange={e => setQuantidade(e.target.value)} />
 
                     </div>
 

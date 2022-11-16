@@ -59,6 +59,7 @@ export default function Index() {
                 temp.push({
                     produto: p,
                     qtd: produto.qtd,
+                    tam: produto.tam
                 })
             }
             setItens(temp)

@@ -109,7 +109,7 @@ export default function Index() {
                         <p className='erro'> <b> {erroSenha} </b> </p>
 
                         <div>
-                            <button className='butao-criarConta' disabled onClick={cadastrarUsuario} > Criar conta </button>
+                            <button className='butao-criarConta' onClick={cadastrarUsuario} > Criar conta </button>
                         </div>
 
                         <Link to='/login' className='cadastro-jaPossuoConta'>Ja possuo Conta </Link>

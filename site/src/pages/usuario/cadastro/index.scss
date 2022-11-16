@@ -2,13 +2,10 @@
     display: flex;
     flex-direction: row;  
 
-    input::-webkit-calendar-picker-indicator{
-        display: none;
-    }
-    
-    input[type="date"]::-webkit-input-placeholder{ 
-        visibility: hidden !important;
-    }
+    textarea:focus, input:focus {
+        box-shadow: 0 0 0 0;
+        outline: 0;
+    }   
 
     .section-cadastro-cl1{
         display: flex;

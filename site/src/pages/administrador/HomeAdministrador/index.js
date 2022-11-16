@@ -58,7 +58,6 @@ export default function Index(){
 
                         <div className='home-adm-bt-linha2-card01'>
                             <Link to='/admin/gerenciarProd' className='homeAdm-botão-produto' > Produtos </Link>
-                            <Link to='/admin/gerenciarFeedbecks' className='homeAdm-botão-cadastro' > FeedBacks </Link>
                         </div>
 
                     </div>
@@ -85,7 +84,6 @@ export default function Index(){
                         </div>
 
                         <div className='home-adm-bt-linha2-card02'>
-                            <Link to='/admin/alterarCard' className='homeAdm-botão-cardDestaque' > Card destaque </Link>
                             <Link to='/admin/gerenciarProd' className='homeAdm-botão-colecao' > Alter. Carrossel </Link>
                         </div>
                     </div>
