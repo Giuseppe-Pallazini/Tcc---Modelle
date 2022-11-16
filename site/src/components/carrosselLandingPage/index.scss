@@ -6,17 +6,18 @@
         display: flex;
         margin-top: 3em;
     } 
-
     .slides{
-        display: flex;
-        width: 5120px;
- 
-
+        margin-left: 15%;
     }
-
+    .slides-2{
+        margin-left: 20%;
+    }
+    .slides-3{
+        margin-left: 18%;
+    }
     .img-01{
-        transition: transform .5s ease;
-        margin-left: 15em; 
+        transition: transform .8s ease;
+        margin-left: 5%;
     }
     .img-01:hover{
         transform: scale(1.04);
@@ -25,7 +26,7 @@
     .div-01 {
         display: flex;
         flex-direction: column;
-        margin-left: 10em;
+        margin-left: 13%;
 
         .h1-01 {
             font-family: 'inter';
@@ -58,28 +59,32 @@
             color: white;
             background-color: black;
             width: 10%;
+            transition: .8s;
             padding: .7em 1.2em .7em 1.2em;
             cursor: pointer;
         }
-    }
-
-    img {
+        .link-01:hover{
+            transform: scale(1.1);
+            color: #000000;
+            background-color: #ffffff;
+            border: 1px solid black;
+        }
     }
 
     .img-02{
-        width: 17em;
-        height: 28em;
+        width: 32%;
+        height: 25%;
         transition: transform .5s ease; 
     }
     .img-02:hover{
-        transform: scale(1.1);
+        transform: scale(1.04);
     }
     .img-03{
-        width: 18em;
-        height: 28em;
+        width: 33%;
+        height: 25%;
         transition: transform .5s ease; 
     }
     .img-03:hover{
-        transform: scale(1.2);
+        transform: scale(1.04);
     }
 }
