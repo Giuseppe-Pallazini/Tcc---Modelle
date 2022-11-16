@@ -8,8 +8,8 @@ import ImagemMeusPedidos from '../../../assets/image/logo-MeusPedidos.png'
 import CabecalhoUser from '../../../components/cabecalhouser'
 import Rodape from '../../../components/Rodapé'
 
-import Imagem01MenuMasculino from '../../../assets/image/imagem01-menuMasculino.png'
-import Imagem02MenuMasculino from '../../../assets/image/imagem02-menuMasculino.png'
+import Imagem01MenuNovidades from '../../../assets/image/imagem01-menuNovidades.png'
+import Imagem02MenuNovidades from '../../../assets/image/imagem02-menuNovidades.png'
 import LogoValorFiltro from '../../../assets/image/logo-valor-filtro.png'
 
 import Carrossel from '../../../components/carrossel'
@@ -51,13 +51,13 @@ export default function Index(){
 
                     <div className='div-cardsEmDestaque'>
                         <div className='div-cardEmDestaque-Img01'>
-                            <img src={Imagem01MenuMasculino} alt='imagem-01-menuMasculino' />
-                            <h3>ENCONTRE SUA MARCA FAVORITA COM DESCONTOS IMPERDÍVEIS, NA MODELLE.</h3>
+                            <img src={Imagem01MenuNovidades} alt='imagem-01-menuMasculino' />
+                            <h3>ENCONTRE SUA MARCA FAVORITA COM DESCONTOS IMPERDÍVEIS, NA MODELLE</h3>
                         </div>
 
                         <div className='div-cardEmDestaque-Img02'>
-                            <img src={Imagem02MenuMasculino} alt='imagem-01-menuMasculino' />
-                            <h3>JAQUETA DE MONOGRAMA EM REVESTIMENTO DE PEITO SIMPLES LVSE </h3>
+                            <img src={Imagem02MenuNovidades} alt='imagem-01-menuMasculino' />
+                            <h3>LVSE SINGLE-BREASTED EMBOSSED MONOGRAM JACKET </h3>
                         </div>
                     </div>
                     <div className='div-hr-card-Destaque'>

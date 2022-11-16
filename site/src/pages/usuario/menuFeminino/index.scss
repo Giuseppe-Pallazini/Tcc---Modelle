@@ -229,7 +229,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        margin-top: 3em;
+        margin-top: 30%;
         margin-bottom: 3em;
     }
     .div-cardEmDestaque-Img01 img{
@@ -250,14 +250,14 @@
         margin-left: 3em;
     }
     .div-cardEmDestaque-Img02 img{
-        width: 25em;
+        height: 94%;
+        margin-bottom: -3.8em;
     }
     .div-cardEmDestaque-Img02 h3{
         font-family: 'caviar';
         font-size: .7em;
         font-weight: 900;
-        margin-top: .8em;
-        margin-left: 1em;   
+        margin-left: 1em; 
     }
     .div-hr-card-Destaque{
         display: flex;

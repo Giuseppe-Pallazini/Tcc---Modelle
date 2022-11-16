@@ -8,8 +8,8 @@ import ImagemMeusPedidos from '../../../assets/image/logo-MeusPedidos.png'
 import CabecalhoUser from '../../../components/cabecalhouser'
 import Rodape from '../../../components/Rodapé'
 
-import Imagem01MenuMasculino from '../../../assets/image/imagem01-menuMasculino.png'
-import Imagem02MenuMasculino from '../../../assets/image/imagem02-menuMasculino.png'
+import Imagem01MenuFeminino from '../../../assets/image/imagem01-menuFeminino.png'
+import Imagem02MenuFeminino from '../../../assets/image/imagem02-menuFeminino.png'
 import LogoValorFiltro from '../../../assets/image/logo-valor-filtro.png'
 
 import Carrossel from '../../../components/carrossel'
@@ -49,17 +49,6 @@ export default function Index(){
                         <button> Ver mais...</button>
                     </div>
 
-                    <div className='div-cardsEmDestaque'>
-                        <div className='div-cardEmDestaque-Img01'>
-                            <img src={Imagem01MenuMasculino} alt='imagem-01-menuMasculino' />
-                            <h3>ENCONTRE SUA MARCA FAVORITA COM DESCONTOS IMPERDÍVEIS, NA MODELLE.</h3>
-                        </div>
-
-                        <div className='div-cardEmDestaque-Img02'>
-                            <img src={Imagem02MenuMasculino} alt='imagem-01-menuMasculino' />
-                            <h3>JAQUETA DE MONOGRAMA EM REVESTIMENTO DE PEITO SIMPLES LVSE </h3>
-                        </div>
-                    </div>
                     <div className='div-hr-card-Destaque'>
                         <hr className='hr-card-Destaque'/>
                     </div>
@@ -68,6 +57,17 @@ export default function Index(){
                         <Carrossel />
                     </div>
                    
+                    <div className='div-cardsEmDestaque'>
+                        <div className='div-cardEmDestaque-Img01'>
+                            <img src={Imagem01MenuFeminino} alt='imagem-01-menuFeminino' />
+                            <h3>Encontre sua marca favorita com descontos imperdíveis, na Modelle</h3>
+                        </div>
+
+                        <div className='div-cardEmDestaque-Img02'>
+                            <img src={Imagem02MenuFeminino} alt='imagem-01-menuFeminino' />
+                            <h3>Se vestir bem,  confortavel e elegante é se vestir com Gucci.</h3>
+                        </div>
+                    </div>
             </section>
 
             <Rodape />
