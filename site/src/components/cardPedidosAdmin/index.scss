@@ -16,8 +16,8 @@
         margin-top: .3em;
         height: 18vh;
         width: 93vh;
-        border-radius: .5em;
         border: 1px solid black;
+        border-radius: .5em .5em 0 0;
     }
     .faixa-preta-infos1{
         display: flex;
@@ -98,7 +98,7 @@
         display: flex;
         flex-direction: column;
         height: 25vh;
-        border-radius: .5em;
+        border-radius: 0 0 .5em .5em;
         border: 1px solid black;
     }
     .faixaPreta-detalhesPed{
@@ -157,7 +157,7 @@
         display: flex;
         flex-direction: row;
         text-align: start;
-        color: rgb(35, 68, 255);
+        color: white;
         margin-top: .7em;
         font-size: 1em;
         font-family: 'caviar';
@@ -210,16 +210,17 @@
     .infoProd-desc{
         display: flex;
         flex-direction: row;
-        font-size: .8em;
+        align-items: center;
+        font-size: 1;
         font-family: 'caviar-bold';
         font-weight: 500;
         opacity: 90%;
         margin-top: .2em;
         .cor{
             margin-left: 1em;
-            width: 20px;
-            height: 20px;
-            border-radius: .25em;
+            width: 15px;
+            height: 15px;
+            border-radius: 20%;
         }
     }
     .infoProd-desc span{

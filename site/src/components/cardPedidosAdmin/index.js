@@ -125,20 +125,8 @@ export default function Index() {
 
                     </div>
 
-
-
-                    <div>
-                        <hr />
-
-                    </div>
-
-
-
                 </main>
             )}
-
-            <hr />
-
 
         </section>
 

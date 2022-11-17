@@ -15,7 +15,6 @@
         margin-top: .3em;
         height: 18vh;
         width: 93vh;
-        border-radius: .5em;
         border: 1px solid black;
     }
     .faixa-preta-infos1{
@@ -24,7 +23,7 @@
         align-items: center;
         height: 3em;
         background-color: black;
-        width: 93vh;
+        border-radius: .4em .4em 0 0 ;
     }
     .faixa-preta-infos1 h1{
         color: #fff;
@@ -96,9 +95,6 @@
     .InfosDetalhes-pedido{
         display: flex;
         flex-direction: column;
-        margin-top: 1em;
-        height: 25vh;
-        width: 93vh;
         border-radius: .5em;
         border: 1px solid black;
     }
@@ -159,7 +155,7 @@
         display: flex;
         flex-direction: row;
         text-align: start;
-        color: rgb(35, 68, 255);
+        color: white;
         margin-top: .7em;
         font-size: 1em;
         font-family: 'caviar';
@@ -205,15 +201,15 @@
     .infoProd-desc{
         display: flex;
         flex-direction: row;
-        font-size: .8em;
+        font-size: 1em;
         font-family: 'caviar-bold';
         font-weight: 500;
         opacity: 90%;
         margin-top: .2em;
         .cor{
             margin-left: 1em;
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             border-radius: .25em;
         }
     }
