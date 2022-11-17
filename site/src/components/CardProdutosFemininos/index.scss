@@ -2,16 +2,43 @@
     display: flex;
     flex-direction: row;
 
+    .section-filtro{
+        .div-filtroRoupas{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .filtro-marca > div > p{
+                cursor: pointer;
+            }
+
+            .filtro-Tamanho > div > p {
+                cursor: pointer;
+            }
+
+            .filtro-roupas > div > p {
+                cursor: pointer;
+            }
+        }
+    }
+
     .section-card{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        margin-top: 2em;
         align-items: flex-start;
-        width: 60em;
+        width: 78%;
 
         .card-produto{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
             width: 10em;
-            margin-left: 7em;
+            margin-right: 1em;
+
+            cursor: pointer;
         }
 
         .icon-lista{
@@ -56,4 +83,22 @@
         }
     }
 
+
+
+    @media(max-width: 414px){
+    .main-menu-produtos{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+    }
+    .div-filtro-Roupas{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    } 
+    .filtro-Tamanho{
+        margin-top: -2em;
+    } 
+    }
 }

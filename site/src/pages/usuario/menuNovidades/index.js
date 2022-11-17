@@ -33,7 +33,7 @@ export default function Index(){
 
                     <div className='MenuMasculino-div-titulo'>
                         <h1>Novidades</h1>
-                        <hr />
+                        <hr className='hr-titulo-novidades' />
                     </div>
                 </div>
 
@@ -46,13 +46,13 @@ export default function Index(){
                         <button> Ver mais...</button>
                     </div>
 
-                    <div className='div-cards-Destaque' >
-                        <div className='div-cardEmDestaque-Img01' >
+                    <div className='div-cards-Destaque-MenuNovidades' >
+                        <div className='div-cardEmDestaque-Img01-MenuNovidades' >
                             <img src={Imagem01MenuNovidades} alt='imagem-01-menuMasculino' />
                             <h3>ENCONTRE SUA MARCA FAVORITA COM DESCONTOS IMPERDÍVEIS, NA MODELLE.</h3>
                         </div>
 
-                        <div className='div-cardEmDestaque-Img02'>
+                        <div className='div-cardEmDestaque-Img02-MenuNovidades'>
                             <img src={Imagem02MenuNovidades} alt='imagem-01-menuMasculino' />
                             <h3>JAQUETA DE MONOGRAMA EM REVESTIMENTO DE PEITO SIMPLES LVSE </h3>
                         </div>
