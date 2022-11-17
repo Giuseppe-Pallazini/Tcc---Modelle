@@ -1,4 +1,5 @@
 .main-carrossel{
+    background-color: #F4F4F4;
     width: 100%;
     div{
         display: flex;
@@ -15,15 +16,19 @@
     }
     .img-01{
         transition: transform .5s ease; 
+        box-shadow: 5px 3px 5px #c7c7c7;
     }
     .img-02{
         width: 17em;
         height: 28em;
+        
+        box-shadow: 5px 3px 5px #c7c7c7;
         transition: transform .5s ease; 
     }
     .img-03{
         width: 18em;
         height: 28em;
+        box-shadow: 5px 3px 5px #c7c7c7;
         transition: transform .5s ease; 
     }
 

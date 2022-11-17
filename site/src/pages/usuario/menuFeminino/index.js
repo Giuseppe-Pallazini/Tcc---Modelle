@@ -46,13 +46,13 @@ export default function Index(){
                         <button> Ver mais...</button>
                     </div>
 
-                    <div className='div-cards-Destaque' >
-                        <div className='div-cardEmDestaque-Img01' >
+                    <div className='div-cards-Destaque-menuFeminino' >
+                        <div className='div-cardEmDestaque-Img01-menuFeminino' >
                             <img src={Imagem01MenuFeminino} alt='imagem-01-menuMasculino' />
                             <h3>ENCONTRE SUA MARCA FAVORITA COM DESCONTOS IMPERDÍVEIS, NA MODELLE.</h3>
                         </div>
 
-                        <div className='div-cardEmDestaque-Img02'>
+                        <div className='div-cardEmDestaque-Img02-menuFeminino'>
                             <img src={Imagem02MenuFeminino} alt='imagem-01-menuMasculino' />
                             <h3>JAQUETA DE MONOGRAMA EM REVESTIMENTO DE PEITO SIMPLES LVSE </h3>
                         </div>
