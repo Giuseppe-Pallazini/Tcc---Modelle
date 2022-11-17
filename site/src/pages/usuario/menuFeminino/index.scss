@@ -225,39 +225,55 @@
     }
 
 
-    .div-cardsEmDestaque{
+    .div-cards-Destaque-menuFeminino{
         display: flex;
         flex-direction: row;
         justify-content: center;
-        margin-top: 30%;
-        margin-bottom: 3em;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 4em;
     }
-    .div-cardEmDestaque-Img01 img{
-        width: 25em;
+    .div-cardEmDestaque-Img01-menuFeminino img{
+        margin-top: .3em;
+        width: 92%;
+        height: 95%;
+        margin-left: 1em;
+        opacity: 85%;
+        margin-bottom: .5em;
     }
-    .div-cardEmDestaque-Img01 h3{
+    .div-cardEmDestaque-Img01-menuFeminino img:hover{  
+        transform: scale(1.02);
+        opacity: 100%;
+        transition: .8s;
+    }
+    .div-cardEmDestaque-Img01-menuFeminino h3{
         font-family: 'caviar';
         font-size: .7em;
-        width: 32em;
         font-weight: 900;
-        margin-top: .8em;
-        margin-left: 1em;
-    }
-
-
-
-    .div-cardEmDestaque-Img02{
+        
+        transition: 1s;
         margin-left: 3em;
     }
-    .div-cardEmDestaque-Img02 img{
-        height: 94%;
-        margin-bottom: -3.8em;
+
+    .div-cardEmDestaque-Img02-menuFeminino{
+        margin-left: 1em;
     }
-    .div-cardEmDestaque-Img02 h3{
+    .div-cardEmDestaque-Img02-menuFeminino img{
+        width: 95%;
+        opacity: 85%;
+        transition: 1s;
+        margin-bottom: -15%;
+    }
+    .div-cardEmDestaque-Img02-menuFeminino h3{
         font-family: 'caviar';
         font-size: .7em;
         font-weight: 900;
-        margin-left: 1em; 
+        margin-left: 1em;   
+    }
+    .div-cardEmDestaque-Img02-menuFeminino img:hover{
+        transform: scale(1.02);
+        opacity: 100%;
+        transition: .8s;
     }
     .div-hr-card-Destaque{
         display: flex;

@@ -209,25 +209,32 @@
     }
     .Menu-div-buttomVerMais button{
         border: none;
-        background-color: #ffffff;  
-        margin-bottom: 3em;
+        background-color: #dfdfdf; 
     }
 
 
-    .div-cards-Destaque{
+    .div-cards-Destaque-menuMasculino{
         display: flex;
         flex-direction: row;
+        justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 3em;     
-        margin-left: 3em;
-        margin-bottom: 1em;
+        margin-top: 3em; 
+        margin-bottom: 4em;
     }
-    .div-cardEmDestaque-Img01 img{
-        height: 90%;
-        margin-bottom: -1.2em;
+    .div-cardEmDestaque-Img01-menuMasculino img{
+        width: 90%;
+        margin-left: 1em;
+        opacity: 85%;
+        transition: 1s;
+        margin-bottom: .5em;
     }
-    .div-cardEmDestaque-Img01 h3{
+    .div-cardEmDestaque-Img01-menuMasculino img:hover{  
+        transform: scale(1.02);
+        opacity: 100%;
+        transition: .8s;
+    }
+    .div-cardEmDestaque-Img01-menuMasculino h3{
         font-family: 'caviar';
         font-size: .7em;
         width: 100%;
@@ -235,20 +242,25 @@
         margin-left: 1em;
     }
 
-    .div-cardEmDestaque-Img02{
-        margin-left: 5em;
+    .div-cardEmDestaque-Img02-menuMasculino{
+        margin-left: 1em;
     }
-    .div-cardEmDestaque-Img02 img{
-        height: 100%;
-        width: 100%;
-        margin-top: 3em;
-        margin-bottom: -13%;
+    .div-cardEmDestaque-Img02-menuMasculino img{
+        width: 93%;
+        opacity: 85%;
+        transition: 1s;
+        margin-bottom: .5em;
     }
-    .div-cardEmDestaque-Img02 h3{
+    .div-cardEmDestaque-Img02-menuMasculino h3{
         font-family: 'caviar';
         font-size: .7em;
         font-weight: 900;
         margin-left: 1em;   
+    }
+    .div-cardEmDestaque-Img02-menuMasculino img:hover{
+        transform: scale(1.02);
+        opacity: 100%;
+        transition: .8s;
     }
     .div-hr-card-Destaque{
         display: flex;
@@ -262,6 +274,8 @@
     .img-next{
         width: 18px;
     }
+
+
 
     @media(max-width: 414px){
         .main-menuUsuario{ 
@@ -284,15 +298,18 @@
             font-size: .8em;
         }
 
-        .div-cards-Destaque{
+        .div-cards-Destaque-menuMasculino{
             display: flex;
             flex-direction: column;
-            margin-top: 1em;
-            margin-left: 1em;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 3em; 
+            margin-bottom: 4em;
         }
-        .div-cardEmDestaque-Img01 img{
-            height: 40%;
-            margin-bottom: -1.2em;
-        }    
+        .div-cardEmDestaque-Img01-menuMasculino{
+            margin-bottom: 3em;
+
+        }
     }
 }
