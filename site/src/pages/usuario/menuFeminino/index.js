@@ -15,7 +15,7 @@ import LogoValorFiltro from '../../../assets/image/logo-valor-filtro.png'
 import Carrossel from '../../../components/carrossel'
 import ImagemNext from '../../../assets/image/icon-seta-carrossel-2.png'
 
-import CardProdutosFemininos from '../../../components/CardProdutosFemininos'
+import CardProdutosMasculinos from '../../../components/carProdutosMenuMasculino'
 
 import {useEffect, useState, useRef} from 'react'
 
@@ -25,7 +25,7 @@ export default function Index(){
         <CabecalhoUser /> 
 
            
-                <div className='MenuMasculino-div-MeusPedidos-Titulo'>
+        <div className='menuMasculino-div-MeusPedidos-Titulo'>
                     <div className='div-meusPedidos'>
                         <img src={ImagemMeusPedidos} alt='logo-meusPedidos' />
                         <p>Meus Pedidos</p>
@@ -38,17 +38,25 @@ export default function Index(){
                 </div>
 
                 <section className='MenuMasculino-section'>
-
-
-
-                            <div className='div-CardsProd'>
-                                <CardProdutosFemininos/>
-                            </div>
+                    <div className='div-CardsProd'>
+                        <CardProdutosMasculinos />
+                    </div>
 
                     <div className='Menu-div-buttomVerMais'>
                         <button> Ver mais...</button>
                     </div>
 
+                    <div className='div-cards-Destaque' >
+                        <div className='div-cardEmDestaque-Img01' >
+                            <img src={Imagem01MenuFeminino} alt='imagem-01-menuMasculino' />
+                            <h3>ENCONTRE SUA MARCA FAVORITA COM DESCONTOS IMPERDÍVEIS, NA MODELLE.</h3>
+                        </div>
+
+                        <div className='div-cardEmDestaque-Img02'>
+                            <img src={Imagem02MenuFeminino} alt='imagem-01-menuMasculino' />
+                            <h3>JAQUETA DE MONOGRAMA EM REVESTIMENTO DE PEITO SIMPLES LVSE </h3>
+                        </div>
+                    </div>
                     <div className='div-hr-card-Destaque'>
                         <hr className='hr-card-Destaque'/>
                     </div>
@@ -57,17 +65,6 @@ export default function Index(){
                         <Carrossel />
                     </div>
                    
-                    <div className='div-cardsEmDestaque'>
-                        <div className='div-cardEmDestaque-Img01'>
-                            <img src={Imagem01MenuFeminino} alt='imagem-01-menuFeminino' />
-                            <h3>Encontre sua marca favorita com descontos imperdíveis, na Modelle</h3>
-                        </div>
-
-                        <div className='div-cardEmDestaque-Img02'>
-                            <img src={Imagem02MenuFeminino} alt='imagem-01-menuFeminino' />
-                            <h3>Se vestir bem,  confortavel e elegante é se vestir com Gucci.</h3>
-                        </div>
-                    </div>
             </section>
 
             <Rodape />

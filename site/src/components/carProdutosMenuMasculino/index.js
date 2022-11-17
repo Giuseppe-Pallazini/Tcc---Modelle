@@ -184,11 +184,10 @@ export default function Index(){
         <main className='main-menu-produtos'>
             
             <div className='section-filtro'>
-                <div className='div-filtroRoupas'>
-                                <div className='filtro-titulo'>
-                                    <h1>Filtrar por: </h1>
-                                </div>
-
+                    <div className='filtro-titulo'>
+                        <h1>Filtrar por: </h1>
+                    </div>
+                <div className='div-filtro-Roupas'>
                                 <div className='filtro-marca'>
                                     <div className='div-tituloMarcas'>
                                         <h1>Marcas: </h1>

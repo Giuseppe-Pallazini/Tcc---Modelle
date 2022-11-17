@@ -24,8 +24,7 @@ export default function Index(){
        <main className='main-menuUsuario'>
         <CabecalhoUser /> 
 
-           
-                <div className='MenuMasculino-div-MeusPedidos-Titulo'>
+                <div className='menuMasculino-div-MeusPedidos-Titulo'>
                     <div className='div-meusPedidos'>
                         <img src={ImagemMeusPedidos} alt='logo-meusPedidos' />
                         <p>Meus Pedidos</p>
@@ -38,19 +37,16 @@ export default function Index(){
                 </div>
 
                 <section className='MenuMasculino-section'>
-
-
-
-                            <div className='div-CardsProd'>
-                                <CardProdutosMasculinos/>
-                            </div>
+                    <div className='div-CardsProd'>
+                        <CardProdutosMasculinos />
+                    </div>
 
                     <div className='Menu-div-buttomVerMais'>
                         <button> Ver mais...</button>
                     </div>
 
-                    <div className='div-cardsEmDestaque'>
-                        <div className='div-cardEmDestaque-Img01'>
+                    <div className='div-cards-Destaque' >
+                        <div className='div-cardEmDestaque-Img01' >
                             <img src={Imagem01MenuMasculino} alt='imagem-01-menuMasculino' />
                             <h3>ENCONTRE SUA MARCA FAVORITA COM DESCONTOS IMPERDÍVEIS, NA MODELLE.</h3>
                         </div>

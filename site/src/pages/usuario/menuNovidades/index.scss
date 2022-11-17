@@ -224,7 +224,6 @@
         margin-bottom: 3em;
     }
 
-
     .div-cardsEmDestaque{
         display: flex;
         flex-direction: row;
@@ -273,6 +272,39 @@
 
     .img-next{
         width: 18px;
+    }
+
+    @media(max-width: 414px){
+        .main-menuUsuario{ 
+            width: 100%;
+            height: 100%;
+        }
+        .menuMasculino-div-MeusPedidos-Titulo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .div-meusPedidos{
+            width: 100%;
+        }
+        .div-meusPedidos img{
+            width: 18px;
+        }
+        .div-meusPedidos p{
+            font-size: .8em;
+        }
+
+        .div-cards-Destaque{
+            display: flex;
+            flex-direction: column;
+            margin-top: 1em;
+            margin-left: 1em;
+        }
+        .div-cardEmDestaque-Img01 img{
+            height: 40%;
+            margin-bottom: -1.2em;
+        }    
     }
 
 }

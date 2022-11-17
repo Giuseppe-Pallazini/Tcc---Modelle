@@ -4,6 +4,8 @@
 
     .section-filtro{
         .div-filtroRoupas{
+            display: flex;
+            flex-direction: column;
 
             .filtro-marca > div > p{
                 cursor: pointer;
@@ -23,11 +25,9 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        margin-top: 2em;
         align-items: flex-start;
-        width: 60em;
-
-        //border: 1px solid #000;
-
+        width: 78%;
 
         .card-produto{
             display: flex;
@@ -81,5 +81,23 @@
             margin-top: 0.5em;
         }
     }
-    
+
+
+
+    @media(max-width: 414px){
+    .main-menu-produtos{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+    }
+    .div-filtro-Roupas{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    } 
+    .filtro-Tamanho{
+        margin-top: -2em;
+    } 
+    }
 }
