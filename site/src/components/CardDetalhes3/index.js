@@ -9,6 +9,7 @@ import { buscarImagem,listarTodos3 } from '../../api/produtoAPI';
 
 import { useNavigate } from "react-router-dom";
 import './index.scss'
+import {toast} from 'react-toastify'
 
 export default function Index(){
     const [produto, setProduto] = useState([]);
@@ -29,8 +30,13 @@ export default function Index(){
     }
 
     function abrirDetalhes(id){
+        if(id == undefined || !id){
+            toast.dark("Produto Invalido")
+        }
+        else{
         navigate(`/user/detalhesProduto/${id}`)
         document.location.reload(true);
+    }
     }
 
     function mostrarImagem(imagem) {

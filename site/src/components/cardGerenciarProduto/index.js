@@ -97,7 +97,7 @@ export default function Index(){
             </div>
 
             {produto.map(item => 
-                <div className='gerenciarProd-card-1' onClick={() => editarProduto(item.produto)}>
+                <div className='gerenciarProd-card-1'>
                         <div className='gerenciarProd-div-icons'>
                                     <img src={LogoRemover} alt='logo' className='logo-remover' onClick={() => deletarProduto(item.produto, item.nome)} />
                                     <img src={LogoEditar} alt='logo' className='logo-editar' onClick={() => editarProduto(item.produto)} />

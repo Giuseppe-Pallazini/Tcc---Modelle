@@ -21,6 +21,7 @@ import { removerProduto, removerProdutoCategoria, removerProdutoImagem, removerP
             resp.status(204).send();
     
         } catch (err) {
+            console.log(err);
             resp.status(400).send({
                 erro: err.message
             })
