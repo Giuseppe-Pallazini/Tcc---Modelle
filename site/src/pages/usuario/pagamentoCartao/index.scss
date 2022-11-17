@@ -1,59 +1,65 @@
-.main-pagamentoPrincipal{
+.main-pagamentoPrincipal {
     display: flex;
     flex-direction: column;
 
-    a:visited, a:link {
+    a:visited,
+    a:link {
         text-decoration: none;
         color: inherit;
     }
 
-    textarea:focus, input:focus {
+    textarea:focus,
+    input:focus {
         box-shadow: 0 0 0 0;
         outline: 0;
-    }   
+    }
 
-    .section-pagamento-principal{
+    .section-pagamento-principal {
         display: flex;
         flex-direction: column;
     }
 
-    .div-pagamento-icons-situações{
+    .div-pagamento-icons-situações {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         margin-top: 1.5em;
         background-color: #F2F2F2;
-        box-shadow: 2px 2px #C0C0C0; 
+        box-shadow: 2px 2px #C0C0C0;
         width: 20em;
     }
 
-    .section-separar{
+    .section-separar {
         display: flex;
         flex-direction: row;
     }
-    .pagamento-icones-situacoes{
+
+    .pagamento-icones-situacoes {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .icon-pagamento-localização{
+
+    .icon-pagamento-localização {
         margin-right: 1em;
         width: 3.8em;
         height: 3.8em;
     }
-    .icon-pagamento-seta{
+
+    .icon-pagamento-seta {
         margin-right: 1em;
         width: 2em;
         height: 2em;
     }
-    .icon-pagamento-cartão{
+
+    .icon-pagamento-cartão {
         margin-right: 1em;
         width: 3em;
         height: 3em;
     }
 
-    .div-pagamento-endereço-infosped{
+    .div-pagamento-endereço-infosped {
         display: flex;
         flex-direction: row;
         margin-top: 3em;
@@ -61,31 +67,34 @@
         width: 100%;
     }
 
-    .div-pagamento-preenchEnd{
+    .div-pagamento-preenchEnd {
         display: flex;
         flex-direction: column;
 
         width: 53em;
         margin-top: 2em;
     }
-    .pagamento-titulo-endereço{
+
+    .pagamento-titulo-endereço {
         font-size: 2em;
         font-family: 'caviar';
         font-weight: 900;
         text-align: center;
     }
-    .pagamento-PreenchEnd-l1{
+
+    .pagamento-PreenchEnd-l1 {
         margin-top: 3em;
         display: flex;
         flex-direction: row;
         margin-left: 4em;
     }
 
-    .pagamento-Preench-rua-p{
+    .pagamento-Preench-rua-p {
         font-size: 1em;
         font-family: 'caviar';
     }
-    .pagamento-Preench-rua-input{
+
+    .pagamento-Preench-rua-input {
         width: 45em;
         height: 2.5em;
         border: none;
@@ -93,14 +102,14 @@
         box-shadow: 2px 2px #C0C0C0;
     }
 
-    .pagamento-Preench-numero{
-        
-    }
-    .pagamento-Preench-numero-p{
+    .pagamento-Preench-numero {}
+
+    .pagamento-Preench-numero-p {
         font-size: 1em;
         font-family: 'caviar';
     }
-    .pagamento-Preench-numero-input{
+
+    .pagamento-Preench-numero-input {
         width: 5em;
         border: none;
         height: 2.5em;
@@ -109,19 +118,20 @@
     }
 
 
-    .pagamento-PreenchEnd-l2{
+    .pagamento-PreenchEnd-l2 {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-top: 2.5em;
         margin-left: 4em;
     }
-    
-    .pagamento-Preench-cidade-p{
+
+    .pagamento-Preench-cidade-p {
         font-size: 1em;
         font-family: 'caviar';
     }
-    .pagamento-Preench-cidade-input{
+
+    .pagamento-Preench-cidade-input {
         width: 18em;
         border: none;
         height: 2.5em;
@@ -129,25 +139,29 @@
         box-shadow: 2px 2px #C0C0C0;
     }
 
-    .pagamento-Preench-bairro-p{
+    .pagamento-Preench-bairro-p {
         font-size: 1em;
         font-family: 'caviar';
     }
-    .pagamento-Preench-bairro-input{
+
+    .pagamento-Preench-bairro-input {
         width: 22em;
         border: none;
         height: 2.5em;
         opacity: 60%;
         box-shadow: 2px 2px #C0C0C0;
     }
-    .pagamento-div-cep{
+
+    .pagamento-div-cep {
         margin-right: 15em;
     }
-    .pagamento-Preench-cep-p{
+
+    .pagamento-Preench-cep-p {
         font-size: 1em;
         font-family: 'caviar';
     }
-    .pagamento-Preench-cep-input{
+
+    .pagamento-Preench-cep-input {
         width: 7em;
         border: none;
         height: 2.5em;
@@ -155,28 +169,30 @@
         box-shadow: 2px 2px #C0C0C0;
     }
 
-    .pagamento-PreenchEnd-l3{
+    .pagamento-PreenchEnd-l3 {
         margin-left: 4em;
         margin-top: 2.5em;
         margin-bottom: 3em;
     }
-    .pagamento-Preench-complem-p{
+
+    .pagamento-Preench-complem-p {
         font-size: 1em;
         font-family: 'caviar';
     }
-    .pagamento-Preench-comple-input{
+
+    .pagamento-Preench-comple-input {
         width: 5em;
         border: none;
         height: 2.5em;
         opacity: 60%;
         box-shadow: 2px 2px #C0C0C0;
-    }   
-    
+    }
 
-    .div-pagamento-InfosPed{
+
+    .div-pagamento-InfosPed {
         display: flex;
         flex-direction: column;
-      
+
         height: 32em;
         margin-bottom: 2em;
         margin-right: 2em;
@@ -185,14 +201,17 @@
         box-shadow: 2px 2px #C0C0C0;
         padding-bottom: 1em;
     }
-    .pagamento-div-imgProd{
+
+    .pagamento-div-imgProd {
         text-align: center;
         margin-top: 2em;
     }
-    .pagamento-div-imgProd img{
+
+    .pagamento-div-imgProd img {
         width: 8em;
     }
-    .pagamento-infosPed-tituloProd{
+
+    .pagamento-infosPed-tituloProd {
         display: flex;
         justify-content: center;
         font-size: 1em;
@@ -202,7 +221,8 @@
         font-family: 'caviar';
         cursor: pointer;
     }
-    .pagamento-div-qtdUnid{
+
+    .pagamento-div-qtdUnid {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -213,11 +233,12 @@
         margin-left: 1.5em;
 
     }
-    .pagamento-p-qtdUnid-prod{
+
+    .pagamento-p-qtdUnid-prod {
         margin-right: 2em;
     }
 
-    .pagamento-div-datePed{
+    .pagamento-div-datePed {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -228,12 +249,13 @@
         margin-left: 1.5em;
 
     }
-    .pagamento-p-DtPed{
+
+    .pagamento-p-DtPed {
         margin-right: 2em;
     }
 
 
-    .pagamento-div-SubtotalPed{
+    .pagamento-div-SubtotalPed {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -244,13 +266,14 @@
         margin-left: 1.5em;
 
     }
-    .pagamento-p-SubtotalPed{
+
+    .pagamento-p-SubtotalPed {
         margin-right: 2em;
     }
 
 
 
-    .pagamento-div-EntregaPed{
+    .pagamento-div-EntregaPed {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -261,16 +284,18 @@
         margin-left: 1.5em;
 
     }
-    .pagamento-p-EntregaPed{
+
+    .pagamento-p-EntregaPed {
         margin-right: 2em;
     }
-    .pagamento-p-InfoEntr{
+
+    .pagamento-p-InfoEntr {
         font-size: .5em;
         margin-left: 3em;
     }
 
 
-    .pagamento-div-CupomPed{
+    .pagamento-div-CupomPed {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -281,12 +306,13 @@
         margin-left: 1.5em;
 
     }
-    .pagamento-p-cupom{
+
+    .pagamento-p-cupom {
         margin-right: 2em;
     }
 
 
-    .pagamento-div-TotalPed{
+    .pagamento-div-TotalPed {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -295,42 +321,39 @@
         font-weight: 900;
         font-family: 'caviar';
     }
+
     .pagamento-p-EntregaPed {
         margin-right: 2em;
     }
 
-    .pagamento-div-button{
+    .pagamento-div-button {
         margin-top: 3em;
         text-align: center;
     }
 
-    .pagamento-button-finalizarPed{
-      
-       
-
-        margin-left: 3em;
-        font-family: 'inter';
-        width: 15em;
-        height: 2.3em;
-        border-radius: .3em;
-        margin-top: 2em;
-        padding: .4em .8em .4em .8em;
-        background-color: #FFF;
-        box-shadow: 1px 2px #c0c0c0ce;
-        cursor: pointer;
-        transition: .2s;
+    .pagamento-button-finalizarPed {
+        margin-top: 3em;
+        font-family: 'caviar';
+        color: white;
+        background-color: black;
+        padding: .5em 3em;
+        transition: .3s;
+        margin-left: 4em;
+        transition: .5s;
     }
 
     .pagamento-button-finalizarPed:hover {
         background-color: #1B130D;
         color: white;
     }
-    .pagamento-div-botao-proximo{
+
+    .pagamento-div-botao-proximo {
         margin-top: -7em;
         margin-bottom: 3em;
         margin-left: 2em;
     }
-    .pagamento-botao-proximo{
+
+    .pagamento-botao-proximo {
         width: 100px;
         height: 30px;
         border: none;
@@ -343,17 +366,17 @@
         cursor: pointer;
     }
 
-    .div-pagamento-ped{
+    .div-pagamento-ped {
         display: flex;
         flex-direction: column;
-        
+
         overflow: scroll;
         height: 30em;
         width: 20em;
         margin-right: 1em;
     }
 
-    .pagamento-confirm{
+    .pagamento-confirm {
         margin-top: 2em;
     }
 
@@ -362,24 +385,26 @@
     }
 
 
-    .pagamento-div-titulo-infoPag{
+    .pagamento-div-titulo-infoPag {
         width: 53em;
         margin-top: 3em;
     }
-    .pagamento-div-titulo-infoPag h1{
+
+    .pagamento-div-titulo-infoPag h1 {
         font-size: 2em;
         font-family: 'caviar';
         font-weight: 900;
         text-align: center;
     }
-    .pagamento-div-icones{
+
+    .pagamento-div-icones {
         display: flex;
         flex-direction: row;
         width: 50em;
-       
+
     }
 
-    .div-logo-cartãoPag{
+    .div-logo-cartãoPag {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -389,26 +414,29 @@
         height: 3em;
         border-radius: .5em;
     }
-    .div-logo-cartãoPag img{
+
+    .div-logo-cartãoPag img {
         width: 3em;
         height: 2em;
     }
 
-    .div-logo-PixPag{
+    .div-logo-PixPag {
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         margin-left: 2em;
         width: 8em;
         height: 3em;
         border-radius: .5em;
     }
-    .div-logo-PixPag img{
+
+    .div-logo-PixPag img {
         width: 4.5em;
         height: 1.7em;
     }
-    .pagamento-formulario-pag{
+
+    .pagamento-formulario-pag {
         display: flex;
         flex-direction: column;
         margin-top: 2em;
@@ -416,19 +444,22 @@
         height: 20em;
         margin-bottom: 2em;
     }
-    .pagamento-infoCartaol1{
+
+    .pagamento-infoCartaol1 {
         display: flex;
         flex-direction: row;
         margin-top: 1em;
         margin-left: 2em;
     }
-    .pagamento-infoCartao-nome{
+
+    .pagamento-infoCartao-nome {
         display: flex;
         flex-direction: column;
         font-family: 'caviar';
-        font-size: 1em ;
+        font-size: 1em;
     }
-    .pagamento-infoCartao-nome input{
+
+    .pagamento-infoCartao-nome input {
         opacity: 80%;
         margin-top: .5em;
         width: 35em;
@@ -438,14 +469,15 @@
     }
 
 
-    .pagamento-infoCartao-Cvv{
+    .pagamento-infoCartao-Cvv {
         display: flex;
         flex-direction: column;
         font-family: 'caviar';
-        font-size: 1em ;
+        font-size: 1em;
         margin-left: 2em;
     }
-    .pagamento-infoCartao-Cvv input{
+
+    .pagamento-infoCartao-Cvv input {
         opacity: 80%;
         margin-top: .5em;
         width: 10em;
@@ -455,20 +487,21 @@
     }
 
 
-    .pagamento-infoCartaol2{
+    .pagamento-infoCartaol2 {
         display: flex;
         flex-direction: row;
         margin-top: 1.2em;
     }
 
-    .pagamento-infoCartao-numero{
+    .pagamento-infoCartao-numero {
         display: flex;
         flex-direction: column;
         font-family: 'caviar';
-        font-size: 1em ;
+        font-size: 1em;
         margin-left: 2em;
     }
-    .pagamento-infoCartao-numero input{
+
+    .pagamento-infoCartao-numero input {
         opacity: 80%;
         margin-top: .5em;
         width: 35em;
@@ -477,14 +510,15 @@
         box-shadow: 1px 2px #c0c0c0ce;
     }
 
-    .pagamento-infoCartao-validade{
+    .pagamento-infoCartao-validade {
         display: flex;
         flex-direction: column;
         font-family: 'caviar';
-        font-size: 1em ;
+        font-size: 1em;
         margin-left: 2em;
     }
-    .pagamento-infoCartao-validade input{
+
+    .pagamento-infoCartao-validade input {
         opacity: 80%;
         margin-top: .5em;
         width: 10em;
@@ -493,15 +527,15 @@
         box-shadow: 1px 2px #c0c0c0ce;
     }
 
-    .cupom{
+    .cupom {
         display: flex;
         flex-direction: column;
         font-family: 'caviar';
-        font-size: 1em ;
+        font-size: 1em;
         margin-left: 2em;
     }
 
-    .cupom input{
+    .cupom input {
         opacity: 80%;
         margin-top: .5em;
         width: 10em;
@@ -510,7 +544,7 @@
         box-shadow: 1px 2px #c0c0c0ce;
     }
 
-    .pagamento-infoCartaol3{
+    .pagamento-infoCartaol3 {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -519,13 +553,14 @@
         width: 59%;
     }
 
-    .div-pagamento-tpCartão{
+    .div-pagamento-tpCartão {
         display: flex;
         flex-direction: column;
         font-size: 1em;
         margin-top: 1em;
     }
-    .pagamento-select-tpCartão{
+
+    .pagamento-select-tpCartão {
         margin-top: .5em;
         width: 11em;
         padding: .2em;
@@ -538,16 +573,17 @@
     .pagamento-select-tpCartão select {
         display: none;
     }
-    
 
-    .div-pagamento-QtdParcelas{
+
+    .div-pagamento-QtdParcelas {
         display: flex;
         flex-direction: column;
         margin-left: 4em;
         margin-top: 1em;
         font-size: 1em;
     }
-    .pagamento-select-qtdParcela{
+
+    .pagamento-select-qtdParcela {
         margin-top: .5em;
         width: 11em;
         padding: .2em;
@@ -556,8 +592,7 @@
         border: none;
         border-radius: .2em;
     }
-    .pagamento-option-qtdParcela{
-        
-    }   
+
+    .pagamento-option-qtdParcela {}
 
 }

@@ -228,11 +228,6 @@ export default function Index() {
                                         </div>
                                         <p className='pagamento-p-InfoEntr'>  Entrega de 7 a 20 dias úteis  </p>
 
-
-
-                                        <div className='pagamento-div-CupomPed'>
-                                            Cupom: <p className='pagamento-p-cupom'> CHAMB162</p>
-                                        </div>
                                     </section>
                                 </div>
                             )}
@@ -247,11 +242,7 @@ export default function Index() {
                     </section>
                 </section>
 
-                <div className='pagamento-div-botao-proximo'>
-                    <button className='pagamento-botao-proximo' onClick={showOrHide}> Proximo </button>
-                </div>
-
-                {mostrarInfosPag ?
+        
                     <section className='pagamento-section'>
                         <div className='pagamento-div-titulo-infoPag'>
                             <h1>Pagamento</h1>
@@ -320,7 +311,7 @@ export default function Index() {
                             </div>
                         </div>
                     </section>
-                    : null}
+                   
             </section>
 
             <RodapeUser />
