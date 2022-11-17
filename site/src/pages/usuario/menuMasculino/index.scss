@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
 
-    .MenuMasculino-div-MeusPedidos-Titulo{
+    .menuMasculino-div-MeusPedidos-Titulo{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -13,7 +13,7 @@
         margin-top: 1.5em;
     }
     .MenuMasculino-div-titulo h1{
-        font-size: 2em;
+        font-size: 32px;
         font-family: 'caviar';
         font-weight: 100;
     }
@@ -182,18 +182,7 @@
     .MenuMasculino-section{
         display: flex;
         flex-direction: column;
-    }
-    .MenuMasculino-div-filtroEcards{
-        display: flex;
-        flex-direction: row;
-    }
-    .div-filtroRoupas{
-        width: 15em;
-        height: 63em;
-        max-height: 63em;
-        margin-top: 2em;
-        border: none;
-        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+
     }
 
     .div-cards-Roupas{
@@ -225,38 +214,40 @@
     }
 
 
-    .div-cardsEmDestaque{
+    .div-cards-Destaque{
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        margin-top: 3em;
-        margin-bottom: 3em;
+        align-items: center;
+        width: 100%;
+        margin-top: 3em;     
+        margin-left: 3em;
+        margin-bottom: 1em;
     }
     .div-cardEmDestaque-Img01 img{
-        width: 25em;
+        height: 90%;
+        margin-bottom: -1.2em;
     }
     .div-cardEmDestaque-Img01 h3{
         font-family: 'caviar';
         font-size: .7em;
-        width: 32em;
+        width: 100%;
         font-weight: 900;
-        margin-top: .8em;
         margin-left: 1em;
     }
 
-
-
     .div-cardEmDestaque-Img02{
-        margin-left: 3em;
+        margin-left: 5em;
     }
     .div-cardEmDestaque-Img02 img{
-        width: 25em;
+        height: 100%;
+        width: 100%;
+        margin-top: 3em;
+        margin-bottom: -13%;
     }
     .div-cardEmDestaque-Img02 h3{
         font-family: 'caviar';
         font-size: .7em;
         font-weight: 900;
-        margin-top: .8em;
         margin-left: 1em;   
     }
     .div-hr-card-Destaque{
@@ -268,9 +259,40 @@
         width: 100%;
         height: 70vh;
     }
-
     .img-next{
         width: 18px;
     }
 
+    @media(max-width: 414px){
+        .main-menuUsuario{ 
+            width: 100%;
+            height: 100%;
+        }
+        .menuMasculino-div-MeusPedidos-Titulo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .div-meusPedidos{
+            width: 100%;
+        }
+        .div-meusPedidos img{
+            width: 18px;
+        }
+        .div-meusPedidos p{
+            font-size: .8em;
+        }
+
+        .div-cards-Destaque{
+            display: flex;
+            flex-direction: column;
+            margin-top: 1em;
+            margin-left: 1em;
+        }
+        .div-cardEmDestaque-Img01 img{
+            height: 40%;
+            margin-bottom: -1.2em;
+        }    
+    }
 }
