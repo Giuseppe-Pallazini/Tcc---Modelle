@@ -152,8 +152,7 @@ export async function inserirCupom( codCupom, valor, quantidade) {
    return r.data;
 }
 
-export async function alterarStatus(id, status,
-    ) {
+export async function alterarStatus(id, status) {
    const r = await api.put('/admin/pedido/status/' + id, 
    {
        status: status

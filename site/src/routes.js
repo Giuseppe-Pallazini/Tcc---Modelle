@@ -9,7 +9,6 @@ import Carrinho2 from               './pages/usuario/carrinho2.0(TeOdeioVictor)'
 import Condicoeseprivacidade from   './pages/usuario/condicoes-Privacidade'
 import DetalheProduto from          './pages/usuario/detalhesProduto'
 import FalhaNaPesquisa from         './pages/usuario/falhaNaPesquisa'
-import Feedback from                './pages/usuario/feedback'
 import LandingPage from             './pages/usuario/landingPage'
 import ListaDeDesejos from          './pages/usuario/listaDeDesejos'
 import MenuFeminino from            './pages/usuario/menuFeminino'
@@ -64,7 +63,6 @@ export default function Index(){
                 <Route path='/user/condicoesEPrivacidade'   element={< Condicoeseprivacidade />} />
                 <Route path='/user/detalhesProduto/:id'     element={< DetalheProduto />} />
                 <Route path='/user/falhaNaPesquisa'         element={< FalhaNaPesquisa />} />
-                <Route path='/user/feedback'                element={< Feedback />} />
                 <Route path='/user/listaDeDesejos'          element={< ListaDeDesejos />} />
                 <Route path='/user/menuFeminino'            element={< MenuFeminino />} />
                 <Route path='/user/menuMasculino'           element={< MenuMasculino />} />

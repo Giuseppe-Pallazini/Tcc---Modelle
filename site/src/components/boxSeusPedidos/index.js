@@ -10,6 +10,7 @@ import Storage from 'local-storage'
 
 export default function Index(){
     const [produto, setProduto] = useState([]);
+    console.log(produto)
 
     const [IdProduto] = useState(Storage('usuario-logado').id);
     console.log(IdProduto);
@@ -47,7 +48,7 @@ useEffect(() => {
                             <div className='div-informaçõesdoPedido'>
                                 <div className='div-cl1-infos01'>
                                     <div className='div-informacoesda-cl1' >Pedido<p>{item.idPedido}</p></div>
-                                    <div className='div-informacoesda-cl1' >Enviado por:<p> {item.marcaProduto}</p></div>
+                                    {/* <div className='div-informacoesda-cl1' >Enviado por:<p> {item.marcaProduto}</p></div> */}
                                     <div className='div-informacoesda-cl1' >Forma de pagamento<p> {item.pagamento}</p></div>
                                 </div>
                                 <div className='div-cl2-infos01'>
@@ -106,7 +107,7 @@ useEffect(() => {
                                             </div> 
                                         </div>
                                         <div className='infoProd-desc' >Tamanho: <span>{item.tamanho}</span></div>
-                                        <div className='infoProd-desc' >Valor unitario: <span>{item.valorProduto}</span></div>
+                                        <div className='infoProd-desc' >Valor unitario:<span>R${item.valorProduto}</span></div>
                                         <div className='infoProd-desc' >Quantidade: <span> {item.qtdProduto}</span></div>
 
                                     </div>
