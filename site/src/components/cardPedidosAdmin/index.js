@@ -9,26 +9,30 @@ export default function Index(){
     const [produto, setProduto] = useState([]);
     const [status, setStatus] = useState();
 
-    async function carregarUsuario(){
-        let a = await visualizarPedido();
-        setProduto(a)
-        }
-    
-useEffect(() => {
-    carregarUsuario();
-}, [])
-    
+        async function carregarUsuario(){
+            let a = await visualizarPedido();
+            setProduto(a)
+            }
 
-    async function alterarStatus(){
-        try {
-            await alterarStatus(produto.idPedido, status)
-            toast.dark("Status alterado com sucesso");
-        } catch (err) {
-            toast.error(err.response.data.erro);
-            console.log(err)
+
+        async function alterarStatus(){
+            try {
+                await alterarStatus(produto.idPedido, status)
+                toast.dark("Status alterado com sucesso");
+            } catch (err) {
+                toast.error(err.response.data.erro);
+                console.log(err)
+            }
+    
         }
 
-    }
+    
+            useEffect(() => {
+                carregarUsuario();
+            }, [])
+                
+
+
 
 
     function mostrarImagem(imagem) {
@@ -143,6 +147,7 @@ useEffect(() => {
                             </div>
 
                         </div>
+                        
                         <div>
                             <h1>Alterar Status</h1>
                             <div>

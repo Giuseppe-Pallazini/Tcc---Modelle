@@ -15,7 +15,7 @@ import LogoValorFiltro from '../../../assets/image/logo-valor-filtro.png'
 import Carrossel from '../../../components/carrossel'
 import ImagemNext from '../../../assets/image/icon-seta-carrossel-2.png'
 
-import CardProdutosMasculinos from '../../../components/carProdutosMenuMasculino'
+import CardProdutosFemininos from '../../../components/CardProdutosFemininos'
 
 import {useEffect, useState, useRef} from 'react'
 
@@ -39,7 +39,7 @@ export default function Index(){
 
                 <section className='MenuMasculino-section'>
                     <div className='div-CardsProd'>
-                        <CardProdutosMasculinos />
+                        <CardProdutosFemininos />
                     </div>
 
                     <div className='Menu-div-buttomVerMais'>
