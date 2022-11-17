@@ -136,12 +136,27 @@ export async function visualizarPedidoPorId(id){
     return resposta.data;
 }
 
+export async function verPedidos(){
+    const resposta = await api.get('/admin/verPedidos')
+    return resposta.data;
+}
+
 export async function inserirCupom( codCupom, valor, quantidade) {
    const r = await api.post('/cadastrar/cupom', 
    {
         codCupom,
         valor,
         quantidade
+   }
+   );
+   return r.data;
+}
+
+export async function alterarStatus(id, status,
+    ) {
+   const r = await api.put('/admin/pedido/status/' + id, 
+   {
+       status: status
    }
    );
    return r.data;

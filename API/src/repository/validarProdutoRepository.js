@@ -430,7 +430,7 @@ group by tb_produto.id_produto,
 
 export async function listarPedidos() {
     const comando =
-        `	 select 
+        `	 	select 
         tb_pedido.id_pedido    as idPedido,
         tp_pagamento     as pagamento,
         ds_endereco        as Endereço,
@@ -443,32 +443,33 @@ export async function listarPedidos() {
         vl_frete        as valorDoFrete,
         dt_pedido     as dataDoPedido,
         nm_usuario        as nomeUsuario,
+        tb_pedido.id_usuario		as idUsuario,
         ds_status        as statudDoPedido,
+        ds_tamanho		as tamanho,
     
         nm_produto        as    nomeProduto,
         nm_marca        as marcaProduto,
         ds_cor            as corProduto,
         vl_preco        as valorProduto,
         qtd_produto        as qtdProduto,
-        ds_tamanho          as tamanho,
         
         ds_imagem			as imagem
     from tb_pedido
-    
+
         inner join tb_produto
-        on tb_produto.id_produto = tb_pedido.id_pedido
-    
+        on tb_produto.id_produto = tb_pedido.id_usuario
+
         inner join tb_marca
         on tb_marca.id_marca = tb_produto.id_produto
-    
+
         inner join tb_pedido_item
-        on tb_pedido_item.id_produto_item = tb_pedido.id_pedido
-    
+        on tb_pedido_item.id_produto_item = tb_pedido.id_usuario
+
         inner join tb_usuario
-        on tb_usuario.id_usuario = tb_pedido.id_pedido
-        
+        on tb_usuario.id_usuario = tb_pedido.id_usuario
+
         inner join tb_produto_imagem
-        on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto`
+        on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto;`
 
     const [linhas] = await con.query(comando);
     return linhas;
@@ -526,4 +527,42 @@ export async function buscarPedidoPorId(Id) {
 
     const [linhas] = await con.query(comando, [Id]);
     return linhas;
+}
+
+export async function listarPedidosPorUsuario(){
+    const comando = `
+        select nm_usuario as nomeUsuario,
+            nm_produto as nomeProduto,
+            dt_pedido  as dataPedido,
+            tb_pedido.id_pedido  as idPedido,
+            vl_total	  as vlTotal
+            
+            
+        from tb_pedido
+        inner join tb_usuario
+        on tb_usuario.id_usuario = tb_pedido.id_usuario
+        inner join tb_produto
+        on tb_produto.id_produto = tb_pedido.id_usuario
+        inner join tb_pedido_item
+        on tb_pedido_item.id_produto_item = tb_pedido.id_usuario;
+    `
+    const [linhas] = await con.query(comando);
+    return linhas;
+}
+
+
+
+export async function alterarStatus(id, pedido) {
+    const comando = `
+        update tb_pedido
+        set ds_status = ?
+        where id_pedido = ?
+    `
+
+    const [resp] = await con.query(comando, [
+        pedido.status,
+        id
+    ])
+
+    return resp.affectedRows;
 }

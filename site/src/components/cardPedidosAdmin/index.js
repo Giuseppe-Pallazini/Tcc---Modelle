@@ -1,29 +1,34 @@
 import './index.scss'
 import '../../assets/common/index.scss'
 import { Link, useParams } from 'react-router-dom'
-import ImgProd from '../../assets/image/img-Prod.png'
-import IconsFluxo from '../../assets/image/icons-fluxo.png'
 import { useEffect, useState } from 'react'
-import { buscarImagem, visualizarPedidoPorId } from '../../api/produtoAPI'
-import { API_URL } from '../../api/config'
-import Storage from 'local-storage'
+import { alterarProduto, buscarImagem, visualizarPedido, visualizarPedidoPorId } from '../../api/produtoAPI'
+import { toast } from 'react-toastify'
 
 export default function Index(){
     const [produto, setProduto] = useState([]);
-
-    const [IdProduto] = useState(Storage('usuario-logado').id);
-    console.log(IdProduto);
+    const [status, setStatus] = useState();
 
     async function carregarUsuario(){
-        let a = await visualizarPedidoPorId(IdProduto);
+        let a = await visualizarPedido();
         setProduto(a)
         }
     
 useEffect(() => {
     carregarUsuario();
 }, [])
+    
 
+    async function alterarStatus(){
+        try {
+            await alterarStatus(produto.idPedido, status)
+            toast.dark("Status alterado com sucesso");
+        } catch (err) {
+            toast.error(err.response.data.erro);
+            console.log(err)
+        }
 
+    }
 
 
     function mostrarImagem(imagem) {
@@ -138,11 +143,25 @@ useEffect(() => {
                             </div>
 
                         </div>
+                        <div>
+                            <h1>Alterar Status</h1>
+                            <div>
+                                <input type='text' value={status} onChange={e => setStatus(e.target.value)} />
+                                <button onClick={alterarStatus}>Ok</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <hr/>
+                            
+                        </div>
+
+
 
                     </main>
                     )}
 
-
+                    <hr/>
 
 
         </section>

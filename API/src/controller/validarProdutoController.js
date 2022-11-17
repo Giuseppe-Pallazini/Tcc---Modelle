@@ -3,7 +3,7 @@ import { Router } from 'express';
 
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
 import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho, buscarTamanhoPorIdAdmin } from '../repository/tamanhoRepository.js'
-import { alterarProduto, buscarMarcaGucci, buscarPedidoPorId, buscarPorNome, listarPedidos, listarProdutosFemininos, listarProdutosMasculino, listarTodosProdutos, removerProdutoImagensDiferentes, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
+import { alterarProduto, alterarStatus, buscarMarcaGucci, buscarPedidoPorId, buscarPorNome, listarPedidos, listarPedidosPorUsuario, listarProdutosFemininos, listarProdutosMasculino, listarTodosProdutos, removerProdutoImagensDiferentes, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
 import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId, ListarTodosTamanhosporIdUser, ListarTodosTamanhosporIdAdmin  } from '../repository/mostrarprodutorepository.js'
 import { removerProdutoImagem, removerProdutoTamanho } from '../repository/removerProdutoRepository.js';
 import { validarProduto } from '../services/ProdutoValidacao.js';
@@ -238,6 +238,31 @@ server.get('/api/listarPedidos/:id', async (req, resp) => {
         const {id} = req.params;
         const x = await buscarPedidoPorId(id);
         resp.send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/admin/verPedidos', async (req, resp) => {
+    try {
+        const x = await listarPedidosPorUsuario();
+        resp.send(x);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.put('/admin/pedido/status/:id', async (req, resp) => {
+    try {
+        const {id} = req.params;
+        const status = req.body;
+
+        let resposta = await alterarStatus(id, status);
+        resp.status(200).send();
     } catch (err) {
         resp.status(400).send({
             erro: err.message

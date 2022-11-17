@@ -1,0 +1,305 @@
+.main-boxSeusProdutos{
+    display: flex;
+    flex-direction: column;
+    .div-numeroPedido{
+        margin-left: 1em;
+    }
+    .div-numeroPedido p{
+        font-size: 1em;
+        font-family: 'caviar';
+    }
+
+    .Infos1-pedido{
+        display: flex;
+        flex-direction: column;
+        margin-top: .3em;
+        height: 18vh;
+        width: 93vh;
+        border-radius: .5em;
+        border: 1px solid black;
+    }
+    .faixa-preta-infos1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3em;
+        background-color: black;
+        width: 93vh;
+    }
+    .faixa-preta-infos1 h1{
+        color: #fff;
+        font-size: 1.5em;
+        font-family: 'caviar';
+    }
+    .div-informaçõesdoPedido{
+        display: flex;
+        justify-content: space-between;
+    }
+    .div-cl1-infos01{
+        margin-left: 1em;
+        width: 15em;
+        margin-top: .5em;
+    }
+    .div-informacoesda-cl1{
+        display: flex;
+        flex-direction: row;
+        font-size: 1em;
+        margin-top: 1em;
+        line-height: .4em;
+        font-family: 'caviar-bold';
+    }
+    .div-informacoesda-cl1 p{
+        margin-left: .5em;
+        font-family: 'caviar';
+    }
+    .div-informacoesda-cl2{
+        font-family: 'caviar-bold';
+        font-size: 1em;
+        margin-top: 1em;
+        width: 10em;
+    }
+    .div-informacoesda-cl2 span{
+        font-family: 'caviar';
+    }
+
+
+    .div-informacoesda-cl3{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        width: 15em;
+        font-size: 1em;
+        margin-top: 1em;
+        margin-right: 1em;
+        font-family: 'caviar-bold';
+    }
+    .div-informacoesda-cl3 span{
+        margin-top: .2em;
+        text-align: start;
+        font-family: 'caviar';
+        width: 14em;
+    }
+    .div-cl4-infos01{
+        width: 13em;
+        margin-top: 1em;
+    }
+    .div-informacoesda-cl4{
+        display: flex;
+        flex-direction: row;
+        font-size: 1em;
+        font-family: 'caviar-bold';
+    }
+    .div-informacoesda-cl4 p{
+        font-family: 'caviar';
+    }
+
+    .InfosDetalhes-pedido{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1em;
+        height: 25vh;
+        width: 93vh;
+        border-radius: .5em;
+        border: 1px solid black;
+    }
+    .faixaPreta-detalhesPed{
+        display: flex;
+        justify-content: space-between;
+        height: 3em;
+        background-color: black;
+        width: 93vh;
+    }
+    .faixaPreta-InformacoesDetalhes-cl1{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        margin-left: 2em;
+        color: #fff;
+        margin-top: .2em;
+        font-size: 1em;
+        font-weight: 700;
+        font-family: 'caviar-bold';
+    }
+    .faixaPreta-InformacoesDetalhes-cl1 span{
+        font-weight: 100;
+    }
+
+    .faixaPreta-InformacoesDetalhes-cl2{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        margin-left: 1em;
+        color: #fff;
+        font-weight: 700;
+        margin-top: .2em;
+        font-size: 1em;
+        font-family: 'caviar';
+    }
+    .faixaPreta-InformacoesDetalhes-cl2 span{
+        font-weight: 100;
+    }
+
+    .faixaPreta-InformacoesDetalhes-cl3{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        margin-left: 1em;
+        color: #fff;
+        font-weight: 700;
+        margin-top: .2em;
+        font-size: 1em;
+        font-family: 'caviar';
+    }
+
+    .faixaPreta-InformacoesDetalhes-cl3{
+        font-weight: 100;
+    }
+
+    .faixaPreta-InformacoesDetalhes-cl4{
+        display: flex;
+        flex-direction: row;
+        text-align: start;
+        color: rgb(35, 68, 255);
+        margin-top: .7em;
+        font-size: 1em;
+        font-family: 'caviar';
+        margin-right: 1em;
+    }
+    .faixaPreta-InformacoesDetalhes-cl4 span {
+        margin-left: .5em;
+        color: #ffffff;
+    }
+
+    .div-detalhesPed-DetProd{
+        display: flex;
+        justify-content: space-between;
+        width: 85vh;
+        height: 10em;
+        margin-left: 3em;
+        margin-top: 1.2em;
+        border: none;
+    }
+    .div-InfoProduto-desc{
+        display: flex;
+        flex-direction: row;
+    }
+    .infoProd-img img{
+        width: 8em;
+    }
+    .infoProd-Descrições{
+        margin-left: 2em;
+    }
+    .infoProd-Descrições h3{
+        font-size: 1em;
+        font-family: 'caviar-bold';
+        font-weight: 100;
+        width: 10em;
+    }
+    .infoProd-Descrições p{
+        font-size: .8em;
+        font-family: 'caviar';
+        font-weight: 500;
+        margin-top: .3em;
+        margin-bottom: 1em;
+    }
+    .infoProd-desc{
+        display: flex;
+        flex-direction: row;
+        font-size: .8em;
+        font-family: 'caviar-bold';
+        font-weight: 500;
+        opacity: 90%;
+        margin-top: .2em;
+        .cor{
+            margin-left: 1em;
+            width: 20px;
+            height: 20px;
+            border-radius: .25em;
+        }
+    }
+    .infoProd-desc span{
+        opacity: 100%;
+        font-size: .8em;
+        font-family: 'caviar';
+        font-weight: 100;
+    }
+
+    .infoPed-feedback{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .infoPed-iconsFluxo{
+        margin-right: 2em;
+    }
+    .infoPed-iconsFluxo img{
+        width: 18em;        
+    }
+
+    .infoPed-btnFeedback{
+        margin-right: 2em;
+        margin-top: .5em;
+    }
+    .infoPed-btnFeedback button{
+        width: 20em;
+        border-radius: 1em;
+        height: 3em;
+        font-size: .8em;
+        background-color: #fff;
+        font-family: 'caivar';
+        border: 2px solid black;
+    }
+    .infoPed-btnFeedback button:hover{
+        background-color: #000;
+        transition: .8s;
+        color: #fff;
+    }
+
+    .infoPed-btnComprarNovamente{
+        margin-right: 2em;
+        margin-top: .5em;
+    }
+    .infoPed-btnComprarNovamente button{
+        width: 20em;
+        border-radius: 1em;
+        height: 3em;
+        font-size: .8em;
+        font-family: 'caivar';
+        background-color: #fff;
+        border: 2px solid black;
+    }
+    .infoPed-btnComprarNovamente button:hover{
+        background-color: #000;
+        transition: .8s;
+        color: #fff;
+    }
+
+    .infoPed-ConfirmaçãoPed{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 9em;
+        margin-right: 9em;
+        margin-top: .5em;
+
+    }
+    .infoPed-ConfirmaçãoPed button{
+        width: 6em;
+        height: 3em;
+        font-family: 'caviar';
+        font-size: .7em;
+        color: #fff;
+        border-radius: .8em;
+        text-align: center;
+        background-color: #000;
+
+    }
+    .div-confirmacaoPed{
+        margin-left: .5em;
+    }
+    .div-confirmacaoPed input{
+        margin-left: .3em;
+    }
+
+}
