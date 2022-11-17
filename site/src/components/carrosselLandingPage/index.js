@@ -67,9 +67,9 @@ export default function Index() {
                     <h1 className='h1-01'> Conscious </h1>
                     <h3 className='h3-01'> Nanushka</h3>
 
-                    <p className='p1-01'> Cinto dupla face Dailey </p>
+                    <p className='p1-01'> Calça de cintura alta </p>
 
-                    <p className='p2-01'> Cinto dupla face Dailey Amarelo manteiga, modelagem dupla face, ferragem dourada, fechamento por fivelas e perfurações.</p>
+                    <p className='p2-01'> Calça preta, cintura alta, cós elástico, fechamento por cordão de ajuste , bolso amplo na parte posterior e punhos flare. </p>
 
                     <Link to='/user/menuNovidades' className='link-01'> Descubra </Link>
                     </div>

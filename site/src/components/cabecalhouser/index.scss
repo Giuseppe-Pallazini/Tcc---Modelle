@@ -143,19 +143,20 @@
         }
     }
 
-    @media(max-width: 414px){
-        .cab-user{
-
+    @media(max-width: 414px){   
         .cab-user-txt{
-            width: 2em ;
+            display: flex;
+            width: 30%;
         }
+        .cab-user{
+            display: flex;
+            flex-direction: row;
+            border: 1px solid black;
+            width: 100%;
+        }  
         .cab-user-txt-1{
-            font-size: 5em;
-        }
-
-        .cab-user-topicos{
-            margin-left: .5em;
-        }
-        }
+            font-size: 1em;
+            border: 1px solid black;
+        }   
     }
 }

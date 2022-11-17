@@ -97,7 +97,7 @@ export default function Index() {
         </div>
 
         <div className="div-imagem">
-          <img className='div-imagem-1' src={Imagem2} alt='' />
+          <img className='div-imagem-1' src={Imagem2} alt='imagem-login' />
         </div>
 
       </section>

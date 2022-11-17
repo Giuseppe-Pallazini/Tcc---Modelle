@@ -89,8 +89,9 @@
     }
         
     .div-imagem-1{
-       
         filter: blur(2px);
+        width: 100%;
+        border: 1px solid black;
     }
 
     @media(max-width: 414px){
