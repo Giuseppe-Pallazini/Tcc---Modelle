@@ -309,17 +309,15 @@
         .div-meusPedidos p{
             font-size: .8em;
         }
-
-        .div-cards-Destaque{
+        .div-cards-Destaque-menuFeminino{
             display: flex;
             flex-direction: column;
-            margin-top: 1em;
-            margin-left: 1em;
+            justify-content: center;
         }
-        .div-cardEmDestaque-Img01 img{
-            height: 40%;
-            margin-bottom: -1.2em;
-        }    
+        .div-cardEmDestaque-Img01-menuFeminino{
+            margin-bottom: 2em;
+        }
     }
+
 
 }
