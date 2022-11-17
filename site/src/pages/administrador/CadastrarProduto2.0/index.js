@@ -166,7 +166,6 @@ export default function CadastroProduto() {
         try {
             const precoProduto = preco.replace(',', '.');
             if(!id){
-            console.log(precoProduto);
             const r = await inserirProduto(nome, complementoProduto, precoProduto, composicao, detalhes, juros, parcela, disponivel, cor, idMarca, idModelo, idCategoria, tamSelecionadas);
             await salvarImagem(r.id, imagem, imagem2, imagem3, imagem4);
 
