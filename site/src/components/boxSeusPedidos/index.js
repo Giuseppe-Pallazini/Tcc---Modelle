@@ -44,21 +44,21 @@ useEffect(() => {
 
                 <div className='div-informaçõesdoPedido'>
                     <div className='div-cl1-infos01'>
-                        <p> ID pedido: {i}</p>
-                        <div className='div-informacoesda-cl1' >Pedido<p>{item.idPedido}</p></div>
-                        <div className='div-informacoesda-cl1' >Enviado por:<p> {item.marcaProduto}</p></div>
-                        <div className='div-informacoesda-cl1' >Forma de pagamento<p> {item.pagamento}</p></div>
+                        <p> <b>  ID pedido: </b> {i}</p>
+                        <div className='div-informacoesda-cl1' >Pedido: <p>{item.idPedido}</p></div>
+                        <div className='div-informacoesda-cl1' >Enviado por: <p> Correios </p> </div>
+                        <div className='div-informacoesda-cl1' >Forma de pagamento: <p> {item.pagamento}</p></div>
                     </div>
                     <div className='div-cl2-infos01'>
                         <div className='div-informacoesda-cl2' >
-                            Envio
+                            Envio:
                             <span> até {item.dataDoPedido.substr(0, 10)} </span>
                         </div>
                     </div>
 
                     <div className='div-cl3-infos01'>
                         <div className='div-informacoesda-cl3'>
-                            Endereço
+                            Endereço:
                             <span> {item.Endereço} {item.NumeroEndereço} - {item.Cidade} ,
                                 {item.Cep}
 
@@ -67,9 +67,8 @@ useEffect(() => {
                     </div>
 
                     <div className='div-cl4-infos01'>
-                        <div>Resumo do pagamento: </div>
-                        <div className='div-informacoesda-cl4'>Valor do item: R$<p> {item.valorProduto}</p></div>
-                        <div className='div-informacoesda-cl4'>Total geral: R$<p> {item.totalItem}</p></div>
+                        <div className='div-informacoesda-cl4'>Valor do item: <p>R$ {item.valorProduto}</p></div>
+                        <div className='div-informacoesda-cl4'>Total geral: <p>R$ {item.totalItem}</p></div>
                     </div>
                 </div>
             </div>

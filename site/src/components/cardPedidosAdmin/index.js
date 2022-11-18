@@ -63,7 +63,6 @@ export default function Index() {
                             </div>
 
                             <div className='div-cl4-infos01'>
-                                <div>Resumo do pagamento: </div>
                                 <div className='div-informacoesda-cl4'>Valor do item: R$<p> {item.valorProduto}</p></div>
                                 <div className='div-informacoesda-cl4'>Total geral: R$<p> {item.totalItem}</p></div>
                             </div>

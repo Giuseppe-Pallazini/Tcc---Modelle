@@ -40,6 +40,7 @@
         margin-left: 1em;
         width: 15em;
         margin-top: .5em;
+        font-family: 'caviar-bold';
     }
     .div-informacoesda-cl1{
         display: flex;
@@ -71,7 +72,6 @@
         width: 15em;
         font-size: 1em;
         margin-top: 1em;
-        margin-right: 1em;
         font-family: 'caviar-bold';
     }
     .div-informacoesda-cl3 span{
@@ -80,9 +80,16 @@
         font-family: 'caviar';
         width: 14em;
     }
+
     .div-cl4-infos01{
-        width: 13em;
         margin-top: 1em;
+        width: 20%;
+        margin-right: 2em;
+        .div-informacoesda-cl4 {
+            display: flex;
+            justify-content: space-between;
+        }
+        
     }
     .div-informacoesda-cl4{
         display: flex;
