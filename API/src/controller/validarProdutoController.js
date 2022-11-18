@@ -48,7 +48,7 @@ server.put('/admin/produto/:id/imagem', upload.array('imagens'), async (req, res
         const id = req.params.id;
         const imagens = req.files;
 
-        let imagensPermanecem = [];
+        const imagensPermanecem = [];
         if (req.body.imagens){
             imagensPermanecem = req.body.imagens.filter(item => item != 'undefined');
         }
