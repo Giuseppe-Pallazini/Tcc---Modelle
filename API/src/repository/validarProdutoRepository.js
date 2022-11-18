@@ -481,9 +481,10 @@ export async function listarPedidos() {
 
 export async function buscarPedidoPorId(Id) {
     const comando =
-        `	 	select 
-        tb_pedido.id_pedido    as idPedido,
-        tp_pagamento     as pagamento,
+        `	 	                        select 
+        id_produto_item,
+		tb_pedido_item.id_pedido    as idPedido,
+        tb_pedido.tp_pagamento     as pagamento,
         ds_endereco        as Endereço,
         nr_numero         as NumeroEndereço,
         ds_cidade         as Cidade,
@@ -499,29 +500,20 @@ export async function buscarPedidoPorId(Id) {
         ds_tamanho		as tamanho,
     
         nm_produto        as    nomeProduto,
-        nm_marca        as marcaProduto,
         ds_cor            as corProduto,
         vl_preco        as valorProduto,
         qtd_produto        as qtdProduto,
-        
-        ds_imagem			as imagem
-    from tb_pedido
-
-        inner join tb_produto
-        on tb_produto.id_produto = tb_pedido.id_usuario
-
-        inner join tb_marca
-        on tb_marca.id_marca = tb_produto.id_produto
-
-        inner join tb_pedido_item
-        on tb_pedido_item.id_produto_item = tb_pedido.id_usuario
-
-        inner join tb_usuario
-        on tb_usuario.id_usuario = tb_pedido.id_usuario
-
-        inner join tb_produto_imagem
-        on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto
-
+        ds_imagem           as imagem
+        from tb_pedido_item
+        inner join tb_pedido
+			on tb_pedido.id_pedido = tb_pedido_item.id_produto_item
+		inner join tb_usuario
+			on tb_usuario.id_usuario = tb_pedido.id_usuario
+		inner join tb_produto
+			on tb_produto.id_produto = tb_pedido.id_pedido
+		inner join tb_produto_imagem
+			on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto
+		
         where tb_usuario.id_usuario = ?;
         `
 

@@ -27,9 +27,19 @@ useEffect(() => {
 
 
 
-    function mostrarImagem(imagem) {
-            return buscarImagem(imagem)
+function mostrarImagem(imagem) {
+    if (typeof (imagem) == 'object') {
+        return URL.createObjectURL(imagem);
     }
+
+    else if (typeof (imagem) == 'string') {
+        return `${API_URL}/${imagem}`
+    }
+
+    else {
+        return buscarImagem(imagem)
+    }
+}
     
 
     return(

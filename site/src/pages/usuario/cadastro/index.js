@@ -33,11 +33,10 @@ export default function Index() {
             if (validator.isEmail(email)) {
 
                 if (email != email2) {
-                    setErroEmail('Emails não coincidem')
+                    throw new Error("Erro")
                 }
 
                 if (senha != senha2) {
-                    setErroSenha('Senhas não coincidem')
                 }
 
                 else if (senha.length < 6) {
