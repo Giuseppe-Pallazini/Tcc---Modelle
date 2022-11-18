@@ -64,24 +64,6 @@ export default function Index() {
         return a
     }
 
-    function compraDireta() {
-        let carrinho = [];
-        if (storage('carrinho')) {
-            carrinho = storage('carrinho')
-
-        }
-
-        if (!carrinho.find(item => item.id === id)) {
-            carrinho.push({
-                id: id,
-                qtd: 1
-            })
-            storage('carrinho', carrinho)
-            toast.dark("🛒 Item Adicionado ao Carrinho")
-        }
-        Navigate('/user/pagamentoCartao')
-    }
-
     return (
         <main className='main-detalhes'>
             <Cabecalho />
@@ -130,7 +112,6 @@ export default function Index() {
 
                         <div className='detalhes-bt' >
                             <button className='detalhes-add-carrinho' onClick={adicionarCarrinho} >Adicionar ao Carrinho</button>
-                            <button className='detalhes-comprar' onClick={compraDireta}>Comprar</button>
                         </div>
                     </div>
 
