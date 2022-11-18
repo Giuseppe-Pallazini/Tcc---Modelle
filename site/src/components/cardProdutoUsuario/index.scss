@@ -3,12 +3,13 @@
     flex-direction: row;
 
     .section-filtro{
+        
         .div-filtroRoupas{
             display: flex;
             flex-direction: column;
             height: 100%;
 
-            .filtro-marca > div > p{
+            .filtro-marca > .div-valoresMarcas > div > p{
                 cursor: pointer;
             }
 

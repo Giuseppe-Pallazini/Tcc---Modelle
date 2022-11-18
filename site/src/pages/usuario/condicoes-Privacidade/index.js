@@ -1,8 +1,8 @@
 import { useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
 
-import Cabecalho from '../../../components/cabecalhouser/index.js'
-import Rodape from '../../../components/Rodapé/index.js'
+import Cabecalho from '../../../components/cabecalhouser'
+import Rodape from '../../../components/Rodapé'
 import './index.scss';
 import { Link } from 'react-router-dom';
 import '../../../assets/common/index.scss'

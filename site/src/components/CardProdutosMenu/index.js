@@ -1,7 +1,7 @@
 import './index.scss'
 import '../../assets/common/index.scss'
 import ImagemProd from '../../assets/image/ImagemProd.png'
-import IconCoracao from '../../assets/image/icon-listaDeDesejos.png'
+import IconCoracao from '../../assets/image/Coracao-icon.svg'
 
 export default function Index(){
 
@@ -23,7 +23,7 @@ export default function Index(){
         <main className='main-CardProdutosMenuMasculino'>
             <div className='div-CardProdutosMenuMasculino'>
                 <div className='CardProdutosMenuMasculino-div-imgs'>
-                    <img src={IconCoracao} alt='' className='logo-coração' />
+                    <img onClick={favorito} src={IconCoracao} alt='' className='logo-coração' />
                     <img src={ImagemProd} alt='' className='imagem-produto' />
                 </div>
                     <h1>Burberry</h1>

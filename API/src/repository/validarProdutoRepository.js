@@ -481,10 +481,10 @@ export async function listarPedidos() {
 
 export async function buscarPedidoPorId(Id) {
     const comando =
-        `	 	                        select 
-        id_produto_item,
-		tb_pedido_item.id_pedido    as idPedido,
-        tb_pedido.tp_pagamento     as pagamento,
+        `	 	                       
+        select 
+        tb_pedido.id_pedido    as idPedido,
+        tp_pagamento     as pagamento,
         ds_endereco        as Endereço,
         nr_numero         as NumeroEndereço,
         ds_cidade         as Cidade,
@@ -495,7 +495,6 @@ export async function buscarPedidoPorId(Id) {
         vl_frete        as valorDoFrete,
         dt_pedido     as dataDoPedido,
         nm_usuario        as nomeUsuario,
-        tb_pedido.id_usuario		as idUsuario,
         ds_status        as statudDoPedido,
         ds_tamanho		as tamanho,
     
@@ -503,18 +502,20 @@ export async function buscarPedidoPorId(Id) {
         ds_cor            as corProduto,
         vl_preco        as valorProduto,
         qtd_produto        as qtdProduto,
-        ds_imagem           as imagem
-        from tb_pedido_item
-        inner join tb_pedido
-			on tb_pedido.id_pedido = tb_pedido_item.id_produto_item
-		inner join tb_usuario
-			on tb_usuario.id_usuario = tb_pedido.id_usuario
-		inner join tb_produto
-			on tb_produto.id_produto = tb_pedido.id_pedido
-		inner join tb_produto_imagem
-			on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto
-		
-        where tb_usuario.id_usuario = ?;
+        
+        ds_imagem			as imagem
+        
+        from
+        tb_pedido
+			inner join tb_pedido_item
+		on tb_pedido_item.id_produto_item = tb_pedido.id_pedido
+			inner join tb_usuario
+		on tb_usuario.id_usuario = tb_pedido.id_usuario
+			inner join tb_produto
+		on tb_produto.id_produto = tb_pedido_item.id_produto
+			inner join tb_produto_imagem
+		on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto
+        where tb_pedido.id_usuario = ?
         `
 
     const [linhas] = await con.query(comando, [Id]);
