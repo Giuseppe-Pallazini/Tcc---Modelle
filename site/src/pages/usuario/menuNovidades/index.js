@@ -20,6 +20,12 @@ import CardProdutos from '../../../components/cardProdutoUsuario'
 import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
+    const navigate = useNavigate();
+
+
+    function navegarPedidos(){
+        navigate('/user/seusPedidos')
+    }
     return(
        <main className='main-menuUsuario'>
         <CabecalhoUser /> 
@@ -28,7 +34,7 @@ export default function Index(){
         <div className='menuMasculino-div-MeusPedidos-Titulo'>
                     <div className='div-meusPedidos'>
                         <img src={ImagemMeusPedidos} alt='logo-meusPedidos' />
-                        <p>Meus Pedidos</p>
+                        <p onClick={navegarPedidos} >Meus Pedidos</p>
                     </div>
 
                     <div className='MenuMasculino-div-titulo'>

@@ -26,7 +26,7 @@ export default function Index(){
     const navigate = useNavigate();
 
     async function carregarProduto(){
-        const resp = await listarProdutosMasculino();
+        const resp = await listarProdutosFemininos();
         setProduto(resp); 
     }
     async function filtroGucci(){
