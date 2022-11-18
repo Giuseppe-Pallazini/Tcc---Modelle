@@ -23,7 +23,7 @@ export default function Index(){
         <main className='main-CardProdutosMenuMasculino'>
             <div className='div-CardProdutosMenuMasculino'>
                 <div className='CardProdutosMenuMasculino-div-imgs'>
-                    <img onClick={favorito} src={IconCoracao} alt='' className='logo-coração' />
+                    <img onClick={favorito} src={favorito} alt='' className='logo-coração' />
                     <img src={ImagemProd} alt='' className='imagem-produto' />
                 </div>
                     <h1>Burberry</h1>

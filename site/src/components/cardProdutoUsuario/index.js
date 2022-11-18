@@ -8,6 +8,7 @@ import IconListaDesejo from '../../assets/image/lista-desejo.png'
 import IconLupa from '../../assets/image/logo-lupa.png'
 import IconCoracao from '../../assets/image/Coracao-icon.svg'
 import Coracao2Icon from '../../assets/image/Coracao-icon02.svg'
+import storage from 'local-storage'
 
 import { buscarPorNome, listarTodos, removerProduto, buscarImagem, listarProdutosMasculino, listarProdutosFemininos } from '../../api/produtoAPI'
 
@@ -194,6 +195,21 @@ export default function Index() {
         return resp;
     }
 
+    function adicionarLista(id) {
+        let listaDesejos = [];
+        if (storage('lista-desejo')) {
+            listaDesejos = storage('lista-desejo')
+        }
+
+        if (!listaDesejos.find(item => item.id === id)) {
+            listaDesejos.push({
+                id: id
+            })
+            storage('lista-desejo', listaDesejos)
+            toast.dark("🛒 Item Adicionado a Lista de Desejo");
+        }
+    }
+    console.log(adicionarLista);
     return (
         <main className='main-menu-produtos'>
 
@@ -331,7 +347,11 @@ export default function Index() {
                 {produto.map(item =>
                     <div className='card-produto'>
                         <div className='icon-lista'>
-                            <img onClick={favoritado} src={IconCoracao} alt='' className='icon-lista-desejo' />
+                            <div onClick={adicionarLista(item.id)} >
+                                <img onClick={favoritado} src={favorito} alt='' className='icon-lista-desejo' />
+                            </div>
+
+
                             <img onClick={() => abrirDetalhes(item.produto)} src={mostrarImagem(item.ds_imagem)} alt='imagem' className='gerenciarProd-imagem-card-1' />
                         </div>
 
