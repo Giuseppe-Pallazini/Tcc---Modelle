@@ -142,13 +142,13 @@ export async function salvarProdutoImagem(idProduto, imagemPath) {
     const [resp] = await con.query(comando, [idProduto, imagemPath]);
 }
 
-export async function removerProdutoImagensDiferentes(imagens) {
+export async function removerProdutoImagensDiferentes(imagens, id) {
     const comando = `
         delete from tb_produto_imagem 
-              where ds_imagem NOT IN (?)
+              where ds_imagem NOT IN (?) and id_produto = ?
     `
 
-    const [resp] = await con.query(comando, [imagens])
+    const [resp] = await con.query(comando, [imagens, id])
     return resp.affectedRows;
 }
 
@@ -500,29 +500,23 @@ export async function buscarPedidoPorId(Id) {
         ds_tamanho		as tamanho,
     
         nm_produto        as    nomeProduto,
-        nm_marca        as marcaProduto,
         ds_cor            as corProduto,
         vl_preco        as valorProduto,
         qtd_produto        as qtdProduto,
         
         ds_imagem			as imagem
-    from tb_pedido
-
-        inner join tb_produto
-        on tb_produto.id_produto = tb_pedido.id_usuario
-
-        inner join tb_marca
-        on tb_marca.id_marca = tb_produto.id_produto
-
+        from tb_pedido
         inner join tb_pedido_item
-        on tb_pedido_item.id_produto_item = tb_pedido.id_usuario
-
-        inner join tb_usuario
-        on tb_usuario.id_usuario = tb_pedido.id_usuario
-
-        inner join tb_produto_imagem
-        on tb_produto_imagem.id_produto_imagem = tb_produto.id_produto
-        where tb_pedido.id_usuario = 
+			on tb_pedido_item.id_produto_item
+		inner join tb_usuario
+			on tb_usuario.id_usuario = tb_pedido.id_pedido
+		inner join tb_produto
+			on tb_pedido.id_pedido
+		inner join tb_produto_imagem
+			on tb_produto_imagem.id_produto_imagem
+            
+        where tb_usuario.id_usuario = ?
+		group by tb_pedido.id_pedido;
         ;
         `
 

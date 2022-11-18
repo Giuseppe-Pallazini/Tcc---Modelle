@@ -209,7 +209,7 @@ export default function Index() {
             toast.dark("🛒 Item Adicionado a Lista de Desejo");
         }
     }
-    console.log(adicionarLista);
+
     return (
         <main className='main-menu-produtos'>
 
@@ -350,7 +350,6 @@ export default function Index() {
                             <div onClick={adicionarLista(item.id)} >
                                 <img onClick={favoritado} src={favorito} alt='' className='icon-lista-desejo' />
                             </div>
-
 
                             <img onClick={() => abrirDetalhes(item.produto)} src={mostrarImagem(item.ds_imagem)} alt='imagem' className='gerenciarProd-imagem-card-1' />
                         </div>

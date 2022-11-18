@@ -8,13 +8,18 @@ import CardProd from '../../../components/cardProdutoListaDeDesejos'
 
 export default function Index(){
     return(
+
+
+
+
+
        <main className='main-listaDeDesejos'>
             <Cabecalho />   
             <section className='listaDeDesejos-section-principal'>
                 <div className='Div-listaDeDesejos-titulo' >
                     <h1> LISTA DE DESEJOS </h1>
                 </div>
-             
+            
                     <CardProd />
 
                     <CardProd />
@@ -23,7 +28,6 @@ export default function Index(){
                     
                     <CardProd />
 
-              
             </section>
 
             <Rodape />

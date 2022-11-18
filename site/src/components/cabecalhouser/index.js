@@ -67,7 +67,7 @@ export default function Index(){
     function sair(){
         if(storage('usuario-logado')){
         storage.remove('usuario-logado')
-        Storage('carrinho', []);
+        storage('carrinho', []);
         toast.dark("Conta deslogada com Sucesso")
         navigate('/')
         }

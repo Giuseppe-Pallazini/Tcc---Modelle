@@ -18,11 +18,28 @@ export default function Index(){
         return resp;
     }
 
+    function adicionarLista(id) {
+        let listaDesejos = [];
+        if (storage('lista-desejo')) {
+            listaDesejos = storage('lista-desejo')
+        }
+
+        if (!listaDesejos.find(item => item.id === id)) {
+            listaDesejos.push({
+                id: id
+            })
+            storage('lista-desejo', listaDesejos)
+            toast.dark("🛒 Item Adicionado a Lista de Desejo");
+        }
+    }
+
 
     return(
         <main className='main-CardProdutosMenuMasculino'>
             <div className='div-CardProdutosMenuMasculino'>
                 <div className='CardProdutosMenuMasculino-div-imgs'>
+
+                    
                     <img onClick={favorito} src={favorito} alt='' className='logo-coração' />
                     <img src={ImagemProd} alt='' className='imagem-produto' />
                 </div>
