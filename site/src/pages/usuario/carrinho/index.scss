@@ -53,10 +53,8 @@
         align-items: center;
         width: 22em;
         height: 33em;
-        background-color: #ffb7000e;
-        position: sticky;
-        gap: unset;
-        align-self: flex-start;
+        background-color: #ffff;
+       
     }
     .div-carrinho-logoModelle{
         margin-left: 1em;
@@ -187,16 +185,18 @@
         align-items: center;
     
     .carrinho-botão-continuar{
-        font-family: 'inter';
-        background-color: white;
-        transition: 170ms ease-in-out;
-        padding: .8em 3em .8em 3em;
-        cursor: pointer;
-        color: #19110B;
+        margin-top: 3em;
+        font-family: 'caviar';
+        color: black;
+        background-color: #ffff;
+        border: solid 1px black;
+        padding: .5em 3em;
+        transition: .3s;
+        transition: .5s;
     }
 
     .carrinho-botão-continuar:hover {
-        background-color: #19110B;
+        background-color: black;
         color: white;
     }
     }

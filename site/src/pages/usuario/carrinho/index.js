@@ -7,6 +7,7 @@ import Rodape from '../../../components/Rodapé'
 import LogoModelle from '../../../assets/image/logo-modelle.png'
 import LogoCaminhão from '../../../assets/image/logo-caminhão.png'
 import LogoCartão from '../../../assets/image/logo-cartão.png'
+import modelle from '../../../assets/image/logo_transparent.png'
 
 import '../../../assets/common/index.scss'
 import { useEffect, useState } from 'react';
@@ -112,7 +113,7 @@ export default function Index() {
                                     <img className='carrinho-logo-pagamento' src={LogoCartão} alt='logo-cartão' />
                                     <div>
                                         <p className='carrinho-p-formas'> Formas de pagamento</p>
-                                        <p className='carrinho-p-infoPagamento'>Cartão de credito, boleto ou PIX</p>
+                                        <p className='carrinho-p-infoPagamento'>Cartão de credito ou débito </p>
                                     </div>
                                 </div>
 

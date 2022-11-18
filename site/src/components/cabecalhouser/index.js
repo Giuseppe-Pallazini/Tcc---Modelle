@@ -31,7 +31,7 @@ export default function Index(){
                     qtd: produto.qtd,
                 })
             }
-            setItens(temp)
+            setItens(temp)    
         }
     }
 
