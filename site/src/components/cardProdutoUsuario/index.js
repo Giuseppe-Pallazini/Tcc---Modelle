@@ -11,6 +11,7 @@ import Coracao2Icon from '../../assets/image/Coracao-icon02.svg'
 import storage from 'local-storage'
 
 import { buscarPorNome, listarTodos, removerProduto, buscarImagem, listarProdutosMasculino, listarProdutosFemininos } from '../../api/produtoAPI'
+import { listaDeDesejos } from '../../api/desejoAPI'
 
 import { API_URL } from '../../api/config.js';
 import { useNavigate } from 'react-router-dom';
@@ -19,12 +20,13 @@ import { filtroMarcaBalenciaga, filtroMarcaBurberry, filtroMarcaDolceGabanna, fi
 
 
 
-
-
 export default function Index() {
     const [produto, setProduto] = useState([]);
     const [modelo, setModelo] = useState([]);
     const [filtro, setFiltro] = useState('');
+
+    const id = storage('usuario-logado');
+    
 
     const navigate = useNavigate();
 
@@ -195,20 +197,7 @@ export default function Index() {
         return resp;
     }
 
-    function adicionarLista(id) {
-        let listaDesejos = [];
-        if (storage('lista-desejo')) {
-            listaDesejos = storage('lista-desejo')
-        }
-
-        if (!listaDesejos.find(item => item.id === id)) {
-            listaDesejos.push({
-                id: id
-            })
-            storage('lista-desejo', listaDesejos)
-            toast.dark("🛒 Item Adicionado a Lista de Desejo");
-        }
-    }
+    
 
     return (
         <main className='main-menu-produtos'>
@@ -347,7 +336,7 @@ export default function Index() {
                 {produto.map(item =>
                     <div className='card-produto'>
                         <div className='icon-lista'>
-                            <div onClick={adicionarLista(item.id)} >
+                            <div>
                                 <img onClick={favoritado} src={favorito} alt='' className='icon-lista-desejo' />
                             </div>
 
