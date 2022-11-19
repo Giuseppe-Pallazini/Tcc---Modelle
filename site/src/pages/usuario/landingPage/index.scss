@@ -152,54 +152,66 @@
     
         }
 
-        .text-info{
+        .div-text-video {
+            z-index: 2;
+            position: absolute;
+            width: 30%;
+            height: 70%;
             display: flex;
-            align-items: flex-end;
-            position: absolute;
-            font-family: 'caviar-bold';
-            color: white;
-            height: 75%;
-            left: 0.9em;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            .div-text-video-2 {
+                margin: 0 0 7em 0;
+
+                .text-info{
+                    position: absolute;
+                    font-family: 'caviar-bold';
+                    left: 0.5em;
+                    bottom: 3.7em;
+                    color: white;
+                    font-size: 2em;
+                }
+    
+                .a {
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    cursor: pointer;
+                    left: 1em;
+    
+                    .bt{
+                        font-family: 'inter';
+                        position: absolute;
+                        color: white;
+                        border: 1px solid white;
+                        padding: .5em 1em;
+                        transition: .3s;
+                    }
+                    .by{
+                        font-family: 'inter';
+                        margin-left: 9.8em;
+                        color: white;
+                        border: 1px solid white;
+                        padding: .5em 1em;
+                        transition: .3s;
+                    }
+    
+                    .bt:hover{
+                        background-color: white;
+                        color: #BA918F;
+                    }
+            
+                    .by:hover{
+                        background-color: white;
+                        color: #BA918F;
+                    }
+                }
+            }
+        }
+
        
-        }
-        .bt{
-            font-family: 'inter';
-            position: absolute;
-            color: white;
-            border: 1px solid white;
-            padding: .5em 1em;
-            transition: .3s;
-        }
-        .by{
-            font-family: 'inter';
-            margin-left: 9.8em;
-            color: white;
-            border: 1px solid white;
-            padding: .5em 1em;
-            transition: .3s;
-        }
 
-        .bt:hover{
-            background-color: white;
-            color: #BA918F;
-        }
-
-        .by:hover{
-            background-color: white;
-            color: #BA918F;
-        }
-
-       
-
-        .a {
-            display: flex;
-            align-items: flex-end;
-            position: absolute;
-            cursor: pointer;
-            height: 80%;
-            left: 1em;
-           
-        }
     }
     .section-slide{
         margin-bottom: 2em;

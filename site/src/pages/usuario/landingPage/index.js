@@ -38,7 +38,7 @@ export default function Index() {
             }
             setItens(temp)
         }
-        
+
     }
 
     const responsive = {
@@ -61,7 +61,7 @@ export default function Index() {
 
     useEffect(() => {
         carregarCarrinho()
-    },[])
+    }, [])
 
 
 
@@ -106,8 +106,8 @@ export default function Index() {
                         <div className='section1-group-direita-div1'>
                             <Link to='/login'> <img src={iconUser} alt='iconUser' /> </Link>
                             <div className='section1-group-direita-div1-group'>
-                            <Link to='/user/carrinho2'> <img src={iconBolsa} alt='iconBolsa' /> </Link>
-                            <p className='section1-group-direita-div1-iconCarrinho'> {qtdItens()} </p>
+                                <Link to='/user/carrinho2'> <img src={iconBolsa} alt='iconBolsa' /> </Link>
+                                <p className='section1-group-direita-div1-iconCarrinho'> {qtdItens()} </p>
                             </div>
                             <Link to='/user/listaDeDesejos'> <img src={iconCoracao} alt='iconCora' /> </Link>
 
@@ -120,20 +120,21 @@ export default function Index() {
 
             <section className='section-video'>
 
+                <div className='div-text-video'>
+                    <div className='div-text-video-2'>
+                        <h1 className='text-info'> CELEBRE A SEDA </h1>
+
+                        <div className='a'>
+                            <a className='bt'> Compre agora </a>
+                            <a className='by'> Descubra a campanha </a>
+                        </div>
+                    </div>
+                </div>
+
                 <video autoPlay loop muted>
 
                     <source className='video' src={Video1} type='video/mp4' />
-
                 </video>
-
-                <div className='div-text-video'>
-                    <h1 className='text-info'> CELEBRE A SEDA </h1>
-
-                    <div className='a'>
-                        <a className='bt'> Compre agora </a>
-                        <a className='by'> Descubra a campanha </a>
-                    </div>
-                </div>
 
             </section>
 

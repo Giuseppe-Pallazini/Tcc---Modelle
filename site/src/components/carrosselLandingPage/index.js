@@ -1,15 +1,17 @@
 import './index.scss';
 import '../../assets/common/index.scss'
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
-import Imagem1 from '../../assets/image/img1-carrossel-landingpage.png'
-import Imagem2 from '../../assets/image/imagem02-carroussel.png'
-import Imagem3 from '../../assets/image/imagem03-carroussel.png'
+import Imagem1 from '../../assets/image/img1-carrossel-landingpage.png';
+import Imagem2 from '../../assets/image/imagem02-carroussel.png';
+import Imagem3 from '../../assets/image/imagem03-carroussel.png';
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 export default function Index() {
+
+
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -27,6 +29,8 @@ export default function Index() {
             slidesToSlide: 1 // optional, default to 1.
         }
     };
+
+
     return (
         <main className='main-carrossel-landingPage'>
             <Carousel 
@@ -37,13 +41,13 @@ export default function Index() {
                     <img className='img-01' src={Imagem1} alt='imagem-carrossel' />
                     <div className='div-01'> 
                     <h1 className='h1-01'> Conscious </h1>
-                    <h3 className='h3-01'> Nanushka</h3>
+                    <h3 className='h3-01'> Prada </h3>
 
                     <p className='p1-01'> Blazer Hathi com abotoamento simples. </p>
 
                     <p className='p2-01'> Lapelas, mangas longas, fechamento frontal por botões, bolso no busto com debrum, bolsos frontais com lapelas e detalhe de fenda.</p>
 
-                    <Link to='/user/menuNovidades' className='link-01'> Descubra </Link>
+                    <Link to='/user/detalhesProduto/1' className='link-01'> Descubra </Link>
                     </div>
                 </div>
             
@@ -57,7 +61,7 @@ export default function Index() {
 
                     <p className='p2-01'> Blazer de lã com abotoamento simples Café, lã, colarinho inglês, fechamento frontal por botões, mangas longas, bolso com fenda no busto e fenda inglesa posterior. </p>
 
-                    <Link to='/user/menuNovidades' className='link-01'> Descubra </Link>
+                    <Link to='/user/detalhesProduto/2' className='link-01'> Descubra </Link>
                     </div>
                 </div>
           
@@ -71,7 +75,7 @@ export default function Index() {
 
                     <p className='p2-01'> Calça preta, cintura alta, cós elástico, fechamento por cordão de ajuste , bolso amplo na parte posterior e punhos flare. </p>
 
-                    <Link to='/user/menuNovidades' className='link-01'> Descubra </Link>
+                    <Link to='/user/detalhesProduto/3' className='link-01'> Descubra </Link>
                     </div>
                 </div>
             </Carousel>;
