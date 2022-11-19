@@ -54,7 +54,6 @@ function mostrarImagem(imagem) {
 
                 <div className='div-informaçõesdoPedido'>
                     <div className='div-cl1-infos01'>
-                        <p> <b>  ID pedido: </b> {i}</p>
                         <div className='div-informacoesda-cl1' >Pedido: <p>{item.idPedido}</p></div>
                         <div className='div-informacoesda-cl1' >Enviado por: <p> Correios </p> </div>
                         <div className='div-informacoesda-cl1' >Forma de pagamento: <p> {item.pagamento}</p></div>

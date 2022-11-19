@@ -142,6 +142,7 @@ export default function Index() {
         }
 
         return total.toFixed(2);
+        
     }
 
     function mostrarImagem(imagem) {
