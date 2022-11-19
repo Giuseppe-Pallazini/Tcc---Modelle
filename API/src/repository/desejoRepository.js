@@ -15,10 +15,9 @@ export async function listaDesejo(avaliacao) {
 export async function varificarSeJaFavoritou(idUser, idProduto) {
     const comando = `
     select id_usuario  id
-          from tb_usuario_favorito
+          from tb_lista_desejos
           where id_usuario = ?
-          and     id_produto = ?;
-    
+          and    id_produto = ?;
     `
     
     let [linhas] = await con.query(comando, [idUser, idProduto])
@@ -30,4 +29,15 @@ export async function varificarSeJaFavoritou(idUser, idProduto) {
         linhas = 1
     }
     return linhas[0];
+}
+
+export async function deletarFavorito(valores){
+    const comando = `
+    delete from tb_lista_desejos
+    where id_usuario = ?
+    and id_produto = ?
+    `
+
+    const [linhas] = await con.query(comando, [valores.id, valores.prod]);
+    return linhas.affectedRows;
 }

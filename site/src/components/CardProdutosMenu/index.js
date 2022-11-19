@@ -5,19 +5,6 @@ import IconCoracao from '../../assets/image/Coracao-icon.svg'
 
 export default function Index(){
 
-    const [favorito, setFavorito] = useState(CoracaoIcon);
-
-    function favorito( ) {
-        const resp = "";
-        if (favorito == Coracao2Icon) {
-            resp = setFavorito(IconCoracao)
-        }
-        else if (favorito == IconCoracao) {
-            resp = setFavorito(Coracao2Icon);
-        }
-        return resp;
-    }
-
    
  
     return(

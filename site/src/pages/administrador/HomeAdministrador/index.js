@@ -79,12 +79,8 @@ export default function Index(){
                         </div>
 
                         <div className='home-adm-bt-linha1-card02'>
-                            <Link to='/admin/cadastroproduto' className='homeAdm-botão-addModelos' > Add. Produto </Link>
-                            <Link to='/admin/cadastrarCupom' className='homeAdm-botão-novidades' > Add. Cupom </Link>
-                        </div>
-
-                        <div className='home-adm-bt-linha2-card02'>
-                            <Link to='/admin/gerenciarProd' className='homeAdm-botão-colecao' > Alter. Carrossel </Link>
+                            <Link to='/admin/cadastroproduto' className='homeAdm-botão-addModelos' > Cadastrar Produto </Link>
+                            <Link to='/admin/cadastrarCupom' className='homeAdm-botão-novidades' > Cadastrar Cupom </Link>
                         </div>
                     </div>
                 </div>
