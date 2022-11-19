@@ -9,3 +9,8 @@ export async function salvarNovoPedido(idUsuario, novoPedido){
     const r = await api.post('/api/pedido/' + idUsuario, novoPedido)
     return r.data;
 }
+
+export async function alterarStatusPedido(id){
+    const r = await api.put(`/api/pedido/status/${id}`);
+    return r.data;
+}

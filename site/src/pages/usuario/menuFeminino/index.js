@@ -18,13 +18,20 @@ import ImagemNext from '../../../assets/image/icon-seta-carrossel-2.png'
 import CardProdutosFemininos from '../../../components/CardProdutosFemininos'
 
 import {useEffect, useState, useRef} from 'react'
+import { toast } from 'react-toastify';
 
 export default function Index(){
     const navigate = useNavigate();
 
     function navegarPedidos(){
+        if(storage('usuario-logado') || storage('admin-logado')){
         navigate('/user/seusPedidos')
+        }
+        else if(storage('usuario-logado')){
+            toast.dark("Você não está logado")
+        }
     }
+
     return(
        <main className='main-menuUsuario'>
         <CabecalhoUser /> 

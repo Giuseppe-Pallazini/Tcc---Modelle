@@ -465,7 +465,7 @@ export async function listarPedidos() {
 		on tb_produto_imagem.id_produto = tb_produto.id_produto
         
         group by tb_pedido_item.id_produto_item
-        ORDER BY tb_pedido_item.id_pedido ASC
+        ORDER BY tb_pedido_item.id_pedido DESC
         `
 
     const [linhas] = await con.query(comando);
@@ -515,7 +515,7 @@ export async function buscarPedidoPorId(Id) {
         where tb_pedido.id_usuario = ?
         
         group by tb_pedido_item.id_produto_item
-        ORDER BY tb_pedido_item.id_pedido ASC;
+        ORDER BY tb_pedido_item.id_pedido DESC;
         
         `
 
@@ -558,5 +558,16 @@ export async function alterarStatus(id, pedido) {
         id
     ])
 
+    return resp.affectedRows;
+}
+
+export async function alterarStatusPorProduto(id) {
+    const comando = `
+        update tb_pedido
+        set ds_status = "Entregue"
+        where id_pedido = ?
+    `
+
+    const [resp] = await con.query(comando, [id])
     return resp.affectedRows;
 }

@@ -3,7 +3,7 @@ import { Router } from 'express';
 
 import { categoriaId, verCategoria } from '../repository/categoriarepository.js'
 import { listarTamanhos, buscarTamanhoPorId, salvarProdutoTamanho, buscarTamanhoPorIdAdmin } from '../repository/tamanhoRepository.js'
-import { alterarProduto, alterarStatus, buscarMarcaGucci, buscarPedidoPorId, buscarPorNome, listarPedidos, listarPedidosPorUsuario, listarProdutosFemininos, listarProdutosMasculino, listarTodosProdutos, removerProdutoImagensDiferentes, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
+import { alterarProduto, alterarStatus, alterarStatusPorProduto, buscarMarcaGucci, buscarPedidoPorId, buscarPorNome, listarPedidos, listarPedidosPorUsuario, listarProdutosFemininos, listarProdutosMasculino, listarTodosProdutos, removerProdutoImagensDiferentes, salvarProduto, salvarProdutoCategoria, salvarProdutoImagem } from '../repository/validarProdutoRepository.js';
 import { ListarTodosProdutosPorId, ListarTodosTamanhosporId, ListarTodosImagensporId, ListarTodosTamanhosporIdUser, ListarTodosTamanhosporIdAdmin  } from '../repository/mostrarprodutorepository.js'
 import { removerProdutoImagem, removerProdutoTamanho } from '../repository/removerProdutoRepository.js';
 import { validarProduto } from '../services/ProdutoValidacao.js';
@@ -264,6 +264,20 @@ server.put('/admin/pedido/status/:id', async (req, resp) => {
         let resposta = await alterarStatus(id, status);
         resp.status(200).send();
     } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.put('/api/pedido/status/:id', async (req,resp) => {
+    try{
+        const {id} = req.params;
+        let resposta = await alterarStatusPorProduto(id);
+        resp.status(200).send();
+    }
+    catch(err) {
+        console.log(err)
         resp.status(400).send({
             erro: err.message
         })

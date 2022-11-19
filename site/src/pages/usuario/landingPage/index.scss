@@ -225,6 +225,7 @@
         .div-cardOffWhite img{
             width: 33em;
             cursor: pointer;
+            transition: transform .8s ease;
         }
 
         .div-cardOffWhite h3{
@@ -252,6 +253,7 @@
             height: 44em;
             margin-top: 2em;
             cursor: pointer;
+            transition: transform .8s ease;
         }
         
         .div-cardDolceGabbana h3{

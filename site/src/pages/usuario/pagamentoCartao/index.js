@@ -138,7 +138,7 @@ export default function Index() {
     function calcularTotal() {
         let total = 0;
         for (let item of itens) {
-            total = total + item.qtd * item.produto.info.preco;
+            total = total + item.qtd * (item.produto.info.preco);
         }
 
         return total.toFixed(2);

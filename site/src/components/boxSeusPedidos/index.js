@@ -7,6 +7,11 @@ import { useEffect, useState } from 'react'
 import { buscarImagem, visualizarPedidoPorId } from '../../api/produtoAPI'
 import { API_URL } from '../../api/config'
 import Storage from 'local-storage'
+import { alterarStatusPedido } from '../../api/pedidoAPI'
+
+import { confirmAlert } from 'react-confirm-alert'
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import { toast } from 'react-toastify'
 
 export default function Index(){
     const [produto, setProduto] = useState([]);
@@ -24,6 +29,27 @@ useEffect(() => {
     carregarUsuario();
 }, [])
 
+
+    async function alterarStatus(id, nome){
+        confirmAlert({
+            title: ' Alterar Status',
+            message: `Confirmar entrega do ${nome}`,
+            buttons: [
+                {
+                    label: 'sim',
+                    onClick: async () => {
+                        const resposta = await alterarStatusPedido(id);
+                        await carregarUsuario();
+                        toast.dark('Produto entregue com sucesso!')
+                    }
+                },
+                {
+                    label: 'não'
+                }
+            ]
+        })
+
+    }
 
 
 
@@ -128,8 +154,7 @@ function mostrarImagem(imagem) {
                         </div>
 
                         <div className='infoPed-ConfirmaçãoPed'>
-                            <button>Recebido?</button>
-                            <div className='div-confirmacaoPed'>sim <input type='checkbox' /></div>
+                            <button onClick={() => alterarStatus(item.idPedido,item.nomeProduto)} >Recebido?</button>
                         </div>
                     </div>
 

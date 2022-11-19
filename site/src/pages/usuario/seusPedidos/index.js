@@ -9,12 +9,16 @@ import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
     
+    function voltar() {
+        window.history.back()
+    }
+
     return(
        <main className='main-VerSeusPedidos'>
             <Cabecalho />
 
             <div className='div-botaoVoltar'> 
-                <button>Voltar</button>
+                <button onClick={voltar}>Voltar</button>
             </div>
             <section className='section-SeusPedidos'>
                     <div className='div-TituloSeusPedidos'>
