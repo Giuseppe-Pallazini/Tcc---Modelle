@@ -27,7 +27,7 @@ export async function inserirProduto( nome, complementoProduto, preco, composica
 }
 
 
-export async function alterarProduto(id, nome, complementoProduto, preco, composicao, detalhes, juros, parcela,disponivel, cor, idMarca, catSelecionadas, modSelecionadas, tamSelecionadas,
+export async function alterarProduto(id, nome, complementoProduto, preco, composicao, detalhes, juros, parcela,disponivel, cor, idMarca, modSelecionadas, catSelecionadas, tamSelecionadas,
     ) {
    const r = await api.put('/admin/produto/' + id, 
    {
@@ -41,8 +41,8 @@ export async function alterarProduto(id, nome, complementoProduto, preco, compos
        disponivel: disponivel,
        cor: cor,
        idMarca: idMarca,
-       idCategoria: catSelecionadas,
        idModelo: modSelecionadas,
+       idCategoria: catSelecionadas,
        tamanhos: tamSelecionadas,
    }
    );

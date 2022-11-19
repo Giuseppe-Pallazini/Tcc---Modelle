@@ -4,7 +4,7 @@ export async function validarPagamento(novoPagamento) {
         throw new Error('Nome do titular é obrigatório!');
     }
     else if (isNaN(novoPagamento.parcelas) || novoPagamento.parcelas <= 0) {
-        throw new Error('Preço do produto é obrigatório!');
+        throw new Error('Parcelas do produto é obrigatório!');
     }
     else if (novoPagamento.numero == undefined || novoPagamento.numero == '') {
         throw new Error('Numero do cartão é obrigatório!');

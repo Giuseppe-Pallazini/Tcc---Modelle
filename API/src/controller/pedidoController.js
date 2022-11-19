@@ -16,11 +16,11 @@ server.post('/api/pedido/:idUsuario/', async (req, resp) => {
 
         const novoPedido = criarNovoPedido(idUsuario, idCupom, info);
         console.log(novoPedido)
-        const idPedidoCriado = await inserirPedido(novoPedido);
         await validarnovoPedido(novoPedido);
+        const idPedidoCriado = await inserirPedido(novoPedido);
+        await validarPagamento(info.cartao)
         await inserirPagamento(idPedidoCriado, info.cartao);
         console.log(inserirPagamento)
-        await validarPagamento(info.cartao)
         
 
         for (let item of info.produtos) {

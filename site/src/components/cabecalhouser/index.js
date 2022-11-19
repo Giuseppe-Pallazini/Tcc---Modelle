@@ -71,6 +71,12 @@ export default function Index(){
         toast.dark("Conta deslogada com Sucesso")
         navigate('/')
         }
+        if(storage('admin-logado')){
+            storage.remove('admin-logado')
+            storage('carrinho', []);
+            toast.dark("Conta deslogada com Sucesso")
+            navigate('/')
+            }
         else if(!storage('usuario-logado')){
             toast.dark("Você não está logado")
         }

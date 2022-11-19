@@ -38,9 +38,9 @@ export async function validarProduto(produto) {
         throw new Error('Seleção de cor é obrigatoria!');
     }
 
-    // const tam = await buscarTamanhoPorId(produto.idTamanho);
-    // if (tam == undefined) {
-    //     throw new Error('Tamanho inválido');
-    // }
+    const tam = await buscarTamanhoPorId(produto.idTamanho);
+    if (tam == undefined) {
+        throw new Error('Tamanho inválido');
+    }
 
 }

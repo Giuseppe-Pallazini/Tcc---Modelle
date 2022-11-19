@@ -13,6 +13,7 @@ export default function Index(){
 
     function sair(){
         storage.remove('admin-logado')
+        toast.dark("Admin deslogado com sucesso")
         navigate('/')
     }
 
