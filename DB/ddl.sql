@@ -13,18 +13,6 @@ create table tb_usuario (
 );
 select * from tb_usuario;
 
-insert into tb_usuario (nm_usuario, dt_nascimento, nr_telefone, ds_email, ds_senha)
-	values 			   ('admin', 20010112, '(11)980165866', 'asdasd@gmail.com', '1234');
-
-insert into tb_usuario (nm_usuario, dt_nascimento, nr_telefone, ds_email, ds_senha)
-	values 			   ('usuario', 20010112, 11999, 'asdasd@gmail.com', '1234');
-
-     select id_usuario					id,
-            nm_usuario					nome
-       from tb_usuario
-      where ds_email = 'juan@hotmail.com'
-        and ds_senha = '1234';
-
 -- 2
 create table tb_login (
 id_login   int primary key auto_increment,
@@ -125,14 +113,7 @@ create table tb_cupom(
     vl_cupom			decimal(15,2),
     qtd_disponivel		int
 );
-
-insert into tb_cupom (cod_cupom, vl_cupom, qtd_disponivel)
-	values			 ('chambin', 12.00, 3);
     
-use modelleDB;    
-
-select * from tb_cupom;
-
 create table tb_pedido(
 	id_pedido			int primary key auto_increment,
     id_usuario			int,
@@ -152,22 +133,7 @@ create table tb_pedido(
 	foreign key (id_cupom)	references tb_cupom	 (id_cupom)
 );	
 
-INSERT INTO tb_pedido (
-            id_usuario,
-            id_cupom,
-            dt_pedido,
-            cod_nota_fiscal,
-            tp_frete,
-            vl_frete,
-            ds_status,
-            tp_pagamento,
-            ds_endereco,			
-            nr_numero,		
-            ds_cidade,		
-            nr_cep,		
-            ds_complemento	
-        )
-        VALUES (1, 1, 20221212, 'OAS', 'asd', 12.00, 'asda', 'asd', 'asdasd', 12, 'SP', 123, 'asdasd');
+
 
 select * from tb_pedido;
 	
