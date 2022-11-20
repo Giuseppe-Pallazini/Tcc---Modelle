@@ -15,14 +15,7 @@ select
         inner join tb_tamanho
         on tb_tamanho.id_tamanho = tb_produto_tamanho.id_tamanho
         where tb_produto_tamanho.id_produto like 1;
-
-select
-		id_login 			id,
-		ds_email			email,
-        ds_senha            senha
-from    tb_login
-where   ds_email = 			'admin'
-and 	ds_senha = 			'1234';
+        
 --
 select * from tb_usuario;
 -- 21
@@ -109,18 +102,6 @@ insert into tb_marca (nm_marca)
             values    ('Burberry');
 
 insert into tb_marca (nm_marca)
-            values   ('Morley');
-
-insert into tb_marca (nm_marca)
-            values   ('Kenzo');
-
-insert into tb_marca (nm_marca)
-            values    ('Modelle');
-
-insert into tb_marca (nm_marca)
-            values   ('Zegna');
-
-insert into tb_marca (nm_marca)
             values   ('Louis Vuitton');
 
 insert into tb_marca (nm_marca)
@@ -134,4 +115,3 @@ insert into tb_marca (nm_marca)
 
 insert into tb_cupom (cod_cupom, vl_cupom, qtd_disponivel)
 	values			 ('chambin', 12.00, 3);
-
