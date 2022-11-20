@@ -17,7 +17,6 @@ import FiltroUserController from './controller/filtroUserController.js'
 import FiltroFemininoController from './controller/filtroFeminino.js'
 import FiltroNovidadesController from './controller/filtroNovidades.js'
 import CadastrarCupomController from './controller/cadastrarCupomController.js'
-import ListaDesejo from './controller/desejoController.js'
 
 import express from 'express'
 import cors from 'cors'
@@ -44,7 +43,6 @@ server.use(FiltroUserController);
 server.use(FiltroFemininoController);
 server.use(FiltroNovidadesController);
 server.use(CadastrarCupomController);
-server.use(ListaDesejo);
 
 server.use('/storage/fotoProduto', express.static('storage/fotoProduto'));
 
