@@ -15,12 +15,9 @@ export default function Index(){
                     <p className='rodape-txtBrasil'> Brasil</p>
                 </div>
 
-                <p className='rodape-contato'>Contato</p>
+                <a href="https://api.whatsapp.com/send?phone=5511988749207" className='rodape-contato'> Contato </a>
  
-                <Link className='tag-link' to='/user/sobreModelle'>
-                    <p className='rodape-QuemEModelle'>Quem é Modelle?</p>
-                </Link>
-                <p className='rodape-sigaNos'>Siga-nos</p>
+                <a href="https://www.instagram.com/modelle_ofc/" className='rodape-sigaNos'> Siga-nos</a>
 
                 <Link className='tag-link' to='/user/condicoesEPrivacidade'>
                     <p className='rodape-condições'>Condições legais e privacide </p>

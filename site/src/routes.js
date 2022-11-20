@@ -16,7 +16,6 @@ import MenuMasculino from           './pages/usuario/menuMasculino'
 import MenuNovidades from           './pages/usuario/menuNovidades'
 import PagamentoCartao from         '../src/pages/usuario/pagamentoCartao'
 import SeusPedidos from             './pages/usuario/seusPedidos'
-import SobreModelle from            './pages/usuario/sobreModelle'
 
 
 // ROTAS PARA ADMIN
@@ -69,7 +68,6 @@ export default function Index(){
                 <Route path='/user/menuNovidades'           element={< MenuNovidades />} />
                 <Route path='/user/pagamentoCartao'         element={< PagamentoCartao />} />
                 <Route path='/user/seusPedidos'             element={< SeusPedidos />} />
-                <Route path='/user/sobreModelle'            element={< SobreModelle />} />
 
             </Routes>
         </BrowserRouter>
