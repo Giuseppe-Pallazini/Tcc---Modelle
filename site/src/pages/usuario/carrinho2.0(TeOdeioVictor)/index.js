@@ -20,14 +20,12 @@ import { toast } from 'react-toastify';
 
 export default function Index() {
     const [itens, setItens] = useState([]);
-    console.log(itens)
 
     const navigate = useNavigate()
 
     function removerItem(id) {
         let carrinho = Storage('carrinho');
         carrinho = carrinho.filter(item => item.id != id);
-        console.log(carrinho)
 
         Storage('carrinho', carrinho);
         carregarCarrinho();
@@ -40,26 +38,19 @@ export default function Index() {
 
     function validacaoVazio() {
         let carrinho = Storage('carrinho')
-        let tamanhos = carrinho.find(item => item.id).tam
-        console.log(tamanhos)
-
-        let outroCarrinho = Storage('carrinho')
-
-        if(outroCarrinho.length == 0) {
+        
+        if(carrinho.length == 0) {
             toast.warn('Carrinho vazio!')
         }
 
-        else if (tamanhos.length > 2) {
+        let tamanhos = carrinho.find(item => item.id).tam
+        if (tamanhos.length > 2) {
             toast.warn('Selecione um tamanho!')
         }
         
         else {
             navigate('/user/pagamentoCartao')
         }
-
-        // else if(tam.length > 1 || tam.length < 1) {
-        //     toast.warn('Selecione um tamanho!')
-        // }
 
     }
 

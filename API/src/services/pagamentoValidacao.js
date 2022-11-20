@@ -9,10 +9,10 @@ export async function validarnovoPedido(novoPedido) {
     else if (novoPedido.cidade == undefined || novoPedido.cidade == '') {
         throw new Error('Cidade é obrigatório!');
     }
-    else if (novoPedido.cep == undefined || novoPedido.cep == '' || novoPedido.cep <= 0) {
+    else if (novoPedido.cep == undefined || novoPedido.cep == '' || novoPedido.cep <= 0 || novoPedido.cep.length < 9) {
         throw new Error('CEP é obrigatório!');
     }
     else if (novoPedido.complemento == undefined || novoPedido.complemento == '') {
-        throw new Error('Complemento da casa é obrigatório!');
+        throw new Error('Complemento da casa é obrigatório! Ex: Casa');
     }
 }
