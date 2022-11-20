@@ -15,11 +15,11 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import { useParams } from 'react-router-dom';
 import { ListarTamanhoPorId } from '../../api/tamanhoAPI';
 
-export default function Index({ item: { produto: { info, imagens, tamanho }, qtd }, removerItem, carregarCarrinho }) {
+export default function Index({ item: { produto: { info, imagens, tamanho }, tam, qtd }, removerItem, carregarCarrinho }) {
     const [produto, setProduto] = useState({ info: {}, tamanho: [], imagens: [] });
     const [qtdProduto, setQtdProduto] = useState(qtd);
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
-    const [tamProduto, setTamProduto] = useState(tamanho);
+    const [tamProduto, setTamProduto] = useState(tam);
 
 
     const { id } = useParams();
@@ -145,7 +145,7 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, qtd
                             <div className='carrinho-section1-div-1-3-div2'>
                                 <p className='carrinho-section1-div-1-3-div2-p'> <b>  Tamanho: </b> </p>
 
-                                <select className='carrinho-section1-div-1-3-div2-select' onChange={e => alterarTamanho(e.target.value)}>
+                                <select className='carrinho-section1-div-1-3-div2-select' value={tamProduto} onChange={e => alterarTamanho(e.target.value)}>
                                     <option selected disabled hidden>Selecione</option>
                                     {tamanho.map(item =>
                                         <option className='cadastro-section2-div3-select-option'> {item} </option>

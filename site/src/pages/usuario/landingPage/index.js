@@ -1,10 +1,9 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Storage from 'local-storage'
 
 
 import Imagem1 from '../../../assets/image/logo_transparent-branco(svg).svg';
 import Video1 from '../../../assets/video/aaa.mp4';
-import imagem2 from '../../../assets/image/img-produto-1.png';
 import iconCoracao from '../../../assets/image/icon-coracao.svg'
 import iconBolsa from '../../../assets/image/icon-bolsa.png'
 import iconUser from '../../../assets/image/icon-user.svg'
@@ -12,7 +11,7 @@ import ImgCardOffWhite from '../../../assets/image/card-offWhite.png'
 import ImgCardDouceGabbana from '../../../assets/image/card-douceEgabbana.png'
 import './index.scss';
 import '../../../assets/common/index.scss'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { buscarProdutoPorId } from '../../../api/produtoAPI';
 
 import Carrossel from '../../../components/carrosselLandingPage'
@@ -125,7 +124,7 @@ export default function Index() {
                         <h1 className='text-info'> CELEBRE A SEDA </h1>
 
                         <div className='a'>
-                            <a className='bt'> Compre agora </a>
+                            <a className='bt'>  Compre agora </a>
                             <a className='by'> Descubra a campanha </a>
                         </div>
                     </div>

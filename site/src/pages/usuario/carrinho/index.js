@@ -16,6 +16,7 @@ import { navigate, useNavigate } from 'react-router-dom';
 import { buscarProdutoPorId } from '../../../api/produtoAPI';
 
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 //import { toast } from 'react-toastify';
 
@@ -35,6 +36,7 @@ export default function Index() {
     function qtdItens() {
         return itens.length
     }
+
 
 
     async function carregarCarrinho() {
@@ -127,7 +129,7 @@ export default function Index() {
                                 </div>
 
                                 <div className='div-carrinho-info-continuar'>
-                                    <Link className='carrinho-botão-continuar' to="/user/pagamentoCartao"> Continuar </Link>
+                                    <p className='carrinho-botão-continuar'> Continuar </p>
                                 </div>
                             </div>
                         </div>

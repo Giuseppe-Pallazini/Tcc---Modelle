@@ -13,17 +13,21 @@ import { useEffect, useState } from 'react';
 import Storage from 'local-storage'
 import { buscarProdutoPorId, buscarProdutoPorIdUsuario } from '../../../api/produtoAPI';
 
-import { Link } from 'react-router-dom';
-import { ListarTamanhoPorId } from '../../../api/tamanhoAPI';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 //import { toast } from 'react-toastify';
 
 export default function Index() {
     const [itens, setItens] = useState([]);
+    console.log(itens)
+
+    const navigate = useNavigate()
 
     function removerItem(id) {
         let carrinho = Storage('carrinho');
         carrinho = carrinho.filter(item => item.id != id);
+        console.log(carrinho)
 
         Storage('carrinho', carrinho);
         carregarCarrinho();
@@ -31,6 +35,32 @@ export default function Index() {
 
     function qtdItens() {
         return itens.length
+    }
+
+
+    function validacaoVazio() {
+        let carrinho = Storage('carrinho')
+        let tamanhos = carrinho.find(item => item.id).tam
+        console.log(tamanhos)
+
+        let outroCarrinho = Storage('carrinho')
+
+        if(outroCarrinho.length == 0) {
+            toast.warn('Carrinho vazio!')
+        }
+
+        else if (tamanhos.length > 2) {
+            toast.warn('Selecione um tamanho!')
+        }
+        
+        else {
+            navigate('/user/pagamentoCartao')
+        }
+
+        // else if(tam.length > 1 || tam.length < 1) {
+        //     toast.warn('Selecione um tamanho!')
+        // }
+
     }
 
 
@@ -46,6 +76,7 @@ export default function Index() {
                 temp.push({
                     produto: p,
                     qtd: produto.qtd,
+                    tam: produto.tam
                 })
             }
             setItens(temp)
@@ -134,7 +165,7 @@ export default function Index() {
                     </div>
 
                     <div className='carrinho-section1-div2-4'> 
-                        <Link to='/user/pagamentoCartao' className='carrinho-section1-div2-4-Link' > Continuar </Link>
+                        <p className='carrinho-section1-div2-4-Link' onClick={validacaoVazio} > Continuar </p>
                     </div>
 
                 </div>
