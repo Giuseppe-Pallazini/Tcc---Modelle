@@ -3,7 +3,7 @@
     flex-direction: row;
 
     .section-filtro{
-        .div-filtroRoupas{
+        .div-filtro-Roupas{
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -12,12 +12,24 @@
                 cursor: pointer;
             }
 
+            .filtro-marca > div > p:hover{
+                color: #8B7CA1;
+            }
+
             .filtro-Tamanho > div > p {
                 cursor: pointer;
             }
 
+            .filtro-Tamanho > div > p:hover {
+                color: #8B7CA1;
+            }
+
             .filtro-roupas > div > p {
                 cursor: pointer;
+            }
+
+            .filtro-roupas > div > p:hover {
+                color: #8B7CA1;
             }
         }
     }

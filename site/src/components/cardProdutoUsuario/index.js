@@ -53,26 +53,6 @@ export default function Index() {
         setProduto(resp);
     }
 
-    async function filtroMorley() {
-        const resp = await filtroMarcaMorley();
-        setProduto(resp);
-    }
-
-    async function filtroKenzo() {
-        const resp = await filtroMarcaKenzo();
-        setProduto(resp);
-    }
-
-    async function filtroModelle() {
-        const resp = await filtroMarcaModelle();
-        setProduto(resp);
-    }
-
-    async function filtroZegna() {
-        const resp = await filtroMarcaZegna();
-        setProduto(resp);
-    }
-
     async function filtroLouisVuitton() {
         const resp = await filtroMarcaLouisVuitton();
         setProduto(resp);
@@ -216,26 +196,6 @@ export default function Index() {
                         <div className='div-valoresMarcas'>
                             <img src={LogoValorFiltro} alt='logo-valores-filtro' />
                             <p onClick={filtroBurberry} >Burberry</p>
-                        </div>
-
-                        <div className='div-valoresMarcas'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
-                            <p onClick={filtroMorley} >Morley</p>
-                        </div>
-
-                        <div className='div-valoresMarcas'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
-                            <p onClick={filtroKenzo} >Kenzo</p>
-                        </div>
-
-                        <div className='div-valoresMarcas'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
-                            <p onClick={filtroModelle} >Modelle</p>
-                        </div>
-
-                        <div className='div-valoresMarcas'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
-                            <p onClick={filtroZegna} >Zegna</p>
                         </div>
 
                         <div className='div-valoresMarcas'>

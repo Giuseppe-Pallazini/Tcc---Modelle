@@ -4,11 +4,15 @@ import storage from 'local-storage'
 import Cabecalho from '../../../components/cabecalhouser'
 import Rodape from '../../../components/Rodapé'
 import './index.scss';
-import { Link } from 'react-router-dom';
 import '../../../assets/common/index.scss'
 import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
+    
+        function voltar(){
+            window.history.back()
+        }
+
     return(
        <main className='main-condições-principal'>
             <Cabecalho/>
@@ -16,9 +20,7 @@ export default function Index(){
                 <section className='condições-section-principal'>
                     <div className='div-titulo-btn'>
                         <div className='condições-div-botão'> 
-                            <Link to='/'>
-                                <button className='condições-botão-voltar'> Voltar</button>
-                            </Link>    
+                                <button className='condições-botão-voltar' onClick={voltar} > Voltar</button>  
                         </div>
                         <div className='condições-div-titulo'> 
                             <h1> Condições Legais e Privacidade </h1>
