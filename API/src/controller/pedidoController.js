@@ -17,8 +17,8 @@ server.post('/api/pedido/:idUsuario/', async (req, resp) => {
         const novoPedido = criarNovoPedido(idUsuario, idCupom, info);
         console.log(novoPedido)
         await validarnovoPedido(novoPedido);
-        const idPedidoCriado = await inserirPedido(novoPedido);
         await validarPagamento(info.cartao)
+        const idPedidoCriado = await inserirPedido(novoPedido);
         await inserirPagamento(idPedidoCriado, info.cartao);
         console.log(inserirPagamento)
         
