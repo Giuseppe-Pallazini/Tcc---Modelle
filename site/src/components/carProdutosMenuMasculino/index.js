@@ -180,7 +180,7 @@ export default function Index(){
                                     
                                     <div className='div-valoresMarcas'>
                                         <img src={LogoValorFiltro} alt='logo-valores-filtro' />
-                                        <p onClick={filtroBalenciaga} >Balenciagaaa</p>
+                                        <p onClick={filtroBalenciaga} >Balenciaga</p>
                                     </div>
 
                                     <div className='div-valoresMarcas'>
