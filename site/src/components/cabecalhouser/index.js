@@ -2,13 +2,15 @@ import './index.scss'
 import '../../assets/common/index.scss'
 import Imagem1 from '../../assets/image/logo_transparent-white.png'
 import Imagem4 from '../../assets/image/carrinho.svg'
-import Imagem5 from '../../assets/image/user.png'
+import Imagem5 from '../../assets/image/icon-user.svg'
 import ImagemSair from '../../assets/image/logo-sair.png'
 import { useNavigate } from 'react-router-dom'
 import storage from 'local-storage'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import { buscarProdutoPorId } from '../../api/produtoAPI'
+
+
 
 export default function Index(){
     const [itens, setItens] = useState([]);
