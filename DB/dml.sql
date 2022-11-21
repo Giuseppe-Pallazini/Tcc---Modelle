@@ -65,13 +65,11 @@ insert into tb_modelo (nm_modelo)
 insert into tb_modelo (nm_modelo)
             values     ('Suéter');
 insert into tb_modelo (nm_modelo)
-            values     ('Relogio');
-insert into tb_modelo (nm_modelo)
             values     ('Polo');
 insert into tb_modelo (nm_modelo)
             values     ('Moletom');
 insert into tb_modelo (nm_modelo)
-            values     ('Casaco');
+            values     ('Jaqueta');
 
 
 -- insert Tamanhos

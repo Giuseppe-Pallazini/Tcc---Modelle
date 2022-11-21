@@ -132,10 +132,6 @@ create table tb_pedido(
 	foreign key (id_usuario) references tb_usuario (id_usuario),
 	foreign key (id_cupom)	references tb_cupom	 (id_cupom)
 );	
-
-
-
-select * from tb_pedido;
 	
 
 create table tb_pedido_item(
