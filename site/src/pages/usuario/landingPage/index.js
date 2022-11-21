@@ -61,13 +61,7 @@ export default function Index() {
                                 <img className='section1-logo' src={Imagem1} alt='img1' />
                             </div>
 
-                            <div className='section1-div1-agrupamento'>
-                                <div className='section1-div1'>
-                                    <Link to='/user/menuNovidades' className='section1-div1-nov'> Novidades </Link>
-                                    <Link to='/user/menuMasculino' className='section1-div1-hom'> Homem </Link>
-                                    <Link to='user/menuFeminino' className='section1-div1-mul'> Mulher </Link>
-                                </div>
-                            </div>
+                            
                         </div>
 
                         <div>
@@ -104,8 +98,7 @@ export default function Index() {
                         <h1 className='text-info'> CELEBRE A SEDA </h1>
 
                         <div className='a'>
-                            <Link className='bt'>  Compre agora </Link>
-                            <Link className='by'> Descubra a campanha </Link>
+                            <Link to='/user/menuNovidades' className='by'> Descubra a campanha </Link>
                         </div>
                     </div>
                 </div>
