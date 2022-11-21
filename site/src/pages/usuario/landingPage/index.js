@@ -108,8 +108,7 @@ export default function Index() {
                                 <Link to='/user/carrinho2'> <img src={iconBolsa} alt='iconBolsa' /> </Link>
                                 <p className='section1-group-direita-div1-iconCarrinho'> {qtdItens()} </p>
                             </div>
-                            <Link to='/user/listaDeDesejos'> <img src={iconCoracao} alt='iconCora' /> </Link>
-
+                         
                         </div>
 
                     </div>
