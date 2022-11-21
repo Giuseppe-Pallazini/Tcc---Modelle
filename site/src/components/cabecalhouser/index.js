@@ -121,11 +121,6 @@ export default function Index(){
 
                 <div className='cab-menu'>
 
-                    <div className='cab-lista'>                        
-                        <p className='cab-user-lista'>Lista de desejos</p>
-                        <img className='cab-user-lista-img' src={Imagem3} alt=''/>
-                    </div>
-
                     <div className='cab-carrinho' >
                         <img onClick={abrirCarrinho} className='cab-user-carrinho' src={Imagem4} alt=''/>
                         <div className='cab-user-carrinho-div'>

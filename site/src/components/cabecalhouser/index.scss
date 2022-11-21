@@ -26,7 +26,7 @@
     .cab-user-topicos{ 
         display: flex;
         flex-direction: column;
-        margin-left: 10%;
+        
     .cab-user-logo{
         display: flex;
         justify-content: center;
@@ -69,28 +69,11 @@
         flex-direction: row;
         justify-content: space-around;
         font-family: 'caviar';
-        width: 25%;
+        width: 15%;
         margin-bottom: 1em;
         margin-right: 1em;
         color: #fff;
     } 
-
-    .cab-lista{
-        display: flex;
-        flex-direction: row;
-        font-family: 'inter';
-
-        .cab-user-lista{
-            margin-right: 0.5em;
-            margin-top: 1.7em;
-        }
-        .cab-user-lista-img{
-            height: 1.3em;
-            cursor: pointer;
-            margin-right: 1em;
-            margin-top: 1.6em;
-        }
-    }
 
     .cab-carrinho{
         display: flex;
@@ -130,6 +113,7 @@
             height: 1em;
             margin-right: 1em;
             margin-top: 1.8em;
+            cursor: pointer;
         }
     }
 

@@ -25,7 +25,7 @@ export default function Index() {
     const [filtro, setFiltro] = useState('');
 
     const id = storage('usuario-logado');
-    
+
 
     const navigate = useNavigate();
 
@@ -163,7 +163,7 @@ export default function Index() {
         navigate(`/user/detalhesProduto/${id}`)
     }
 
-    
+
 
     return (
         <main className='main-menu-produtos'>
@@ -179,37 +179,37 @@ export default function Index() {
                         </div>
 
                         <div className='div-valoresMarcas'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroGucci} >Gucci</p>
                         </div>
 
                         <div className='div-valoresMarcas'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroBalenciaga} >Balenciaga</p>
                         </div>
 
                         <div className='div-valoresMarcas'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroDolceGabanna} >Dolce & Gabbana</p>
                         </div>
 
                         <div className='div-valoresMarcas'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroBurberry} >Burberry</p>
                         </div>
 
                         <div className='div-valoresMarcas'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroLouisVuitton} >Louis Vuitton</p>
                         </div>
 
                         <div className='div-valoresMarcas'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroVersace} >Versace</p>
                         </div>
 
                         <div className='div-valoresMarcas'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroPrada} >Prada</p>
                         </div>
                     </div>
@@ -220,26 +220,26 @@ export default function Index() {
                         </div>
 
                         <div className='div-valoresTamanho'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroPP} > XS / PP </p>
                         </div>
 
                         <div className='div-valoresTamanho'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroP} > S / P </p>
                         </div>
 
                         <div className='div-valoresTamanho'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroM} > M / M</p>
                         </div>
                         <div className='div-valoresTamanho'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroG} > L / G</p>
                         </div>
 
                         <div className='div-valoresTamanho'>
-                            <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+
                             <p onClick={filtroGG} > XL / GG</p>
                         </div>
                     </div>

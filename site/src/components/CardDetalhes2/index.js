@@ -57,8 +57,7 @@ export default function Index(){
     return(
         <div className='section-card' >
                 <div className='card-produto' onClick={() => abrirDetalhes(produto.produto)}>
-                    <div className='icon-lista'>
-                        <img src={IconListaDesejo} alt='' className='icon-lista-desejo' />                
+                    <div className='icon-lista'>          
                         <img src={mostrarImagem(produto.ds_imagem)}  alt='imagem' className='gerenciarProd-imagem-card-1' />
                     </div>
 

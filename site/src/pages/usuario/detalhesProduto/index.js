@@ -1,6 +1,7 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import storage from 'local-storage'
 import Cabecalho from '../../../components/cabecalhouser'
+import Rodape from '../../../components/Rodapé'
 
 import { toast } from 'react-toastify';
 
@@ -143,6 +144,10 @@ export default function Index() {
                         <CardUsuario3/>
 
                     </div>
+                </div>
+
+                <div>
+                    <Rodape/>
                 </div>
             </div>
         </main>

@@ -197,16 +197,17 @@
 
     .home-adm-bt-linha1-card02{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-evenly;
+        align-items: center;
         margin-top: 3em;
     }
     .homeAdm-botão-addModelos{
+        display: flex;
         font-size: 1em;
         font-family: 'caviar';
         border: none;
-        margin-right: 4em;
-        width: 2em;
+        margin-bottom: 2.5em;
 
 
         background-color: #e4e7eb;

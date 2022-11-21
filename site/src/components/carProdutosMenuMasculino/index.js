@@ -174,37 +174,37 @@ export default function Index(){
                                     </div>
 
                                     <div className='div-valoresMarcas'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroGucci} >Gucci</p>
                                     </div>
                                     
                                     <div className='div-valoresMarcas'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroBalenciaga} >Balenciaga</p>
                                     </div>
 
                                     <div className='div-valoresMarcas'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroDolceGabanna} >Dolce & Gabbana</p>
                                     </div>
 
                                     <div className='div-valoresMarcas'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroBurberry} >Burberry</p>
                                     </div>
 
                                     <div className='div-valoresMarcas'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroLouisVuitton} >Louis Vuitton</p>
                                     </div>
 
                                     <div className='div-valoresMarcas'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroVersace} >Versace</p>
                                     </div>
 
                                     <div className='div-valoresMarcas'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroPrada} >Prada</p>
                                     </div>
                                 </div>
@@ -215,26 +215,26 @@ export default function Index(){
                                     </div>
 
                                     <div className='div-valoresTamanho'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroPP} > XS / PP </p>
                                     </div>
                                     
                                     <div className='div-valoresTamanho'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroP} > S / P </p>
                                     </div>
 
                                     <div className='div-valoresTamanho'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroM} > M / M</p>
                                     </div>
                                     <div className='div-valoresTamanho'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroG} > L / G</p>
                                     </div>
 
                                     <div className='div-valoresTamanho'>
-                                        <img src={LogoValorFiltro} alt='logo-valores-filtro' />
+            
                                         <p onClick={filtroGG} > XL / GG</p>
                                     </div>
                                 </div>
@@ -277,7 +277,6 @@ export default function Index(){
                 {produto.map(item => 
                     <div className='card-produto' onClick={() => abrirDetalhes(item.produto)}>
                         <div className='icon-lista'>
-                            <img src={IconListaDesejo} alt='' className='icon-lista-desejo' />                
                             <img src={mostrarImagem(item.ds_imagem)}  alt='imagem' className='gerenciarProd-imagem-card-1' />
                         </div>
 
