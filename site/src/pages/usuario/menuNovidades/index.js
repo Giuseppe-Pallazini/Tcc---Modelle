@@ -44,10 +44,6 @@ export default function Index(){
                         <CardProdutos/>
                     </div>
 
-                    <div className='Menu-div-buttomVerMais'>
-                        <button> Ver mais...</button>
-                    </div>
-
                     <div className='div-cards-Destaque-MenuNovidades' >
                         <div className='div-cardEmDestaque-Img01-MenuNovidades' >
                             <img src={Imagem01MenuNovidades} alt='imagem-01-menuMasculino' />
@@ -63,9 +59,6 @@ export default function Index(){
                         <hr className='hr-card-Destaque'/>
                     </div>
                 
-                    <div className='div-carrossel'>
-                        <Carrossel />
-                    </div>
                    
             </section>
 

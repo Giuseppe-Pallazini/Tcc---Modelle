@@ -2,7 +2,9 @@ import './index.scss';
 import '../../../assets/common/index.scss'
 import Cabecalho from '../../../components/cabecalhouser'
 import BoxSeusPedidos from '../../../components/boxSeusPedidos'
-
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Storage from 'local-storage';
 export default function Index(){
     
     function voltar() {

@@ -189,7 +189,7 @@ export default function Index() {
                             <div className='pagamento-PreenchEnd-l3'>
                                 <div>
                                     <p className='pagamento-Preench-complem-p'>Complemento:</p>
-                                    <input type='text' placeholder='Apt 18' className='pagamento-Preench-comple-input' value={complemento} onChange={e => setComplemento(e.target.value)} />
+                                    <input type='text' className='pagamento-Preench-comple-input' value={complemento} onChange={e => setComplemento(e.target.value)} />
                                 </div>
                             </div>
                         </div>
