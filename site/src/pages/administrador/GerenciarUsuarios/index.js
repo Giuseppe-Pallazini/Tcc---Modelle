@@ -1,6 +1,4 @@
 import './index.scss'
-import { useNavigate} from 'react-router-dom'
-import storage from 'local-storage'
 import CabecalhoAdm from '../../../components/cabecalhoadm'
 import { toast } from 'react-toastify';
 

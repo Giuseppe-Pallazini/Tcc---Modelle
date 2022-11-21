@@ -1,11 +1,10 @@
 import './index.scss';
 import '../../../assets/common/index.scss'
 import { useNavigate } from 'react-router-dom';
-import { buscarProdutoPorId, buscarImagem, buscarProdutoPorIdUsuario } from '../../../api/produtoAPI';
-import { useEffect, useState, useRef } from 'react'
+import { buscarProdutoPorId, buscarImagem } from '../../../api/produtoAPI';
+import { useEffect, useState } from 'react'
 import { IMaskInput } from 'react-imask'
 import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom'
 
 
 import CabecalhoUser from '../../../components/cabecalhouser/index.js'
@@ -17,14 +16,9 @@ import { salvarNovoPedido } from '../../../api/pedidoAPI';
 
 export default function Index() {
     const [itens, setItens] = useState([])
-
-    const [mostrarInfosPag, setMostrarInfosPag] = useState(false)
-    const showOrHide = () => setMostrarInfosPag(true)
-
-    const [imagemPrincipal, setImagemPrincipal] = useState(0);
-
+    
     const [cupom, setCupom] = useState('')
-    const [frete, setFrete] = useState('')
+    const [frete] = useState('')
     const [nome, setNome] = useState('')
     const [numero, setNumero] = useState('')
     const [vencimento, setVencimento] = useState('')

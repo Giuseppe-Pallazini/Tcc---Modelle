@@ -8,9 +8,7 @@ import { toast } from 'react-toastify';
 import LogoRemover from '../../assets/image/logo-remover.svg'
 import LogoEditar from '../../assets/image/logo-editar.svg'
 import IconLupa from '../../assets/image/logo-lupa.png'
-import { Link } from 'react-router-dom';
 
-import ImagemCard from '../../assets/image/imagem-card.png'
 import { buscarPorNome, listarTodos, removerProduto, buscarImagem } from '../../api/produtoAPI'
 
 import { API_URL } from '../../api/config.js';
@@ -23,7 +21,6 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export default function Index(){
     const [produto, setProduto] = useState([]);
-    const [modelo, setModelo] = useState([]);
     const [filtro, setFiltro] = useState('');
     
 
@@ -80,7 +77,6 @@ export default function Index(){
     
         async function editarProduto(id){
             navigate(`/admin/cadastroproduto/${id}`);
-            //navigate(`/admin/produto/alterar/${id}`)
         }
 
         function formatarPreco(preco){
@@ -124,15 +120,6 @@ export default function Index(){
                                         {item.idModelo}
                                     </p>
                                 </div>
-
-                                <div className='gerenciarProd-div-tamanhos' >
-                                    <p className='tamanho-produto-card'> Tamanho </p>
-                                    <div className='valorTamanho-produto-card'>
-                                        <p className='tamanhoProduto-card'> {item.idTamanho} </p>
-                                    </div>
-                                </div>
-
-
                                 
                                 <div className='gerenciarProd-div-disponivel' >
                                     <p className='disponivel-produto-card'> disponibilidade </p>

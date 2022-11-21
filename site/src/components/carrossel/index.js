@@ -1,6 +1,5 @@
 import './index.scss';
 import '../../assets/common/index.scss'
-import { Link } from 'react-router-dom';
 
 import Imagem1 from '../../assets/image/image1-carrosel.png'
 import Imagem2 from '../../assets/image/imagem-Biber.png'

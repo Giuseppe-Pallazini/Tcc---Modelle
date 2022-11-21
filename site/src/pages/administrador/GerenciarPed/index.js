@@ -1,11 +1,9 @@
-//import { useNavigate} from 'react-router-dom'
-//import storage from 'local-storage'
 import CabecalhoAdm from '../../../components/cabecalhoadm'
 
 import './index.scss'
 import LogoLupa from '../../../assets/image/logo-lupa.png'
 import '../../../assets/common/index.scss'
-import {useEffect, useState, useRef} from 'react'
+import {useEffect, useState} from 'react'
 import { alterarStatus, verPedidos, visualizarPedido } from '../../../api/produtoAPI'
 import CardPedidos from '../../../components/cardPedidosAdmin'
 import { toast } from 'react-toastify'

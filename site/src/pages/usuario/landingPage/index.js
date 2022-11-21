@@ -4,7 +4,6 @@ import Storage from 'local-storage'
 
 import Imagem1 from '../../../assets/image/logo_transparent-branco(svg).svg';
 import Video1 from '../../../assets/video/aaa.mp4';
-import iconCoracao from '../../../assets/image/icon-coracao.svg'
 import iconBolsa from '../../../assets/image/icon-bolsa.png'
 import iconUser from '../../../assets/image/icon-user.svg'
 import ImgCardOffWhite from '../../../assets/image/card-offWhite.png'
@@ -39,24 +38,6 @@ export default function Index() {
         }
 
     }
-
-    const responsive = {
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 1,
-            slidesToSlide: 1// optional, default to 1.
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2,
-            slidesToSlide: 2 // optional, default to 1.
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1,
-            slidesToSlide: 1 // optional, default to 1.
-        }
-    };
 
     useEffect(() => {
         carregarCarrinho()
@@ -123,8 +104,8 @@ export default function Index() {
                         <h1 className='text-info'> CELEBRE A SEDA </h1>
 
                         <div className='a'>
-                            <a className='bt'>  Compre agora </a>
-                            <a className='by'> Descubra a campanha </a>
+                            <Link className='bt'>  Compre agora </Link>
+                            <Link className='by'> Descubra a campanha </Link>
                         </div>
                     </div>
                 </div>

@@ -5,15 +5,12 @@ import ImagemCadastroUsuario from '../../../assets/image/imagem-cadastro-usuario
 import LogoModelle from '../../../assets/image/logo-modelle.svg'
 import { CadastroUsuario } from '../../../api/usuarioAPI'
 
-import { login } from '../../../api/usuarioAPI.js'
-
 import { Link } from 'react-router-dom'
 import './index.scss';
 import '../../../assets/common/index.scss'
 import { useState } from 'react'
 import { IMaskInput } from 'react-imask';
 import validator from 'validator';
-import storage from 'local-storage';
 
 export default function Index() {
     const [nome, setNome] = useState('');
@@ -23,7 +20,7 @@ export default function Index() {
     const [email2, setEmail2] = useState('');
     const [senha, setSenha] = useState('');
     const [senha2, setSenha2] = useState('');
-    const [erroEmail, setErroEmail] = useState('');
+    const [erroEmail] = useState('');
     const [erroSenha, setErroSenha] = useState('')
 
     const navigate = useNavigate()

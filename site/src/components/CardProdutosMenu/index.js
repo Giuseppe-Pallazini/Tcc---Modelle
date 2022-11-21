@@ -1,7 +1,6 @@
 import './index.scss'
 import '../../assets/common/index.scss'
 import ImagemProd from '../../assets/image/ImagemProd.png'
-import IconCoracao from '../../assets/image/Coracao-icon.svg'
 
 export default function Index(){
 

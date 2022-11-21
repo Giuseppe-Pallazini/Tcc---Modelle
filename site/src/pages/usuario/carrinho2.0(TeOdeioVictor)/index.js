@@ -11,9 +11,9 @@ import LogoCartão from '../../../assets/image/logo-cartão.png'
 import '../../../assets/common/index.scss'
 import { useEffect, useState } from 'react';
 import Storage from 'local-storage'
-import { buscarProdutoPorId, buscarProdutoPorIdUsuario } from '../../../api/produtoAPI';
+import { buscarProdutoPorIdUsuario } from '../../../api/produtoAPI';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 //import { toast } from 'react-toastify';

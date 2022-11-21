@@ -1,8 +1,5 @@
 import './index.scss'
 import '../../assets/common/index.scss'
-import { Link, useParams } from 'react-router-dom'
-import ImgProd from '../../assets/image/img-Prod.png'
-import IconsFluxo from '../../assets/image/icons-fluxo.png'
 import { useEffect, useState } from 'react'
 import { buscarImagem, visualizarPedidoPorId } from '../../api/produtoAPI'
 import { API_URL } from '../../api/config'

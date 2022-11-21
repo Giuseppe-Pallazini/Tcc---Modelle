@@ -1,5 +1,4 @@
 import { useNavigate} from 'react-router-dom'
-import storage from 'local-storage'
 
 import './index.scss';
 import '../../../assets/common/index.scss'
@@ -10,14 +9,11 @@ import Rodape from '../../../components/Rodapé'
 
 import Imagem01MenuNovidades from '../../../assets/image/imagem01-menuNovidades.png'
 import Imagem02MenuNovidades from '../../../assets/image/imagem02-menuNovidades.png'
-import LogoValorFiltro from '../../../assets/image/logo-valor-filtro.png'
 
 import Carrossel from '../../../components/carrossel'
-import ImagemNext from '../../../assets/image/icon-seta-carrossel-2.png'
 
 import CardProdutos from '../../../components/cardProdutoUsuario'
 
-import {useEffect, useState, useRef} from 'react'
 
 export default function Index(){
     const navigate = useNavigate();

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 
 
 import '../../../assets/common/index.scss'
-import {useEffect, useState, useRef} from 'react'
+import {useEffect} from 'react'
 import { toast } from 'react-toastify'
 
 export default function Index(){

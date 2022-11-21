@@ -1,18 +1,12 @@
 import './index.scss'
 import '../../assets/common/index.scss'
 
-import { useEffect, useState } from 'react'
-import { toast } from 'react-toastify';
-
-import IconListaDesejo from '../../assets/image/lista-desejo.png'
-import IconLupa from '../../assets/image/logo-lupa.png'
-
-import { buscarPorNome, listarTodos, removerProduto, buscarImagem, listarProdutosMasculino, listarProdutosFemininos } from '../../api/produtoAPI'
-
-import { API_URL } from '../../api/config.js';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LogoValorFiltro from '../../assets/image/logo-valor-filtro.png'
-import { filtroMarcaBalenciaga, filtroMarcaBurberry, filtroMarcaDolceGabanna, filtroMarcaGucci, filtroMarcaKenzo, filtroMarcaLouisVuitton, filtroMarcaModelle, filtroMarcaMorley, filtroMarcaPrada, filtroMarcaVersace, filtroMarcaZegna, filtroModeloBermuda, filtroModeloBlusa, filtroModeloCalca, filtroModeloCamisa, filtroModeloCasaco, filtroModeloMoletom, filtroModeloPolo, filtroModeloSueter, filtroTamanhoG, filtroTamanhoGG, filtroTamanhoM, filtroTamanhoP, filtroTamanhoPP } from '../../api/filtroAPI';
+import { API_URL } from '../../api/config.js';
+
+import { buscarImagem, listarProdutosFemininos } from '../../api/produtoAPI'
+import { filtroMarcaBalenciaga, filtroMarcaBurberry, filtroMarcaDolceGabanna, filtroMarcaGucci, filtroMarcaLouisVuitton, filtroMarcaPrada, filtroMarcaVersace, filtroModeloBermuda, filtroModeloBlusa, filtroModeloCalca, filtroModeloCamisa, filtroModeloCasaco, filtroModeloMoletom, filtroModeloPolo, filtroModeloSueter, filtroTamanhoG, filtroTamanhoGG, filtroTamanhoM, filtroTamanhoP, filtroTamanhoPP } from '../../api/filtroAPI';
 
 
 
@@ -20,8 +14,6 @@ import { filtroMarcaBalenciaga, filtroMarcaBurberry, filtroMarcaDolceGabanna, fi
 
 export default function Index() {
     const [produto, setProduto] = useState([]);
-    const [modelo, setModelo] = useState([]);
-    const [filtro, setFiltro] = useState('');
 
     const navigate = useNavigate();
 

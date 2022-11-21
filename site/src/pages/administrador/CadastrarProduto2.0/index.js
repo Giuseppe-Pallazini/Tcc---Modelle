@@ -19,7 +19,7 @@ import { API_URL } from '../../../api/config';
 import storage from 'local-storage';
 
 export default function CadastroProduto() {
-    const [idProduto, setIdProduto] = useState();
+    const [setIdProduto] = useState();
     const [nome, setNome] = useState();
     const [complementoProduto, setComplementoProduto] = useState();
     const [preco, setPreco] = useState();
@@ -115,29 +115,19 @@ export default function CadastroProduto() {
 
 
     function buscarNomeTamanho(id) {
-        const cat = tamanho.find(item => item.id == id);
-        console.log(cat)
+        const cat = tamanho.find(item => item.id === id);
         return cat.tamanho;
     }
 
-    function adicionarTamanho() {
-        if (!idTamanho) return;
-        
-        if (!tamSelecionadas.find(item => item == idTamanho)) {
-            const tamanhos = [...tamSelecionadas, idTamanho];
-            setTamSelecionadas(tamanhos);
-        }
-    }
-
     function removerCategoria(id) {
-        const x = tamSelecionadas.filter(item => item != id);
+        const x = tamSelecionadas.filter(item => item !== id);
         setTamSelecionadas(x);
     }
 
     function adicionarTamanho() {
         if (!idTamanho) return;
         
-        if (!tamSelecionadas.find(item => item == idTamanho)) {
+        if (!tamSelecionadas.find(item => item === idTamanho)) {
             const tamanhos = [...tamSelecionadas, idTamanho];
             setTamSelecionadas(tamanhos);
         }

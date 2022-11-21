@@ -1,4 +1,4 @@
-import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import storage from 'local-storage'
 import Cabecalho from '../../../components/cabecalhouser'
 import Rodape from '../../../components/Rodapé'
@@ -18,8 +18,6 @@ import CardUsuario3 from '../../../components/CardDetalhes3'
 export default function Index() {
     const [produto, setProduto] = useState({ info: {}, tamanho: [], imagens: [] });
     const [imagemPrincipal, setImagemPrincipal] = useState(0);
-
-    const Navigate = useNavigate();
 
     const { id } = useParams();
 

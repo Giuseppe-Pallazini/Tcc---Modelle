@@ -2,30 +2,19 @@ import './index.scss'
 import '../../assets/common/index.scss'
 
 import { useEffect, useState } from 'react'
-import { toast } from 'react-toastify';
 
-import IconListaDesejo from '../../assets/image/lista-desejo.png'
-import IconLupa from '../../assets/image/logo-lupa.png'
-import IconCoracao from '../../assets/image/Coracao-icon.svg'
-import Coracao2Icon from '../../assets/image/Coracao-icon02.svg'
 import storage from 'local-storage'
 
-import { buscarPorNome, listarTodos, removerProduto, buscarImagem, listarProdutosMasculino, listarProdutosFemininos } from '../../api/produtoAPI'
+import { listarTodos, buscarImagem } from '../../api/produtoAPI'
 
 import { API_URL } from '../../api/config.js';
 import { useNavigate } from 'react-router-dom';
-import LogoValorFiltro from '../../assets/image/logo-valor-filtro.png'
-import { filtroMarcaBalenciaga, filtroMarcaBurberry, filtroMarcaDolceGabanna, filtroMarcaGucci, filtroMarcaKenzo, filtroMarcaLouisVuitton, filtroMarcaModelle, filtroMarcaMorley, filtroMarcaPrada, filtroMarcaVersace, filtroMarcaZegna, filtroModeloBermuda, filtroModeloBlusa, filtroModeloCalca, filtroModeloCamisa, filtroModeloCasaco, filtroModeloMoletom, filtroModeloPolo, filtroModeloSueter, filtroTamanhoG, filtroTamanhoGG, filtroTamanhoM, filtroTamanhoP, filtroTamanhoPP } from '../../api/filtroAPI';
+import { filtroMarcaBalenciaga, filtroMarcaBurberry, filtroMarcaDolceGabanna, filtroMarcaGucci, filtroMarcaLouisVuitton, filtroMarcaPrada, filtroMarcaVersace, filtroModeloBermuda, filtroModeloBlusa, filtroModeloCalca, filtroModeloCamisa, filtroModeloCasaco, filtroModeloMoletom, filtroModeloPolo, filtroModeloSueter, filtroTamanhoG, filtroTamanhoGG, filtroTamanhoM, filtroTamanhoP, filtroTamanhoPP } from '../../api/filtroAPI';
 
 
 
 export default function Index() {
     const [produto, setProduto] = useState([]);
-    const [modelo, setModelo] = useState([]);
-    const [filtro, setFiltro] = useState('');
-
-    const id = storage('usuario-logado');
-
 
     const navigate = useNavigate();
 

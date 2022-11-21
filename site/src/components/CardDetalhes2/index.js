@@ -3,8 +3,6 @@ import { API_URL } from '../../api/config.js';
 
 import { useEffect, useState } from 'react'
 
-import IconListaDesejo from '../../assets/image/lista-desejo.png'
-
 import { buscarImagem,listarTodos2 } from '../../api/produtoAPI';
 
 import { useNavigate } from "react-router-dom";
@@ -26,12 +24,9 @@ export default function Index(){
         carregarProduto();
     }, [])
 
-    function formatarPreco(preco){
-        return preco.toFixed(2);
-    }
 
     function abrirDetalhes(id){
-        if(id == undefined || !id){
+        if(id === undefined || !id){
             toast.dark("Produto Invalido")
         }
         else{

@@ -1,27 +1,19 @@
 import './index.scss'
 import '../../assets/common/index.scss'
-import { Link, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { alterarProduto, buscarImagem, visualizarPedido, visualizarPedidoPorId, alterarStatus } from '../../api/produtoAPI'
-import { toast } from 'react-toastify'
+import {  buscarImagem, visualizarPedido } from '../../api/produtoAPI'
 
 export default function Index() {
     const [produto, setProduto] = useState([]);
-    const [status, setStatus] = useState('');
 
     async function carregarUsuario() {
         let a = await visualizarPedido();
         setProduto(a)
     }
 
-
     useEffect(() => {
         carregarUsuario();
     }, [])
-
-
-
-
 
     function mostrarImagem(imagem) {
         return buscarImagem(imagem)

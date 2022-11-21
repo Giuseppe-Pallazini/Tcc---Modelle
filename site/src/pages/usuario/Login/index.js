@@ -1,7 +1,6 @@
 import { useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
 
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './index.scss';
@@ -55,10 +54,7 @@ export default function Index() {
           storage('usuario-logado', r)
           setCarregando(false)
         }
-        //setTimeout(() => { 
-        //    navigate('/');
-        //}, 2000)
-
+        
     } catch (err) {
         ref.current.complete();
         setCarregando(false);

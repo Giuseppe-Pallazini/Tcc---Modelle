@@ -1,7 +1,6 @@
 import './index.scss'
 import '../../assets/common/index.scss';
-import { buscarImagem, buscarProdutoPorIdUsuario, listarTodos } from '../../api/produtoAPI';
-import IconeRemover from '../../assets/image/remover-svg.svg';
+import { buscarProdutoPorIdUsuario, listarTodos } from '../../api/produtoAPI';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { API_URL } from '../../api/config';
@@ -16,9 +15,9 @@ import { useParams } from 'react-router-dom';
 import { ListarTamanhoPorId } from '../../api/tamanhoAPI';
 
 export default function Index({ item: { produto: { info, imagens, tamanho }, tam, qtd }, removerItem, carregarCarrinho }) {
-    const [produto, setProduto] = useState({ info: {}, tamanho: [], imagens: [] });
+    const [setProduto] = useState({ info: {}, tamanho: [], imagens: [] });
     const [qtdProduto, setQtdProduto] = useState(qtd);
-    const [imagemPrincipal, setImagemPrincipal] = useState(0);
+    const [imagemPrincipal] = useState(0);
     const [tamProduto, setTamProduto] = useState(tam);
 
 
@@ -68,11 +67,6 @@ export default function Index({ item: { produto: { info, imagens, tamanho }, tam
         console.log(r)
         return r
     }
-
-    // function buscarNomeTamanho(id) {
-    //     const cat = tamanho.find(item => item.id == id);
-    //     return cat.tamanho;
-    // }
 
     function calcularSubTotal() {
         const subtotal = qtdProduto * info.preco;

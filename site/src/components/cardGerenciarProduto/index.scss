@@ -29,6 +29,7 @@
     transform: scale(1.02);
 
     .gerenciarProd-div-icons {
+        // eslint-disable-next-line
         overflow: visible;
     }
 }
@@ -36,7 +37,7 @@
 .gerenciarProd-div-icons{
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     overflow: hidden;
 
     .logo-remover{
@@ -200,6 +201,7 @@
     font-family: 'caviar';
     font-size: 15px;
     font-weight: 600;
+    // eslint-disable-next-line
     opacity: 80%;
     margin-left: 1.3em;
 }
@@ -236,7 +238,7 @@
 .gerenciarProd-div-id{
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     margin-bottom: .4em;
     margin-top: 1em;
     margin-left: 1.3em;

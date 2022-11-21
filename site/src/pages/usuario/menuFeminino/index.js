@@ -1,4 +1,4 @@
-import { Link, useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import storage from 'local-storage'
 
 import './index.scss';
@@ -10,14 +10,11 @@ import Rodape from '../../../components/Rodapé'
 
 import Imagem01MenuFeminino from '../../../assets/image/imagem01-menuFeminino.png'
 import Imagem02MenuFeminino from '../../../assets/image/imagem02-menuFeminino.png'
-import LogoValorFiltro from '../../../assets/image/logo-valor-filtro.png'
 
 import Carrossel from '../../../components/carrossel'
-import ImagemNext from '../../../assets/image/icon-seta-carrossel-2.png'
 
 import CardProdutosFemininos from '../../../components/CardProdutosFemininos'
 
-import {useEffect, useState, useRef} from 'react'
 import { toast } from 'react-toastify';
 
 export default function Index(){

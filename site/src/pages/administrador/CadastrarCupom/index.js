@@ -1,12 +1,11 @@
 import './index.scss'
 import { useNavigate } from 'react-router-dom'
-import storage from 'local-storage'
 import { IMaskInput } from 'react-imask'
 import CabecalhoAdm from '../../../components/cabecalhoadm'
 import desc from '../../../assets/image/descontto.svg'
 import '../../../assets/common/index.scss'
 
-import { useEffect, useState, useRef } from 'react'
+import { useState} from 'react'
 import { toast } from 'react-toastify'
 import { inserirCupom } from '../../../api/produtoAPI'
 
